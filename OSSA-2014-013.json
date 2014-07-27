@@ -1,0 +1,42 @@
+{
+    "advisory": {
+        "date": "2014-04-10", 
+        "description": "Abu Shohel Ahmed from Ericsson reported a vulnerability in Keystone V3 API authentication. By sending a single request with the same authentication method multiple times, a remote attacker may generate unwanted load on the Keystone host, potentially resulting in a Denial of Service against a Keystone service. Only Keystone setups enabling V3 API are affected.", 
+        "id": "2014-013", 
+        "title": "Keystone DoS through V3 API authentication chaining", 
+        "url": "http://lists.openstack.org/pipermail/openstack-announce/2014-April/000221.html"
+    }, 
+    "affects": [
+        {
+            "product": "keystone", 
+            "version": "TODO"
+        }
+    ], 
+    "bugs": [
+        "1300274"
+    ], 
+    "notes": "", 
+    "reporters": [
+        {
+            "company": "Ericsson", 
+            "name": "Abu Shohel Ahmed"
+        }
+    ], 
+    "reviews": [
+        "84425", 
+        "84735", 
+        "86024"
+    ], 
+    "schema_version": 1, 
+    "vulnerabilities": [
+        {
+            "cve": "CVE-2014-2828", 
+            "cvss": {
+                "base_score": "5.0", 
+                "scoring_vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P"
+            }, 
+            "cwe": "TODO", 
+            "impact": "moderate"
+        }
+    ]
+}

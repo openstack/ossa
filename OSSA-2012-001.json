@@ -1,0 +1,49 @@
+{
+    "advisory": {
+        "date": "2012-01-11", 
+        "description": "Nachi Ueno (NTT PF lab), Rohit Karajgi (Vertex) and Venkatesan Ravikumar (HP) discovered a vulnerability in Nova API nodes handling of incoming requests. An authenticated user may craft malicious commands to affect resources on tenants he is not a member of, potentially leading to incorrect billing, quota escaping or compromise of computing resources created by a third-party. Only setups allowing the OpenStack API are affected.     ", 
+        "id": "2012-001", 
+        "title": "Tenant bypass by authenticated users using OpenStack API", 
+        "url": "https://lists.launchpad.net/openstack/msg06648.html"
+    }, 
+    "affects": [
+        {
+            "product": "nova", 
+            "version": "TODO"
+        }
+    ], 
+    "bugs": [
+        "904072"
+    ], 
+    "notes": "", 
+    "reporters": [
+        {
+            "company": "NTT PF lab", 
+            "name": "Nachi Ueno"
+        }, 
+        {
+            "company": "Vertex", 
+            "name": "Rohit Karajgi"
+        }, 
+        {
+            "company": "HP", 
+            "name": "Venkatesan Ravikumar"
+        }
+    ], 
+    "reviews": [
+        "2960", 
+        "2961"
+    ], 
+    "schema_version": 1, 
+    "vulnerabilities": [
+        {
+            "cve": "CVE-2012-0030", 
+            "cvss": {
+                "base_score": "6.5", 
+                "scoring_vector": "AV:N/AC:L/Au:S/C:P/I:P/A:P"
+            }, 
+            "cwe": "TODO", 
+            "impact": "important"
+        }
+    ]
+}

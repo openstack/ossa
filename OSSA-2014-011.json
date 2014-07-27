@@ -1,0 +1,42 @@
+{
+    "advisory": {
+        "date": "2014-04-09", 
+        "description": "Marc Heckmann from Ubisoft reported a vulnerability in the Nova EC2 API security group implementation. RBAC policies are not enforced when using the EC2 API, in particular the add_rules, remove_rules and destroy methods. A restricted user may overcome his limitation by using EC2 API resulting in unauthorized action on security groups. Only setups using non-default RBAC rules for Nova may be affected.", 
+        "id": "2014-011", 
+        "title": "RBAC policy not properly enforced in Nova EC2 API", 
+        "url": "http://lists.openstack.org/pipermail/openstack-announce/2014-April/000219.html"
+    }, 
+    "affects": [
+        {
+            "product": "nova", 
+            "version": "TODO"
+        }
+    ], 
+    "bugs": [
+        "1290537"
+    ], 
+    "notes": "", 
+    "reporters": [
+        {
+            "company": "Ubisoft", 
+            "name": "Marc Heckmann"
+        }
+    ], 
+    "reviews": [
+        "86358", 
+        "86360", 
+        "86361"
+    ], 
+    "schema_version": 1, 
+    "vulnerabilities": [
+        {
+            "cve": "CVE-2014-0167", 
+            "cvss": {
+                "base_score": "6.0", 
+                "scoring_vector": "AV:N/AC:M/Au:S/C:P/I:P/A:P"
+            }, 
+            "cwe": "TODO", 
+            "impact": "moderate"
+        }
+    ]
+}

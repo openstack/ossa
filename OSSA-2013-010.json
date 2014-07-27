@@ -1,0 +1,46 @@
+{
+    "advisory": {
+        "date": "2013-05-09", 
+        "description": "Grant Murphy from Red Hat and Anton Lundin both independently reported a vulnerability in Nova's default location for the Keystone middleware signing directory (signing_dir). By previously setting up a malicious directory structure, an attacker with local shell access on the Nova node could potentially issue forged tokens that would be accepted by the middleware. Only setups that use the default value for signing_dir are affected. Note that future versions of the Keystone middleware will issue a warning if an insecure signing directory is used. ", 
+        "id": "2013-010", 
+        "title": "Nova uses insecure keystone middleware tmpdir by default", 
+        "url": "http://lists.openstack.org/pipermail/openstack-announce/2013-May/000098.html"
+    }, 
+    "affects": [
+        {
+            "product": "nova", 
+            "version": "TODO"
+        }
+    ], 
+    "bugs": [
+        "1174608"
+    ], 
+    "notes": "", 
+    "reporters": [
+        {
+            "company": "Red Hat", 
+            "name": "Grant Murphy"
+        }, 
+        {
+            "company": "UNKNOWN", 
+            "name": "Anton Lundin"
+        }
+    ], 
+    "reviews": [
+        "28568", 
+        "28569", 
+        "28570"
+    ], 
+    "schema_version": 1, 
+    "vulnerabilities": [
+        {
+            "cve": "CVE-2013-2030", 
+            "cvss": {
+                "base_score": "2.1", 
+                "scoring_vector": "AV:L/AC:L/Au:N/C:N/I:P/A:N"
+            }, 
+            "cwe": "TODO", 
+            "impact": "low"
+        }
+    ]
+}

@@ -1,0 +1,41 @@
+{
+    "advisory": {
+        "date": "2013-12-11", 
+        "description": "Steven Hardy from Red Hat reported a vulnerability in Heat's default API policy enforcement. By calling the CreateStack or UpdateStack methods, an in-instance user may be able to create or update a stack in violation of the default policy. Only setups using Heat's cloudformation-compatible API are affected.", 
+        "id": "2013-034", 
+        "title": "Heat CFN policy rules not all enforced", 
+        "url": "http://lists.openstack.org/pipermail/openstack-announce/2013-December/000170.html"
+    }, 
+    "affects": [
+        {
+            "product": "heat", 
+            "version": "TODO"
+        }
+    ], 
+    "bugs": [
+        "1256049"
+    ], 
+    "notes": "", 
+    "reporters": [
+        {
+            "company": "Red Hat", 
+            "name": "Steven Hardy"
+        }
+    ], 
+    "reviews": [
+        "61452", 
+        "61454"
+    ], 
+    "schema_version": 1, 
+    "vulnerabilities": [
+        {
+            "cve": "CVE-2013-6426", 
+            "cvss": {
+                "base_score": "4.0", 
+                "scoring_vector": "AV:N/AC:L/Au:S/C:N/I:P/A:N"
+            }, 
+            "cwe": "TODO", 
+            "impact": "moderate"
+        }
+    ]
+}

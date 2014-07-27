@@ -1,0 +1,42 @@
+{
+    "advisory": {
+        "date": "2012-08-07", 
+        "description": "P\u00e1draig Brady from Red Hat discovered that the fix implemented for CVE-2012-3361 (OSSA-2012-008) was not covering all attack scenarios. By crafting a malicious image with root-readable-only symlinks and requesting a server based on it, an authenticated user could still corrupt arbitrary files (all setups affected) or inject arbitrary files (Essex and later setups with OpenStack API enabled and a libvirt-based hypervisor) on the host filesystem, potentially resulting in full compromise of that compute node.", 
+        "id": "2012-011", 
+        "title": "Compute node filesystem injection/corruption", 
+        "url": "https://lists.launchpad.net/openstack/msg15549.html"
+    }, 
+    "affects": [
+        {
+            "product": "nova", 
+            "version": "TODO"
+        }
+    ], 
+    "bugs": [
+        "1031311"
+    ], 
+    "notes": "", 
+    "reporters": [
+        {
+            "company": "Red Hat", 
+            "name": "P\u00e1draig Brady"
+        }
+    ], 
+    "reviews": [
+        "10951", 
+        "10952", 
+        "10953"
+    ], 
+    "schema_version": 1, 
+    "vulnerabilities": [
+        {
+            "cve": "CVE-2012-3447", 
+            "cvss": {
+                "base_score": "3.5", 
+                "scoring_vector": "AV:N/AC:M/Au:S/C:N/I:N/A:P"
+            }, 
+            "cwe": "TODO", 
+            "impact": "moderate"
+        }
+    ]
+}

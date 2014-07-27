@@ -1,0 +1,42 @@
+{
+    "advisory": {
+        "date": "2014-06-12", 
+        "description": "Steven Hardy from Red Hat reported a vulnerability in Keystone chained delegation. By creating a delegation from a trust or OAuth token, a trustee may abuse the identity impersonation against keystone and circumvent the enforced scope, resulting in potential elevated privileges to any of the trustor's projects and or roles. All Keystone deployments configured to enable trusts are affected, which has been the default since Grizzly.", 
+        "id": "2014-018", 
+        "title": "Keystone privilege escalation through trust chained delegation", 
+        "url": "http://lists.openstack.org/pipermail/openstack-announce/2014-June/000240.html"
+    }, 
+    "affects": [
+        {
+            "product": "keystone", 
+            "version": "TODO"
+        }
+    ], 
+    "bugs": [
+        "1324592"
+    ], 
+    "notes": "", 
+    "reporters": [
+        {
+            "company": "Red Hat", 
+            "name": "Steven Hardy"
+        }
+    ], 
+    "reviews": [
+        "99687", 
+        "99700", 
+        "99703"
+    ], 
+    "schema_version": 1, 
+    "vulnerabilities": [
+        {
+            "cve": "CVE-2014-3476", 
+            "cvss": {
+                "base_score": "4.9", 
+                "scoring_vector": "AV:N/AC:M/Au:S/C:P/I:P/A:N"
+            }, 
+            "cwe": "TODO", 
+            "impact": "important"
+        }
+    ]
+}

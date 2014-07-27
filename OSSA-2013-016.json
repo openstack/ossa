@@ -1,0 +1,43 @@
+{
+    "advisory": {
+        "date": "2013-06-13", 
+        "description": "Alex Gaynor from Rackspace reported a vulnerability in XML handling within Swift account servers. Account strings were unescaped in XML listings, and an attacker could potentially generate unparsable or arbitrary XML responses which may be used to leverage other vulnerabilities in the calling software.", 
+        "id": "2013-016", 
+        "title": "Unchecked user input in Swift XML responses", 
+        "url": "https://lists.launchpad.net/openstack/msg24373.html"
+    }, 
+    "affects": [
+        {
+            "product": "swift", 
+            "version": "TODO"
+        }
+    ], 
+    "bugs": [
+        "1183884"
+    ], 
+    "notes": "", 
+    "reporters": [
+        {
+            "company": "Rackspace", 
+            "name": "Alex Gaynor"
+        }
+    ], 
+    "reviews": [
+        "32905", 
+        "32909", 
+        "32911", 
+        "32982"
+    ], 
+    "schema_version": 1, 
+    "vulnerabilities": [
+        {
+            "cve": "CVE-2013-2161", 
+            "cvss": {
+                "base_score": "5.8", 
+                "scoring_vector": "AV:N/AC:M/Au:N/C:N/I:P/A:P"
+            }, 
+            "cwe": "TODO", 
+            "impact": "moderate"
+        }
+    ]
+}

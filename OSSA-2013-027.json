@@ -1,0 +1,41 @@
+{
+    "advisory": {
+        "date": "2013-10-22", 
+        "description": "Stuart McLaren from HP reported a vulnerability in Glance download_image policy enforcement in the case of cached images. Deployers may opt to set a download_image policy to restrict image download to specific roles. However, when an image is previously cached by an authorized download, any authenticated user could download image contents if it can determine the image UUID, bypassing any download_image policy restrictions. This could result in disclosure of image contents that were thought to be protected by the download_image policy setting. Only setups making use of the download_image policy are affected.", 
+        "id": "2013-027", 
+        "title": "Glance image_download policy not enforced for cached images", 
+        "url": "http://lists.openstack.org/pipermail/openstack-announce/2013-October/000155.html"
+    }, 
+    "affects": [
+        {
+            "product": "glance", 
+            "version": "TODO"
+        }
+    ], 
+    "bugs": [
+        "1235378"
+    ], 
+    "notes": "", 
+    "reporters": [
+        {
+            "company": "HP", 
+            "name": "Stuart McLaren"
+        }
+    ], 
+    "reviews": [
+        "50103", 
+        "50860"
+    ], 
+    "schema_version": 1, 
+    "vulnerabilities": [
+        {
+            "cve": "CVE-2013-4428", 
+            "cvss": {
+                "base_score": "6.3", 
+                "scoring_vector": "AV:N/AC:M/Au:S/C:C/I:N/A:N"
+            }, 
+            "cwe": "TODO", 
+            "impact": "moderate"
+        }
+    ]
+}

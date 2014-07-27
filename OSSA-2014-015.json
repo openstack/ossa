@@ -1,0 +1,43 @@
+{
+    "advisory": {
+        "date": "2014-05-21", 
+        "description": "Michael Stancampiano from IBM reported a vulnerability in Keystone. Someone with write access to the user and group repository (such as the LDAP directory server) may willingly or unwillingly grant additional rights by picking the same IDs for users and groups, resulting in roles assigned to a group being assigned to the affected user even if he is not a member of this group. Only Keystone setups using LDAP for the Identity driver are affected.", 
+        "id": "2014-015", 
+        "title": "Keystone user and group id mismatch", 
+        "url": "http://lists.openstack.org/pipermail/openstack-announce/2014-May/000231.html"
+    }, 
+    "affects": [
+        {
+            "product": "keystone", 
+            "version": "TODO"
+        }
+    ], 
+    "bugs": [
+        "1309228"
+    ], 
+    "notes": "", 
+    "reporters": [
+        {
+            "company": "IBM", 
+            "name": "Michael Stancampiano"
+        }
+    ], 
+    "reviews": [
+        "94396", 
+        "94470", 
+        "94397", 
+        "95263"
+    ], 
+    "schema_version": 1, 
+    "vulnerabilities": [
+        {
+            "cve": "CVE-2014-0204", 
+            "cvss": {
+                "base_score": "2.7", 
+                "scoring_vector": "AV:A/AC:L/Au:S/C:N/I:P/A:N"
+            }, 
+            "cwe": "TODO", 
+            "impact": "moderate"
+        }
+    ]
+}

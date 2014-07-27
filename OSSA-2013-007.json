@@ -1,0 +1,42 @@
+{
+    "advisory": {
+        "date": "2013-03-14", 
+        "description": "Stuart McLaren from HP reported a vulnerability in the information potentially returned to the user in Glance v1 API. If an authenticated user requests, through the v1 API, an image that is already cached, the headers returned may disclose the Glance operator's backend credentials for that endpoint. Only setups accepting the Glance v1 API and using either the single-tenant Swift store or S3 store are affected.", 
+        "id": "2013-007", 
+        "title": "Backend credentials leak in Glance v1 API", 
+        "url": "http://lists.openstack.org/pipermail/openstack-announce/2013-March/000085.html"
+    }, 
+    "affects": [
+        {
+            "product": "glance", 
+            "version": "TODO"
+        }
+    ], 
+    "bugs": [
+        "1135541"
+    ], 
+    "notes": "", 
+    "reporters": [
+        {
+            "company": "HP", 
+            "name": "Stuart McLaren"
+        }
+    ], 
+    "reviews": [
+        "24437", 
+        "24438", 
+        "24439"
+    ], 
+    "schema_version": 1, 
+    "vulnerabilities": [
+        {
+            "cve": "CVE-2013-1840", 
+            "cvss": {
+                "base_score": "3.5", 
+                "scoring_vector": "AV:N/AC:M/Au:S/C:P/I:N/A:N"
+            }, 
+            "cwe": "TODO", 
+            "impact": "moderate"
+        }
+    ]
+}

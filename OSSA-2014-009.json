@@ -1,0 +1,42 @@
+{
+    "advisory": {
+        "date": "2014-03-27", 
+        "description": "Stanislaw Pitucha from Hewlett Packard reported a vulnerability in the Nova instance rescue mode. By overwriting the disk inside an instance with a malicious image and switching the instance to rescue mode, an authenticated user would be able to leak an arbitrary file from the compute host to the virtual instance. Note that the host file must be readable by the libvirt/kvm context to be exposed. Only setups using libvirt to spawn instance, and having \"use_cow_images = False\" in Nova configuration are affected.", 
+        "id": "2014-009", 
+        "title": "Nova host data leak to vm instance in rescue mode", 
+        "url": "http://lists.openstack.org/pipermail/openstack-announce/2014-March/000213.html"
+    }, 
+    "affects": [
+        {
+            "product": "nova", 
+            "version": "TODO"
+        }
+    ], 
+    "bugs": [
+        "1221190"
+    ], 
+    "notes": "Review 86353 not included in advisory.", 
+    "reporters": [
+        {
+            "company": "HP", 
+            "name": "Stanislaw Pitucha"
+        }
+    ], 
+    "reviews": [
+        "82841", 
+        "82840", 
+        "86353"
+    ], 
+    "schema_version": 1, 
+    "vulnerabilities": [
+        {
+            "cve": "CVE-2014-0134", 
+            "cvss": {
+                "base_score": "3.5", 
+                "scoring_vector": "AV:N/AC:M/Au:S/C:P/I:N/A:N"
+            }, 
+            "cwe": "TODO", 
+            "impact": "moderate"
+        }
+    ]
+}

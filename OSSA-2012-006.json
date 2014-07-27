@@ -1,0 +1,41 @@
+{
+    "advisory": {
+        "date": "2012-05-04", 
+        "description": "Thomas Biege from SUSE reported a vulnerability in OpenStack Dashboard (Horizon). Under specific circumstances it is possible to reuse session cookies from another user, potentially allowing access to unauthorized information and capabilities. ", 
+        "id": "2012-006", 
+        "title": "Horizon session fixation and reuse", 
+        "url": "https://lists.launchpad.net/openstack/msg11263.html"
+    }, 
+    "affects": [
+        {
+            "product": "horizon", 
+            "version": "TODO"
+        }
+    ], 
+    "bugs": [
+        "978896"
+    ], 
+    "notes": "Incorrect CVE listed in advisory: CVE-2012-05-04", 
+    "reporters": [
+        {
+            "company": "SUSE", 
+            "name": "Thomas Biege"
+        }
+    ], 
+    "reviews": [
+        "7144", 
+        "7145"
+    ], 
+    "schema_version": 1, 
+    "vulnerabilities": [
+        {
+            "cve": "CVE-2012-2144", 
+            "cvss": {
+                "base_score": "5.8", 
+                "scoring_vector": "AV:N/AC:M/Au:N/C:P/I:P/A:N"
+            }, 
+            "cwe": "TODO", 
+            "impact": "moderate"
+        }
+    ]
+}

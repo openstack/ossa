@@ -1,0 +1,41 @@
+{
+    "advisory": {
+        "date": "2012-03-27", 
+        "description": "Dan Prince reported a vulnerability in Keystone. He discovered that you can remotely trigger a crash in Keystone by sending an extremely long password. When Keystone is validating the password, glibc allocates space on the stack for the entire password. If the password is long enough, stack space can be exhausted, resulting in a crash. This vulnerability is mitigated by a patch to impose a reasonablelimit on password length (4 kB).", 
+        "id": "2012-002", 
+        "title": "Extremely long passwords can crash Keystone", 
+        "url": "https://lists.launchpad.net/openstack/msg09193.html"
+    }, 
+    "affects": [
+        {
+            "product": "keystone", 
+            "version": "TODO"
+        }
+    ], 
+    "bugs": [
+        "957359"
+    ], 
+    "notes": "", 
+    "reporters": [
+        {
+            "company": "Red Hat", 
+            "name": "Dan Prince"
+        }
+    ], 
+    "reviews": [
+        "5507", 
+        "5865"
+    ], 
+    "schema_version": 1, 
+    "vulnerabilities": [
+        {
+            "cve": "CVE-2012-1572", 
+            "cvss": {
+                "base_score": "5.0", 
+                "scoring_vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P"
+            }, 
+            "cwe": "TODO", 
+            "impact": "moderate"
+        }
+    ]
+}

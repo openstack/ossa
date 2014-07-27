@@ -1,0 +1,42 @@
+{
+    "advisory": {
+        "date": "2013-01-29", 
+        "description": "Phil Day from HP reported a vulnerability in volume attachment in nova-volume, affecting the boot-from-volume feature. By passing a specific volume ID,  an authenticated user may be able to boot from a volume he doesn't own, potentially resulting in full access to that 3rd-party volume contents. Folsom  setups making use of Cinder are not affected. ", 
+        "id": "2013-001", 
+        "title": "Boot from volume allows access to random volumes", 
+        "url": "http://lists.openstack.org/pipermail/openstack-announce/2013-January/000070.html"
+    }, 
+    "affects": [
+        {
+            "product": "nova", 
+            "version": "TODO"
+        }
+    ], 
+    "bugs": [
+        "1069904"
+    ], 
+    "notes": "", 
+    "reporters": [
+        {
+            "company": "HP", 
+            "name": "Phil Day"
+        }
+    ], 
+    "reviews": [
+        "20698", 
+        "20699", 
+        "20700"
+    ], 
+    "schema_version": 1, 
+    "vulnerabilities": [
+        {
+            "cve": "CVE-2013-0208", 
+            "cvss": {
+                "base_score": "6.5", 
+                "scoring_vector": "AV:N/AC:L/Au:S/C:P/I:P/A:P"
+            }, 
+            "cwe": "TODO", 
+            "impact": "important"
+        }
+    ]
+}

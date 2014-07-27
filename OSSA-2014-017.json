@@ -1,0 +1,45 @@
+{
+    "advisory": {
+        "date": "2014-05-29", 
+        "description": "Jaroslav Henner from Red Hat reported a vulnerability in Nova. By requesting Nova place an image into rescue, then deleting the image, an authenticated user my exceed their quota. This can result in a denial of service via excessive resource consumption. Only setups using the Nova VMWare driver are affected.", 
+        "id": "2014-017", 
+        "title": "Nova VMWare driver leaks rescued images", 
+        "url": "http://lists.openstack.org/pipermail/openstack-announce/2014-May/000235.html"
+    }, 
+    "affects": [
+        {
+            "product": "nova", 
+            "version": "TODO"
+        }
+    ], 
+    "bugs": [
+        "1269418"
+    ], 
+    "notes": "", 
+    "reporters": [
+        {
+            "company": "Red Hat", 
+            "name": "Jaroslav Henner"
+        }
+    ], 
+    "reviews": [
+        "75788", 
+        "80284", 
+        "88514", 
+        "89217", 
+        "89762", 
+        "89768"
+    ], 
+    "schema_version": 1, 
+    "vulnerabilities": [
+        {
+            "cve": "CVE-2014-2573", 
+            "cvss": {
+                "base_score": "4.0", 
+                "scoring_vector": "AV:N/AC:L/Au:S/C:N/I:N/A:P"
+            }, 
+            "cwe": "TODO", 
+            "impact": "moderate"
+        }
+    ]
+}

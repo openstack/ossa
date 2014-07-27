@@ -1,0 +1,42 @@
+{
+    "advisory": {
+        "date": "2014-05-23", 
+        "description": "Jason Dunsmore from Rackspace reported a vulnerability in Heat. An authenticated user may temporarily see the URL of a provider template used in another tenant by listing heat resources types. This may result in disclosure of additional information if the template itself can be accessed. The URL disappears from the listing after a certain point in the stack creation. All Heat setups are affected.", 
+        "id": "2014-016", 
+        "title": "Heat template URL information leakage", 
+        "url": "http://lists.openstack.org/pipermail/openstack-announce/2014-May/000232.html"
+    }, 
+    "affects": [
+        {
+            "product": "heat", 
+            "version": "TODO"
+        }
+    ], 
+    "bugs": [
+        "1311223"
+    ], 
+    "notes": "", 
+    "reporters": [
+        {
+            "company": "Rackspace", 
+            "name": "Jason Dunsmore"
+        }
+    ], 
+    "reviews": [
+        "89695", 
+        "94625", 
+        "94644"
+    ], 
+    "schema_version": 1, 
+    "vulnerabilities": [
+        {
+            "cve": "CVE-2014-3801", 
+            "cvss": {
+                "base_score": "4", 
+                "scoring_vector": "AV:N/AC:L/Au:S/C:P/I:N/A:N"
+            }, 
+            "cwe": "TODO", 
+            "impact": "moderate"
+        }
+    ]
+}

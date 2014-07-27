@@ -1,0 +1,41 @@
+{
+    "advisory": {
+        "date": "2014-06-19", 
+        "description": "Globo.com Security Team reported a vulnerability in Swift's header value escaping. By tricking a Swift user into clicking a malicious URL, a remote attacker may inject data in Swift response while still appearing to come from the Swift server, potentially leading to other client-side vulnerabilities. All Swift setups are affected. ", 
+        "id": "2014-020", 
+        "title": "XSS in Swift requests through WWW-Authenticate header", 
+        "url": "http://lists.openstack.org/pipermail/openstack-announce/2014-June/000243.html"
+    }, 
+    "affects": [
+        {
+            "product": "swift", 
+            "version": "TODO"
+        }
+    ], 
+    "bugs": [
+        "1327414"
+    ], 
+    "notes": "", 
+    "reporters": [
+        {
+            "company": "Globo.com", 
+            "name": "Globo.com Security Team"
+        }
+    ], 
+    "reviews": [
+        "101031", 
+        "101032"
+    ], 
+    "schema_version": 1, 
+    "vulnerabilities": [
+        {
+            "cve": "CVE-2014-3497", 
+            "cvss": {
+                "base_score": "4.3", 
+                "scoring_vector": "AV:N/AC:M/Au:N/C:P/I:N/A:N"
+            }, 
+            "cwe": "TODO", 
+            "impact": "moderate"
+        }
+    ]
+}

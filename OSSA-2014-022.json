@@ -1,0 +1,42 @@
+{
+    "advisory": {
+        "date": "2014-07-02", 
+        "description": "Jamie Lennox from Red Hat reported a vulnerability in Keystone trusts. By using an out of scope project id, a trustee may gain unauthorized access if the trustor has the required roles in the requested project id. All Keystone deployments configured to enable trusts and V2 API are affected.", 
+        "id": "2014-022", 
+        "title": "Keystone V2 trusts privilege escalation through user supplied", 
+        "url": "http://lists.openstack.org/pipermail/openstack-announce/2014-July/000248.html"
+    }, 
+    "affects": [
+        {
+            "product": "keystone", 
+            "version": "TODO"
+        }
+    ], 
+    "bugs": [
+        "1331912"
+    ], 
+    "notes": "", 
+    "reporters": [
+        {
+            "company": "Red Hat", 
+            "name": "Jamie Lennox"
+        }
+    ], 
+    "reviews": [
+        "104216", 
+        "104217", 
+        "104218"
+    ], 
+    "schema_version": 1, 
+    "vulnerabilities": [
+        {
+            "cve": "CVE-2014-3520", 
+            "cvss": {
+                "base_score": "3.5", 
+                "scoring_vector": "AV:N/AC:M/Au:S/C:P/I:N/A:N"
+            }, 
+            "cwe": "TODO", 
+            "impact": "important"
+        }
+    ]
+}

@@ -1,0 +1,41 @@
+{
+    "advisory": {
+        "date": "2013-12-11", 
+        "description": "Steven Hardy from Red Hat reported a vulnerability in the Heat ReST API. By changing the request path, an authenticated client may override their tenant scope resulting in privilege escalation. Only setups exposing the Heat orchestration ReST interface are affected.", 
+        "id": "2013-035", 
+        "title": "Heat ReST API doesn't respect tenant scoping", 
+        "url": "http://lists.openstack.org/pipermail/openstack-announce/2013-December/000172.html"
+    }, 
+    "affects": [
+        {
+            "product": "heat", 
+            "version": "TODO"
+        }
+    ], 
+    "bugs": [
+        "1256983"
+    ], 
+    "notes": "", 
+    "reporters": [
+        {
+            "company": "Red Hat", 
+            "name": "Steven Hardy"
+        }
+    ], 
+    "reviews": [
+        "61455", 
+        "61456"
+    ], 
+    "schema_version": 1, 
+    "vulnerabilities": [
+        {
+            "cve": "CVE-2013-6428", 
+            "cvss": {
+                "base_score": "4.0", 
+                "scoring_vector": "AV:N/AC:L/Au:S/C:N/I:P/A:N"
+            }, 
+            "cwe": "TODO", 
+            "impact": "moderate"
+        }
+    ]
+}

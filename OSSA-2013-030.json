@@ -1,0 +1,46 @@
+{
+    "advisory": {
+        "date": "2013-11-14", 
+        "description": "Chris Behrens with Rackspace and Vangelis Tasoulas reported a set of vulnerabilities in OpenStack Nova's XenAPI hypervisor backend. When migrating or resizing an instance, including live migration, existing security groups may not be reapplied after the operation completes. This can lead to unintentional network exposure for virtual machines. Only setups using the XenAPI backend are affected.", 
+        "id": "2013-030", 
+        "title": "XenAPI security groups not kept through migrate or resize", 
+        "url": "http://lists.openstack.org/pipermail/openstack-announce/2013-November/000161.html"
+    }, 
+    "affects": [
+        {
+            "product": "nova", 
+            "version": "TODO"
+        }
+    ], 
+    "bugs": [
+        "1073306", 
+        "1202266"
+    ], 
+    "notes": "", 
+    "reporters": [
+        {
+            "company": "Rackspace", 
+            "name": "Chris Behrens"
+        }, 
+        {
+            "company": "UNKNOWN", 
+            "name": "Vangelis Tasoulas"
+        }
+    ], 
+    "reviews": [
+        "52987", 
+        "52989"
+    ], 
+    "schema_version": 1, 
+    "vulnerabilities": [
+        {
+            "cve": "CVE-2013-4497", 
+            "cvss": {
+                "base_score": "3.6", 
+                "scoring_vector": "AV:N/AC:H/Au:S/C:P/I:P/A:N"
+            }, 
+            "cwe": "TODO", 
+            "impact": "low"
+        }
+    ]
+}

@@ -1,0 +1,42 @@
+{
+    "advisory": {
+        "date": "2013-08-07", 
+        "description": "Peter Portante from Red Hat reported a vulnerability in Swift. Byissuing requests with an old X-Timestamp value, an authenticatedattacker can fill an object server with superfluous object tombstones,which may significantly slow down subsequent requests to that objectserver, facilitating a Denial of Service attack against Swift clusters.", 
+        "id": "2013-022", 
+        "title": "Swift Denial of Service using superfluous object tombstones", 
+        "url": "http://lists.openstack.org/pipermail/openstack-announce/2013-August/000131.html"
+    }, 
+    "affects": [
+        {
+            "product": "swift", 
+            "version": "TODO"
+        }
+    ], 
+    "bugs": [
+        "1196932"
+    ], 
+    "notes": "", 
+    "reporters": [
+        {
+            "company": "Red Hat", 
+            "name": "Peter Portante"
+        }
+    ], 
+    "reviews": [
+        "40643", 
+        "40645", 
+        "40646"
+    ], 
+    "schema_version": 1, 
+    "vulnerabilities": [
+        {
+            "cve": "CVE-2013-4155", 
+            "cvss": {
+                "base_score": "4.0", 
+                "scoring_vector": "AV:N/AC:L/Au:S/C:N/I:N/A:P"
+            }, 
+            "cwe": "TODO", 
+            "impact": "moderate"
+        }
+    ]
+}

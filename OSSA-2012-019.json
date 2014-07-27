@@ -1,0 +1,41 @@
+{
+    "advisory": {
+        "date": "2012-11-28", 
+        "description": "Anndy reported a vulnerability in token chaining in Keystone. A token expiration date can be circumvented by creating a new token before the old one has expired. An authenticated and authorized user could potentially leverage this vulnerability to extend his access beyond the account owner expectations. Note: this vulnerability was fixed in the past (CVE-2012-3426) but was reintroduced in Folsom when code was refactored to support PKI tokens.", 
+        "id": "2012-019", 
+        "title": "Extension of token validity through token chaining", 
+        "url": "http://lists.openstack.org/pipermail/openstack-announce/2012-November/000056.html"
+    }, 
+    "affects": [
+        {
+            "product": "keystone", 
+            "version": "TODO"
+        }
+    ], 
+    "bugs": [
+        "1079216"
+    ], 
+    "notes": "", 
+    "reporters": [
+        {
+            "company": "UNKNOWN", 
+            "name": "Anndy"
+        }
+    ], 
+    "reviews": [
+        "17050", 
+        "17051"
+    ], 
+    "schema_version": 1, 
+    "vulnerabilities": [
+        {
+            "cve": "CVE-2012-5563", 
+            "cvss": {
+                "base_score": "4.0", 
+                "scoring_vector": "AV:N/AC:L/Au:S/C:N/I:P/A:N"
+            }, 
+            "cwe": "TODO", 
+            "impact": "moderate"
+        }
+    ]
+}

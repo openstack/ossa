@@ -1,0 +1,54 @@
+{
+    "advisory": {
+        "date": "2012-11-07", 
+        "description": "Gabe Westmaas from Rackspace reported a vulnerability in Glance authentication of image deletion requests. Authenticated users may be able to delete arbitrary, non-protected images from Glance servers. Only Folsom/Grizzly deployments that expose the v1 API are affected by this vulnerability. Additionally, Essex deployments that use the delayed_delete option are also affected.", 
+        "id": "2012-017", 
+        "title": "Authentication bypass for image deletion", 
+        "url": "https://lists.launchpad.net/openstack/msg18386.html, https://lists.launchpad.net/openstack/msg18466.html"
+    }, 
+    "affects": [
+        {
+            "product": "glance", 
+            "version": "TODO"
+        }
+    ], 
+    "bugs": [
+        "1065187", 
+        "1076506"
+    ], 
+    "notes": "OSSA-2012-017.1 ERRATA", 
+    "reporters": [
+        {
+            "company": "Rackspace", 
+            "name": "Gabe Westmaas"
+        }
+    ], 
+    "reviews": [
+        "15562", 
+        "15563", 
+        "15564", 
+        "15658", 
+        "15659"
+    ], 
+    "schema_version": 1, 
+    "vulnerabilities": [
+        {
+            "cve": "CVE-2012-4573", 
+            "cvss": {
+                "base_score": "2.1", 
+                "scoring_vector": "AV:N/AC:H/Au:S/C:N/I:N/A:P"
+            }, 
+            "cwe": "TODO", 
+            "impact": "low"
+        }, 
+        {
+            "cve": "CVE-2012-5482", 
+            "cvss": {
+                "base_score": "UNKNOWN", 
+                "scoring_vector": "UNKNOWN"
+            }, 
+            "cwe": "TODO", 
+            "impact": "UNKNOWN"
+        }
+    ]
+}

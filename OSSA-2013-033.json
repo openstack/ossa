@@ -1,0 +1,49 @@
+{
+    "advisory": {
+        "date": "2013-12-11", 
+        "description": "Aaron Rosen from VMware reported a vulnerability in the metadata access from OpenStack Neutron to Nova. Because of a missing authorization check on port binding, by guessing an instance_id a tenant may retrieve another tenant's metadata resulting in information disclosure. Only OpenStack setups running neutron-metadata-agent are affected. ", 
+        "id": "2013-033", 
+        "title": "Metadata queries from Neutron to Nova are not restricted by tenant", 
+        "url": "http://lists.openstack.org/pipermail/openstack-announce/2013-December/000169.html"
+    }, 
+    "affects": [
+        {
+            "product": "neutron", 
+            "version": "TODO"
+        }, 
+        {
+            "product": "nova", 
+            "version": "TODO"
+        }
+    ], 
+    "bugs": [
+        "1235450"
+    ], 
+    "notes": "", 
+    "reporters": [
+        {
+            "company": "VMware", 
+            "name": "Aaron Rosen"
+        }
+    ], 
+    "reviews": [
+        "61439", 
+        "61428", 
+        "61442", 
+        "61435", 
+        "61443", 
+        "61437"
+    ], 
+    "schema_version": 1, 
+    "vulnerabilities": [
+        {
+            "cve": "CVE-2013-6419", 
+            "cvss": {
+                "base_score": "4.0", 
+                "scoring_vector": "AV:N/AC:L/Au:S/C:P/I:N/A:N"
+            }, 
+            "cwe": "TODO", 
+            "impact": "moderate"
+        }
+    ]
+}

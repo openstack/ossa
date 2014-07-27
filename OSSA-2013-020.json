@@ -1,0 +1,42 @@
+{
+    "advisory": {
+        "date": "2013-08-06", 
+        "description": "Vishvananda Ishaya from Nebula reported a denial of service vulnerability in Nova's handling of network source security group policy updates. By performing a large number of server creation operations, the proportion of updates increases quadratically and may overwhelm nova-network such that it is no longer able to service other requests in a timely fashion. Only setups relying on nova-network are affected.", 
+        "id": "2013-020", 
+        "title": "Denial of Service in Nova network source security groups", 
+        "url": "http://lists.openstack.org/pipermail/openstack-announce/2013-August/000127.html"
+    }, 
+    "affects": [
+        {
+            "product": "nova", 
+            "version": "TODO"
+        }
+    ], 
+    "bugs": [
+        "1184041"
+    ], 
+    "notes": "", 
+    "reporters": [
+        {
+            "company": "Nebula", 
+            "name": "Vishvananda Ishaya"
+        }
+    ], 
+    "reviews": [
+        "39541", 
+        "39543", 
+        "39544"
+    ], 
+    "schema_version": 1, 
+    "vulnerabilities": [
+        {
+            "cve": "CVE-2013-4185", 
+            "cvss": {
+                "base_score": "4.0", 
+                "scoring_vector": "AV:N/AC:L/Au:S/C:N/I:N/A:P"
+            }, 
+            "cwe": "TODO", 
+            "impact": "moderate"
+        }
+    ]
+}
