@@ -28,7 +28,7 @@
     "schema_version": 1, 
     "vulnerabilities": [
         {
-            "cve": "CVE-2012-3542", 
+            "cve": "CVE-2012-3540", 
             "cvss": {
                 "base_score": "5.0", 
                 "scoring_vector": "AV:N/AC:L/Au:N/C:N/I:P/A:N"
