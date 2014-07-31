@@ -1,6 +1,6 @@
 {
     "advisory": {
-        "date": "2013-01-13", 
+        "date": "2014-01-13", 
         "description": "Daniel Berrange from Red Hat reported that the directories used to temporarily store live snapshots on Nova compute nodes were writable to all local users. A local attacker with shell access on compute nodes could therefore read and modify the contents of live snapshots before those are uploaded to the image service.", 
         "id": "2014-001", 
         "title": "Nova live snapshots use an insecure local directory", 

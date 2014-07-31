@@ -1,6 +1,6 @@
 {
     "advisory": {
-        "date": "2013-01-16", 
+        "date": "2014-01-16", 
         "description": "Samuel Merritt from SwiftStack reported a timing attack vulnerability in Swift TempURL middleware. By analyzing response times to arbitrary TempURL requests, an attacker may be able to guess valid secret URLs and get access to objects that were only intended to be publicly shared with specific recipients. In order to use this attack, the attacker needs to know the targeted object name, and the object account needs to have a TempURL key set. Only Swift setups enabling the TempURL middleware are affected.", 
         "id": "2014-002", 
         "title": "Swift TempURL timing attack", 
