@@ -1,0 +1,46 @@
+{
+    "advisory": {
+        "date": "2014-08-21",
+        "description": "Thomas Leaman and Stuart McLaren from Hewlett Packard reported a vulnerability in Glance. By uploading a large enough image to a Glance store, an authenticated user may fill the store space because the image_size_cap configuration option is not honored. This may prevent further image upload and/or cause service disruption. Note that the import method is not affected. All Glance setups using API v2 are affected (unless you use a policy to restrict/disable image upload).",
+        "id": "2014-028",
+        "title": "Glance store DoS through disk space exhaustion",
+        "url": "http://lists.openstack.org/pipermail/openstack-announce/2014-August/000267.html"
+    },
+    "affects": [
+        {
+            "product": "glance",
+            "version": "up to 2013.2.3 and 2014.1 versions up to 2014.1.2"
+        }
+    ],
+    "bugs": [
+        "1315321"
+    ],
+    "notes": "This fix will be included in the Juno-3 development milestone and in future 2013.2.4 and 2014.1.3 releases.",
+    "reporters": [
+        {
+            "company": "HP",
+            "name": "Thomas Leaman"
+        },
+        {
+            "company": "HP",
+            "name": "Stuart McLaren"
+        }
+   ],
+    "reviews": [
+        "91764",
+        "115280",
+        "115289"
+    ],
+    "schema_version": 1,
+    "vulnerabilities": [
+        {
+            "cve": "CVE-2014-5356",
+            "cvss": {
+                "base_score": "4.0",
+                "scoring_vector": "AV:N/AC:L/Au:S/C:N/I:N/A:P"
+            },
+            "cwe": "CWE-770",
+            "impact": "moderate"
+        }
+    ]
+}
