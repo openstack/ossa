@@ -46,7 +46,7 @@
                 "base_score": "4.9",
                 "scoring_vector": "AV:N/AC:M/Au:S/C:P/I:P/A:N"
             },
-            "cwe": "TODO",
+            "cwe": "CWE-665",
             "impact": "low"
         },
         {
@@ -55,7 +55,7 @@
                 "base_score": "4.9",
                 "scoring_vector": "AV:N/AC:M/Au:S/C:P/I:P/A:N"
             },
-            "cwe": "TODO",
+            "cwe": "CWE-222->CWE-672",
             "impact": "low"
         },
         {
@@ -64,7 +64,7 @@
                 "base_score": "4.9",
                 "scoring_vector": "AV:N/AC:M/Au:S/C:P/I:P/A:N"
             },
-            "cwe": "TODO",
+            "cwe": "CWE-672",
             "impact": "low"
         }
     ]
