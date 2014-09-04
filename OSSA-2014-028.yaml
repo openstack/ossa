@@ -45,12 +45,14 @@ notes: 'This fix will be included in the Juno-3 development milestone and in fut
   2013.2.4 and 2014.1.3 releases.'
 
 issues:
-  issue-tracking-system: https://launchpad.net/bugs/{id}
+  issue-tracking-system-url: https://launchpad.net/bugs/{id}
+  issue-tracking-system-type : 'launchpad'
   issue-id:
     - 1315321
 
 reviews:
-  review-system: https://review.openstack.org/#/c/{id}
+  review-system-url: https://review.openstack.org/#/c/{id}
+  review-system-type: 'gerrit'
   review-id:
     - 91764
     - 115280

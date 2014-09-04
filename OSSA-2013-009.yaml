@@ -40,11 +40,13 @@ reporters:
 notes:
 
 issues:
-  issue-tracking-system: https://launchpad.net/bugs/{id}
+  issue-tracking-system-url: https://launchpad.net/bugs/{id}
+  issue-tracking-system-type : 'launchpad'
   issue-id:
     - 1129713
 
 reviews:
-  review-system: https://review.openstack.org/#/c/{id}
+  review-system-url: https://review.openstack.org/#/c/{id}
+  review-system-type: 'gerrit'
   review-id:
     - 24906

@@ -75,14 +75,16 @@ notes: 'These fixes will be included in the Juno-3 development milestone and are
   included in the 2014.1.2.1 release.'
 
 issues:
-  issue-tracking-system: https://launchpad.net/bugs/{id}
+  issue-tracking-system-url: https://launchpad.net/bugs/{id}
+  issue-tracking-system-type : 'launchpad'
   issue-id:
     - 1347961
     - 1348820
     - 1349597
 
 reviews:
-  review-system: https://review.openstack.org/#/c/{id}
+  review-system-url: https://review.openstack.org/#/c/{id}
+  review-system-type: 'gerrit'
   review-id:
     - 111106
     - 109747
