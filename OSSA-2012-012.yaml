@@ -1,0 +1,49 @@
+advisory-date: 2012-08-30
+
+advisory-id: OSSA-2012-012
+
+advisory-title: 'Open redirect through ''next'' parameter'
+
+advisory-description: 'Thomas Biege from SUSE reported a vulnerability in Horizon
+  authentication mechanism. By adding a malicious ''next'' parameter to a Horizon
+  authentication URL and enticing an unsuspecting user to follow it, the victim might
+  get redirected after authentication to a malicious site where useful information
+  could be extracted. Only setups running Essex are affected.'
+
+advisory-reference: https://lists.launchpad.net/openstack/msg16278.html
+
+affected-products:
+  - product: horizon
+    version: TODO
+
+vulnerabilities:
+  - cve-id: CVE-2012-3540
+    impact-assessment:
+      source: 'Red Hat Product Security'
+      rating: important
+      assessment:
+        type: CVSS2
+        score: 5.0
+        detail: AV:N/AC:L/Au:N/C:N/I:P/A:N
+    classification:
+      source: 'Red Hat Product Security'
+      type: CWE
+      detail: TODO
+
+reporters:
+  - name: 'Thomas Biege'
+    affiliation: SUSE
+    reported:
+      - CVE-2012-3540
+
+notes:
+
+issues:
+  issue-tracking-system: https://launchpad.net/bugs/{id}
+  issue-id:
+    - 1039077
+
+reviews:
+  review-system: https://review.openstack.org/#/c/{id}
+  review-id:
+    - 12193

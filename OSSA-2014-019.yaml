@@ -1,0 +1,52 @@
+advisory-date: 2014-06-18
+
+advisory-id: OSSA-2014-019
+
+advisory-title: 'Neutron L3-agent DoS through IPv6 subnet'
+
+advisory-description: 'Thiago Martins from Hewlett Packard reported a vulnerability
+  in Neutron L3-agent. By creating an IPv6 private subnet attached to a L3 router,
+  an authenticated user may break the L3-agent, preventing further floating IPv4 addresses
+  from being attached for the entire cloud. Note: removal of the faulty network can
+  not be done using the API and must be cleaned at the database level. Only Neutron
+  setups using IPv6 and L3-agent are affected.'
+
+advisory-reference: http://lists.openstack.org/pipermail/openstack-announce/2014-June/000242.html
+
+affected-products:
+  - product: neutron
+    version: TODO
+
+vulnerabilities:
+  - cve-id: CVE-2014-4167
+    impact-assessment:
+      source: 'Red Hat Product Security'
+      rating: moderate
+      assessment:
+        type: CVSS2
+        score: 4.0
+        detail: AV:N/AC:L/Au:S/C:N/I:N/A:P
+    classification:
+      source: 'Red Hat Product Security'
+      type: CWE
+      detail: TODO
+
+reporters:
+  - name: 'Thiago Martins'
+    affiliation: HP
+    reported:
+      - CVE-2014-4167
+
+notes:
+
+issues:
+  issue-tracking-system: https://launchpad.net/bugs/{id}
+  issue-id:
+    - 1309195
+
+reviews:
+  review-system: https://review.openstack.org/#/c/{id}
+  review-id:
+    - 88584
+    - 95938
+    - 95939

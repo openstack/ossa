@@ -1,0 +1,52 @@
+advisory-date: 2014-05-23
+
+advisory-id: OSSA-2014-016
+
+advisory-title: 'Heat template URL information leakage'
+
+advisory-description: 'Jason Dunsmore from Rackspace reported a vulnerability in Heat.
+  An authenticated user may temporarily see the URL of a provider template used in
+  another tenant by listing heat resources types. This may result in disclosure of
+  additional information if the template itself can be accessed. The URL disappears
+  from the listing after a certain point in the stack creation. All Heat setups are
+  affected.'
+
+advisory-reference: http://lists.openstack.org/pipermail/openstack-announce/2014-May/000232.html
+
+affected-products:
+  - product: heat
+    version: TODO
+
+vulnerabilities:
+  - cve-id: CVE-2014-3801
+    impact-assessment:
+      source: 'Red Hat Product Security'
+      rating: moderate
+      assessment:
+        type: CVSS2
+        score: 4
+        detail: AV:N/AC:L/Au:S/C:P/I:N/A:N
+    classification:
+      source: 'Red Hat Product Security'
+      type: CWE
+      detail: TODO
+
+reporters:
+  - name: 'Jason Dunsmore'
+    affiliation: Rackspace
+    reported:
+      - CVE-2014-3801
+
+notes:
+
+issues:
+  issue-tracking-system: https://launchpad.net/bugs/{id}
+  issue-id:
+    - 1311223
+
+reviews:
+  review-system: https://review.openstack.org/#/c/{id}
+  review-id:
+    - 89695
+    - 94625
+    - 94644

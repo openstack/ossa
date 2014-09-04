@@ -1,0 +1,52 @@
+advisory-date: 2014-04-10
+
+advisory-id: OSSA-2014-012
+
+advisory-title: 'Remote code execution in Glance Sheepdog backend'
+
+advisory-description: 'Paul McMillan from Nebula reported a vulnerability in Glance
+  Sheepdog backend. By using a specially crafted location, a user allowed to insert
+  or modify Glance image metadata may trigger code execution on the Glance host as
+  the user the Glance service runs under. This may result in Glance host unauthorized
+  access and further compromise of the Glance service. All setups using Glance server
+  with the (enabled by default) sheepdog backend are affected.'
+
+advisory-reference: http://lists.openstack.org/pipermail/openstack-announce/2014-April/000220.html
+
+affected-products:
+  - product: glance
+    version: TODO
+
+vulnerabilities:
+  - cve-id: CVE-2014-0162
+    impact-assessment:
+      source: 'Red Hat Product Security'
+      rating: important
+      assessment:
+        type: CVSS2
+        score: 6.5
+        detail: AV:N/AC:L/Au:S/C:P/I:P/A:P
+    classification:
+      source: 'Red Hat Product Security'
+      type: CWE
+      detail: TODO
+
+reporters:
+  - name: 'Paul McMillan'
+    affiliation: Nebula
+    reported:
+      - CVE-2014-0162
+
+notes:
+
+issues:
+  issue-tracking-system: https://launchpad.net/bugs/{id}
+  issue-id:
+    - 1298698
+
+reviews:
+  review-system: https://review.openstack.org/#/c/{id}
+  review-id:
+    - 86622
+    - 86625
+    - 86626

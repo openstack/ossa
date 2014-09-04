@@ -1,0 +1,65 @@
+advisory-date: 2013-06-19
+
+advisory-id: OSSA-2013-017
+
+advisory-title: 'Issues in Keystone middleware memcache signing/encryption feature'
+
+advisory-description: 'Paul McMillan from Nebula reported multiple issues in the implementation
+  of memcache signing/encryption feature in Keystone client middleware. An attacker
+  with direct write access to the memcache backend (or in a man-in-the-middle position)
+  could insert malicious data and potentially bypass the encryption (CVE-2013-2166)
+  or signing (CVE-2013-2167) security strategy that was specified. Only setups that
+  make use of memcache caching in the Keystone middleware (specify memcache_servers)
+  and using ENCRYPT or MAC as their memcache_security_strategy are affected.'
+
+advisory-reference: http://lists.openstack.org/pipermail/openstack-announce/2013-June/000114.html
+
+affected-products:
+  - product: python-keystoneclient
+    version: TODO
+
+vulnerabilities:
+  - cve-id: CVE-2013-2166
+    impact-assessment:
+      source: 'Red Hat Product Security'
+      rating: important
+      assessment:
+        type: CVSS2
+        score: 7.5
+        detail: AV:N/AC:L/Au:N/C:P/I:P/A:P
+    classification:
+      source: 'Red Hat Product Security'
+      type: CWE
+      detail: TODO
+  - cve-id: CVE-2013-2167
+    impact-assessment:
+      source: 'Red Hat Product Security'
+      rating: important
+      assessment:
+        type: CVSS2
+        score: 7.5
+        detail: AV:N/AC:L/Au:N/C:P/I:P/A:P
+    classification:
+      source: 'Red Hat Product Security'
+      type: CWE
+      detail: TODO
+
+reporters:
+  - name: 'Paul McMillan'
+    affiliation: Nebula
+    reported:
+      - CVE-2013-2166
+      - CVE-2013-2167
+
+notes:
+
+issues:
+  issue-tracking-system: https://launchpad.net/bugs/{id}
+  issue-id:
+    - 1175367
+    - 1175368
+
+reviews:
+  review-system: https://review.openstack.org/#/c/{id}
+  review-id:
+    - 33661

@@ -1,0 +1,74 @@
+advisory-date: 2012-07-03
+
+advisory-id: OSSA-2012-008
+
+advisory-title: 'Arbitrary file injection/corruption through directory traversal'
+
+advisory-description: 'Matthias Weckbecker from SUSE Security team reported a vulnerability
+  in Nova compute nodes handling of file injection in disk images. By requesting iles
+  to be injected in malicious paths, a remote authenticated user could inject files
+  in arbitrary locations on the host file system, potentially resulting in full compromise
+  of the compute node. Only Essex and later setups running the OpenStack API over
+  libvirt-based hypervisors are affected. Upon further inspection of the code, Pádraig
+  Brady from Red Hat found an additional vulnerability. By crafting a malicious image
+  and requesting an instance based on it, a remote authenticated user may corrupt
+  arbitrary files on the host filesystem, potentially resulting in a denial of service.
+  This affects all setups. '
+
+advisory-reference: https://lists.launchpad.net/openstack/msg14089.html
+
+affected-products:
+  - product: nova
+    version: TODO
+
+vulnerabilities:
+  - cve-id: CVE-2012-3360
+    impact-assessment:
+      source: 'Red Hat Product Security'
+      rating: moderate
+      assessment:
+        type: CVSS2
+        score: 6.0
+        detail: AV:N/AC:M/Au:S/C:P/I:P/A:P
+    classification:
+      source: 'Red Hat Product Security'
+      type: CWE
+      detail: TODO
+  - cve-id: CVE-2012-3361
+    impact-assessment:
+      source: 'Red Hat Product Security'
+      rating: moderate
+      assessment:
+        type: CVSS2
+        score: 3.5
+        detail: AV:N/AC:M/Au:S/C:N/I:N/A:P
+    classification:
+      source: 'Red Hat Product Security'
+      type: CWE
+      detail: TODO
+
+reporters:
+  - name: 'Matthias Weckbecker'
+    affiliation: SUSE
+    reported:
+      - CVE-2012-3360
+      - CVE-2012-3361
+  - name: 'Pádraig Brady'
+    affiliation: 'Red Hat'
+    reported:
+      - CVE-2012-3360
+      - CVE-2012-3361
+
+notes:
+
+issues:
+  issue-tracking-system: https://launchpad.net/bugs/{id}
+  issue-id:
+    - 1015531
+
+reviews:
+  review-system: https://review.openstack.org/#/c/{id}
+  review-id:
+    - 9266
+    - 9267
+    - 9268

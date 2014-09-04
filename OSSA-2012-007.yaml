@@ -1,0 +1,54 @@
+advisory-date: 2012-06-06
+
+advisory-id: OSSA-2012-007
+
+advisory-title: 'Security groups fail to be set correctly'
+
+advisory-description: 'HP Cloud Services reported a vulnerability in Nova API handling.
+  When a security group is created via the EC2 or OS API''s that uses a protocol defined
+  in the incorrect case i.e ''TCP'' rather than ''tcp'' it causes a later string comparison
+  to fail. This leads to Security Groups not being set correctly. Once he ova DB has
+  been polluted with the incorrect case any subsequent modifications to the security
+  group will also fail. ake Nova resilient to any protocol case inconsistencies that
+  may be in the Nova DB. Users may want to consider sanitizing their database by forcing
+  all protocol entries to lower case, hardening their DB against any failures of future
+  code that may expect the data to be lower case. '
+
+advisory-reference: https://lists.launchpad.net/openstack/msg12883.html
+
+affected-products:
+  - product: nova
+    version: TODO
+
+vulnerabilities:
+  - cve-id: CVE-2012-2654
+    impact-assessment:
+      source: 'Red Hat Product Security'
+      rating: low
+      assessment:
+        type: CVSS2
+        score: 2.1
+        detail: AV:N/AC:H/Au:S/C:N/I:N/A:P
+    classification:
+      source: 'Red Hat Product Security'
+      type: CWE
+      detail: TODO
+
+reporters:
+  - name: 'HP Cloud Services'
+    affiliation: HP
+    reported:
+      - CVE-2012-2654
+
+notes:
+
+issues:
+  issue-tracking-system: https://launchpad.net/bugs/{id}
+  issue-id:
+    - 985184
+
+reviews:
+  review-system: https://review.openstack.org/#/c/{id}
+  review-id:
+    - 8238
+    - 8239

@@ -1,0 +1,52 @@
+advisory-date: 2013-06-13
+
+advisory-id: OSSA-2013-015
+
+advisory-title: 'Authentication bypass when using LDAP backend'
+
+advisory-description: 'Jose Castro Leon from CERN reported a vulnerability in the
+  way the Keystone LDAP backend authenticates users. When provided with an empty password,
+  the backend would perform an anonymous LDAP bind that would result in successfully
+  authenticating the user.  An attacker could therefore easily impersonate and get
+  valid tokens for any user. Only Keystone setups using LDAP authentication backend
+  are affected.'
+
+advisory-reference: http://lists.openstack.org/pipermail/openstack-announce/2013-June/000111.html
+
+affected-products:
+  - product: keystone
+    version: TODO
+
+vulnerabilities:
+  - cve-id: CVE-2013-2157
+    impact-assessment:
+      source: 'Red Hat Product Security'
+      rating: important
+      assessment:
+        type: CVSS2
+        score: 5.0
+        detail: AV:N/AC:L/Au:N/C:N/I:P/A:N
+    classification:
+      source: 'Red Hat Product Security'
+      type: CWE
+      detail: TODO
+
+reporters:
+  - name: 'Jose Castro Leon'
+    affiliation: CERN
+    reported:
+      - CVE-2013-2157
+
+notes:
+
+issues:
+  issue-tracking-system: https://launchpad.net/bugs/{id}
+  issue-id:
+    - 1187305
+
+reviews:
+  review-system: https://review.openstack.org/#/c/{id}
+  review-id:
+    - 32896
+    - 32895
+    - 32894

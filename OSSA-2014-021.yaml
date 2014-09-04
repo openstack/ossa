@@ -1,0 +1,60 @@
+advisory-date: 2014-06-25
+
+advisory-id: OSSA-2014-021
+
+advisory-title: 'User token leak to message queue in pyCADF notifier middleware'
+
+advisory-description: 'Zhi Kun Liu from IBM reported a vulnerability in the notifier
+  middleware available in the PyCADF library and formerly copied into Neutron and
+  Ceilometer code. An attacker with read access to the message queue may obtain authentication
+  tokens used in REST requests (X_AUTH_TOKEN) that goes through the notifier middleware.
+  All services using the notifier middleware configured after the auth_token middleware
+  pipeline are impacted.'
+
+advisory-reference: http://lists.openstack.org/pipermail/openstack-announce/2014-June/000245.html
+
+affected-products:
+  - product: neutron
+    version: TODO
+  - product: ceilometer
+    version: TODO
+
+vulnerabilities:
+  - cve-id: CVE-2014-4615
+    impact-assessment:
+      source: 'Red Hat Product Security'
+      rating: important
+      assessment:
+        type: CVSS2
+        score: 5.0
+        detail: AV:N/AC:L/Au:N/C:P/I:N/A:N
+    classification:
+      source: 'Red Hat Product Security'
+      type: CWE
+      detail: TODO
+
+reporters:
+  - name: 'Zhi Kun Liu'
+    affiliation: IBM
+    reported:
+      - CVE-2014-4615
+
+notes: 'PyCADF library is also mentioned in this advisory, but is not officially security
+  supported by OpenStack VMT'
+
+issues:
+  issue-tracking-system: https://launchpad.net/bugs/{id}
+  issue-id:
+    - 1321080
+
+reviews:
+  review-system: https://review.openstack.org/#/c/{id}
+  review-id:
+    - 94666
+    - 94770
+    - 94891
+    - 94878
+    - 101097
+    - 96944
+    - 101799
+    - 100414

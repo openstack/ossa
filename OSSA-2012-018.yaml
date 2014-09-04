@@ -1,0 +1,52 @@
+advisory-date: 2012-11-28
+
+advisory-id: OSSA-2012-018
+
+advisory-title: 'EC2-style credentials invalidation issue'
+
+advisory-description: 'Vijaya Erukala reported a vulnerability in Keystone EC2-style
+  credentials invalidation: when a user is removed from a tenant, issued EC2-style
+  credentials would continue to be valid for that tenant. An authenticated and authorized
+  user could potentially leverage this vulnerability to extend his access beyond the
+  account owner expectations. Only setups enabling EC2-style credentials (for example
+  enabling EC2 API in Nova) are affected.'
+
+advisory-reference: http://lists.openstack.org/pipermail/openstack-announce/2012-November/000055.html
+
+affected-products:
+  - product: keystone
+    version: TODO
+
+vulnerabilities:
+  - cve-id: CVE-2012-5571
+    impact-assessment:
+      source: 'Red Hat Product Security'
+      rating: moderate
+      assessment:
+        type: CVSS2
+        score: 4.0
+        detail: AV:N/AC:L/Au:S/C:N/I:P/A:N
+    classification:
+      source: 'Red Hat Product Security'
+      type: CWE
+      detail: TODO
+
+reporters:
+  - name: 'Vijaya Erukala'
+    affiliation: UNKNOWN
+    reported:
+      - CVE-2012-5571
+
+notes:
+
+issues:
+  issue-tracking-system: https://launchpad.net/bugs/{id}
+  issue-id:
+    - 1064914
+
+reviews:
+  review-system: https://review.openstack.org/#/c/{id}
+  review-id:
+    - 16028
+    - 16304
+    - 16760

@@ -1,0 +1,53 @@
+advisory-date: 2013-10-30
+
+advisory-id: OSSA-2013-028
+
+advisory-title: 'Unintentional role granting with Keystone LDAP backend'
+
+advisory-description: 'The IBM OpenStack test team reported a vulnerability in role
+  change code within the Keystone LDAP backend. When a role on a tenant is removed
+  from a user, and that user doesn''t have that role on the tenant, then the user
+  may actually be granted the role on the tenant. A user could use social engineering
+  and leverage that vulnerability to get extra roles granted, or may accidentally
+  be granted extra roles. Only Keystone setups using a LDAP backend are affected.'
+
+advisory-reference: http://lists.openstack.org/pipermail/openstack-announce/2013-October/000158.html
+
+affected-products:
+  - product: keystone
+    version: TODO
+
+vulnerabilities:
+  - cve-id: CVE-2013-4477
+    impact-assessment:
+      source: 'Red Hat Product Security'
+      rating: moderate
+      assessment:
+        type: CVSS2
+        score: 4.9
+        detail: AV:N/AC:M/Au:S/C:P/I:P/A:N
+    classification:
+      source: 'Red Hat Product Security'
+      type: CWE
+      detail: TODO
+
+reporters:
+  - name: 'The IBM OpenStack test team'
+    affiliation: IBM
+    reported:
+      - CVE-2013-4477
+
+notes:
+
+issues:
+  issue-tracking-system: https://launchpad.net/bugs/{id}
+  issue-id:
+    - 1242855
+
+reviews:
+  review-system: https://review.openstack.org/#/c/{id}
+  review-id:
+    - 5310
+    - 53012
+    - 53154
+    - 53146

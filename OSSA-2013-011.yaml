@@ -1,0 +1,54 @@
+advisory-date: 2013-05-09
+
+advisory-id: OSSA-2013-011
+
+advisory-title: 'Keystone tokens not immediately invalidated when user is deleted'
+
+advisory-description: 'Sam Stoelinga reported a vulnerability in Keystone. When users
+  are deleted through Keystone v2 API, existing tokens for those users are not immediately
+  invalidated and remain valid for the duration of the token''s life (by default,
+  up to 24 hours). This may result in users retaining access when the administrator
+  of the system thought them disabled. You can workaround this issue by disabling
+  a user before deleting it: in that case the tokens belonging to the disabled user
+  are immediately invalidated. Keystone setups using the v3 API call to delete users
+  are unaffected.'
+
+advisory-reference: http://lists.openstack.org/pipermail/openstack-announce/2013-May/000099.html
+
+affected-products:
+  - product: keystone
+    version: TODO
+
+vulnerabilities:
+  - cve-id: CVE-2013-2059
+    impact-assessment:
+      source: 'Red Hat Product Security'
+      rating: moderate
+      assessment:
+        type: CVSS2
+        score: 4.0
+        detail: AV:N/AC:L/Au:S/C:N/I:P/A:N
+    classification:
+      source: 'Red Hat Product Security'
+      type: CWE
+      detail: TODO
+
+reporters:
+  - name: 'Sam Stoelinga'
+    affiliation: UNKNOWN
+    reported:
+      - CVE-2013-2059
+
+notes:
+
+issues:
+  issue-tracking-system: https://launchpad.net/bugs/{id}
+  issue-id:
+    - 1166670
+
+reviews:
+  review-system: https://review.openstack.org/#/c/{id}
+  review-id:
+    - 28677
+    - 28678
+    - 28679

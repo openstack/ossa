@@ -1,0 +1,51 @@
+advisory-date: 2012-11-28
+
+advisory-id: OSSA-2012-019
+
+advisory-title: 'Extension of token validity through token chaining'
+
+advisory-description: 'Anndy reported a vulnerability in token chaining in Keystone.
+  A token expiration date can be circumvented by creating a new token before the old
+  one has expired. An authenticated and authorized user could potentially leverage
+  this vulnerability to extend his access beyond the account owner expectations. Note:
+  this vulnerability was fixed in the past (CVE-2012-3426) but was reintroduced in
+  Folsom when code was refactored to support PKI tokens.'
+
+advisory-reference: http://lists.openstack.org/pipermail/openstack-announce/2012-November/000056.html
+
+affected-products:
+  - product: keystone
+    version: TODO
+
+vulnerabilities:
+  - cve-id: CVE-2012-5563
+    impact-assessment:
+      source: 'Red Hat Product Security'
+      rating: moderate
+      assessment:
+        type: CVSS2
+        score: 4.0
+        detail: AV:N/AC:L/Au:S/C:N/I:P/A:N
+    classification:
+      source: 'Red Hat Product Security'
+      type: CWE
+      detail: TODO
+
+reporters:
+  - name: Anndy
+    affiliation: UNKNOWN
+    reported:
+      - CVE-2012-5563
+
+notes:
+
+issues:
+  issue-tracking-system: https://launchpad.net/bugs/{id}
+  issue-id:
+    - 1079216
+
+reviews:
+  review-system: https://review.openstack.org/#/c/{id}
+  review-id:
+    - 17050
+    - 17051

@@ -1,0 +1,53 @@
+advisory-date: 2014-01-16
+
+advisory-id: OSSA-2014-002
+
+advisory-title: 'Swift TempURL timing attack'
+
+advisory-description: 'Samuel Merritt from SwiftStack reported a timing attack vulnerability
+  in Swift TempURL middleware. By analyzing response times to arbitrary TempURL requests,
+  an attacker may be able to guess valid secret URLs and get access to objects that
+  were only intended to be publicly shared with specific recipients. In order to use
+  this attack, the attacker needs to know the targeted object name, and the object
+  account needs to have a TempURL key set. Only Swift setups enabling the TempURL
+  middleware are affected.'
+
+advisory-reference: http://lists.openstack.org/pipermail/openstack-announce/2014-January/000185.html
+
+affected-products:
+  - product: swift
+    version: TODO
+
+vulnerabilities:
+  - cve-id: CVE-2014-0006
+    impact-assessment:
+      source: 'Red Hat Product Security'
+      rating: moderate
+      assessment:
+        type: CVSS2
+        score: 4.3
+        detail: AV:N/AC:M/Au:N/C:P/I:N/A:N
+    classification:
+      source: 'Red Hat Product Security'
+      type: CWE
+      detail: TODO
+
+reporters:
+  - name: 'Samuel Merritt'
+    affiliation: SwiftStack
+    reported:
+      - CVE-2014-0006
+
+notes:
+
+issues:
+  issue-tracking-system: https://launchpad.net/bugs/{id}
+  issue-id:
+    - 1265665
+
+reviews:
+  review-system: https://review.openstack.org/#/c/{id}
+  review-id:
+    - 67185
+    - 67186
+    - 67187

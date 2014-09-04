@@ -1,0 +1,53 @@
+advisory-date: 2013-10-22
+
+advisory-id: OSSA-2013-027
+
+advisory-title: 'Glance image_download policy not enforced for cached images'
+
+advisory-description: 'Stuart McLaren from HP reported a vulnerability in Glance download_image
+  policy enforcement in the case of cached images. Deployers may opt to set a download_image
+  policy to restrict image download to specific roles. However, when an image is previously
+  cached by an authorized download, any authenticated user could download image contents
+  if it can determine the image UUID, bypassing any download_image policy restrictions.
+  This could result in disclosure of image contents that were thought to be protected
+  by the download_image policy setting. Only setups making use of the download_image
+  policy are affected.'
+
+advisory-reference: http://lists.openstack.org/pipermail/openstack-announce/2013-October/000155.html
+
+affected-products:
+  - product: glance
+    version: TODO
+
+vulnerabilities:
+  - cve-id: CVE-2013-4428
+    impact-assessment:
+      source: 'Red Hat Product Security'
+      rating: moderate
+      assessment:
+        type: CVSS2
+        score: 6.3
+        detail: AV:N/AC:M/Au:S/C:C/I:N/A:N
+    classification:
+      source: 'Red Hat Product Security'
+      type: CWE
+      detail: TODO
+
+reporters:
+  - name: 'Stuart McLaren'
+    affiliation: HP
+    reported:
+      - CVE-2013-4428
+
+notes:
+
+issues:
+  issue-tracking-system: https://launchpad.net/bugs/{id}
+  issue-id:
+    - 1235378
+
+reviews:
+  review-system: https://review.openstack.org/#/c/{id}
+  review-id:
+    - 50103
+    - 50860

@@ -1,0 +1,94 @@
+advisory-date: 2014-08-15
+
+advisory-id: OSSA-2014-026
+
+advisory-title: 'Multiple vulnerabilities in Keystone revocation events'
+
+advisory-description: 'Lance Bragstad from Rackspace and Brant Knudson from IBM reported
+  3 vulnerabilities in Keystone revocation events. Lance Bragstad discovered that
+  UUID v2 tokens processed by the V3 API are incorrectly updated and get their "issued_at"
+  time regenerated (CVE-2014-5252). Brant Knudson discovered that the MySQL token
+  driver stores expiration dates incorrectly which prevents manual revocation (CVE-2014-5251)
+  and that domain-scoped tokens don''t get revoked when the domain is disabled (CVE-2014-5253).
+  Tokens impacted by one of these bugs may allow a user to evade token revocation.
+  Only Keystone setups configured to use revocation events are affected.'
+
+advisory-reference: http://lists.openstack.org/pipermail/openstack-announce/2014-August/000264.html
+
+affected-products:
+  - product: keystone
+    version: '2014.1 versions up to 2014.1.1'
+
+vulnerabilities:
+  - cve-id: CVE-2014-5252
+    impact-assessment:
+      source: 'Red Hat Product Security'
+      rating: low
+      assessment:
+        type: CVSS2
+        score: 4.9
+        detail: AV:N/AC:M/Au:S/C:P/I:P/A:N
+    classification:
+      source: 'Red Hat Product Security'
+      type: CWE
+      detail: CWE-665
+  - cve-id: CVE-2014-5251
+    impact-assessment:
+      source: 'Red Hat Product Security'
+      rating: low
+      assessment:
+        type: CVSS2
+        score: 4.9
+        detail: AV:N/AC:M/Au:S/C:P/I:P/A:N
+    classification:
+      source: 'Red Hat Product Security'
+      type: CWE
+      detail: CWE-222->CWE-672
+  - cve-id: CVE-2014-5253
+    impact-assessment:
+      source: 'Red Hat Product Security'
+      rating: low
+      assessment:
+        type: CVSS2
+        score: 4.9
+        detail: AV:N/AC:M/Au:S/C:P/I:P/A:N
+    classification:
+      source: 'Red Hat Product Security'
+      type: CWE
+      detail: CWE-672
+
+reporters:
+  - name: 'Lance Bragstad'
+    affiliation: Rackspace
+    reported:
+      - CVE-2014-5251
+      - CVE-2014-5252
+      - CVE-2014-5253
+  - name: 'Brant Knudson'
+    affiliation: IBM
+    reported:
+      - CVE-2014-5251
+      - CVE-2014-5252
+      - CVE-2014-5253
+
+notes: 'These fixes will be included in the Juno-3 development milestone and are already
+  included in the 2014.1.2.1 release.'
+
+issues:
+  issue-tracking-system: https://launchpad.net/bugs/{id}
+  issue-id:
+    - 1347961
+    - 1348820
+    - 1349597
+
+reviews:
+  review-system: https://review.openstack.org/#/c/{id}
+  review-id:
+    - 111106
+    - 109747
+    - 109819
+    - 109820
+    - 112087
+    - 111772
+    - 112083
+    - 112084

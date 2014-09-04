@@ -1,0 +1,52 @@
+advisory-date: 2014-04-08
+
+advisory-id: OSSA-2014-010
+
+advisory-title: 'XSS in Horizon orchestration dashboard'
+
+advisory-description: 'Cristian Fiorentino from Intel reported a vulnerability in
+  Horizon Orchestration dashboard. By tricking a Horizon user into using a malicious
+  template in the Orchestration/Stack section of Horizon, a remote attacker may trigger
+  a cross-site-scripting vulnerability. It may result in potential assets theft (Horizon
+  user/admin access credentials, tenants confidential information, etc.). Only setups
+  exposing the orchestration dashboard in Horizon are affected. '
+
+advisory-reference: http://lists.openstack.org/pipermail/openstack-announce/2014-April/000218.html
+
+affected-products:
+  - product: horizon
+    version: TODO
+
+vulnerabilities:
+  - cve-id: CVE-2014-0157
+    impact-assessment:
+      source: 'Red Hat Product Security'
+      rating: low
+      assessment:
+        type: CVSS2
+        score: 4.3
+        detail: AV:N/AC:M/Au:N/C:N/I:P/A:N
+    classification:
+      source: 'Red Hat Product Security'
+      type: CWE
+      detail: TODO
+
+reporters:
+  - name: 'Cristian Fiorentino'
+    affiliation: Intel
+    reported:
+      - CVE-2014-0157
+
+notes:
+
+issues:
+  issue-tracking-system: https://launchpad.net/bugs/{id}
+  issue-id:
+    - 1289033
+
+reviews:
+  review-system: https://review.openstack.org/#/c/{id}
+  review-id:
+    - 86059
+    - 86054
+    - 86056

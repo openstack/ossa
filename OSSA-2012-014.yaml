@@ -1,0 +1,50 @@
+advisory-date: 2012-09-12
+
+advisory-id: OSSA-2012-014
+
+advisory-title: 'Revoking a role does not affect existing tokens'
+
+advisory-description: 'Dolph Mathews reported a vulnerability in Keystone. Granting
+  and revoking roles from a user is not reflected upon token validation for pre-existing
+  tokens. Pre-existing tokens continue to be valid for the original set of roles for
+  the remainder of the token''s lifespan, or until explicitly invalidated. This fix
+  invalidates all tokens held by a user upon role grant/revoke to circumvent the issue. '
+
+advisory-reference: https://lists.launchpad.net/openstack/msg16659.html
+
+affected-products:
+  - product: keystone
+    version: TODO
+
+vulnerabilities:
+  - cve-id: CVE-2012-4413
+    impact-assessment:
+      source: 'Red Hat Product Security'
+      rating: moderate
+      assessment:
+        type: CVSS2
+        score: 4.0
+        detail: AV:N/AC:L/Au:S/C:N/I:P/A:N
+    classification:
+      source: 'Red Hat Product Security'
+      type: CWE
+      detail: TODO
+
+reporters:
+  - name: 'Dolph Mathews'
+    affiliation: Rackspace
+    reported:
+      - CVE-2012-4413
+
+notes:
+
+issues:
+  issue-tracking-system: https://launchpad.net/bugs/{id}
+  issue-id:
+    - 1041396
+
+reviews:
+  review-system: https://review.openstack.org/#/c/{id}
+  review-id:
+    - 12868
+    - 12870

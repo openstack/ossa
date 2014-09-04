@@ -1,0 +1,52 @@
+advisory-date: 2013-08-06
+
+advisory-id: OSSA-2013-020
+
+advisory-title: 'Denial of Service in Nova network source security groups'
+
+advisory-description: 'Vishvananda Ishaya from Nebula reported a denial of service
+  vulnerability in Nova''s handling of network source security group policy updates.
+  By performing a large number of server creation operations, the proportion of updates
+  increases quadratically and may overwhelm nova-network such that it is no longer
+  able to service other requests in a timely fashion. Only setups relying on nova-network
+  are affected.'
+
+advisory-reference: http://lists.openstack.org/pipermail/openstack-announce/2013-August/000127.html
+
+affected-products:
+  - product: nova
+    version: TODO
+
+vulnerabilities:
+  - cve-id: CVE-2013-4185
+    impact-assessment:
+      source: 'Red Hat Product Security'
+      rating: moderate
+      assessment:
+        type: CVSS2
+        score: 4.0
+        detail: AV:N/AC:L/Au:S/C:N/I:N/A:P
+    classification:
+      source: 'Red Hat Product Security'
+      type: CWE
+      detail: TODO
+
+reporters:
+  - name: 'Vishvananda Ishaya'
+    affiliation: Nebula
+    reported:
+      - CVE-2013-4185
+
+notes:
+
+issues:
+  issue-tracking-system: https://launchpad.net/bugs/{id}
+  issue-id:
+    - 1184041
+
+reviews:
+  review-system: https://review.openstack.org/#/c/{id}
+  review-id:
+    - 39541
+    - 39543
+    - 39544

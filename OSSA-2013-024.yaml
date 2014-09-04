@@ -1,0 +1,50 @@
+advisory-date: 2013-08-28
+
+advisory-id: OSSA-2013-024
+
+advisory-title: 'Resource limit circumvention in Nova private flavors'
+
+advisory-description: 'Ken''ichi Ohmichi from NEC reported that the fix for OSSA 2013-019
+  (CVE-2013-2256) was incomplete. Any tenant was still able to boot any other tenant''s
+  private flavors by guessing a flavor ID. This potentially allowed circumvention
+  of any resource limits enforced through the os-flavor-access:is_public property.'
+
+advisory-reference: http://lists.openstack.org/pipermail/openstack-announce/2013-August/000138.html
+
+affected-products:
+  - product: nova
+    version: TODO
+
+vulnerabilities:
+  - cve-id: CVE-2013-4278
+    impact-assessment:
+      source: 'Red Hat Product Security'
+      rating: moderate
+      assessment:
+        type: CVSS2
+        score: 5.5
+        detail: AV:N/AC:L/Au:S/C:P/I:N/A:P
+    classification:
+      source: 'Red Hat Product Security'
+      type: CWE
+      detail: TODO
+
+reporters:
+  - name: 'Ken''ichi Ohmichi'
+    affiliation: NEC
+    reported:
+      - CVE-2013-4278
+
+notes:
+
+issues:
+  issue-tracking-system: https://launchpad.net/bugs/{id}
+  issue-id:
+    - 1212179
+
+reviews:
+  review-system: https://review.openstack.org/#/c/{id}
+  review-id:
+    - 42922
+    - 43281
+    - 43296

@@ -1,0 +1,52 @@
+advisory-date: 2013-09-11
+
+advisory-id: OSSA-2013-025
+
+advisory-title: ' Token revocation failure using Keystone memcache/KVS backends'
+
+advisory-description: 'Kieran Spear from the University of Melbourne reported a vulnerability
+  in Keystone memcache and KVS token backends. The PKI token revocation lists stored
+  the entire token instead of the token ID, triggering comparison failures, ultimately
+  resulting in revoked PKI tokens still being considered valid. Only Folsom and Grizzly
+  Keystone setups making use of PKI tokens with the memcache or KVS token backends
+  are affected. Havana setups, setups using UUID tokens, or setups using PKI tokens
+  with the SQL token backend are all unaffected.'
+
+advisory-reference: http://lists.openstack.org/pipermail/openstack-announce/2013-September/000142.html
+
+affected-products:
+  - product: keystone
+    version: TODO
+
+vulnerabilities:
+  - cve-id: CVE-2013-4294
+    impact-assessment:
+      source: 'Red Hat Product Security'
+      rating: moderate
+      assessment:
+        type: CVSS2
+        score: 4.0
+        detail: AV:N/AC:L/Au:S/C:N/I:P/A:N
+    classification:
+      source: 'Red Hat Product Security'
+      type: CWE
+      detail: TODO
+
+reporters:
+  - name: 'Kieran Spear'
+    affiliation: 'University of Melbourne'
+    reported:
+      - CVE-2013-4294
+
+notes:
+
+issues:
+  issue-tracking-system: https://launchpad.net/bugs/{id}
+  issue-id:
+    - 1202952
+
+reviews:
+  review-system: https://review.openstack.org/#/c/{id}
+  review-id:
+    - 46079
+    - 46080

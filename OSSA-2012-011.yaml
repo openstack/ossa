@@ -1,0 +1,53 @@
+advisory-date: 2012-08-07
+
+advisory-id: OSSA-2012-011
+
+advisory-title: 'Compute node filesystem injection/corruption'
+
+advisory-description: 'Pádraig Brady from Red Hat discovered that the fix implemented
+  for CVE-2012-3361 (OSSA-2012-008) was not covering all attack scenarios. By crafting
+  a malicious image with root-readable-only symlinks and requesting a server based
+  on it, an authenticated user could still corrupt arbitrary files (all setups affected)
+  or inject arbitrary files (Essex and later setups with OpenStack API enabled and
+  a libvirt-based hypervisor) on the host filesystem, potentially resulting in full
+  compromise of that compute node.'
+
+advisory-reference: https://lists.launchpad.net/openstack/msg15549.html
+
+affected-products:
+  - product: nova
+    version: TODO
+
+vulnerabilities:
+  - cve-id: CVE-2012-3447
+    impact-assessment:
+      source: 'Red Hat Product Security'
+      rating: moderate
+      assessment:
+        type: CVSS2
+        score: 3.5
+        detail: AV:N/AC:M/Au:S/C:N/I:N/A:P
+    classification:
+      source: 'Red Hat Product Security'
+      type: CWE
+      detail: TODO
+
+reporters:
+  - name: 'Pádraig Brady'
+    affiliation: 'Red Hat'
+    reported:
+      - CVE-2012-3447
+
+notes:
+
+issues:
+  issue-tracking-system: https://launchpad.net/bugs/{id}
+  issue-id:
+    - 1031311
+
+reviews:
+  review-system: https://review.openstack.org/#/c/{id}
+  review-id:
+    - 10951
+    - 10952
+    - 10953

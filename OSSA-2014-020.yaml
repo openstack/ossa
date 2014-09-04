@@ -1,0 +1,50 @@
+advisory-date: 2014-06-19
+
+advisory-id: OSSA-2014-020
+
+advisory-title: 'XSS in Swift requests through WWW-Authenticate header'
+
+advisory-description: 'Globo.com Security Team reported a vulnerability in Swift''s
+  header value escaping. By tricking a Swift user into clicking a malicious URL, a
+  remote attacker may inject data in Swift response while still appearing to come
+  from the Swift server, potentially leading to other client-side vulnerabilities.
+  All Swift setups are affected. '
+
+advisory-reference: http://lists.openstack.org/pipermail/openstack-announce/2014-June/000243.html
+
+affected-products:
+  - product: swift
+    version: TODO
+
+vulnerabilities:
+  - cve-id: CVE-2014-3497
+    impact-assessment:
+      source: 'Red Hat Product Security'
+      rating: moderate
+      assessment:
+        type: CVSS2
+        score: 4.3
+        detail: AV:N/AC:M/Au:N/C:P/I:N/A:N
+    classification:
+      source: 'Red Hat Product Security'
+      type: CWE
+      detail: TODO
+
+reporters:
+  - name: 'Globo.com Security Team'
+    affiliation: Globo.com
+    reported:
+      - CVE-2014-3497
+
+notes:
+
+issues:
+  issue-tracking-system: https://launchpad.net/bugs/{id}
+  issue-id:
+    - 1327414
+
+reviews:
+  review-system: https://review.openstack.org/#/c/{id}
+  review-id:
+    - 101031
+    - 101032

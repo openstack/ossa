@@ -1,0 +1,51 @@
+advisory-date: 2013-01-29
+
+advisory-id: OSSA-2013-001
+
+advisory-title: 'Boot from volume allows access to random volumes'
+
+advisory-description: 'Phil Day from HP reported a vulnerability in volume attachment
+  in nova-volume, affecting the boot-from-volume feature. By passing a specific volume
+  ID,  an authenticated user may be able to boot from a volume he doesn''t own, potentially
+  resulting in full access to that 3rd-party volume contents. Folsom  setups making
+  use of Cinder are not affected. '
+
+advisory-reference: http://lists.openstack.org/pipermail/openstack-announce/2013-January/000070.html
+
+affected-products:
+  - product: nova
+    version: TODO
+
+vulnerabilities:
+  - cve-id: CVE-2013-0208
+    impact-assessment:
+      source: 'Red Hat Product Security'
+      rating: important
+      assessment:
+        type: CVSS2
+        score: 6.5
+        detail: AV:N/AC:L/Au:S/C:P/I:P/A:P
+    classification:
+      source: 'Red Hat Product Security'
+      type: CWE
+      detail: TODO
+
+reporters:
+  - name: 'Phil Day'
+    affiliation: HP
+    reported:
+      - CVE-2013-0208
+
+notes:
+
+issues:
+  issue-tracking-system: https://launchpad.net/bugs/{id}
+  issue-id:
+    - 1069904
+
+reviews:
+  review-system: https://review.openstack.org/#/c/{id}
+  review-id:
+    - 20698
+    - 20699
+    - 20700

@@ -1,0 +1,52 @@
+advisory-date: 2014-03-27
+
+advisory-id: OSSA-2014-007
+
+advisory-title: 'Potential context confusion in Keystone middleware'
+
+advisory-description: 'Kieran Spear from the University of Melbourne reported a vulnerability
+  in Keystone auth_token middleware (shipped in python-keystoneclient). By doing repeated
+  requests, with sufficient load on the target system, an authenticated user may in
+  certain situations assume another authenticated user''s complete identity and multi-tenant
+  authorizations, potentially resulting in a privilege escalation. Note that it is
+  related to a bad interaction between eventlet and python-memcached that should be
+  avoided if the calling process already monkey-patches "thread" to use eventlet.
+  Only keystone middleware setups using auth_token with memcache are vulnerable.'
+
+advisory-reference: http://lists.openstack.org/pipermail/openstack-announce/2014-March/000211.html
+
+affected-products:
+  - product: python-keystoneclient
+    version: TODO
+
+vulnerabilities:
+  - cve-id: CVE-2014-0105
+    impact-assessment:
+      source: 'Red Hat Product Security'
+      rating: important
+      assessment:
+        type: CVSS2
+        score: 4.3
+        detail: AV:N/AC:M/Au:N/C:N/I:P/A:N
+    classification:
+      source: 'Red Hat Product Security'
+      type: CWE
+      detail: TODO
+
+reporters:
+  - name: 'Kieran Spear'
+    affiliation: 'University of Melbourne'
+    reported:
+      - CVE-2014-0105
+
+notes:
+
+issues:
+  issue-tracking-system: https://launchpad.net/bugs/{id}
+  issue-id:
+    - 1282865
+
+reviews:
+  review-system: https://review.openstack.org/#/c/{id}
+  review-id:
+    - 81078

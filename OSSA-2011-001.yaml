@@ -1,0 +1,51 @@
+advisory-date: 2011-12-13
+
+advisory-id: OSSA-2011-001
+
+advisory-title: 'Path traversal issues registering malicious images using EC2 API'
+
+advisory-description: 'David Black reported two issues in OpenStack Nova''s support
+  for EC2 RegisterImage action. By registering images from malicious tarballs or manifests,
+  an attacker could potentially traverse directories and overwrite files with the
+  rights of the user Nova runs under. Only setups allowing the EC2 API and the S3/RegisterImage
+  method for registering images are affected.'
+
+advisory-reference: https://lists.launchpad.net/openstack/msg06105.html
+
+affected-products:
+  - product: nova
+    version: TODO
+
+vulnerabilities:
+  - cve-id: CVE-2011-4596
+    impact-assessment:
+      source: 'Red Hat Product Security'
+      rating: moderate
+      assessment:
+        type: CVSS2
+        score: 5.8
+        detail: AV:N/AC:M/Au:N/C:P/I:P/A:N
+    classification:
+      source: 'Red Hat Product Security'
+      type: CWE
+      detail: TODO
+
+reporters:
+  - name: 'David Black'
+    affiliation: UNKNOWN
+    reported:
+      - CVE-2011-4596
+
+notes:
+
+issues:
+  issue-tracking-system: https://launchpad.net/bugs/{id}
+  issue-id:
+    - 885167
+    - 894755
+
+reviews:
+  review-system: https://review.openstack.org/#/c/{id}
+  review-id:
+    - 2283
+    - 2284

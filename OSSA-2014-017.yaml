@@ -1,0 +1,53 @@
+advisory-date: 2014-05-29
+
+advisory-id: OSSA-2014-017
+
+advisory-title: 'Nova VMware driver leaks rescued images'
+
+advisory-description: 'Jaroslav Henner from Red Hat reported a vulnerability in Nova.
+  By requesting Nova place an image into rescue, then deleting the image, an authenticated
+  user my exceed their quota. This can result in a denial of service via excessive
+  resource consumption. Only setups using the Nova VMware driver are affected.'
+
+advisory-reference: http://lists.openstack.org/pipermail/openstack-announce/2014-May/000235.html
+
+affected-products:
+  - product: nova
+    version: TODO
+
+vulnerabilities:
+  - cve-id: CVE-2014-2573
+    impact-assessment:
+      source: 'Red Hat Product Security'
+      rating: moderate
+      assessment:
+        type: CVSS2
+        score: 4.0
+        detail: AV:N/AC:L/Au:S/C:N/I:N/A:P
+    classification:
+      source: 'Red Hat Product Security'
+      type: CWE
+      detail: TODO
+
+reporters:
+  - name: 'Jaroslav Henner'
+    affiliation: 'Red Hat'
+    reported:
+      - CVE-2014-2573
+
+notes:
+
+issues:
+  issue-tracking-system: https://launchpad.net/bugs/{id}
+  issue-id:
+    - 1269418
+
+reviews:
+  review-system: https://review.openstack.org/#/c/{id}
+  review-id:
+    - 75788
+    - 80284
+    - 88514
+    - 89217
+    - 89762
+    - 89768

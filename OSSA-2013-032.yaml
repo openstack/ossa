@@ -1,0 +1,51 @@
+advisory-date: 2013-12-11
+
+advisory-id: OSSA-2013-032
+
+advisory-title: 'Keystone trust circumvention through EC2-style tokens'
+
+advisory-description: 'Steven Hardy from Red Hat reported a vulnerability in Keystone
+  trusts when used in conjunction with the ec2tokens API. By generating EC2 credentials
+  using a trust-scoped token, a trustee may retrieve a token not scoped to the trust,
+  therefore elevating privileges to all of the trustor''s roles. Only Keystone setups
+  enabling EC2-style authentication are affected.'
+
+advisory-reference: http://lists.openstack.org/pipermail/openstack-announce/2013-December/000168.html
+
+affected-products:
+  - product: keystone
+    version: TODO
+
+vulnerabilities:
+  - cve-id: CVE-2013-6391
+    impact-assessment:
+      source: 'Red Hat Product Security'
+      rating: moderate
+      assessment:
+        type: CVSS2
+        score: 4.0
+        detail: AV:N/AC:L/Au:S/C:N/I:P/A:N
+    classification:
+      source: 'Red Hat Product Security'
+      type: CWE
+      detail: TODO
+
+reporters:
+  - name: 'Steven Hardy'
+    affiliation: 'Red Hat'
+    reported:
+      - CVE-2013-6391
+
+notes:
+
+issues:
+  issue-tracking-system: https://launchpad.net/bugs/{id}
+  issue-id:
+    - 1242597
+
+reviews:
+  review-system: https://review.openstack.org/#/c/{id}
+  review-id:
+    - 51973
+    - 61419
+    - 61425

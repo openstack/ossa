@@ -1,0 +1,51 @@
+advisory-date: 2014-07-17
+
+advisory-id: OSSA-2014-024
+
+advisory-title: 'Use of non-constant time comparison operation'
+
+advisory-description: 'Alex Gaynor from Rackspace reported a timing attack vulnerability
+  in Nova.   By analyzing response times to requests for instance metadata, an attacker  may
+  be able to guess a valid instance ID signature. This could allow access  to important
+  configuration details of another instance. Only setups  configured to proxy metadata
+  requests via Neutron are affected.'
+
+advisory-reference: http://lists.openstack.org/pipermail/openstack-announce/2014-July/000253.html
+
+affected-products:
+  - product: nova
+    version: TODO
+
+vulnerabilities:
+  - cve-id: CVE-2014-3517
+    impact-assessment:
+      source: 'Red Hat Product Security'
+      rating: moderate
+      assessment:
+        type: CVSS2
+        score: 4.3
+        detail: AV:N/AC:M/Au:N/C:P/I:N/A:N
+    classification:
+      source: 'Red Hat Product Security'
+      type: CWE
+      detail: TODO
+
+reporters:
+  - name: 'Alex Gaynor'
+    affiliation: Rackspace
+    reported:
+      - CVE-2014-3517
+
+notes:
+
+issues:
+  issue-tracking-system: https://launchpad.net/bugs/{id}
+  issue-id:
+    - 1325128
+
+reviews:
+  review-system: https://review.openstack.org/#/c/{id}
+  review-id:
+    - 107396
+    - 107397
+    - 107398

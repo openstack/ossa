@@ -1,0 +1,53 @@
+advisory-date: 2013-02-19
+
+advisory-id: OSSA-2013-005
+
+advisory-title: 'EC2-style authentication accepts disabled user/tenants'
+
+advisory-description: 'Nathanael Burton reported a vulnerability in EC2-style authentication
+  in Keystone. Keystone fails to check whether a user, tenant, or domain is enabled  before
+  authenticating a user using the EC2 api. Authenticated, but disabled users (or authenticated
+  users in disabled tenants or domains) could therefore retain access rights that
+  were thought removed. Only setups enabling EC2-style authentication are affected.
+  To disable EC2-style authentication to work around the issue, remove the EC2 extension
+  (keystone.contrib.ec2:Ec2Extension.factory) from the keystone API pipeline in keystone.conf. '
+
+advisory-reference: http://lists.openstack.org/pipermail/openstack-announce/2013-February/000079.html
+
+affected-products:
+  - product: keystone
+    version: TODO
+
+vulnerabilities:
+  - cve-id: CVE-2013-0282
+    impact-assessment:
+      source: 'Red Hat Product Security'
+      rating: moderate
+      assessment:
+        type: CVSS2
+        score: 4.0
+        detail: AV:N/AC:L/Au:S/C:N/I:P/A:N
+    classification:
+      source: 'Red Hat Product Security'
+      type: CWE
+      detail: TODO
+
+reporters:
+  - name: 'Nathanael Burton'
+    affiliation: 'National Security Agency'
+    reported:
+      - CVE-2013-0282
+
+notes:
+
+issues:
+  issue-tracking-system: https://launchpad.net/bugs/{id}
+  issue-id:
+    - 1121494
+
+reviews:
+  review-system: https://review.openstack.org/#/c/{id}
+  review-id:
+    - 22319
+    - 22320
+    - 22321

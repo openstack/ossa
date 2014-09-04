@@ -1,0 +1,55 @@
+advisory-date: 2013-05-16
+
+advisory-id: OSSA-2013-012
+
+advisory-title: 'Nova fails to verify image virtual size'
+
+advisory-description: 'Loganathan Parthipan publicly reported a vulnerability in Nova.
+  Nova did not implement checking for the virtual size of a qcow2 image used as ephemeral
+  storage for instances. It is therefore possible for a user to create an image which
+  has a large virtual size, but little data. Once the instance is created, the user
+  can then proceed to fill the virtual disk, and consume all available disk on the
+  host node file system. '
+
+advisory-reference: http://lists.openstack.org/pipermail/openstack-announce/2013-May/000102.html
+
+affected-products:
+  - product: nova
+    version: TODO
+
+vulnerabilities:
+  - cve-id: CVE-2013-2096
+    impact-assessment:
+      source: 'Red Hat Product Security'
+      rating: moderate
+      assessment:
+        type: CVSS2
+        score: 4.0
+        detail: AV:N/AC:L/Au:S/C:N/I:N/A:P
+    classification:
+      source: 'Red Hat Product Security'
+      type: CWE
+      detail: TODO
+
+reporters:
+  - name: 'Loganathan Parthipan'
+    affiliation: HP
+    reported:
+      - CVE-2013-2096
+
+notes:
+
+issues:
+  issue-tracking-system: https://launchpad.net/bugs/{id}
+  issue-id:
+    - 1177830
+
+reviews:
+  review-system: https://review.openstack.org/#/c/{id}
+  review-id:
+    - 28717
+    - 28901
+    - 29192
+    - 54765
+    - 54767
+    - 54768

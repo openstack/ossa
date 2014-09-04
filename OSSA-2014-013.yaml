@@ -1,0 +1,51 @@
+advisory-date: 2014-04-10
+
+advisory-id: OSSA-2014-013
+
+advisory-title: 'Keystone DoS through V3 API authentication chaining'
+
+advisory-description: 'Abu Shohel Ahmed from Ericsson reported a vulnerability in
+  Keystone V3 API authentication. By sending a single request with the same authentication
+  method multiple times, a remote attacker may generate unwanted load on the Keystone
+  host, potentially resulting in a Denial of Service against a Keystone service. Only
+  Keystone setups enabling V3 API are affected.'
+
+advisory-reference: http://lists.openstack.org/pipermail/openstack-announce/2014-April/000221.html
+
+affected-products:
+  - product: keystone
+    version: TODO
+
+vulnerabilities:
+  - cve-id: CVE-2014-2828
+    impact-assessment:
+      source: 'Red Hat Product Security'
+      rating: moderate
+      assessment:
+        type: CVSS2
+        score: 5.0
+        detail: AV:N/AC:L/Au:N/C:N/I:N/A:P
+    classification:
+      source: 'Red Hat Product Security'
+      type: CWE
+      detail: TODO
+
+reporters:
+  - name: 'Abu Shohel Ahmed'
+    affiliation: Ericsson
+    reported:
+      - CVE-2014-2828
+
+notes:
+
+issues:
+  issue-tracking-system: https://launchpad.net/bugs/{id}
+  issue-id:
+    - 1300274
+
+reviews:
+  review-system: https://review.openstack.org/#/c/{id}
+  review-id:
+    - 84425
+    - 84735
+    - 86024
