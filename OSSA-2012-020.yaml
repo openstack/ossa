@@ -1,22 +1,24 @@
-advisory-date: 2012-12-11
+date: 2012-12-11
 
-advisory-id: OSSA-2012-020
+id: OSSA-2012-020
 
-advisory-title: 'Information leak in libvirt LVM-backed instances'
+title: 'Information leak in libvirt LVM-backed instances'
 
-advisory-description: 'Eric Windisch from Cloudscaling reported a vulnerability in
-  libvirt LVM-backed instances. The physical volume content was not wiped out before
-  being deallocated and passed to an instance, which may result in the disclosure
-  of information from previously-allocated logical volumes.Only setups using libvirt
-  and LVM-backed instances (libvirt_images_type=lvm) are affected. '
+description: 'Eric Windisch from Cloudscaling reported a vulnerability in libvirt
+  LVM-backed instances. The physical volume content was not wiped out before being
+  deallocated and passed to an instance, which may result in the disclosure of information
+  from previously-allocated logical volumes.Only setups using libvirt and LVM-backed
+  instances (libvirt_images_type=lvm) are affected. '
 
-advisory-reference: http://lists.openstack.org/pipermail/openstack-announce/2012-December/000059.html
+reference: http://lists.openstack.org/pipermail/openstack-announce/2012-December/000059.html
 
 affected-products:
+
   - product: nova
     version: TODO
 
 vulnerabilities:
+
   - cve-id: CVE-2012-5625
     impact-assessment:
       source: 'Red Hat Product Security'
@@ -31,22 +33,23 @@ vulnerabilities:
       detail: TODO
 
 reporters:
+
   - name: 'Eric Windisch'
     affiliation: Cloudscaling
     reported:
       - CVE-2012-5625
 
-notes:
-
 issues:
-  issue-tracking-system-url: https://launchpad.net/bugs/{id}
-  issue-tracking-system-type : 'launchpad'
-  issue-id:
-    - 1070539
+
+  issues:
+    - https://launchpad.net/bugs/1070539
+
+  type: launchpad
 
 reviews:
-  review-system-url: https://review.openstack.org/#/c/{id}
-  review-system-type: 'gerrit'
-  review-id:
-    - 17856
-    - 17857
+
+  links:
+    - https://review.openstack.org/#/c/17856
+    - https://review.openstack.org/#/c/17857
+
+  type: gerrit

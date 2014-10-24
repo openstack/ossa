@@ -1,23 +1,26 @@
-advisory-date: 2014-04-22
+date: 2014-04-22
 
-advisory-id: OSSA-2014-014
+id: OSSA-2014-014
 
-advisory-title: 'Neutron security groups bypass through invalid CIDR'
+title: 'Neutron security groups bypass through invalid CIDR'
 
-advisory-description: 'Stephen Ma from Hewlett Packard and Christoph Thiel from Deutsche
-  Telekom reported a vulnerability in Neutron security groups. By creating a security
-  group rule with an invalid CIDR, an authenticated user may break openvswitch-agent
-  process, preventing further rules from being applied on the host. Note: removal
-  of the faulty rule is not enough, the openvswitch-agent must be restarted. All Neutron
-  setups using Open vSwitch are affected.'
+description: 'Stephen Ma from Hewlett Packard and Christoph Thiel from Deutsche Telekom
+  reported a vulnerability in Neutron security groups. By creating a security group
+  rule with an invalid CIDR, an authenticated user may break openvswitch-agent process,
 
-advisory-reference: http://lists.openstack.org/pipermail/openstack-announce/2014-April/000227.html
+  preventing further rules from being applied on the host. Note: removal of the faulty
+  rule is not enough, the openvswitch-agent must be restarted. All Neutron setups
+  using Open vSwitch are affected.'
+
+reference: http://lists.openstack.org/pipermail/openstack-announce/2014-April/000227.html
 
 affected-products:
+
   - product: neutron
     version: TODO
 
 vulnerabilities:
+
   - cve-id: CVE-2014-0187
     impact-assessment:
       source: 'Red Hat Product Security'
@@ -32,27 +35,29 @@ vulnerabilities:
       detail: TODO
 
 reporters:
+
   - name: 'Stephen Ma'
     affiliation: HP
     reported:
       - CVE-2014-0187
+
   - name: 'Christoph Thiel'
     affiliation: 'Deutsche Telekom'
     reported:
       - CVE-2014-0187
 
-notes:
-
 issues:
-  issue-tracking-system-url: https://launchpad.net/bugs/{id}
-  issue-tracking-system-type : 'launchpad'
-  issue-id:
-    - 1300785
+
+  issues:
+    - https://launchpad.net/bugs/1300785
+
+  type: launchpad
 
 reviews:
-  review-system-url: https://review.openstack.org/#/c/{id}
-  review-system-type: 'gerrit'
-  review-id:
-    - 59212
-    - 88674
-    - 88057
+
+  links:
+    - https://review.openstack.org/#/c/59212
+    - https://review.openstack.org/#/c/88674
+    - https://review.openstack.org/#/c/88057
+
+  type: gerrit

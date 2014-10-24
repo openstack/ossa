@@ -1,21 +1,23 @@
-advisory-date: 2013-06-13
+date: 2013-06-13
 
-advisory-id: OSSA-2013-016
+id: OSSA-2013-016
 
-advisory-title: 'Unchecked user input in Swift XML responses'
+title: 'Unchecked user input in Swift XML responses'
 
-advisory-description: 'Alex Gaynor from Rackspace reported a vulnerability in XML
-  handling within Swift account servers. Account strings were unescaped in XML listings,
-  and an attacker could potentially generate unparsable or arbitrary XML responses
-  which may be used to leverage other vulnerabilities in the calling software.'
+description: 'Alex Gaynor from Rackspace reported a vulnerability in XML handling
+  within Swift account servers. Account strings were unescaped in XML listings, and
+  an attacker could potentially generate unparsable or arbitrary XML responses which
+  may be used to leverage other vulnerabilities in the calling software.'
 
-advisory-reference: https://lists.launchpad.net/openstack/msg24373.html
+reference: https://lists.launchpad.net/openstack/msg24373.html
 
 affected-products:
+
   - product: swift
     version: TODO
 
 vulnerabilities:
+
   - cve-id: CVE-2013-2161
     impact-assessment:
       source: 'Red Hat Product Security'
@@ -30,24 +32,25 @@ vulnerabilities:
       detail: TODO
 
 reporters:
+
   - name: 'Alex Gaynor'
     affiliation: Rackspace
     reported:
       - CVE-2013-2161
 
-notes:
-
 issues:
-  issue-tracking-system-url: https://launchpad.net/bugs/{id}
-  issue-tracking-system-type : 'launchpad'
-  issue-id:
-    - 1183884
+
+  issues:
+    - https://launchpad.net/bugs/1183884
+
+  type: launchpad
 
 reviews:
-  review-system-url: https://review.openstack.org/#/c/{id}
-  review-system-type: 'gerrit'
-  review-id:
-    - 32905
-    - 32909
-    - 32911
-    - 32982
+
+  links:
+    - https://review.openstack.org/#/c/32905
+    - https://review.openstack.org/#/c/32909
+    - https://review.openstack.org/#/c/32911
+    - https://review.openstack.org/#/c/32982
+
+  type: gerrit

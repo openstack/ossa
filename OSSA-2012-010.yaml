@@ -1,23 +1,25 @@
-advisory-date: 2012-07-27
+date: 2012-07-27
 
-advisory-id: OSSA-2012-010
+id: OSSA-2012-010
 
-advisory-title: 'Various Keystone token expiration issues'
+title: 'Various Keystone token expiration issues'
 
-advisory-description: 'Derek Higgins reported various issues affecting Keystone token
-  expiration. A token expiration date can be circumvented by continuously creating
-  new tokens before the old one has expired. Existing tokens also remain valid after
-  a user account is disabled or after an account password changed. An authenticated
-  and authorized user could potentially leverage those vulnerabilities to extend his
-  access beyond the account owner expectations.'
+description: 'Derek Higgins reported various issues affecting Keystone token expiration.
+  A token expiration date can be circumvented by continuously creating new tokens
+  before the old one has expired. Existing tokens also remain valid after a user account
+  is disabled or after an account password changed. An authenticated and authorized
+  user could potentially leverage those vulnerabilities to extend his access beyond
+  the account owner expectations.'
 
-advisory-reference: https://lists.launchpad.net/openstack/msg15164.html
+reference: https://lists.launchpad.net/openstack/msg15164.html
 
 affected-products:
+
   - product: keystone
     version: TODO
 
 vulnerabilities:
+
   - cve-id: CVE-2012-3426
     impact-assessment:
       source: 'Red Hat Product Security'
@@ -32,28 +34,29 @@ vulnerabilities:
       detail: TODO
 
 reporters:
+
   - name: 'Derek Higgins'
     affiliation: UNKNOWN
     reported:
       - CVE-2012-3426
 
-notes:
-
 issues:
-  issue-tracking-system-url: https://launchpad.net/bugs/{id}
-  issue-tracking-system-type : 'launchpad'
-  issue-id:
-    - 998185
-    - 997194
-    - 996595
+
+  issues:
+    - https://launchpad.net/bugs/998185
+    - https://launchpad.net/bugs/997194
+    - https://launchpad.net/bugs/996595
+
+  type: launchpad
 
 reviews:
-  review-system-url: https://review.openstack.org/#/c/{id}
-  review-system-type: 'gerrit'
-  review-id:
-    - 8174
-    - 8573
-    - 7344
-    - 8456
-    - 7276
-    - 8454
+
+  links:
+    - https://review.openstack.org/#/c/8174
+    - https://review.openstack.org/#/c/8573
+    - https://review.openstack.org/#/c/7344
+    - https://review.openstack.org/#/c/8456
+    - https://review.openstack.org/#/c/7276
+    - https://review.openstack.org/#/c/8454
+
+  type: gerrit

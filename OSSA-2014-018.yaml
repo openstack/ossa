@@ -1,23 +1,25 @@
-advisory-date: 2014-06-12
+date: 2014-06-12
 
-advisory-id: OSSA-2014-018
+id: OSSA-2014-018
 
-advisory-title: 'Keystone privilege escalation through trust chained delegation'
+title: 'Keystone privilege escalation through trust chained delegation'
 
-advisory-description: 'Steven Hardy from Red Hat reported a vulnerability in Keystone
-  chained delegation. By creating a delegation from a trust or OAuth token, a trustee
-  may abuse the identity impersonation against keystone and circumvent the enforced
-  scope, resulting in potential elevated privileges to any of the trustor''s projects
-  and or roles. All Keystone deployments configured to enable trusts are affected,
-  which has been the default since Grizzly.'
+description: 'Steven Hardy from Red Hat reported a vulnerability in Keystone chained
+  delegation. By creating a delegation from a trust or OAuth token, a trustee may
+  abuse the identity impersonation against keystone and circumvent the enforced scope,
+  resulting in potential elevated privileges to any of the trustor''s projects and
+  or roles. All Keystone deployments configured to enable trusts are affected, which
+  has been the default since Grizzly.'
 
-advisory-reference: http://lists.openstack.org/pipermail/openstack-announce/2014-June/000240.html
+reference: http://lists.openstack.org/pipermail/openstack-announce/2014-June/000240.html
 
 affected-products:
+
   - product: keystone
     version: TODO
 
 vulnerabilities:
+
   - cve-id: CVE-2014-3476
     impact-assessment:
       source: 'Red Hat Product Security'
@@ -32,23 +34,24 @@ vulnerabilities:
       detail: TODO
 
 reporters:
+
   - name: 'Steven Hardy'
     affiliation: 'Red Hat'
     reported:
       - CVE-2014-3476
 
-notes:
-
 issues:
-  issue-tracking-system-url: https://launchpad.net/bugs/{id}
-  issue-tracking-system-type : 'launchpad'
-  issue-id:
-    - 1324592
+
+  issues:
+    - https://launchpad.net/bugs/1324592
+
+  type: launchpad
 
 reviews:
-  review-system-url: https://review.openstack.org/#/c/{id}
-  review-system-type: 'gerrit'
-  review-id:
-    - 99687
-    - 99700
-    - 99703
+
+  links:
+    - https://review.openstack.org/#/c/99687
+    - https://review.openstack.org/#/c/99700
+    - https://review.openstack.org/#/c/99703
+
+  type: gerrit

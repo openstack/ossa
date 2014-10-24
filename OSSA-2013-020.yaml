@@ -1,23 +1,24 @@
-advisory-date: 2013-08-06
+date: 2013-08-06
 
-advisory-id: OSSA-2013-020
+id: OSSA-2013-020
 
-advisory-title: 'Denial of Service in Nova network source security groups'
+title: 'Denial of Service in Nova network source security groups'
 
-advisory-description: 'Vishvananda Ishaya from Nebula reported a denial of service
-  vulnerability in Nova''s handling of network source security group policy updates.
-  By performing a large number of server creation operations, the proportion of updates
-  increases quadratically and may overwhelm nova-network such that it is no longer
-  able to service other requests in a timely fashion. Only setups relying on nova-network
-  are affected.'
+description: 'Vishvananda Ishaya from Nebula reported a denial of service vulnerability
+  in Nova''s handling of network source security group policy updates. By performing
+  a large number of server creation operations, the proportion of updates increases
+  quadratically and may overwhelm nova-network such that it is no longer able to service
+  other requests in a timely fashion. Only setups relying on nova-network are affected.'
 
-advisory-reference: http://lists.openstack.org/pipermail/openstack-announce/2013-August/000127.html
+reference: http://lists.openstack.org/pipermail/openstack-announce/2013-August/000127.html
 
 affected-products:
+
   - product: nova
     version: TODO
 
 vulnerabilities:
+
   - cve-id: CVE-2013-4185
     impact-assessment:
       source: 'Red Hat Product Security'
@@ -32,23 +33,24 @@ vulnerabilities:
       detail: TODO
 
 reporters:
+
   - name: 'Vishvananda Ishaya'
     affiliation: Nebula
     reported:
       - CVE-2013-4185
 
-notes:
-
 issues:
-  issue-tracking-system-url: https://launchpad.net/bugs/{id}
-  issue-tracking-system-type : 'launchpad'
-  issue-id:
-    - 1184041
+
+  issues:
+    - https://launchpad.net/bugs/1184041
+
+  type: launchpad
 
 reviews:
-  review-system-url: https://review.openstack.org/#/c/{id}
-  review-system-type: 'gerrit'
-  review-id:
-    - 39541
-    - 39543
-    - 39544
+
+  links:
+    - https://review.openstack.org/#/c/39541
+    - https://review.openstack.org/#/c/39543
+    - https://review.openstack.org/#/c/39544
+
+  type: gerrit

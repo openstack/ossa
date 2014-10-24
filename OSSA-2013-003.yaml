@@ -1,21 +1,23 @@
-advisory-date: 2013-02-05
+date: 2013-02-05
 
-advisory-id: OSSA-2013-003
+id: OSSA-2013-003
 
-advisory-title: 'Keystone denial of service through invalid token requests'
+title: 'Keystone denial of service through invalid token requests'
 
-advisory-description: 'Dan Prince of Red Hat reported a vulnerability in token creation
-  error handling in Keystone. By requesting lots of invalid tokens, an unauthenticated  user
+description: 'Dan Prince of Red Hat reported a vulnerability in token creation error
+  handling in Keystone. By requesting lots of invalid tokens, an unauthenticated  user
   may fill up logs on Keystone API servers disks, potentially resulting in a denial
   of service attack against Keystone. '
 
-advisory-reference: http://lists.openstack.org/pipermail/openstack-announce/2013-February/000074.html
+reference: http://lists.openstack.org/pipermail/openstack-announce/2013-February/000074.html
 
 affected-products:
+
   - product: keystone
     version: TODO
 
 vulnerabilities:
+
   - cve-id: CVE-2013-0247
     impact-assessment:
       source: 'Red Hat Product Security'
@@ -30,23 +32,24 @@ vulnerabilities:
       detail: TODO
 
 reporters:
+
   - name: 'Dan Prince'
     affiliation: 'Red Hat'
     reported:
       - CVE-2013-0247
 
-notes:
-
 issues:
-  issue-tracking-system-url: https://launchpad.net/bugs/{id}
-  issue-tracking-system-type : 'launchpad'
-  issue-id:
-    - 1098307
+
+  issues:
+    - https://launchpad.net/bugs/1098307
+
+  type: launchpad
 
 reviews:
-  review-system-url: https://review.openstack.org/#/c/{id}
-  review-system-type: 'gerrit'
-  review-id:
-    - 21213
-    - 21215
-    - 21216
+
+  links:
+    - https://review.openstack.org/#/c/21213
+    - https://review.openstack.org/#/c/21215
+    - https://review.openstack.org/#/c/21216
+
+  type: gerrit

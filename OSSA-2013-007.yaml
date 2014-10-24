@@ -1,23 +1,25 @@
-advisory-date: 2013-03-14
+date: 2013-03-14
 
-advisory-id: OSSA-2013-007
+id: OSSA-2013-007
 
-advisory-title: 'Backend credentials leak in Glance v1 API'
+title: 'Backend credentials leak in Glance v1 API'
 
-advisory-description: 'Stuart McLaren from HP reported a vulnerability in the information
-  potentially returned to the user in Glance v1 API. If an authenticated user requests,
-  through the v1 API, an image that is already cached, the headers returned may disclose
-  the Glance operator''s backend credentials for that endpoint. Only setups accepting
+description: 'Stuart McLaren from HP reported a vulnerability in the information potentially
+  returned to the user in Glance v1 API. If an authenticated user requests, through
+  the v1 API, an image that is already cached, the headers returned may disclose the
+  Glance operator''s backend credentials for that endpoint. Only setups accepting
   the Glance v1 API and using either the single-tenant Swift store or S3 store are
   affected.'
 
-advisory-reference: http://lists.openstack.org/pipermail/openstack-announce/2013-March/000085.html
+reference: http://lists.openstack.org/pipermail/openstack-announce/2013-March/000085.html
 
 affected-products:
+
   - product: glance
     version: TODO
 
 vulnerabilities:
+
   - cve-id: CVE-2013-1840
     impact-assessment:
       source: 'Red Hat Product Security'
@@ -32,23 +34,24 @@ vulnerabilities:
       detail: TODO
 
 reporters:
+
   - name: 'Stuart McLaren'
     affiliation: HP
     reported:
       - CVE-2013-1840
 
-notes:
-
 issues:
-  issue-tracking-system-url: https://launchpad.net/bugs/{id}
-  issue-tracking-system-type : 'launchpad'
-  issue-id:
-    - 1135541
+
+  issues:
+    - https://launchpad.net/bugs/1135541
+
+  type: launchpad
 
 reviews:
-  review-system-url: https://review.openstack.org/#/c/{id}
-  review-system-type: 'gerrit'
-  review-id:
-    - 24437
-    - 24438
-    - 24439
+
+  links:
+    - https://review.openstack.org/#/c/24437
+    - https://review.openstack.org/#/c/24438
+    - https://review.openstack.org/#/c/24439
+
+  type: gerrit

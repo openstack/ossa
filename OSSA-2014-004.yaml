@@ -1,25 +1,27 @@
-advisory-date: 2014-02-12
+date: 2014-02-12
 
-advisory-id: OSSA-2014-004
+id: OSSA-2014-004
 
-advisory-title: 'Glance Swift store backend password leak'
+title: 'Glance Swift store backend password leak'
 
-advisory-description: 'Nikhil Komawar from Rackspace reported an information leak
-  in Glance logs. The password for the Swift store backend is logged at WARNING level
-  as part of the URL when authentication to a store fails if image location is not
-  disabled by policy or the store is a single-tenant configuration. An attacker with
-  access to the logs (local shell, log aggregation system access, or accidental leak)
-  may leverage this vulnerability to elevate privileges and gain direct full access
-  to the Glance Swift store backend. Only Glance setups using the Swift store backend
+description: 'Nikhil Komawar from Rackspace reported an information leak in Glance
+  logs. The password for the Swift store backend is logged at WARNING level as part
+  of the URL when authentication to a store fails if image location is not disabled
+  by policy or the store is a single-tenant configuration. An attacker with access
+  to the logs (local shell, log aggregation system access, or accidental leak) may
+  leverage this vulnerability to elevate privileges and gain direct full access to
+  the Glance Swift store backend. Only Glance setups using the Swift store backend
   are affected.'
 
-advisory-reference: http://lists.openstack.org/pipermail/openstack-announce/2014-February/000194.html
+reference: http://lists.openstack.org/pipermail/openstack-announce/2014-February/000194.html
 
 affected-products:
+
   - product: glance
     version: TODO
 
 vulnerabilities:
+
   - cve-id: CVE-2014-1948
     impact-assessment:
       source: 'Red Hat Product Security'
@@ -34,22 +36,23 @@ vulnerabilities:
       detail: TODO
 
 reporters:
+
   - name: 'Nikhil Komawar'
     affiliation: Rackspace
     reported:
       - CVE-2014-1948
 
-notes:
-
 issues:
-  issue-tracking-system-url: https://launchpad.net/bugs/{id}
-  issue-tracking-system-type : 'launchpad'
-  issue-id:
-    - 1275062
+
+  issues:
+    - https://launchpad.net/bugs/1275062
+
+  type: launchpad
 
 reviews:
-  review-system-url: https://review.openstack.org/#/c/{id}
-  review-system-type: 'gerrit'
-  review-id:
-    - 71419
-    - 72473
+
+  links:
+    - https://review.openstack.org/#/c/71419
+    - https://review.openstack.org/#/c/72473
+
+  type: gerrit

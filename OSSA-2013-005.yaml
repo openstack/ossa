@@ -1,24 +1,27 @@
-advisory-date: 2013-02-19
+date: 2013-02-19
 
-advisory-id: OSSA-2013-005
+id: OSSA-2013-005
 
-advisory-title: 'EC2-style authentication accepts disabled user/tenants'
+title: 'EC2-style authentication accepts disabled user/tenants'
 
-advisory-description: 'Nathanael Burton reported a vulnerability in EC2-style authentication
+description: 'Nathanael Burton reported a vulnerability in EC2-style authentication
   in Keystone. Keystone fails to check whether a user, tenant, or domain is enabled  before
   authenticating a user using the EC2 api. Authenticated, but disabled users (or authenticated
   users in disabled tenants or domains) could therefore retain access rights that
   were thought removed. Only setups enabling EC2-style authentication are affected.
   To disable EC2-style authentication to work around the issue, remove the EC2 extension
+
   (keystone.contrib.ec2:Ec2Extension.factory) from the keystone API pipeline in keystone.conf. '
 
-advisory-reference: http://lists.openstack.org/pipermail/openstack-announce/2013-February/000079.html
+reference: http://lists.openstack.org/pipermail/openstack-announce/2013-February/000079.html
 
 affected-products:
+
   - product: keystone
     version: TODO
 
 vulnerabilities:
+
   - cve-id: CVE-2013-0282
     impact-assessment:
       source: 'Red Hat Product Security'
@@ -33,23 +36,24 @@ vulnerabilities:
       detail: TODO
 
 reporters:
+
   - name: 'Nathanael Burton'
     affiliation: 'National Security Agency'
     reported:
       - CVE-2013-0282
 
-notes:
-
 issues:
-  issue-tracking-system-url: https://launchpad.net/bugs/{id}
-  issue-tracking-system-type : 'launchpad'
-  issue-id:
-    - 1121494
+
+  issues:
+    - https://launchpad.net/bugs/1121494
+
+  type: launchpad
 
 reviews:
-  review-system-url: https://review.openstack.org/#/c/{id}
-  review-system-type: 'gerrit'
-  review-id:
-    - 22319
-    - 22320
-    - 22321
+
+  links:
+    - https://review.openstack.org/#/c/22319
+    - https://review.openstack.org/#/c/22320
+    - https://review.openstack.org/#/c/22321
+
+  type: gerrit

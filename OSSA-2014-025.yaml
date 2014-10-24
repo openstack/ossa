@@ -1,21 +1,23 @@
-advisory-date: 2014-07-17
+date: 2014-07-17
 
-advisory-id: OSSA-2014-025
+id: OSSA-2014-025
 
-advisory-title: 'Denial of Service in Neutron allowed address pair'
+title: 'Denial of Service in Neutron allowed address pair'
 
-advisory-description: 'Liping Mao from Cisco reported a denial of service vulnerability
-  in Neutron''s handling of allowed address pair. By creating a large number of allowed
+description: 'Liping Mao from Cisco reported a denial of service vulnerability in
+  Neutron''s handling of allowed address pair. By creating a large number of allowed
   address pairs, an authenticated user may overwhelm neutron firewall rules and render
   compute nodes unusable. All Neutron setups are affected.'
 
-advisory-reference: http://lists.openstack.org/pipermail/openstack-announce/2014-July/000255.html
+reference: http://lists.openstack.org/pipermail/openstack-announce/2014-July/000255.html
 
 affected-products:
+
   - product: neutron
     version: TODO
 
 vulnerabilities:
+
   - cve-id: CVE-2014-3555
     impact-assessment:
       source: 'Red Hat Product Security'
@@ -30,23 +32,24 @@ vulnerabilities:
       detail: TODO
 
 reporters:
+
   - name: 'Liping Mao'
     affiliation: Cisco
     reported:
       - CVE-2014-3555
 
-notes:
-
 issues:
-  issue-tracking-system-url: https://launchpad.net/bugs/{id}
-  issue-tracking-system-type : 'launchpad'
-  issue-id:
-    - 1336207
+
+  issues:
+    - https://launchpad.net/bugs/1336207
+
+  type: launchpad
 
 reviews:
-  review-system-url: https://review.openstack.org/#/c/{id}
-  review-system-type: 'gerrit'
-  review-id:
-    - 107734
-    - 107733
-    - 107731
+
+  links:
+    - https://review.openstack.org/#/c/107734
+    - https://review.openstack.org/#/c/107733
+    - https://review.openstack.org/#/c/107731
+
+  type: gerrit

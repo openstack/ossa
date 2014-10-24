@@ -1,23 +1,25 @@
-advisory-date: 2014-04-08
+date: 2014-04-08
 
-advisory-id: OSSA-2014-010
+id: OSSA-2014-010
 
-advisory-title: 'XSS in Horizon orchestration dashboard'
+title: 'XSS in Horizon orchestration dashboard'
 
-advisory-description: 'Cristian Fiorentino from Intel reported a vulnerability in
-  Horizon Orchestration dashboard. By tricking a Horizon user into using a malicious
-  template in the Orchestration/Stack section of Horizon, a remote attacker may trigger
-  a cross-site-scripting vulnerability. It may result in potential assets theft (Horizon
-  user/admin access credentials, tenants confidential information, etc.). Only setups
-  exposing the orchestration dashboard in Horizon are affected. '
+description: 'Cristian Fiorentino from Intel reported a vulnerability in Horizon Orchestration
+  dashboard. By tricking a Horizon user into using a malicious template in the Orchestration/Stack
+  section of Horizon, a remote attacker may trigger a cross-site-scripting vulnerability.
+  It may result in potential assets theft (Horizon user/admin access credentials,
+  tenants confidential information, etc.). Only setups exposing the orchestration
+  dashboard in Horizon are affected. '
 
-advisory-reference: http://lists.openstack.org/pipermail/openstack-announce/2014-April/000218.html
+reference: http://lists.openstack.org/pipermail/openstack-announce/2014-April/000218.html
 
 affected-products:
+
   - product: horizon
     version: TODO
 
 vulnerabilities:
+
   - cve-id: CVE-2014-0157
     impact-assessment:
       source: 'Red Hat Product Security'
@@ -32,23 +34,24 @@ vulnerabilities:
       detail: TODO
 
 reporters:
+
   - name: 'Cristian Fiorentino'
     affiliation: Intel
     reported:
       - CVE-2014-0157
 
-notes:
-
 issues:
-  issue-tracking-system-url: https://launchpad.net/bugs/{id}
-  issue-tracking-system-type : 'launchpad'
-  issue-id:
-    - 1289033
+
+  issues:
+    - https://launchpad.net/bugs/1289033
+
+  type: launchpad
 
 reviews:
-  review-system-url: https://review.openstack.org/#/c/{id}
-  review-system-type: 'gerrit'
-  review-id:
-    - 86059
-    - 86054
-    - 86056
+
+  links:
+    - https://review.openstack.org/#/c/86059
+    - https://review.openstack.org/#/c/86054
+    - https://review.openstack.org/#/c/86056
+
+  type: gerrit

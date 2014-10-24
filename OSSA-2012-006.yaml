@@ -1,21 +1,22 @@
-advisory-date: 2012-05-04
+date: 2012-05-04
 
-advisory-id: OSSA-2012-006
+id: OSSA-2012-006
 
-advisory-title: 'Horizon session fixation and reuse'
+title: 'Horizon session fixation and reuse'
 
-advisory-description: 'Thomas Biege from SUSE reported a vulnerability in OpenStack
-  Dashboard (Horizon). Under specific circumstances it is possible to reuse session
-  cookies from another user, potentially allowing access to unauthorized information
-  and capabilities. '
+description: 'Thomas Biege from SUSE reported a vulnerability in OpenStack Dashboard
+  (Horizon). Under specific circumstances it is possible to reuse session cookies
+  from another user, potentially allowing access to unauthorized information and capabilities. '
 
-advisory-reference: https://lists.launchpad.net/openstack/msg11263.html
+reference: https://lists.launchpad.net/openstack/msg11263.html
 
 affected-products:
+
   - product: horizon
     version: TODO
 
 vulnerabilities:
+
   - cve-id: CVE-2012-2144
     impact-assessment:
       source: 'Red Hat Product Security'
@@ -30,22 +31,23 @@ vulnerabilities:
       detail: TODO
 
 reporters:
+
   - name: 'Thomas Biege'
     affiliation: SUSE
     reported:
       - CVE-2012-2144
 
-notes: 'Incorrect CVE listed in advisory: CVE-2012-05-04'
-
 issues:
-  issue-tracking-system-url: https://launchpad.net/bugs/{id}
-  issue-tracking-system-type : 'launchpad'
-  issue-id:
-    - 978896
+
+  issues:
+    - https://launchpad.net/bugs/978896
+
+  type: launchpad
 
 reviews:
-  review-system-url: https://review.openstack.org/#/c/{id}
-  review-system-type: 'gerrit'
-  review-id:
-    - 7144
-    - 7145
+
+  links:
+    - https://review.openstack.org/#/c/7144
+    - https://review.openstack.org/#/c/7145
+
+  type: gerrit

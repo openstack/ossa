@@ -1,22 +1,24 @@
-advisory-date: 2014-07-17
+date: 2014-07-17
 
-advisory-id: OSSA-2014-024
+id: OSSA-2014-024
 
-advisory-title: 'Use of non-constant time comparison operation'
+title: 'Use of non-constant time comparison operation'
 
-advisory-description: 'Alex Gaynor from Rackspace reported a timing attack vulnerability
-  in Nova.   By analyzing response times to requests for instance metadata, an attacker  may
+description: 'Alex Gaynor from Rackspace reported a timing attack vulnerability in
+  Nova.   By analyzing response times to requests for instance metadata, an attacker  may
   be able to guess a valid instance ID signature. This could allow access  to important
   configuration details of another instance. Only setups  configured to proxy metadata
   requests via Neutron are affected.'
 
-advisory-reference: http://lists.openstack.org/pipermail/openstack-announce/2014-July/000253.html
+reference: http://lists.openstack.org/pipermail/openstack-announce/2014-July/000253.html
 
 affected-products:
+
   - product: nova
     version: TODO
 
 vulnerabilities:
+
   - cve-id: CVE-2014-3517
     impact-assessment:
       source: 'Red Hat Product Security'
@@ -31,23 +33,24 @@ vulnerabilities:
       detail: TODO
 
 reporters:
+
   - name: 'Alex Gaynor'
     affiliation: Rackspace
     reported:
       - CVE-2014-3517
 
-notes:
-
 issues:
-  issue-tracking-system-url: https://launchpad.net/bugs/{id}
-  issue-tracking-system-type : 'launchpad'
-  issue-id:
-    - 1325128
+
+  issues:
+    - https://launchpad.net/bugs/1325128
+
+  type: launchpad
 
 reviews:
-  review-system-url: https://review.openstack.org/#/c/{id}
-  review-system-type: 'gerrit'
-  review-id:
-    - 107396
-    - 107397
-    - 107398
+
+  links:
+    - https://review.openstack.org/#/c/107396
+    - https://review.openstack.org/#/c/107397
+    - https://review.openstack.org/#/c/107398
+
+  type: gerrit

@@ -1,29 +1,33 @@
-advisory-date: 2013-02-19
+date: 2013-02-19
 
-advisory-id: OSSA-2013-004
+id: OSSA-2013-004
 
-advisory-title: 'Information leak and Denial of Service using XML entities'
+title: 'Information leak and Denial of Service using XML entities'
 
-advisory-description: 'Jonathan Murray from NCC Group, Joshua Harlow from Yahoo! and
-  Stuart Stent independently reported a vulnerabilities in the parsing of  XML requests
-  in Python XML libraries used in Keystone, Nova and Cinder. By using entities in
-  XML requests, an unauthenticated attacker may consume excessive  resources on the
-  Keystone, Nova or Cinder API servers, resulting in a denial of service and potentially
-  a crash (CVE-2013-1664). Authenticated attackers  may also leverage XML entities
-  to read the content of a local file on the Keystone API server (CVE-2013-1665).
-  This only affects servers with XML support enabled.'
+description: 'Jonathan Murray from NCC Group, Joshua Harlow from Yahoo! and Stuart
+  Stent independently reported a vulnerabilities in the parsing of  XML requests in
+  Python XML libraries used in Keystone, Nova and Cinder. By using entities in XML
+  requests, an unauthenticated attacker may consume excessive  resources on the Keystone,
+  Nova or Cinder API servers, resulting in a denial of service and potentially a crash
+  (CVE-2013-1664). Authenticated attackers  may also leverage XML entities to read
+  the content of a local file on the Keystone API server (CVE-2013-1665). This only
+  affects servers with XML support enabled.'
 
-advisory-reference: http://lists.openstack.org/pipermail/openstack-announce/2013-February/000078.html
+reference: http://lists.openstack.org/pipermail/openstack-announce/2013-February/000078.html
 
 affected-products:
+
   - product: keystone
     version: TODO
+
   - product: nova
     version: TODO
+
   - product: cinder
     version: TODO
 
 vulnerabilities:
+
   - cve-id: CVE-2013-1664
     impact-assessment:
       source: 'Red Hat Product Security'
@@ -36,6 +40,7 @@ vulnerabilities:
       source: 'Red Hat Product Security'
       type: CWE
       detail: TODO
+
   - cve-id: CVE-2013-1665
     impact-assessment:
       source: 'Red Hat Product Security'
@@ -50,40 +55,43 @@ vulnerabilities:
       detail: TODO
 
 reporters:
+
   - name: 'Jonathan Murray'
     affiliation: 'NCC Group'
     reported:
       - CVE-2013-1664
       - CVE-2013-1665
+
   - name: 'Joshua Harlow'
     affiliation: Yahoo!
     reported:
       - CVE-2013-1664
       - CVE-2013-1665
+
   - name: StuartStent
     affiliation: UNKNOWN
     reported:
       - CVE-2013-1664
       - CVE-2013-1665
 
-notes:
-
 issues:
-  issue-tracking-system-url: https://launchpad.net/bugs/{id}
-  issue-tracking-system-type : 'launchpad'
-  issue-id:
-    - 1100282
-    - 1100279
+
+  issues:
+    - https://launchpad.net/bugs/1100282
+    - https://launchpad.net/bugs/1100279
+
+  type: launchpad
 
 reviews:
-  review-system-url: https://review.openstack.org/#/c/{id}
-  review-system-type: 'gerrit'
-  review-id:
-    - 22309
-    - 22310
-    - 22315
-    - 22312
-    - 22311
-    - 22314
-    - 22313
-    - 22316
+
+  links:
+    - https://review.openstack.org/#/c/22309
+    - https://review.openstack.org/#/c/22310
+    - https://review.openstack.org/#/c/22315
+    - https://review.openstack.org/#/c/22312
+    - https://review.openstack.org/#/c/22311
+    - https://review.openstack.org/#/c/22314
+    - https://review.openstack.org/#/c/22313
+    - https://review.openstack.org/#/c/22316
+
+  type: gerrit

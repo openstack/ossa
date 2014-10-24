@@ -1,22 +1,24 @@
-advisory-date: 2013-08-07
+date: 2013-08-07
 
-advisory-id: OSSA-2013-022
+id: OSSA-2013-022
 
-advisory-title: 'Swift Denial of Service using superfluous object tombstones'
+title: 'Swift Denial of Service using superfluous object tombstones'
 
-advisory-description: 'Peter Portante from Red Hat reported a vulnerability in Swift.
-  Byissuing requests with an old X-Timestamp value, an authenticatedattacker can fill
-  an object server with superfluous object tombstones,which may significantly slow
-  down subsequent requests to that objectserver, facilitating a Denial of Service
-  attack against Swift clusters.'
+description: 'Peter Portante from Red Hat reported a vulnerability in Swift. Byissuing
+  requests with an old X-Timestamp value, an authenticatedattacker can fill an object
+  server with superfluous object tombstones,which may significantly slow down subsequent
+  requests to that objectserver, facilitating a Denial of Service attack against Swift
+  clusters.'
 
-advisory-reference: http://lists.openstack.org/pipermail/openstack-announce/2013-August/000131.html
+reference: http://lists.openstack.org/pipermail/openstack-announce/2013-August/000131.html
 
 affected-products:
+
   - product: swift
     version: TODO
 
 vulnerabilities:
+
   - cve-id: CVE-2013-4155
     impact-assessment:
       source: 'Red Hat Product Security'
@@ -31,23 +33,24 @@ vulnerabilities:
       detail: TODO
 
 reporters:
+
   - name: 'Peter Portante'
     affiliation: 'Red Hat'
     reported:
       - CVE-2013-4155
 
-notes:
-
 issues:
-  issue-tracking-system-url: https://launchpad.net/bugs/{id}
-  issue-tracking-system-type : 'launchpad'
-  issue-id:
-    - 1196932
+
+  issues:
+    - https://launchpad.net/bugs/1196932
+
+  type: launchpad
 
 reviews:
-  review-system-url: https://review.openstack.org/#/c/{id}
-  review-system-type: 'gerrit'
-  review-id:
-    - 40643
-    - 40645
-    - 40646
+
+  links:
+    - https://review.openstack.org/#/c/40643
+    - https://review.openstack.org/#/c/40645
+    - https://review.openstack.org/#/c/40646
+
+  type: gerrit

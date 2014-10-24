@@ -1,22 +1,24 @@
-advisory-date: 2013-02-26
+date: 2013-02-26
 
-advisory-id: OSSA-2013-006
+id: OSSA-2013-006
 
-advisory-title: 'VNC proxy can connect to the wrong VM'
+title: 'VNC proxy can connect to the wrong VM'
 
-advisory-description: 'Loganathan Parthipan (HP) and Rohit Karajgi (NTT Data) independently
+description: 'Loganathan Parthipan (HP) and Rohit Karajgi (NTT Data) independently
   reported a vulnerability in Nova. If a user requests a console and then deletes
   the VM, it is possible that the console token could allow connectivity to a different
   VM before the console token expires if the VNC port gets reused in that time period.
   This issue can be worked around by disabling VNC support. '
 
-advisory-reference: http://lists.openstack.org/pipermail/openstack-announce/2013-February/000082.html
+reference: http://lists.openstack.org/pipermail/openstack-announce/2013-February/000082.html
 
 affected-products:
+
   - product: nova
     version: TODO
 
 vulnerabilities:
+
   - cve-id: CVE-2013-0335
     impact-assessment:
       source: 'Red Hat Product Security'
@@ -31,29 +33,31 @@ vulnerabilities:
       detail: TODO
 
 reporters:
+
   - name: 'Loganathan Parthipan'
     affiliation: HP
     reported:
       - CVE-2013-0335
+
   - name: 'Rohit Karajgi'
     affiliation: 'NTT Data'
     reported:
       - CVE-2013-0335
 
-notes:
-
 issues:
-  issue-tracking-system-url: https://launchpad.net/bugs/{id}
-  issue-tracking-system-type : 'launchpad'
-  issue-id:
-    - 1125378
+
+  issues:
+    - https://launchpad.net/bugs/1125378
+
+  type: launchpad
 
 reviews:
-  review-system-url: https://review.openstack.org/#/c/{id}
-  review-system-type: 'gerrit'
-  review-id:
-    - 22086
-    - 22616
-    - 22872
-    - 23768
-    - 22758
+
+  links:
+    - https://review.openstack.org/#/c/22086
+    - https://review.openstack.org/#/c/22616
+    - https://review.openstack.org/#/c/22872
+    - https://review.openstack.org/#/c/23768
+    - https://review.openstack.org/#/c/22758
+
+  type: gerrit

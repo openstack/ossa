@@ -1,25 +1,27 @@
-advisory-date: 2013-05-09
+date: 2013-05-09
 
-advisory-id: OSSA-2013-011
+id: OSSA-2013-011
 
-advisory-title: 'Keystone tokens not immediately invalidated when user is deleted'
+title: 'Keystone tokens not immediately invalidated when user is deleted'
 
-advisory-description: 'Sam Stoelinga reported a vulnerability in Keystone. When users
-  are deleted through Keystone v2 API, existing tokens for those users are not immediately
-  invalidated and remain valid for the duration of the token''s life (by default,
-  up to 24 hours). This may result in users retaining access when the administrator
-  of the system thought them disabled. You can workaround this issue by disabling
-  a user before deleting it: in that case the tokens belonging to the disabled user
-  are immediately invalidated. Keystone setups using the v3 API call to delete users
-  are unaffected.'
+description: 'Sam Stoelinga reported a vulnerability in Keystone. When users are deleted
+  through Keystone v2 API, existing tokens for those users are not immediately invalidated
+  and remain valid for the duration of the token''s life (by default, up to 24 hours).
+  This may result in users retaining access when the administrator of the system thought
+  them disabled. You can workaround this issue by disabling a user before deleting
 
-advisory-reference: http://lists.openstack.org/pipermail/openstack-announce/2013-May/000099.html
+  it: in that case the tokens belonging to the disabled user are immediately invalidated.
+  Keystone setups using the v3 API call to delete users are unaffected.'
+
+reference: http://lists.openstack.org/pipermail/openstack-announce/2013-May/000099.html
 
 affected-products:
+
   - product: keystone
     version: TODO
 
 vulnerabilities:
+
   - cve-id: CVE-2013-2059
     impact-assessment:
       source: 'Red Hat Product Security'
@@ -34,23 +36,24 @@ vulnerabilities:
       detail: TODO
 
 reporters:
+
   - name: 'Sam Stoelinga'
     affiliation: UNKNOWN
     reported:
       - CVE-2013-2059
 
-notes:
-
 issues:
-  issue-tracking-system-url: https://launchpad.net/bugs/{id}
-  issue-tracking-system-type : 'launchpad'
-  issue-id:
-    - 1166670
+
+  issues:
+    - https://launchpad.net/bugs/1166670
+
+  type: launchpad
 
 reviews:
-  review-system-url: https://review.openstack.org/#/c/{id}
-  review-system-type: 'gerrit'
-  review-id:
-    - 28677
-    - 28678
-    - 28679
+
+  links:
+    - https://review.openstack.org/#/c/28677
+    - https://review.openstack.org/#/c/28678
+    - https://review.openstack.org/#/c/28679
+
+  type: gerrit

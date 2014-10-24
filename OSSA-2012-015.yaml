@@ -1,20 +1,22 @@
-advisory-date: 2012-09-28
+date: 2012-09-28
 
-advisory-id: OSSA-2012-015
+id: OSSA-2012-015
 
-advisory-title: 'Some actions in Keystone admin API do not validate token'
+title: 'Some actions in Keystone admin API do not validate token'
 
-advisory-description: 'Jaxon Xu reported a vulnerability in Keystone. Two admin API
-  actions did not require a valid token.  The first was listing roles for a user.  The
-  second as  the ability to get, create, and delete services.'
+description: 'Jaxon Xu reported a vulnerability in Keystone. Two admin API actions
+  did not require a valid token.  The first was listing roles for a user.  The second
+  as  the ability to get, create, and delete services.'
 
-advisory-reference: https://lists.launchpad.net/openstack/msg17034.html
+reference: https://lists.launchpad.net/openstack/msg17034.html
 
 affected-products:
+
   - product: keystone
     version: TODO
 
 vulnerabilities:
+
   - cve-id: CVE-2012-4456
     impact-assessment:
       source: 'Red Hat Product Security'
@@ -29,25 +31,26 @@ vulnerabilities:
       detail: TODO
 
 reporters:
+
   - name: 'Jason Xu'
     affiliation: UNKNOWN
     reported:
       - CVE-2012-4456
 
-notes:
-
 issues:
-  issue-tracking-system-url: https://launchpad.net/bugs/{id}
-  issue-tracking-system-type : 'launchpad'
-  issue-id:
-    - 1006815
-    - 1006822
+
+  issues:
+    - https://launchpad.net/bugs/1006815
+    - https://launchpad.net/bugs/1006822
+
+  type: launchpad
 
 reviews:
-  review-system-url: https://review.openstack.org/#/c/{id}
-  review-system-type: 'gerrit'
-  review-id:
-    - 8104
-    - 9014
-    - 8105
-    - 9015
+
+  links:
+    - https://review.openstack.org/#/c/8104
+    - https://review.openstack.org/#/c/9014
+    - https://review.openstack.org/#/c/8105
+    - https://review.openstack.org/#/c/9015
+
+  type: gerrit

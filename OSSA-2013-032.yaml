@@ -1,22 +1,24 @@
-advisory-date: 2013-12-11
+date: 2013-12-11
 
-advisory-id: OSSA-2013-032
+id: OSSA-2013-032
 
-advisory-title: 'Keystone trust circumvention through EC2-style tokens'
+title: 'Keystone trust circumvention through EC2-style tokens'
 
-advisory-description: 'Steven Hardy from Red Hat reported a vulnerability in Keystone
-  trusts when used in conjunction with the ec2tokens API. By generating EC2 credentials
-  using a trust-scoped token, a trustee may retrieve a token not scoped to the trust,
-  therefore elevating privileges to all of the trustor''s roles. Only Keystone setups
-  enabling EC2-style authentication are affected.'
+description: 'Steven Hardy from Red Hat reported a vulnerability in Keystone trusts
+  when used in conjunction with the ec2tokens API. By generating EC2 credentials using
+  a trust-scoped token, a trustee may retrieve a token not scoped to the trust, therefore
+  elevating privileges to all of the trustor''s roles. Only Keystone setups enabling
+  EC2-style authentication are affected.'
 
-advisory-reference: http://lists.openstack.org/pipermail/openstack-announce/2013-December/000168.html
+reference: http://lists.openstack.org/pipermail/openstack-announce/2013-December/000168.html
 
 affected-products:
+
   - product: keystone
     version: TODO
 
 vulnerabilities:
+
   - cve-id: CVE-2013-6391
     impact-assessment:
       source: 'Red Hat Product Security'
@@ -31,23 +33,24 @@ vulnerabilities:
       detail: TODO
 
 reporters:
+
   - name: 'Steven Hardy'
     affiliation: 'Red Hat'
     reported:
       - CVE-2013-6391
 
-notes:
-
 issues:
-  issue-tracking-system-url: https://launchpad.net/bugs/{id}
-  issue-tracking-system-type : 'launchpad'
-  issue-id:
-    - 1242597
+
+  issues:
+    - https://launchpad.net/bugs/1242597
+
+  type: launchpad
 
 reviews:
-  review-system-url: https://review.openstack.org/#/c/{id}
-  review-system-type: 'gerrit'
-  review-id:
-    - 51973
-    - 61419
-    - 61425
+
+  links:
+    - https://review.openstack.org/#/c/51973
+    - https://review.openstack.org/#/c/61419
+    - https://review.openstack.org/#/c/61425
+
+  type: gerrit

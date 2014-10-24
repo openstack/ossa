@@ -1,22 +1,24 @@
-advisory-date: 2013-03-14
+date: 2013-03-14
 
-advisory-id: OSSA-2013-008
+id: OSSA-2013-008
 
-advisory-title: 'Nova DoS by allocating all Fixed IPs'
+title: 'Nova DoS by allocating all Fixed IPs'
 
-advisory-description: 'Vish Ishaya reported a vulnerability in Nova where there is
-  no quota for Fixed IPs. Previously the instance quota acted as a proxy for a Fixed
-  IP quota, but if your configuration allows an instance to consume more than one
-  Fixed IP via an extension such as multinic then this is no longer true. Running
-  out of Fixed IPs would result in not being able to spawn new instances.'
+description: 'Vish Ishaya reported a vulnerability in Nova where there is no quota
+  for Fixed IPs. Previously the instance quota acted as a proxy for a Fixed IP quota,
+  but if your configuration allows an instance to consume more than one Fixed IP via
+  an extension such as multinic then this is no longer true. Running out of Fixed
+  IPs would result in not being able to spawn new instances.'
 
-advisory-reference: http://lists.openstack.org/pipermail/openstack-announce/2013-March/000086.html
+reference: http://lists.openstack.org/pipermail/openstack-announce/2013-March/000086.html
 
 affected-products:
+
   - product: nova
     version: TODO
 
 vulnerabilities:
+
   - cve-id: CVE-2013-1838
     impact-assessment:
       source: 'Red Hat Product Security'
@@ -31,23 +33,24 @@ vulnerabilities:
       detail: TODO
 
 reporters:
+
   - name: 'Vish Ishaya'
     affiliation: Nebula
     reported:
       - CVE-2013-1838
 
-notes:
-
 issues:
-  issue-tracking-system-url: https://launchpad.net/bugs/{id}
-  issue-tracking-system-type : 'launchpad'
-  issue-id:
-    - 1125468
+
+  issues:
+    - https://launchpad.net/bugs/1125468
+
+  type: launchpad
 
 reviews:
-  review-system-url: https://review.openstack.org/#/c/{id}
-  review-system-type: 'gerrit'
-  review-id:
-    - 24451
-    - 24452
-    - 24453
+
+  links:
+    - https://review.openstack.org/#/c/24451
+    - https://review.openstack.org/#/c/24452
+    - https://review.openstack.org/#/c/24453
+
+  type: gerrit

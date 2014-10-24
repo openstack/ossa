@@ -1,21 +1,23 @@
-advisory-date: 2014-05-29
+date: 2014-05-29
 
-advisory-id: OSSA-2014-017
+id: OSSA-2014-017
 
-advisory-title: 'Nova VMware driver leaks rescued images'
+title: 'Nova VMware driver leaks rescued images'
 
-advisory-description: 'Jaroslav Henner from Red Hat reported a vulnerability in Nova.
-  By requesting Nova place an image into rescue, then deleting the image, an authenticated
-  user my exceed their quota. This can result in a denial of service via excessive
-  resource consumption. Only setups using the Nova VMware driver are affected.'
+description: 'Jaroslav Henner from Red Hat reported a vulnerability in Nova. By requesting
+  Nova place an image into rescue, then deleting the image, an authenticated user
+  my exceed their quota. This can result in a denial of service via excessive resource
+  consumption. Only setups using the Nova VMware driver are affected.'
 
-advisory-reference: http://lists.openstack.org/pipermail/openstack-announce/2014-May/000235.html
+reference: http://lists.openstack.org/pipermail/openstack-announce/2014-May/000235.html
 
 affected-products:
+
   - product: nova
     version: TODO
 
 vulnerabilities:
+
   - cve-id: CVE-2014-2573
     impact-assessment:
       source: 'Red Hat Product Security'
@@ -30,26 +32,27 @@ vulnerabilities:
       detail: TODO
 
 reporters:
+
   - name: 'Jaroslav Henner'
     affiliation: 'Red Hat'
     reported:
       - CVE-2014-2573
 
-notes:
-
 issues:
-  issue-tracking-system-url: https://launchpad.net/bugs/{id}
-  issue-tracking-system-type : 'launchpad'
-  issue-id:
-    - 1269418
+
+  issues:
+    - https://launchpad.net/bugs/1269418
+
+  type: launchpad
 
 reviews:
-  review-system-url: https://review.openstack.org/#/c/{id}
-  review-system-type: 'gerrit'
-  review-id:
-    - 75788
-    - 80284
-    - 88514
-    - 89217
-    - 89762
-    - 89768
+
+  links:
+    - https://review.openstack.org/#/c/75788
+    - https://review.openstack.org/#/c/80284
+    - https://review.openstack.org/#/c/88514
+    - https://review.openstack.org/#/c/89217
+    - https://review.openstack.org/#/c/89762
+    - https://review.openstack.org/#/c/89768
+
+  type: gerrit

@@ -1,22 +1,24 @@
-advisory-date: 2012-03-29
+date: 2012-03-29
 
-advisory-id: OSSA-2012-003
+id: OSSA-2012-003
 
-advisory-title: 'Long server names grow nova-api log files significantly'
+title: 'Long server names grow nova-api log files significantly'
 
-advisory-description: 'Dan Prince reported a vulnerability in OpenStack Compute (Nova)
-  API servers. By PUTing or POSTing extremely long server names to the OpenStack API,
+description: 'Dan Prince reported a vulnerability in OpenStack Compute (Nova) API
+  servers. By PUTing or POSTing extremely long server names to the OpenStack API,
   any authenticated user may grow nova-api log files significantly, potentially resulting
   in disk space exhaustion and denial of service to the affected nova-api nodes. only
   setups running the OpenStack API are affected. '
 
-advisory-reference: https://lists.launchpad.net/openstack/msg09311.html
+reference: https://lists.launchpad.net/openstack/msg09311.html
 
 affected-products:
+
   - product: nova
     version: TODO
 
 vulnerabilities:
+
   - cve-id: CVE-2012-1585
     impact-assessment:
       source: 'Red Hat Product Security'
@@ -31,22 +33,23 @@ vulnerabilities:
       detail: TODO
 
 reporters:
+
   - name: 'Dan Prince'
     affiliation: 'Red Hat'
     reported:
       - CVE-2012-1585
 
-notes:
-
 issues:
-  issue-tracking-system-url: https://launchpad.net/bugs/{id}
-  issue-tracking-system-type : 'launchpad'
-  issue-id:
-    - 962515
+
+  issues:
+    - https://launchpad.net/bugs/962515
+
+  type: launchpad
 
 reviews:
-  review-system-url: https://review.openstack.org/#/c/{id}
-  review-system-type: 'gerrit'
-  review-id:
-    - 5955
-    - 5957
+
+  links:
+    - https://review.openstack.org/#/c/5955
+    - https://review.openstack.org/#/c/5957
+
+  type: gerrit

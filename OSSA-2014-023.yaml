@@ -1,11 +1,11 @@
-advisory-date: 2014-07-08
+date: 2014-07-08
 
-advisory-id: OSSA-2014-023
+id: OSSA-2014-023
 
-advisory-title: 'Multiple XSS vulnerabilities in Horizon'
+title: 'Multiple XSS vulnerabilities in Horizon'
 
-advisory-description: 'Jason Hullinger from Hewlett Packard, Craig Lorentzen from
-  Cisco and Michael Xin from Rackspace reported 3 cross-site scripting (XSS) vulnerabilities
+description: 'Jason Hullinger from Hewlett Packard, Craig Lorentzen from Cisco and
+  Michael Xin from Rackspace reported 3 cross-site scripting (XSS) vulnerabilities
   in Horizon. A malicious Orchestration template owner or catalog may conduct an XSS
   attack once a corrupted template is used in the Orchestration/Stack section of Horizon.
   A malicious Horizon user may store an XSS attack by creating a network with a corrupted
@@ -15,13 +15,15 @@ advisory-description: 'Jason Hullinger from Hewlett Packard, Craig Lorentzen fro
   configuration/management, tenants'' confidential information, etc.). All Horizon
   setups are affected.'
 
-advisory-reference: http://lists.openstack.org/pipermail/openstack-announce/2014-July/000251.html
+reference: http://lists.openstack.org/pipermail/openstack-announce/2014-July/000251.html
 
 affected-products:
+
   - product: horizon
     version: TODO
 
 vulnerabilities:
+
   - cve-id: CVE-2014-3473
     impact-assessment:
       source: 'Red Hat Product Security'
@@ -34,6 +36,7 @@ vulnerabilities:
       source: 'Red Hat Product Security'
       type: CWE
       detail: TODO
+
   - cve-id: CVE-2014-3474
     impact-assessment:
       source: 'Red Hat Product Security'
@@ -46,6 +49,7 @@ vulnerabilities:
       source: 'Red Hat Product Security'
       type: CWE
       detail: TODO
+
   - cve-id: CVE-2014-3475
     impact-assessment:
       source: 'Red Hat Product Security'
@@ -60,18 +64,21 @@ vulnerabilities:
       detail: TODO
 
 reporters:
+
   - name: 'Jason Hullinger'
     affiliation: HP
     reported:
       - CVE-2014-3473
       - CVE-2014-3474
       - CVE-2014-3475
+
   - name: 'Craig Lorentzen'
     affiliation: Cisco
     reported:
       - CVE-2014-3473
       - CVE-2014-3474
       - CVE-2014-3475
+
   - name: 'Michael Xin'
     affiliation: Rackspace
     reported:
@@ -79,20 +86,20 @@ reporters:
       - CVE-2014-3474
       - CVE-2014-3475
 
-notes:
-
 issues:
-  issue-tracking-system-url: https://launchpad.net/bugs/{id}
-  issue-tracking-system-type : 'launchpad'
-  issue-id:
-    - 1308727
-    - 1320235
-    - 1322197
+
+  issues:
+    - https://launchpad.net/bugs/1308727
+    - https://launchpad.net/bugs/1320235
+    - https://launchpad.net/bugs/1322197
+
+  type: launchpad
 
 reviews:
-  review-system-url: https://review.openstack.org/#/c/{id}
-  review-system-type: 'gerrit'
-  review-id:
-    - 105476
-    - 105477
-    - 105478
+
+  links:
+    - https://review.openstack.org/#/c/105476
+    - https://review.openstack.org/#/c/105477
+    - https://review.openstack.org/#/c/105478
+
+  type: gerrit

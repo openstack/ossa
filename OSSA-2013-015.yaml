@@ -1,23 +1,24 @@
-advisory-date: 2013-06-13
+date: 2013-06-13
 
-advisory-id: OSSA-2013-015
+id: OSSA-2013-015
 
-advisory-title: 'Authentication bypass when using LDAP backend'
+title: 'Authentication bypass when using LDAP backend'
 
-advisory-description: 'Jose Castro Leon from CERN reported a vulnerability in the
-  way the Keystone LDAP backend authenticates users. When provided with an empty password,
-  the backend would perform an anonymous LDAP bind that would result in successfully
-  authenticating the user.  An attacker could therefore easily impersonate and get
-  valid tokens for any user. Only Keystone setups using LDAP authentication backend
-  are affected.'
+description: 'Jose Castro Leon from CERN reported a vulnerability in the way the Keystone
+  LDAP backend authenticates users. When provided with an empty password, the backend
+  would perform an anonymous LDAP bind that would result in successfully authenticating
+  the user.  An attacker could therefore easily impersonate and get valid tokens for
+  any user. Only Keystone setups using LDAP authentication backend are affected.'
 
-advisory-reference: http://lists.openstack.org/pipermail/openstack-announce/2013-June/000111.html
+reference: http://lists.openstack.org/pipermail/openstack-announce/2013-June/000111.html
 
 affected-products:
+
   - product: keystone
     version: TODO
 
 vulnerabilities:
+
   - cve-id: CVE-2013-2157
     impact-assessment:
       source: 'Red Hat Product Security'
@@ -32,23 +33,24 @@ vulnerabilities:
       detail: TODO
 
 reporters:
+
   - name: 'Jose Castro Leon'
     affiliation: CERN
     reported:
       - CVE-2013-2157
 
-notes:
-
 issues:
-  issue-tracking-system-url: https://launchpad.net/bugs/{id}
-  issue-tracking-system-type : 'launchpad'
-  issue-id:
-    - 1187305
+
+  issues:
+    - https://launchpad.net/bugs/1187305
+
+  type: launchpad
 
 reviews:
-  review-system-url: https://review.openstack.org/#/c/{id}
-  review-system-type: 'gerrit'
-  review-id:
-    - 32896
-    - 32895
-    - 32894
+
+  links:
+    - https://review.openstack.org/#/c/32896
+    - https://review.openstack.org/#/c/32895
+    - https://review.openstack.org/#/c/32894
+
+  type: gerrit

@@ -1,28 +1,29 @@
-advisory-date: 2013-10-31
+date: 2013-10-31
 
-advisory-id: OSSA-2013-029
+id: OSSA-2013-029
 
-advisory-title: 'Potential Nova denial of service through compressed disk images'
+title: 'Potential Nova denial of service through compressed disk images'
 
-advisory-description: 'Bernhard M. Wiedemann from SUSE reported a vulnerability in
-  Nova''s control of the size of disk images. By using malicious compressed qcow2
-  disk images, an authenticated user may consume large amounts of disk space for each
-  image, potentially resulting in a Denial of Service attack on Nova compute nodes
-  (CVE-2013-4463). While fixing this issue, Pádraig Brady from Red Hat additionally
-  discovered that OSSA 2013-012 did not fully address CVE-2013-2096 in the non-default
-  case where use_cow_images=False, and malicious qcow images are being transferred
-  from Glance. In that specific case, an authenticated user could still consume large
-  amounts of disk space for each instance using the malicious image, potentially also
-  resulting in a Denial of Service attack on Nova compute nodes (CVE-2013-4469). The
-  provided fixes address both issues.'
+description: 'Bernhard M. Wiedemann from SUSE reported a vulnerability in Nova''s
+  control of the size of disk images. By using malicious compressed qcow2 disk images,
+  an authenticated user may consume large amounts of disk space for each image, potentially
+  resulting in a Denial of Service attack on Nova compute nodes (CVE-2013-4463). While
+  fixing this issue, Pádraig Brady from Red Hat additionally discovered that OSSA
+  2013-012 did not fully address CVE-2013-2096 in the non-default case where use_cow_images=False,
+  and malicious qcow images are being transferred from Glance. In that specific case,
+  an authenticated user could still consume large amounts of disk space for each instance
+  using the malicious image, potentially also resulting in a Denial of Service attack
+  on Nova compute nodes (CVE-2013-4469). The provided fixes address both issues.'
 
-advisory-reference: http://lists.openstack.org/pipermail/openstack-announce/2013-October/000159.html
+reference: http://lists.openstack.org/pipermail/openstack-announce/2013-October/000159.html
 
 affected-products:
+
   - product: nova
     version: TODO
 
 vulnerabilities:
+
   - cve-id: CVE-2013-4463
     impact-assessment:
       source: 'Red Hat Product Security'
@@ -35,6 +36,7 @@ vulnerabilities:
       source: 'Red Hat Product Security'
       type: CWE
       detail: TODO
+
   - cve-id: CVE-2013-4469
     impact-assessment:
       source: 'Red Hat Product Security'
@@ -49,29 +51,31 @@ vulnerabilities:
       detail: TODO
 
 reporters:
+
   - name: 'Bernhard M. Wiedemann'
     affiliation: SUSE
     reported:
       - CVE-2013-4463
       - CVE-2013-4469
+
   - name: 'Pádraig Brady'
     affiliation: 'Red Hat'
     reported:
       - CVE-2013-4463
       - CVE-2013-4469
 
-notes:
-
 issues:
-  issue-tracking-system-url: https://launchpad.net/bugs/{id}
-  issue-tracking-system-type : 'launchpad'
-  issue-id:
-    - 1206081
+
+  issues:
+    - https://launchpad.net/bugs/1206081
+
+  type: launchpad
 
 reviews:
-  review-system-url: https://review.openstack.org/#/c/{id}
-  review-system-type: 'gerrit'
-  review-id:
-    - 54765
-    - 54767
-    - 54768
+
+  links:
+    - https://review.openstack.org/#/c/54765
+    - https://review.openstack.org/#/c/54767
+    - https://review.openstack.org/#/c/54768
+
+  type: gerrit

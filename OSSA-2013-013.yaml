@@ -1,22 +1,23 @@
-advisory-date: 2013-05-23
+date: 2013-05-23
 
-advisory-id: OSSA-2013-013
+id: OSSA-2013-013
 
-advisory-title: 'Keystone client local information disclosure'
+title: 'Keystone client local information disclosure'
 
-advisory-description: 'Jake Dahn from Nebula reported a vulnerability that the keystone
-  client only allows passwords to be updated in a clear text command-line argument,
-  which may enable other local users to obtain sensitive information by listing the
-  process and potentially leaves a record of the password within the shell command
-  history.'
+description: 'Jake Dahn from Nebula reported a vulnerability that the keystone client
+  only allows passwords to be updated in a clear text command-line argument, which
+  may enable other local users to obtain sensitive information by listing the process
+  and potentially leaves a record of the password within the shell command history.'
 
-advisory-reference: https://lists.launchpad.net/openstack/msg23923.html
+reference: https://lists.launchpad.net/openstack/msg23923.html
 
 affected-products:
+
   - product: python-keystoneclient
     version: TODO
 
 vulnerabilities:
+
   - cve-id: CVE-2013-2013
     impact-assessment:
       source: 'Red Hat Product Security'
@@ -31,21 +32,22 @@ vulnerabilities:
       detail: TODO
 
 reporters:
+
   - name: 'Jake Dahn'
     affiliation: Nebula
     reported:
       - CVE-2013-2013
 
-notes:
-
 issues:
-  issue-tracking-system-url: https://launchpad.net/bugs/{id}
-  issue-tracking-system-type : 'launchpad'
-  issue-id:
-    - 938315
+
+  issues:
+    - https://launchpad.net/bugs/938315
+
+  type: launchpad
 
 reviews:
-  review-system-url: https://review.openstack.org/#/c/{id}
-  review-system-type: 'gerrit'
-  review-id:
-    - 28702
+
+  links:
+    - https://review.openstack.org/#/c/28702
+
+  type: gerrit

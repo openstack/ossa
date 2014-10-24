@@ -1,23 +1,25 @@
-advisory-date: 2012-03-27
+date: 2012-03-27
 
-advisory-id: OSSA-2012-002
+id: OSSA-2012-002
 
-advisory-title: 'Extremely long passwords can crash Keystone'
+title: 'Extremely long passwords can crash Keystone'
 
-advisory-description: 'Dan Prince reported a vulnerability in Keystone. He discovered
-  that you can remotely trigger a crash in Keystone by sending an extremely long password.
+description: 'Dan Prince reported a vulnerability in Keystone. He discovered that
+  you can remotely trigger a crash in Keystone by sending an extremely long password.
   When Keystone is validating the password, glibc allocates space on the stack for
   the entire password. If the password is long enough, stack space can be exhausted,
   resulting in a crash. This vulnerability is mitigated by a patch to impose a reasonablelimit
   on password length (4 kB).'
 
-advisory-reference: https://lists.launchpad.net/openstack/msg09193.html
+reference: https://lists.launchpad.net/openstack/msg09193.html
 
 affected-products:
+
   - product: keystone
     version: TODO
 
 vulnerabilities:
+
   - cve-id: CVE-2012-1572
     impact-assessment:
       source: 'Red Hat Product Security'
@@ -32,22 +34,23 @@ vulnerabilities:
       detail: TODO
 
 reporters:
+
   - name: 'Dan Prince'
     affiliation: 'Red Hat'
     reported:
       - CVE-2012-1572
 
-notes:
-
 issues:
-  issue-tracking-system-url: https://launchpad.net/bugs/{id}
-  issue-tracking-system-type : 'launchpad'
-  issue-id:
-    - 957359
+
+  issues:
+    - https://launchpad.net/bugs/957359
+
+  type: launchpad
 
 reviews:
-  review-system-url: https://review.openstack.org/#/c/{id}
-  review-system-type: 'gerrit'
-  review-id:
-    - 5507
-    - 5865
+
+  links:
+    - https://review.openstack.org/#/c/5507
+    - https://review.openstack.org/#/c/5865
+
+  type: gerrit

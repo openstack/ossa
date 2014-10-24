@@ -1,11 +1,11 @@
-advisory-date: 2012-06-06
+date: 2012-06-06
 
-advisory-id: OSSA-2012-007
+id: OSSA-2012-007
 
-advisory-title: 'Security groups fail to be set correctly'
+title: 'Security groups fail to be set correctly'
 
-advisory-description: 'HP Cloud Services reported a vulnerability in Nova API handling.
-  When a security group is created via the EC2 or OS API''s that uses a protocol defined
+description: 'HP Cloud Services reported a vulnerability in Nova API handling. When
+  a security group is created via the EC2 or OS API''s that uses a protocol defined
   in the incorrect case i.e ''TCP'' rather than ''tcp'' it causes a later string comparison
   to fail. This leads to Security Groups not being set correctly. Once he ova DB has
   been polluted with the incorrect case any subsequent modifications to the security
@@ -14,13 +14,15 @@ advisory-description: 'HP Cloud Services reported a vulnerability in Nova API ha
   all protocol entries to lower case, hardening their DB against any failures of future
   code that may expect the data to be lower case. '
 
-advisory-reference: https://lists.launchpad.net/openstack/msg12883.html
+reference: https://lists.launchpad.net/openstack/msg12883.html
 
 affected-products:
+
   - product: nova
     version: TODO
 
 vulnerabilities:
+
   - cve-id: CVE-2012-2654
     impact-assessment:
       source: 'Red Hat Product Security'
@@ -35,22 +37,23 @@ vulnerabilities:
       detail: TODO
 
 reporters:
+
   - name: 'HP Cloud Services'
     affiliation: HP
     reported:
       - CVE-2012-2654
 
-notes:
-
 issues:
-  issue-tracking-system-url: https://launchpad.net/bugs/{id}
-  issue-tracking-system-type : 'launchpad'
-  issue-id:
-    - 985184
+
+  issues:
+    - https://launchpad.net/bugs/985184
+
+  type: launchpad
 
 reviews:
-  review-system-url: https://review.openstack.org/#/c/{id}
-  review-system-type: 'gerrit'
-  review-id:
-    - 8238
-    - 8239
+
+  links:
+    - https://review.openstack.org/#/c/8238
+    - https://review.openstack.org/#/c/8239
+
+  type: gerrit

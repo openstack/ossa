@@ -1,10 +1,10 @@
-advisory-date: 2012-07-03
+date: 2012-07-03
 
-advisory-id: OSSA-2012-008
+id: OSSA-2012-008
 
-advisory-title: 'Arbitrary file injection/corruption through directory traversal'
+title: 'Arbitrary file injection/corruption through directory traversal'
 
-advisory-description: 'Matthias Weckbecker from SUSE Security team reported a vulnerability
+description: 'Matthias Weckbecker from SUSE Security team reported a vulnerability
   in Nova compute nodes handling of file injection in disk images. By requesting iles
   to be injected in malicious paths, a remote authenticated user could inject files
   in arbitrary locations on the host file system, potentially resulting in full compromise
@@ -15,13 +15,15 @@ advisory-description: 'Matthias Weckbecker from SUSE Security team reported a vu
   arbitrary files on the host filesystem, potentially resulting in a denial of service.
   This affects all setups. '
 
-advisory-reference: https://lists.launchpad.net/openstack/msg14089.html
+reference: https://lists.launchpad.net/openstack/msg14089.html
 
 affected-products:
+
   - product: nova
     version: TODO
 
 vulnerabilities:
+
   - cve-id: CVE-2012-3360
     impact-assessment:
       source: 'Red Hat Product Security'
@@ -34,6 +36,7 @@ vulnerabilities:
       source: 'Red Hat Product Security'
       type: CWE
       detail: TODO
+
   - cve-id: CVE-2012-3361
     impact-assessment:
       source: 'Red Hat Product Security'
@@ -48,29 +51,31 @@ vulnerabilities:
       detail: TODO
 
 reporters:
+
   - name: 'Matthias Weckbecker'
     affiliation: SUSE
     reported:
       - CVE-2012-3360
       - CVE-2012-3361
+
   - name: 'Pádraig Brady'
     affiliation: 'Red Hat'
     reported:
       - CVE-2012-3360
       - CVE-2012-3361
 
-notes:
-
 issues:
-  issue-tracking-system-url: https://launchpad.net/bugs/{id}
-  issue-tracking-system-type : 'launchpad'
-  issue-id:
-    - 1015531
+
+  issues:
+    - https://launchpad.net/bugs/1015531
+
+  type: launchpad
 
 reviews:
-  review-system-url: https://review.openstack.org/#/c/{id}
-  review-system-type: 'gerrit'
-  review-id:
-    - 9266
-    - 9267
-    - 9268
+
+  links:
+    - https://review.openstack.org/#/c/9266
+    - https://review.openstack.org/#/c/9267
+    - https://review.openstack.org/#/c/9268
+
+  type: gerrit

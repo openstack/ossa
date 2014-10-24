@@ -1,24 +1,26 @@
-advisory-date: 2013-05-09
+date: 2013-05-09
 
-advisory-id: OSSA-2013-010
+id: OSSA-2013-010
 
-advisory-title: 'Nova uses insecure keystone middleware tmpdir by default'
+title: 'Nova uses insecure keystone middleware tmpdir by default'
 
-advisory-description: 'Grant Murphy from Red Hat and Anton Lundin both independently
-  reported a vulnerability in Nova''s default location for the Keystone middleware
-  signing directory (signing_dir). By previously setting up a malicious directory
-  structure, an attacker with local shell access on the Nova node could potentially
-  issue forged tokens that would be accepted by the middleware. Only setups that use
-  the default value for signing_dir are affected. Note that future versions of the
-  Keystone middleware will issue a warning if an insecure signing directory is used. '
+description: 'Grant Murphy from Red Hat and Anton Lundin both independently reported
+  a vulnerability in Nova''s default location for the Keystone middleware signing
+  directory (signing_dir). By previously setting up a malicious directory structure,
+  an attacker with local shell access on the Nova node could potentially issue forged
+  tokens that would be accepted by the middleware. Only setups that use the default
+  value for signing_dir are affected. Note that future versions of the Keystone middleware
+  will issue a warning if an insecure signing directory is used. '
 
-advisory-reference: http://lists.openstack.org/pipermail/openstack-announce/2013-May/000098.html
+reference: http://lists.openstack.org/pipermail/openstack-announce/2013-May/000098.html
 
 affected-products:
+
   - product: nova
     version: TODO
 
 vulnerabilities:
+
   - cve-id: CVE-2013-2030
     impact-assessment:
       source: 'Red Hat Product Security'
@@ -33,27 +35,29 @@ vulnerabilities:
       detail: TODO
 
 reporters:
+
   - name: 'Grant Murphy'
     affiliation: 'Red Hat'
     reported:
       - CVE-2013-2030
+
   - name: 'Anton Lundin'
     affiliation: UNKNOWN
     reported:
       - CVE-2013-2030
 
-notes:
-
 issues:
-  issue-tracking-system-url: https://launchpad.net/bugs/{id}
-  issue-tracking-system-type : 'launchpad'
-  issue-id:
-    - 1174608
+
+  issues:
+    - https://launchpad.net/bugs/1174608
+
+  type: launchpad
 
 reviews:
-  review-system-url: https://review.openstack.org/#/c/{id}
-  review-system-type: 'gerrit'
-  review-id:
-    - 28568
-    - 28569
-    - 28570
+
+  links:
+    - https://review.openstack.org/#/c/28568
+    - https://review.openstack.org/#/c/28569
+    - https://review.openstack.org/#/c/28570
+
+  type: gerrit

@@ -1,10 +1,10 @@
-advisory-date: 2012-08-30
+date: 2012-08-30
 
-advisory-id: OSSA-2012-013
+id: OSSA-2012-013
 
-advisory-title: 'Lack of authorization for adding users to tenants'
+title: 'Lack of authorization for adding users to tenants'
 
-advisory-description: 'Dolph Mathews reported a vulnerability in Keystone. When attempting
+description: 'Dolph Mathews reported a vulnerability in Keystone. When attempting
   to update a user''s default tenant, Keystone will only partially deny the request
   when a user is not authorized to complete  this action. The API responds with 401
   Not Authorized and the user''s default tenant is not changed. However, the user
@@ -12,13 +12,15 @@ advisory-description: 'Dolph Mathews reported a vulnerability in Keystone. When 
   can reach the administrative API (deployed on port 35357, by default) can add any
   user to any tenant.'
 
-advisory-reference: https://lists.launchpad.net/openstack/msg16282.html
+reference: https://lists.launchpad.net/openstack/msg16282.html
 
 affected-products:
+
   - product: keystone
     version: TODO
 
 vulnerabilities:
+
   - cve-id: CVE-2012-3542
     impact-assessment:
       source: 'Red Hat Product Security'
@@ -33,21 +35,22 @@ vulnerabilities:
       detail: TODO
 
 reporters:
+
   - name: 'Dolph Mathews'
     affiliation: Rackspace
     reported:
       - CVE-2012-3542
 
-notes:
-
 issues:
-  issue-tracking-system-url: https://launchpad.net/bugs/{id}
-  issue-tracking-system-type : 'launchpad'
-  issue-id:
-    - 1040626
+
+  issues:
+    - https://launchpad.net/bugs/1040626
+
+  type: launchpad
 
 reviews:
-  review-system-url: https://review.openstack.org/#/c/{id}
-  review-system-type: 'gerrit'
-  review-id:
-    - 12194
+
+  links:
+    - https://review.openstack.org/#/c/12194
+
+  type: gerrit

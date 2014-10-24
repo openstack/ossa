@@ -1,22 +1,24 @@
-advisory-date: 2013-11-14
+date: 2013-11-14
 
-advisory-id: OSSA-2013-030
+id: OSSA-2013-030
 
-advisory-title: 'XenAPI security groups not kept through migrate or resize'
+title: 'XenAPI security groups not kept through migrate or resize'
 
-advisory-description: 'Chris Behrens with Rackspace and Vangelis Tasoulas reported
-  a set of vulnerabilities in OpenStack Nova''s XenAPI hypervisor backend. When migrating
-  or resizing an instance, including live migration, existing security groups may
-  not be reapplied after the operation completes. This can lead to unintentional network
+description: 'Chris Behrens with Rackspace and Vangelis Tasoulas reported a set of
+  vulnerabilities in OpenStack Nova''s XenAPI hypervisor backend. When migrating or
+  resizing an instance, including live migration, existing security groups may not
+  be reapplied after the operation completes. This can lead to unintentional network
   exposure for virtual machines. Only setups using the XenAPI backend are affected.'
 
-advisory-reference: http://lists.openstack.org/pipermail/openstack-announce/2013-November/000161.html
+reference: http://lists.openstack.org/pipermail/openstack-announce/2013-November/000161.html
 
 affected-products:
+
   - product: nova
     version: TODO
 
 vulnerabilities:
+
   - cve-id: CVE-2013-4497
     impact-assessment:
       source: 'Red Hat Product Security'
@@ -31,27 +33,29 @@ vulnerabilities:
       detail: TODO
 
 reporters:
+
   - name: 'Chris Behrens'
     affiliation: Rackspace
     reported:
       - CVE-2013-4497
+
   - name: 'Vangelis Tasoulas'
     affiliation: UNKNOWN
     reported:
       - CVE-2013-4497
 
-notes:
-
 issues:
-  issue-tracking-system-url: https://launchpad.net/bugs/{id}
-  issue-tracking-system-type : 'launchpad'
-  issue-id:
-    - 1073306
-    - 1202266
+
+  issues:
+    - https://launchpad.net/bugs/1073306
+    - https://launchpad.net/bugs/1202266
+
+  type: launchpad
 
 reviews:
-  review-system-url: https://review.openstack.org/#/c/{id}
-  review-system-type: 'gerrit'
-  review-id:
-    - 52987
-    - 52989
+
+  links:
+    - https://review.openstack.org/#/c/52987
+    - https://review.openstack.org/#/c/52989
+
+  type: gerrit

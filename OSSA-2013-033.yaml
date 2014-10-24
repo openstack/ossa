@@ -1,24 +1,27 @@
-advisory-date: 2013-12-11
+date: 2013-12-11
 
-advisory-id: OSSA-2013-033
+id: OSSA-2013-033
 
-advisory-title: 'Metadata queries from Neutron to Nova are not restricted by tenant'
+title: 'Metadata queries from Neutron to Nova are not restricted by tenant'
 
-advisory-description: 'Aaron Rosen from VMware reported a vulnerability in the metadata
-  access from OpenStack Neutron to Nova. Because of a missing authorization check
-  on port binding, by guessing an instance_id a tenant may retrieve another tenant''s
-  metadata resulting in information disclosure. Only OpenStack setups running neutron-metadata-agent
+description: 'Aaron Rosen from VMware reported a vulnerability in the metadata access
+  from OpenStack Neutron to Nova. Because of a missing authorization check on port
+  binding, by guessing an instance_id a tenant may retrieve another tenant''s metadata
+  resulting in information disclosure. Only OpenStack setups running neutron-metadata-agent
   are affected. '
 
-advisory-reference: http://lists.openstack.org/pipermail/openstack-announce/2013-December/000169.html
+reference: http://lists.openstack.org/pipermail/openstack-announce/2013-December/000169.html
 
 affected-products:
+
   - product: neutron
     version: TODO
+
   - product: nova
     version: TODO
 
 vulnerabilities:
+
   - cve-id: CVE-2013-6419
     impact-assessment:
       source: 'Red Hat Product Security'
@@ -33,26 +36,27 @@ vulnerabilities:
       detail: TODO
 
 reporters:
+
   - name: 'Aaron Rosen'
     affiliation: VMware
     reported:
       - CVE-2013-6419
 
-notes:
-
 issues:
-  issue-tracking-system-url: https://launchpad.net/bugs/{id}
-  issue-tracking-system-type : 'launchpad'
-  issue-id:
-    - 1235450
+
+  issues:
+    - https://launchpad.net/bugs/1235450
+
+  type: launchpad
 
 reviews:
-  review-system-url: https://review.openstack.org/#/c/{id}
-  review-system-type: 'gerrit'
-  review-id:
-    - 61439
-    - 61428
-    - 61442
-    - 61435
-    - 61443
-    - 61437
+
+  links:
+    - https://review.openstack.org/#/c/61439
+    - https://review.openstack.org/#/c/61428
+    - https://review.openstack.org/#/c/61442
+    - https://review.openstack.org/#/c/61435
+    - https://review.openstack.org/#/c/61443
+    - https://review.openstack.org/#/c/61437
+
+  type: gerrit

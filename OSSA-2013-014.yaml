@@ -1,25 +1,28 @@
-advisory-date: 2013-05-28
+date: 2013-05-28
 
-advisory-id: OSSA-2013-014
+id: OSSA-2013-014
 
-advisory-title: 'Missing expiration check in Keystone PKI tokens validation'
+title: 'Missing expiration check in Keystone PKI tokens validation'
 
-advisory-description: 'Eoghan Glynn from Red Hat and Alex Meade from Rackspace both
-  reported a vulnerability in expiry checks for PKI tokens in the Keystone authentication
-  middleware. Expired tokens for authenticated users could continue to be used, potentially
-  resulting in the bypass of intended security policies. The effect of PKI token revocation
+description: 'Eoghan Glynn from Red Hat and Alex Meade from Rackspace both reported
+  a vulnerability in expiry checks for PKI tokens in the Keystone authentication middleware.
+  Expired tokens for authenticated users could continue to be used, potentially resulting
+  in the bypass of intended security policies. The effect of PKI token revocation
   is also reversed when the token expires, in the sense that a revoked token is once
   again treated as being valid. Only setups using PKI tokens are affected.'
 
-advisory-reference: http://lists.openstack.org/pipermail/openstack-announce/2013-May/000106.html
+reference: http://lists.openstack.org/pipermail/openstack-announce/2013-May/000106.html
 
 affected-products:
+
   - product: keystone
     version: TODO
+
   - product: python-keystoneclient
     version: TODO
 
 vulnerabilities:
+
   - cve-id: CVE-2013-2104
     impact-assessment:
       source: 'Red Hat Product Security'
@@ -34,26 +37,28 @@ vulnerabilities:
       detail: TODO
 
 reporters:
+
   - name: 'Eoghan Glynn'
     affiliation: 'Red Hat'
     reported:
       - CVE-2013-2104
+
   - name: 'Alex Meade'
     affiliation: Rackspace
     reported:
       - CVE-2013-2104
 
-notes:
-
 issues:
-  issue-tracking-system-url: https://launchpad.net/bugs/{id}
-  issue-tracking-system-type : 'launchpad'
-  issue-id:
-    - 1179615
+
+  issues:
+    - https://launchpad.net/bugs/1179615
+
+  type: launchpad
 
 reviews:
-  review-system-url: https://review.openstack.org/#/c/{id}
-  review-system-type: 'gerrit'
-  review-id:
-    - 30742
-    - 30743
+
+  links:
+    - https://review.openstack.org/#/c/30742
+    - https://review.openstack.org/#/c/30743
+
+  type: gerrit

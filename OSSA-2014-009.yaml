@@ -1,24 +1,26 @@
-advisory-date: 2014-03-27
+date: 2014-03-27
 
-advisory-id: OSSA-2014-009
+id: OSSA-2014-009
 
-advisory-title: 'Nova host data leak to vm instance in rescue mode'
+title: 'Nova host data leak to vm instance in rescue mode'
 
-advisory-description: 'Stanislaw Pitucha from Hewlett Packard reported a vulnerability
-  in the Nova instance rescue mode. By overwriting the disk inside an instance with
-  a malicious image and switching the instance to rescue mode, an authenticated user
-  would be able to leak an arbitrary file from the compute host to the virtual instance.
-  Note that the host file must be readable by the libvirt/kvm context to be exposed.
-  Only setups using libvirt to spawn instance, and having "use_cow_images = False"
-  in Nova configuration are affected.'
+description: 'Stanislaw Pitucha from Hewlett Packard reported a vulnerability in the
+  Nova instance rescue mode. By overwriting the disk inside an instance with a malicious
+  image and switching the instance to rescue mode, an authenticated user would be
+  able to leak an arbitrary file from the compute host to the virtual instance. Note
+  that the host file must be readable by the libvirt/kvm context to be exposed. Only
+  setups using libvirt to spawn instance, and having "use_cow_images = False" in Nova
+  configuration are affected.'
 
-advisory-reference: http://lists.openstack.org/pipermail/openstack-announce/2014-March/000213.html
+reference: http://lists.openstack.org/pipermail/openstack-announce/2014-March/000213.html
 
 affected-products:
+
   - product: nova
     version: TODO
 
 vulnerabilities:
+
   - cve-id: CVE-2014-0134
     impact-assessment:
       source: 'Red Hat Product Security'
@@ -33,23 +35,24 @@ vulnerabilities:
       detail: TODO
 
 reporters:
+
   - name: 'Stanislaw Pitucha'
     affiliation: HP
     reported:
       - CVE-2014-0134
 
-notes: 'Review 86353 not included in advisory.'
-
 issues:
-  issue-tracking-system-url: https://launchpad.net/bugs/{id}
-  issue-tracking-system-type : 'launchpad'
-  issue-id:
-    - 1221190
+
+  issues:
+    - https://launchpad.net/bugs/1221190
+
+  type: launchpad
 
 reviews:
-  review-system-url: https://review.openstack.org/#/c/{id}
-  review-system-type: 'gerrit'
-  review-id:
-    - 82841
-    - 82840
-    - 86353
+
+  links:
+    - https://review.openstack.org/#/c/82841
+    - https://review.openstack.org/#/c/82840
+    - https://review.openstack.org/#/c/86353
+
+  type: gerrit

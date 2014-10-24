@@ -1,22 +1,24 @@
-advisory-date: 2013-07-30
+date: 2013-07-30
 
-advisory-id: OSSA-2013-018
+id: OSSA-2013-018
 
-advisory-title: 'Missing SSL certificate check in Python glance client'
+title: 'Missing SSL certificate check in Python glance client'
 
-advisory-description: 'Thomas Leaman from HP reported that the Python Glance client
-  was failing to properly check certificates during the establishment of HTTPS connections.
-  A remote attacker with access over segments of the network between client and server
+description: 'Thomas Leaman from HP reported that the Python Glance client was failing
+  to properly check certificates during the establishment of HTTPS connections. A
+  remote attacker with access over segments of the network between client and server
   could potentially set up a man-in the-middle attack and access the contents of the
   Glance client request (or response).'
 
-advisory-reference: http://lists.openstack.org/pipermail/openstack/2013-July/000076.html
+reference: http://lists.openstack.org/pipermail/openstack/2013-July/000076.html
 
 affected-products:
+
   - product: python-glanceclient
     version: TODO
 
 vulnerabilities:
+
   - cve-id: CVE-2013-4111
     impact-assessment:
       source: 'Red Hat Product Security'
@@ -31,21 +33,22 @@ vulnerabilities:
       detail: TODO
 
 reporters:
+
   - name: 'Thomas Leaman'
     affiliation: HP
     reported:
       - CVE-2013-4111
 
-notes:
-
 issues:
-  issue-tracking-system-url: https://launchpad.net/bugs/{id}
-  issue-tracking-system-type : 'launchpad'
-  issue-id:
-    - 1192229
+
+  issues:
+    - https://launchpad.net/bugs/1192229
+
+  type: launchpad
 
 reviews:
-  review-system-url: https://review.openstack.org/#/c/{id}
-  review-system-type: 'gerrit'
-  review-id:
-    - 33464
+
+  links:
+    - https://review.openstack.org/#/c/33464
+
+  type: gerrit

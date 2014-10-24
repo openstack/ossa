@@ -1,23 +1,26 @@
-advisory-date: 2012-11-28
+date: 2012-11-28
 
-advisory-id: OSSA-2012-018
+id: OSSA-2012-018
 
-advisory-title: 'EC2-style credentials invalidation issue'
+title: 'EC2-style credentials invalidation issue'
 
-advisory-description: 'Vijaya Erukala reported a vulnerability in Keystone EC2-style
-  credentials invalidation: when a user is removed from a tenant, issued EC2-style
-  credentials would continue to be valid for that tenant. An authenticated and authorized
-  user could potentially leverage this vulnerability to extend his access beyond the
-  account owner expectations. Only setups enabling EC2-style credentials (for example
-  enabling EC2 API in Nova) are affected.'
+description: 'Vijaya Erukala reported a vulnerability in Keystone EC2-style credentials
 
-advisory-reference: http://lists.openstack.org/pipermail/openstack-announce/2012-November/000055.html
+  invalidation: when a user is removed from a tenant, issued EC2-style credentials
+  would continue to be valid for that tenant. An authenticated and authorized user
+  could potentially leverage this vulnerability to extend his access beyond the account
+  owner expectations. Only setups enabling EC2-style credentials (for example enabling
+  EC2 API in Nova) are affected.'
+
+reference: http://lists.openstack.org/pipermail/openstack-announce/2012-November/000055.html
 
 affected-products:
+
   - product: keystone
     version: TODO
 
 vulnerabilities:
+
   - cve-id: CVE-2012-5571
     impact-assessment:
       source: 'Red Hat Product Security'
@@ -32,23 +35,24 @@ vulnerabilities:
       detail: TODO
 
 reporters:
+
   - name: 'Vijaya Erukala'
     affiliation: UNKNOWN
     reported:
       - CVE-2012-5571
 
-notes:
-
 issues:
-  issue-tracking-system-url: https://launchpad.net/bugs/{id}
-  issue-tracking-system-type : 'launchpad'
-  issue-id:
-    - 1064914
+
+  issues:
+    - https://launchpad.net/bugs/1064914
+
+  type: launchpad
 
 reviews:
-  review-system-url: https://review.openstack.org/#/c/{id}
-  review-system-type: 'gerrit'
-  review-id:
-    - 16028
-    - 16304
-    - 16760
+
+  links:
+    - https://review.openstack.org/#/c/16028
+    - https://review.openstack.org/#/c/16304
+    - https://review.openstack.org/#/c/16760
+
+  type: gerrit

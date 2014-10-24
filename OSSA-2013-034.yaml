@@ -1,21 +1,23 @@
-advisory-date: 2013-12-11
+date: 2013-12-11
 
-advisory-id: OSSA-2013-034
+id: OSSA-2013-034
 
-advisory-title: 'Heat CFN policy rules not all enforced'
+title: 'Heat CFN policy rules not all enforced'
 
-advisory-description: 'Steven Hardy from Red Hat reported a vulnerability in Heat''s
-  default API policy enforcement. By calling the CreateStack or UpdateStack methods,
-  an in-instance user may be able to create or update a stack in violation of the
-  default policy. Only setups using Heat''s cloudformation-compatible API are affected.'
+description: 'Steven Hardy from Red Hat reported a vulnerability in Heat''s default
+  API policy enforcement. By calling the CreateStack or UpdateStack methods, an in-instance
+  user may be able to create or update a stack in violation of the default policy.
+  Only setups using Heat''s cloudformation-compatible API are affected.'
 
-advisory-reference: http://lists.openstack.org/pipermail/openstack-announce/2013-December/000170.html
+reference: http://lists.openstack.org/pipermail/openstack-announce/2013-December/000170.html
 
 affected-products:
+
   - product: heat
     version: TODO
 
 vulnerabilities:
+
   - cve-id: CVE-2013-6426
     impact-assessment:
       source: 'Red Hat Product Security'
@@ -30,22 +32,23 @@ vulnerabilities:
       detail: TODO
 
 reporters:
+
   - name: 'Steven Hardy'
     affiliation: 'Red Hat'
     reported:
       - CVE-2013-6426
 
-notes:
-
 issues:
-  issue-tracking-system-url: https://launchpad.net/bugs/{id}
-  issue-tracking-system-type : 'launchpad'
-  issue-id:
-    - 1256049
+
+  issues:
+    - https://launchpad.net/bugs/1256049
+
+  type: launchpad
 
 reviews:
-  review-system-url: https://review.openstack.org/#/c/{id}
-  review-system-type: 'gerrit'
-  review-id:
-    - 61452
-    - 61454
+
+  links:
+    - https://review.openstack.org/#/c/61452
+    - https://review.openstack.org/#/c/61454
+
+  type: gerrit

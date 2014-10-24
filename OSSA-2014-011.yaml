@@ -1,23 +1,24 @@
-advisory-date: 2014-04-09
+date: 2014-04-09
 
-advisory-id: OSSA-2014-011
+id: OSSA-2014-011
 
-advisory-title: 'RBAC policy not properly enforced in Nova EC2 API'
+title: 'RBAC policy not properly enforced in Nova EC2 API'
 
-advisory-description: 'Marc Heckmann from Ubisoft reported a vulnerability in the
-  Nova EC2 API security group implementation. RBAC policies are not enforced when
-  using the EC2 API, in particular the add_rules, remove_rules and destroy methods.
-  A restricted user may overcome his limitation by using EC2 API resulting in unauthorized
-  action on security groups. Only setups using non-default RBAC rules for Nova may
-  be affected.'
+description: 'Marc Heckmann from Ubisoft reported a vulnerability in the Nova EC2
+  API security group implementation. RBAC policies are not enforced when using the
+  EC2 API, in particular the add_rules, remove_rules and destroy methods. A restricted
+  user may overcome his limitation by using EC2 API resulting in unauthorized action
+  on security groups. Only setups using non-default RBAC rules for Nova may be affected.'
 
-advisory-reference: http://lists.openstack.org/pipermail/openstack-announce/2014-April/000219.html
+reference: http://lists.openstack.org/pipermail/openstack-announce/2014-April/000219.html
 
 affected-products:
+
   - product: nova
     version: TODO
 
 vulnerabilities:
+
   - cve-id: CVE-2014-0167
     impact-assessment:
       source: 'Red Hat Product Security'
@@ -32,23 +33,24 @@ vulnerabilities:
       detail: TODO
 
 reporters:
+
   - name: 'Marc Heckmann'
     affiliation: Ubisoft
     reported:
       - CVE-2014-0167
 
-notes:
-
 issues:
-  issue-tracking-system-url: https://launchpad.net/bugs/{id}
-  issue-tracking-system-type : 'launchpad'
-  issue-id:
-    - 1290537
+
+  issues:
+    - https://launchpad.net/bugs/1290537
+
+  type: launchpad
 
 reviews:
-  review-system-url: https://review.openstack.org/#/c/{id}
-  review-system-type: 'gerrit'
-  review-id:
-    - 86358
-    - 86360
-    - 86361
+
+  links:
+    - https://review.openstack.org/#/c/86358
+    - https://review.openstack.org/#/c/86360
+    - https://review.openstack.org/#/c/86361
+
+  type: gerrit

@@ -1,24 +1,26 @@
-advisory-date: 2014-03-04
+date: 2014-03-04
 
-advisory-id: OSSA-2014-006
+id: OSSA-2014-006
 
-advisory-title: 'Trustee token revocation does not work with memcache backend'
+title: 'Trustee token revocation does not work with memcache backend'
 
-advisory-description: 'Morgan Fainberg from Metacloud reported a vulnerability in
-  the Keystone memcache token backend. When a trustor issues a trust token with impersonation
-  enabled, the token is only added to the trustor''s token list and not to the trustee''s
-  token list. This results in the trust token not being invalidated by the trustee''s
-  token revocation (bulk revocation). This is most noticeable when the trustee user
-  is disabled or the trustee changes a password. Only setups using the memcache backend
-  for tokens in Keystone are affected.'
+description: 'Morgan Fainberg from Metacloud reported a vulnerability in the Keystone
+  memcache token backend. When a trustor issues a trust token with impersonation enabled,
+  the token is only added to the trustor''s token list and not to the trustee''s token
+  list. This results in the trust token not being invalidated by the trustee''s token
+  revocation (bulk revocation). This is most noticeable when the trustee user is disabled
+  or the trustee changes a password. Only setups using the memcache backend for tokens
+  in Keystone are affected.'
 
-advisory-reference: http://lists.openstack.org/pipermail/openstack-announce/2014-March/000204.html
+reference: http://lists.openstack.org/pipermail/openstack-announce/2014-March/000204.html
 
 affected-products:
+
   - product: keystone
     version: TODO
 
 vulnerabilities:
+
   - cve-id: CVE-2014-2237
     impact-assessment:
       source: 'Red Hat Product Security'
@@ -33,23 +35,24 @@ vulnerabilities:
       detail: TODO
 
 reporters:
+
   - name: 'Morgan Fainberg'
     affiliation: Metacloud
     reported:
       - CVE-2014-2237
 
-notes:
-
 issues:
-  issue-tracking-system-url: https://launchpad.net/bugs/{id}
-  issue-tracking-system-type : 'launchpad'
-  issue-id:
-    - 1260080
+
+  issues:
+    - https://launchpad.net/bugs/1260080
+
+  type: launchpad
 
 reviews:
-  review-system-url: https://review.openstack.org/#/c/{id}
-  review-system-type: 'gerrit'
-  review-id:
-    - 60743
-    - 75521
-    - 75526
+
+  links:
+    - https://review.openstack.org/#/c/60743
+    - https://review.openstack.org/#/c/75521
+    - https://review.openstack.org/#/c/75526
+
+  type: gerrit

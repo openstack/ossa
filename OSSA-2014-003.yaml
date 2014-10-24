@@ -1,22 +1,24 @@
-advisory-date: 2014-01-23
+date: 2014-01-23
 
-advisory-id: OSSA-2014-003
+id: OSSA-2014-003
 
-advisory-title: 'Live migration can leak root disk into ephemeral storage'
+title: 'Live migration can leak root disk into ephemeral storage'
 
-advisory-description: 'Loganathan Parthipan from Hewlett Packard reported a vulnerability
-  in the Nova libvirt driver. By spawning a server with the same flavor as another
-  user''s migrated virtual machine, an authenticated user can potentially access that
-  user''s snapshot content resulting in information leakage. Only setups using KVM
-  live block migration are affected.'
+description: 'Loganathan Parthipan from Hewlett Packard reported a vulnerability in
+  the Nova libvirt driver. By spawning a server with the same flavor as another user''s
+  migrated virtual machine, an authenticated user can potentially access that user''s
+  snapshot content resulting in information leakage. Only setups using KVM live block
+  migration are affected.'
 
-advisory-reference: http://lists.openstack.org/pipermail/openstack-announce/2014-January/000188.html
+reference: http://lists.openstack.org/pipermail/openstack-announce/2014-January/000188.html
 
 affected-products:
+
   - product: nova
     version: TODO
 
 vulnerabilities:
+
   - cve-id: CVE-2013-7130
     impact-assessment:
       source: 'Red Hat Product Security'
@@ -31,23 +33,24 @@ vulnerabilities:
       detail: TODO
 
 reporters:
+
   - name: 'Loganathan Parthipan'
     affiliation: HP
     reported:
       - CVE-2013-7130
 
-notes:
-
 issues:
-  issue-tracking-system-url: https://launchpad.net/bugs/{id}
-  issue-tracking-system-type : 'launchpad'
-  issue-id:
-    - 1251590
+
+  issues:
+    - https://launchpad.net/bugs/1251590
+
+  type: launchpad
 
 reviews:
-  review-system-url: https://review.openstack.org/#/c/{id}
-  review-system-type: 'gerrit'
-  review-id:
-    - 68658
-    - 68659
-    - 68660
+
+  links:
+    - https://review.openstack.org/#/c/68658
+    - https://review.openstack.org/#/c/68659
+    - https://review.openstack.org/#/c/68660
+
+  type: gerrit

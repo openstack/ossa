@@ -1,26 +1,29 @@
-advisory-date: 2013-08-08
+date: 2013-08-08
 
-advisory-id: OSSA-2013-023
+id: OSSA-2013-023
 
-advisory-title: 'Denial of Service using XML entities in Nova/Cinder extensions'
+title: 'Denial of Service using XML entities in Nova/Cinder extensions'
 
-advisory-description: 'Grant Murphy from Red Hat reported that vulnerabilities in
-  XML request parsers were not fully patched in OSSA 2013-004. By leveraging XML entity
-  expansion in specific extensions, an unauthenticated attacker may still consume
-  excessive resources on the Nova (CVE-2013-4179) or Cinder (CVE-2013-4202) API servers,
-  resulting in a denial of service and potentially a crash. Only Nova setups making
-  use of the security group extension in Grizzly are affected. Only Cinder setups
-  making use of the backups or volume transfer API extension in Grizzly are affected.'
+description: 'Grant Murphy from Red Hat reported that vulnerabilities in XML request
+  parsers were not fully patched in OSSA 2013-004. By leveraging XML entity expansion
+  in specific extensions, an unauthenticated attacker may still consume excessive
+  resources on the Nova (CVE-2013-4179) or Cinder (CVE-2013-4202) API servers, resulting
+  in a denial of service and potentially a crash. Only Nova setups making use of the
+  security group extension in Grizzly are affected. Only Cinder setups making use
+  of the backups or volume transfer API extension in Grizzly are affected.'
 
-advisory-reference: http://lists.openstack.org/pipermail/openstack-announce/2013-August/000133.html
+reference: http://lists.openstack.org/pipermail/openstack-announce/2013-August/000133.html
 
 affected-products:
+
   - product: nova
     version: TODO
+
   - product: cinder
     version: TODO
 
 vulnerabilities:
+
   - cve-id: CVE-2013-4179
     impact-assessment:
       source: 'Red Hat Product Security'
@@ -33,6 +36,7 @@ vulnerabilities:
       source: 'Red Hat Product Security'
       type: CWE
       detail: TODO
+
   - cve-id: CVE-2013-4202
     impact-assessment:
       source: 'Red Hat Product Security'
@@ -47,25 +51,26 @@ vulnerabilities:
       detail: TODO
 
 reporters:
+
   - name: 'Grant Murphy'
     affiliation: 'Red Hat'
     reported:
       - CVE-2013-4179
       - CVE-2013-4202
 
-notes:
-
 issues:
-  issue-tracking-system-url: https://launchpad.net/bugs/{id}
-  issue-tracking-system-type : 'launchpad'
-  issue-id:
-    - 1190229
+
+  issues:
+    - https://launchpad.net/bugs/1190229
+
+  type: launchpad
 
 reviews:
-  review-system-url: https://review.openstack.org/#/c/{id}
-  review-system-type: 'gerrit'
-  review-id:
-    - 40879
-    - 40881
-    - 40880
-    - 40883
+
+  links:
+    - https://review.openstack.org/#/c/40879
+    - https://review.openstack.org/#/c/40881
+    - https://review.openstack.org/#/c/40880
+    - https://review.openstack.org/#/c/40883
+
+  type: gerrit

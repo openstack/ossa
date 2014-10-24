@@ -1,22 +1,23 @@
-advisory-date: 2014-01-13
+date: 2014-01-13
 
-advisory-id: OSSA-2014-001
+id: OSSA-2014-001
 
-advisory-title: 'Nova live snapshots use an insecure local directory'
+title: 'Nova live snapshots use an insecure local directory'
 
-advisory-description: 'Daniel Berrange from Red Hat reported that the directories
-  used to temporarily store live snapshots on Nova compute nodes were writable to
-  all local users. A local attacker with shell access on compute nodes could therefore
-  read and modify the contents of live snapshots before those are uploaded to the
-  image service.'
+description: 'Daniel Berrange from Red Hat reported that the directories used to temporarily
+  store live snapshots on Nova compute nodes were writable to all local users. A local
+  attacker with shell access on compute nodes could therefore read and modify the
+  contents of live snapshots before those are uploaded to the image service.'
 
-advisory-reference: http://lists.openstack.org/pipermail/openstack-announce/2014-January/000184.html
+reference: http://lists.openstack.org/pipermail/openstack-announce/2014-January/000184.html
 
 affected-products:
+
   - product: nova
     version: TODO
 
 vulnerabilities:
+
   - cve-id: CVE-2013-7048
     impact-assessment:
       source: 'Red Hat Product Security'
@@ -31,23 +32,24 @@ vulnerabilities:
       detail: TODO
 
 reporters:
+
   - name: 'Daniel Berrange'
     affiliation: 'Red Hat'
     reported:
       - CVE-2013-7048
 
-notes:
-
 issues:
-  issue-tracking-system-url: https://launchpad.net/bugs/{id}
-  issue-tracking-system-type : 'launchpad'
-  issue-id:
-    - 1227027
+
+  issues:
+    - https://launchpad.net/bugs/1227027
+
+  type: launchpad
 
 reviews:
-  review-system-url: https://review.openstack.org/#/c/{id}
-  review-system-type: 'gerrit'
-  review-id:
-    - 58852
-    - 60548
-    - 60550
+
+  links:
+    - https://review.openstack.org/#/c/58852
+    - https://review.openstack.org/#/c/60548
+    - https://review.openstack.org/#/c/60550
+
+  type: gerrit

@@ -1,23 +1,26 @@
-advisory-date: 2013-08-06
+date: 2013-08-06
 
-advisory-id: OSSA-2013-019
+id: OSSA-2013-019
 
-advisory-title: 'Resource limit circumvention in Nova private flavors'
+title: 'Resource limit circumvention in Nova private flavors'
 
-advisory-description: 'hzrandd from NetEase reported a resource limit circumvention
-  vulnerability in Nova''s handling of private flavors. Any tenant is able to show
-  and boot any other tenant''s private flavors by guessing a flavor ID. This not only
-  exposes the flavor''s name, memory and disk size, swap allocation, VCPU count and
-  similar flavor properties, but potentially allows circumvention of any resource
-  limits enforced through the os-flavor-access:is_public property.'
+description: 'hzrandd from NetEase reported a resource limit circumvention vulnerability
+  in Nova''s handling of private flavors. Any tenant is able to show and boot any
+  other tenant''s private flavors by guessing a flavor ID. This not only exposes the
+  flavor''s name, memory and disk size, swap allocation, VCPU count and similar flavor
+  properties, but potentially allows circumvention of any resource limits enforced
 
-advisory-reference: http://lists.openstack.org/pipermail/openstack-announce/2013-August/000126.html
+  through the os-flavor-access:is_public property.'
+
+reference: http://lists.openstack.org/pipermail/openstack-announce/2013-August/000126.html
 
 affected-products:
+
   - product: nova
     version: TODO
 
 vulnerabilities:
+
   - cve-id: CVE-2013-2256
     impact-assessment:
       source: 'Red Hat Product Security'
@@ -32,23 +35,24 @@ vulnerabilities:
       detail: TODO
 
 reporters:
+
   - name: hzrandd
     affiliation: NetEase
     reported:
       - CVE-2013-2256
 
-notes:
-
 issues:
-  issue-tracking-system-url: https://launchpad.net/bugs/{id}
-  issue-tracking-system-type : 'launchpad'
-  issue-id:
-    - 1194093
+
+  issues:
+    - https://launchpad.net/bugs/1194093
+
+  type: launchpad
 
 reviews:
-  review-system-url: https://review.openstack.org/#/c/{id}
-  review-system-type: 'gerrit'
-  review-id:
-    - 34963
-    - 37992
-    - 38318
+
+  links:
+    - https://review.openstack.org/#/c/34963
+    - https://review.openstack.org/#/c/37992
+    - https://review.openstack.org/#/c/38318
+
+  type: gerrit

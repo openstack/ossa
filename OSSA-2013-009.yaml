@@ -1,23 +1,25 @@
-advisory-date: 2013-03-20
+date: 2013-03-20
 
-advisory-id: OSSA-2013-009
+id: OSSA-2013-009
 
-advisory-title: 'Keystone PKI tokens online validation bypasses revocation check'
+title: 'Keystone PKI tokens online validation bypasses revocation check'
 
-advisory-description: 'Guang Yee from HP reported a vulnerability in the revocation
-  check for Keystone PKI tokens. Those tokens are supposed to be validated locally
-  using cryptographic checks, but the user also has the option of asking the server
-  to validate them. In that case, the online verification of PKI tokens would bypass
-  the revocation check, potentially affirming revocated tokens are still valid. Only
-  Folsom setups making use of online verification of PKI tokens are affected.'
+description: 'Guang Yee from HP reported a vulnerability in the revocation check for
+  Keystone PKI tokens. Those tokens are supposed to be validated locally using cryptographic
+  checks, but the user also has the option of asking the server to validate them.
+  In that case, the online verification of PKI tokens would bypass the revocation
+  check, potentially affirming revocated tokens are still valid. Only Folsom setups
+  making use of online verification of PKI tokens are affected.'
 
-advisory-reference: http://lists.openstack.org/pipermail/openstack-announce/2013-March/000087.html
+reference: http://lists.openstack.org/pipermail/openstack-announce/2013-March/000087.html
 
 affected-products:
+
   - product: keystone
     version: TODO
 
 vulnerabilities:
+
   - cve-id: CVE-2013-1865
     impact-assessment:
       source: 'Red Hat Product Security'
@@ -32,21 +34,22 @@ vulnerabilities:
       detail: TODO
 
 reporters:
+
   - name: 'Guang Yee'
     affiliation: HP
     reported:
       - CVE-2013-1865
 
-notes:
-
 issues:
-  issue-tracking-system-url: https://launchpad.net/bugs/{id}
-  issue-tracking-system-type : 'launchpad'
-  issue-id:
-    - 1129713
+
+  issues:
+    - https://launchpad.net/bugs/1129713
+
+  type: launchpad
 
 reviews:
-  review-system-url: https://review.openstack.org/#/c/{id}
-  review-system-type: 'gerrit'
-  review-id:
-    - 24906
+
+  links:
+    - https://review.openstack.org/#/c/24906
+
+  type: gerrit

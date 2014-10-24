@@ -1,24 +1,26 @@
-advisory-date: 2013-12-18
+date: 2013-12-18
 
-advisory-id: OSSA-2013-037
+id: OSSA-2013-037
 
-advisory-title: 'Nova compute DoS through ephemeral disk backing files'
+title: 'Nova compute DoS through ephemeral disk backing files'
 
-advisory-description: 'Phil Day from HP reported a vulnerability in the libvirt driver
-  handling of ephemeral disk backing files on Nova compute nodes. By repeatedly creating
-  snapshots, changing the os_type to a new random value, and spawning new instances
-  from the snapshot (and quickly deleting those instances), an authenticated user
-  could generate lots of different ephemeral disk backing files and fill up compute
-  node disks, potentially resulting in a Denial of Service against a Nova setup. Only
-  Nova setups running the libvirt driver are affected.'
+description: 'Phil Day from HP reported a vulnerability in the libvirt driver handling
+  of ephemeral disk backing files on Nova compute nodes. By repeatedly creating snapshots,
+  changing the os_type to a new random value, and spawning new instances from the
+  snapshot (and quickly deleting those instances), an authenticated user could generate
+  lots of different ephemeral disk backing files and fill up compute node disks, potentially
+  resulting in a Denial of Service against a Nova setup. Only Nova setups running
+  the libvirt driver are affected.'
 
-advisory-reference: http://lists.openstack.org/pipermail/openstack-announce/2013-December/000179.html
+reference: http://lists.openstack.org/pipermail/openstack-announce/2013-December/000179.html
 
 affected-products:
+
   - product: nova
     version: TODO
 
 vulnerabilities:
+
   - cve-id: CVE-2013-6437
     impact-assessment:
       source: 'Red Hat Product Security'
@@ -33,23 +35,24 @@ vulnerabilities:
       detail: TODO
 
 reporters:
+
   - name: 'Phil Day'
     affiliation: HP
     reported:
       - CVE-2013-6437
 
-notes:
-
 issues:
-  issue-tracking-system-url: https://launchpad.net/bugs/{id}
-  issue-tracking-system-type : 'launchpad'
-  issue-id:
-    - 1253980
+
+  issues:
+    - https://launchpad.net/bugs/1253980
+
+  type: launchpad
 
 reviews:
-  review-system-url: https://review.openstack.org/#/c/{id}
-  review-system-type: 'gerrit'
-  review-id:
-    - 62910
-    - 62912
-    - 62913
+
+  links:
+    - https://review.openstack.org/#/c/62910
+    - https://review.openstack.org/#/c/62912
+    - https://review.openstack.org/#/c/62913
+
+  type: gerrit

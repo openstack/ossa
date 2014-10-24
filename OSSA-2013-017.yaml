@@ -1,10 +1,10 @@
-advisory-date: 2013-06-19
+date: 2013-06-19
 
-advisory-id: OSSA-2013-017
+id: OSSA-2013-017
 
-advisory-title: 'Issues in Keystone middleware memcache signing/encryption feature'
+title: 'Issues in Keystone middleware memcache signing/encryption feature'
 
-advisory-description: 'Paul McMillan from Nebula reported multiple issues in the implementation
+description: 'Paul McMillan from Nebula reported multiple issues in the implementation
   of memcache signing/encryption feature in Keystone client middleware. An attacker
   with direct write access to the memcache backend (or in a man-in-the-middle position)
   could insert malicious data and potentially bypass the encryption (CVE-2013-2166)
@@ -12,13 +12,15 @@ advisory-description: 'Paul McMillan from Nebula reported multiple issues in the
   make use of memcache caching in the Keystone middleware (specify memcache_servers)
   and using ENCRYPT or MAC as their memcache_security_strategy are affected.'
 
-advisory-reference: http://lists.openstack.org/pipermail/openstack-announce/2013-June/000114.html
+reference: http://lists.openstack.org/pipermail/openstack-announce/2013-June/000114.html
 
 affected-products:
+
   - product: python-keystoneclient
     version: TODO
 
 vulnerabilities:
+
   - cve-id: CVE-2013-2166
     impact-assessment:
       source: 'Red Hat Product Security'
@@ -31,6 +33,7 @@ vulnerabilities:
       source: 'Red Hat Product Security'
       type: CWE
       detail: TODO
+
   - cve-id: CVE-2013-2167
     impact-assessment:
       source: 'Red Hat Product Security'
@@ -45,23 +48,24 @@ vulnerabilities:
       detail: TODO
 
 reporters:
+
   - name: 'Paul McMillan'
     affiliation: Nebula
     reported:
       - CVE-2013-2166
       - CVE-2013-2167
 
-notes:
-
 issues:
-  issue-tracking-system-url: https://launchpad.net/bugs/{id}
-  issue-tracking-system-type : 'launchpad'
-  issue-id:
-    - 1175367
-    - 1175368
+
+  issues:
+    - https://launchpad.net/bugs/1175367
+    - https://launchpad.net/bugs/1175368
+
+  type: launchpad
 
 reviews:
-  review-system-url: https://review.openstack.org/#/c/{id}
-  review-system-type: 'gerrit'
-  review-id:
-    - 33661
+
+  links:
+    - https://review.openstack.org/#/c/33661
+
+  type: gerrit

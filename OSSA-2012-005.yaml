@@ -1,21 +1,23 @@
-advisory-date: 2012-04-19
+date: 2012-04-19
 
-advisory-id: OSSA-2012-005
+id: OSSA-2012-005
 
-advisory-title: 'No quota enforced on security group rules'
+title: 'No quota enforced on security group rules'
 
-advisory-description: 'Dan Prince reported a vulnerability in Nova. He discovered
-  that there was no limit on the number of security group rules a user can create.
-  By creating a very large set of rules, an unreasonable number of iptables rules
-  will be created on compute nodes, resulting in a denial of service. '
+description: 'Dan Prince reported a vulnerability in Nova. He discovered that there
+  was no limit on the number of security group rules a user can create. By creating
+  a very large set of rules, an unreasonable number of iptables rules will be created
+  on compute nodes, resulting in a denial of service. '
 
-advisory-reference: https://lists.launchpad.net/openstack/msg10268.html
+reference: https://lists.launchpad.net/openstack/msg10268.html
 
 affected-products:
+
   - product: nova
     version: TODO
 
 vulnerabilities:
+
   - cve-id: CVE-2012-2101
     impact-assessment:
       source: 'Red Hat Product Security'
@@ -30,24 +32,25 @@ vulnerabilities:
       detail: TODO
 
 reporters:
+
   - name: 'Dan Prince'
     affiliation: 'Red Hat'
     reported:
       - CVE-2012-2101
 
-notes:
-
 issues:
-  issue-tracking-system-url: https://launchpad.net/bugs/{id}
-  issue-tracking-system-type : 'launchpad'
-  issue-id:
-    - 969545
+
+  issues:
+    - https://launchpad.net/bugs/969545
+
+  type: launchpad
 
 reviews:
-  review-system-url: https://review.openstack.org/#/c/{id}
-  review-system-type: 'gerrit'
-  review-id:
-    - 6653
-    - 6654
-    - 6655
-    - 6656
+
+  links:
+    - https://review.openstack.org/#/c/6653
+    - https://review.openstack.org/#/c/6654
+    - https://review.openstack.org/#/c/6655
+    - https://review.openstack.org/#/c/6656
+
+  type: gerrit

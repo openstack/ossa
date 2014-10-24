@@ -1,21 +1,23 @@
-advisory-date: 2014-07-02
+date: 2014-07-02
 
-advisory-id: OSSA-2014-022
+id: OSSA-2014-022
 
-advisory-title: 'Keystone V2 trusts privilege escalation through user supplied'
+title: 'Keystone V2 trusts privilege escalation through user supplied'
 
-advisory-description: 'Jamie Lennox from Red Hat reported a vulnerability in Keystone
-  trusts. By using an out of scope project id, a trustee may gain unauthorized access
-  if the trustor has the required roles in the requested project id. All Keystone
-  deployments configured to enable trusts and V2 API are affected.'
+description: 'Jamie Lennox from Red Hat reported a vulnerability in Keystone trusts.
+  By using an out of scope project id, a trustee may gain unauthorized access if the
+  trustor has the required roles in the requested project id. All Keystone deployments
+  configured to enable trusts and V2 API are affected.'
 
-advisory-reference: http://lists.openstack.org/pipermail/openstack-announce/2014-July/000248.html
+reference: http://lists.openstack.org/pipermail/openstack-announce/2014-July/000248.html
 
 affected-products:
+
   - product: keystone
     version: TODO
 
 vulnerabilities:
+
   - cve-id: CVE-2014-3520
     impact-assessment:
       source: 'Red Hat Product Security'
@@ -30,23 +32,24 @@ vulnerabilities:
       detail: TODO
 
 reporters:
+
   - name: 'Jamie Lennox'
     affiliation: 'Red Hat'
     reported:
       - CVE-2014-3520
 
-notes:
-
 issues:
-  issue-tracking-system-url: https://launchpad.net/bugs/{id}
-  issue-tracking-system-type : 'launchpad'
-  issue-id:
-    - 1331912
+
+  issues:
+    - https://launchpad.net/bugs/1331912
+
+  type: launchpad
 
 reviews:
-  review-system-url: https://review.openstack.org/#/c/{id}
-  review-system-type: 'gerrit'
-  review-id:
-    - 104216
-    - 104217
-    - 104218
+
+  links:
+    - https://review.openstack.org/#/c/104216
+    - https://review.openstack.org/#/c/104217
+    - https://review.openstack.org/#/c/104218
+
+  type: gerrit
