@@ -44,7 +44,7 @@ reporters:
 
 issues:
 
-  issues:
+  links:
     - https://launchpad.net/bugs/1121494
 
   type: launchpad

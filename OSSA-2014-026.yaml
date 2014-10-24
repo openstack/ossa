@@ -79,7 +79,7 @@ reporters:
 
 issues:
 
-  issues:
+  links:
     - https://launchpad.net/bugs/1347961
     - https://launchpad.net/bugs/1348820
     - https://launchpad.net/bugs/1349597

@@ -40,7 +40,7 @@ reporters:
 
 issues:
 
-  issues:
+  links:
     - https://launchpad.net/bugs/1227027
 
   type: launchpad

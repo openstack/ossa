@@ -60,7 +60,7 @@ reporters:
 
 issues:
 
-  issues:
+  links:
     - https://launchpad.net/bugs/1190229
 
   type: launchpad

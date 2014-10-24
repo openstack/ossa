@@ -52,7 +52,7 @@ reporters:
 
 issues:
 
-  issues:
+  links:
     - https://launchpad.net/bugs/904072
 
   type: launchpad
