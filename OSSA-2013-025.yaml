@@ -2,7 +2,7 @@ date: 2013-09-11
 
 id: OSSA-2013-025
 
-title: ' Token revocation failure using Keystone memcache/KVS backends'
+title: 'Token revocation failure using Keystone memcache/KVS backends'
 
 description: 'Kieran Spear from the University of Melbourne reported a vulnerability
   in Keystone memcache and KVS token backends. The PKI token revocation lists stored
