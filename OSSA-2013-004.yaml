@@ -68,7 +68,7 @@ reporters:
       - CVE-2013-1664
       - CVE-2013-1665
 
-  - name: StuartStent
+  - name: 'Stuart Stent'
     affiliation: UNKNOWN
     reported:
       - CVE-2013-1664
