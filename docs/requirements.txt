@@ -1,3 +1,0 @@
-PyYAML==3.11
-rstcloth==0.2.2
-wsgiref==0.1.2
