@@ -69,21 +69,15 @@ reporters:
     affiliation: HP
     reported:
       - CVE-2014-3473
-      - CVE-2014-3474
-      - CVE-2014-3475
 
   - name: 'Craig Lorentzen'
     affiliation: Cisco
     reported:
-      - CVE-2014-3473
       - CVE-2014-3474
-      - CVE-2014-3475
 
   - name: 'Michael Xin'
     affiliation: Rackspace
     reported:
-      - CVE-2014-3473
-      - CVE-2014-3474
       - CVE-2014-3475
 
 issues:

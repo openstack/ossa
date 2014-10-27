@@ -56,12 +56,10 @@ reporters:
     affiliation: SUSE
     reported:
       - CVE-2013-4463
-      - CVE-2013-4469
 
   - name: 'Pádraig Brady'
     affiliation: 'Red Hat'
     reported:
-      - CVE-2013-4463
       - CVE-2013-4469
 
 issues:

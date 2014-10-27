@@ -66,15 +66,12 @@ reporters:
   - name: 'Lance Bragstad'
     affiliation: Rackspace
     reported:
-      - CVE-2014-5251
       - CVE-2014-5252
-      - CVE-2014-5253
 
   - name: 'Brant Knudson'
     affiliation: IBM
     reported:
       - CVE-2014-5251
-      - CVE-2014-5252
       - CVE-2014-5253
 
 issues:
