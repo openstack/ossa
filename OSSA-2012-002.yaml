@@ -16,7 +16,7 @@ reference: https://lists.launchpad.net/openstack/msg09193.html
 affected-products:
 
   - product: keystone
-    version: TODO
+    version: All versions
 
 vulnerabilities:
 
@@ -49,8 +49,10 @@ issues:
 
 reviews:
 
-  links:
+  essex:
     - https://review.openstack.org/#/c/5507
+
+  diablo:
     - https://review.openstack.org/#/c/5865
 
   type: gerrit

@@ -14,7 +14,7 @@ reference: https://lists.launchpad.net/openstack/msg10211.html
 affected-products:
 
   - product: horizon
-    version: TODO
+    version: All versions
 
 vulnerabilities:
 
@@ -47,8 +47,10 @@ issues:
 
 reviews:
 
-  links:
+  folsom:
     - https://review.openstack.org/#/c/6618
+
+  essex:
     - https://review.openstack.org/#/c/6621
 
   type: gerrit

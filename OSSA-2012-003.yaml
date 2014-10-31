@@ -48,8 +48,11 @@ issues:
 
 reviews:
 
-  links:
+  essex:
     - https://review.openstack.org/#/c/5955
     - https://review.openstack.org/#/c/5957
+
+  diablo:
+    - https://review.openstack.org/#/c/5956
 
   type: gerrit

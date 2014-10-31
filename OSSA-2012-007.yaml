@@ -19,7 +19,7 @@ reference: https://lists.launchpad.net/openstack/msg12883.html
 affected-products:
 
   - product: nova
-    version: TODO
+    version: All versions
 
 vulnerabilities:
 
@@ -52,8 +52,13 @@ issues:
 
 reviews:
 
-  links:
+  folsom:
+    - https://review.openstack.org/#/c/8237
+
+  essex:
     - https://review.openstack.org/#/c/8238
+
+  diablo:
     - https://review.openstack.org/#/c/8239
 
   type: gerrit

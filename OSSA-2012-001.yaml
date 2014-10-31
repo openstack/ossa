@@ -16,7 +16,7 @@ reference: https://lists.launchpad.net/openstack/msg06648.html
 affected-products:
 
   - product: nova
-    version: TODO
+    version: 2011.3, Essex
 
 vulnerabilities:
 
@@ -59,8 +59,10 @@ issues:
 
 reviews:
 
-  links:
+  essex:
     - https://review.openstack.org/#/c/2960
+
+  diablo:
     - https://review.openstack.org/#/c/2961
 
   type: gerrit
