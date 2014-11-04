@@ -17,7 +17,7 @@ reference: http://lists.openstack.org/pipermail/openstack-announce/2012-November
 affected-products:
 
   - product: keystone
-    version: TODO
+    version: Folsom, Grizzly
 
 vulnerabilities:
 
@@ -50,8 +50,10 @@ issues:
 
 reviews:
 
-  links:
-    - https://review.openstack.org/#/c/17050
+  grizzly:
     - https://review.openstack.org/#/c/17051
+
+  folsom:
+    - https://review.openstack.org/#/c/17050
 
   type: gerrit

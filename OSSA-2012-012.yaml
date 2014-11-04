@@ -15,7 +15,7 @@ reference: https://lists.launchpad.net/openstack/msg16278.html
 affected-products:
 
   - product: horizon
-    version: TODO
+    version: Essex (2012.1)
 
 vulnerabilities:
 
@@ -48,7 +48,7 @@ issues:
 
 reviews:
 
-  links:
+  essex:
     - https://review.openstack.org/#/c/12193
 
   type: gerrit

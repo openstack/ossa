@@ -15,7 +15,7 @@ reference: https://lists.launchpad.net/openstack/msg14452.html
 affected-products:
 
   - product: nova
-    version: TODO
+    version: Essex, Folsom series
 
 vulnerabilities:
 
@@ -48,8 +48,10 @@ issues:
 
 reviews:
 
-  links:
+  folsom:
     - https://review.openstack.org/#/c/9637
+
+  essex:
     - https://review.openstack.org/#/c/9639
 
   type: gerrit

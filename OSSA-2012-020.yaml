@@ -15,7 +15,7 @@ reference: http://lists.openstack.org/pipermail/openstack-announce/2012-December
 affected-products:
 
   - product: nova
-    version: TODO
+    version: Folsom, Grizzly
 
 vulnerabilities:
 
@@ -48,8 +48,10 @@ issues:
 
 reviews:
 
-  links:
+  grizzly:
     - https://review.openstack.org/#/c/17856
+
+  folsom:
     - https://review.openstack.org/#/c/17857
 
   type: gerrit

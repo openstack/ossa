@@ -15,7 +15,7 @@ reference: 'https://lists.launchpad.net/openstack/msg18386.html, https://lists.l
 affected-products:
 
   - product: glance
-    version: TODO
+    version: Essex, Folsom, Grizzly
 
 vulnerabilities:
 
@@ -33,17 +33,6 @@ vulnerabilities:
       detail: TODO
 
   - cve-id: CVE-2012-5482
-    impact-assessment:
-      source: 'Red Hat Product Security'
-      rating: UNKNOWN
-      assessment:
-        type: CVSS2
-        score: UNKNOWN
-        detail: UNKNOWN
-    classification:
-      source: 'Red Hat Product Security'
-      type: CWE
-      detail: TODO
 
 reporters:
 
@@ -63,11 +52,15 @@ issues:
 
 reviews:
 
-  links:
-    - https://review.openstack.org/#/c/15562
-    - https://review.openstack.org/#/c/15563
-    - https://review.openstack.org/#/c/15564
+  grizzly:
     - https://review.openstack.org/#/c/15658
     - https://review.openstack.org/#/c/15659
+    - https://review.openstack.org/#/c/15564
+
+  folsom:
+    - https://review.openstack.org/#/c/15563
+
+  essex:
+    - https://review.openstack.org/#/c/15562
 
   type: gerrit

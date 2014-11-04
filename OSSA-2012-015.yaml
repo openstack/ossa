@@ -13,7 +13,7 @@ reference: https://lists.launchpad.net/openstack/msg17034.html
 affected-products:
 
   - product: keystone
-    version: TODO
+    version: Essex (prior to 2012.1.2), Folsom (prior to folsom-2 development milestone)
 
 vulnerabilities:
 
@@ -47,10 +47,12 @@ issues:
 
 reviews:
 
-  links:
+  folsom:
     - https://review.openstack.org/#/c/8104
-    - https://review.openstack.org/#/c/9014
     - https://review.openstack.org/#/c/8105
+
+  essex:
+    - https://review.openstack.org/#/c/9014
     - https://review.openstack.org/#/c/9015
 
   type: gerrit
