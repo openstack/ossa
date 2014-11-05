@@ -15,7 +15,7 @@ reference: http://lists.openstack.org/pipermail/openstack-announce/2013-November
 affected-products:
 
   - product: nova
-    version: TODO
+    version: All supported versions prior to Havana
 
 vulnerabilities:
 
@@ -54,7 +54,7 @@ issues:
 
 reviews:
 
-  links:
+  grizzly:
     - https://review.openstack.org/#/c/52987
     - https://review.openstack.org/#/c/52989
 

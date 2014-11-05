@@ -18,7 +18,7 @@ reference: http://lists.openstack.org/pipermail/openstack-announce/2013-February
 affected-products:
 
   - product: keystone
-    version: TODO
+    version: All versions
 
 vulnerabilities:
 
@@ -51,9 +51,13 @@ issues:
 
 reviews:
 
-  links:
+  grizzly:
     - https://review.openstack.org/#/c/22319
+
+  folsom:
     - https://review.openstack.org/#/c/22320
+
+  essex:
     - https://review.openstack.org/#/c/22321
 
   type: gerrit

@@ -16,7 +16,7 @@ reference: http://lists.openstack.org/pipermail/openstack-announce/2013-October/
 affected-products:
 
   - product: keystone
-    version: TODO
+    version: All supported versions
 
 vulnerabilities:
 
@@ -49,10 +49,13 @@ issues:
 
 reviews:
 
-  links:
-    - https://review.openstack.org/#/c/5310
+  icehouse:
     - https://review.openstack.org/#/c/53012
+
+  havana:
     - https://review.openstack.org/#/c/53154
+
+  grizzly:
     - https://review.openstack.org/#/c/53146
 
   type: gerrit

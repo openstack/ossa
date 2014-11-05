@@ -18,7 +18,7 @@ reference: http://lists.openstack.org/pipermail/openstack-announce/2013-Septembe
 affected-products:
 
   - product: nova
-    version: TODO
+    version: Folsom, Grizzly
 
 vulnerabilities:
 
@@ -51,10 +51,10 @@ issues:
 
 reviews:
 
-  links:
-    - https://review.openstack.org/#/c/44695
-    - https://review.openstack.org/#/c/44700
-    - https://review.openstack.org/#/c/45426
+  grizzly:
     - https://review.openstack.org/#/c/43303
+
+  folsom:
+    - https://review.openstack.org/#/c/45426
 
   type: gerrit

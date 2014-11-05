@@ -16,7 +16,7 @@ reference: http://lists.openstack.org/pipermail/openstack-announce/2013-March/00
 affected-products:
 
   - product: keystone
-    version: TODO
+    version: Folsom
 
 vulnerabilities:
 
@@ -49,7 +49,7 @@ issues:
 
 reviews:
 
-  links:
+  folsom:
     - https://review.openstack.org/#/c/24906
 
   type: gerrit

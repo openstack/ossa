@@ -14,7 +14,7 @@ reference: http://lists.openstack.org/pipermail/openstack-announce/2013-December
 affected-products:
 
   - product: heat
-    version: TODO
+    version: All supported releases
 
 vulnerabilities:
 
@@ -47,8 +47,10 @@ issues:
 
 reviews:
 
-  links:
+  icehouse:
     - https://review.openstack.org/#/c/61455
+
+  havana:
     - https://review.openstack.org/#/c/61456
 
   type: gerrit

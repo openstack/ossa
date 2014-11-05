@@ -14,7 +14,7 @@ reference: http://lists.openstack.org/pipermail/openstack/2013-August/000415.htm
 affected-products:
 
   - product: cinder
-    version: TODO
+    version: 2013.1 (Grizzly) and later
 
 vulnerabilities:
 
@@ -47,8 +47,10 @@ issues:
 
 reviews:
 
-  links:
+  havana:
     - https://review.openstack.org/#/c/36506
+
+  grizzly:
     - https://review.openstack.org/#/c/39565
 
   type: gerrit

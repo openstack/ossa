@@ -18,7 +18,7 @@ reference: http://lists.openstack.org/pipermail/openstack-announce/2013-October/
 affected-products:
 
   - product: glance
-    version: TODO
+    version: Grizzly, Folsom (and earlier versions)
 
 vulnerabilities:
 
@@ -51,8 +51,10 @@ issues:
 
 reviews:
 
-  links:
+  grizzly:
     - https://review.openstack.org/#/c/50103
+
+  folsom:
     - https://review.openstack.org/#/c/50860
 
   type: gerrit

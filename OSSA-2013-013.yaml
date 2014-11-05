@@ -14,7 +14,7 @@ reference: https://lists.launchpad.net/openstack/msg23923.html
 affected-products:
 
   - product: python-keystoneclient
-    version: TODO
+    version: All versions
 
 vulnerabilities:
 

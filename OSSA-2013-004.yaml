@@ -18,13 +18,13 @@ reference: http://lists.openstack.org/pipermail/openstack-announce/2013-February
 affected-products:
 
   - product: keystone
-    version: TODO
+    version: All versions
 
   - product: nova
-    version: TODO
+    version: All versions
 
   - product: cinder
-    version: TODO
+    version: All versions
 
 vulnerabilities:
 
@@ -84,13 +84,17 @@ issues:
 
 reviews:
 
-  links:
+  grizzly:
     - https://review.openstack.org/#/c/22309
     - https://review.openstack.org/#/c/22310
     - https://review.openstack.org/#/c/22315
+
+  folsom:
     - https://review.openstack.org/#/c/22312
     - https://review.openstack.org/#/c/22311
     - https://review.openstack.org/#/c/22314
+
+  essex:
     - https://review.openstack.org/#/c/22313
     - https://review.openstack.org/#/c/22316
 

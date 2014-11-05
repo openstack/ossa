@@ -16,7 +16,7 @@ reference: http://lists.openstack.org/pipermail/openstack-announce/2013-November
 affected-products:
 
   - product: ceilometer
-    version: TODO
+    version: All supported versions
 
 vulnerabilities:
 
@@ -49,8 +49,10 @@ issues:
 
 reviews:
 
-  links:
+  icehouse:
     - https://review.openstack.org/#/c/54553
+
+  havana:
     - https://review.openstack.org/#/c/56396
 
   type: gerrit

@@ -20,7 +20,7 @@ reference: http://lists.openstack.org/pipermail/openstack-announce/2013-October/
 affected-products:
 
   - product: nova
-    version: TODO
+    version: All versions
 
 vulnerabilities:
 
@@ -71,9 +71,13 @@ issues:
 
 reviews:
 
-  links:
+  icehouse:
     - https://review.openstack.org/#/c/54765
+
+  havana:
     - https://review.openstack.org/#/c/54767
+
+  grizzly:
     - https://review.openstack.org/#/c/54768
 
   type: gerrit

@@ -15,7 +15,7 @@ reference: http://lists.openstack.org/pipermail/openstack-announce/2013-June/000
 affected-products:
 
   - product: keystone
-    version: TODO
+    version: Folsom, Grizzly
 
 vulnerabilities:
 
@@ -48,9 +48,13 @@ issues:
 
 reviews:
 
-  links:
+  havana:
     - https://review.openstack.org/#/c/32896
+
+  grizzly:
     - https://review.openstack.org/#/c/32895
+
+  folsom:
     - https://review.openstack.org/#/c/32894
 
   type: gerrit

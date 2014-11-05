@@ -16,7 +16,7 @@ reference: http://lists.openstack.org/pipermail/openstack-announce/2013-January/
 affected-products:
 
   - product: glance
-    version: TODO
+    version: All versions
 
 vulnerabilities:
 
@@ -49,9 +49,13 @@ issues:
 
 reviews:
 
-  links:
+  grizzly:
     - https://review.openstack.org/#/c/20695
+
+  folsom:
     - https://review.openstack.org/#/c/20696
+
+  essex:
     - https://review.openstack.org/#/c/20697
 
   type: gerrit

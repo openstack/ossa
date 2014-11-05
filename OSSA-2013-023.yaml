@@ -17,10 +17,10 @@ reference: http://lists.openstack.org/pipermail/openstack-announce/2013-August/0
 affected-products:
 
   - product: nova
-    version: TODO
+    version: Grizzly and later
 
   - product: cinder
-    version: TODO
+    version: Grizzly and later
 
 vulnerabilities:
 
@@ -67,9 +67,11 @@ issues:
 
 reviews:
 
-  links:
+  havana:
     - https://review.openstack.org/#/c/40879
     - https://review.openstack.org/#/c/40881
+
+  grizzly:
     - https://review.openstack.org/#/c/40880
     - https://review.openstack.org/#/c/40883
 

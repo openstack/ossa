@@ -17,7 +17,7 @@ reference: http://lists.openstack.org/pipermail/openstack-announce/2013-August/0
 affected-products:
 
   - product: nova
-    version: TODO
+    version: All versions
 
 vulnerabilities:
 
@@ -50,9 +50,13 @@ issues:
 
 reviews:
 
-  links:
+  havana:
     - https://review.openstack.org/#/c/34963
+
+  grizzly:
     - https://review.openstack.org/#/c/37992
+
+  folsom:
     - https://review.openstack.org/#/c/38318
 
   type: gerrit

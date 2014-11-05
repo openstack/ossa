@@ -15,10 +15,10 @@ reference: http://lists.openstack.org/pipermail/openstack-announce/2013-December
 affected-products:
 
   - product: neutron
-    version: TODO
+    version: All supported releases
 
   - product: nova
-    version: TODO
+    version: All supported releases
 
 vulnerabilities:
 
@@ -51,11 +51,15 @@ issues:
 
 reviews:
 
-  links:
+  icehouse:
     - https://review.openstack.org/#/c/61439
     - https://review.openstack.org/#/c/61428
+
+  havana:
     - https://review.openstack.org/#/c/61442
     - https://review.openstack.org/#/c/61435
+
+  grizzly:
     - https://review.openstack.org/#/c/61443
     - https://review.openstack.org/#/c/61437
 

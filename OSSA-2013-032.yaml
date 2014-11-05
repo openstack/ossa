@@ -15,7 +15,7 @@ reference: http://lists.openstack.org/pipermail/openstack-announce/2013-December
 affected-products:
 
   - product: keystone
-    version: TODO
+    version: Havana and later
 
 vulnerabilities:
 
@@ -48,9 +48,10 @@ issues:
 
 reviews:
 
-  links:
-    - https://review.openstack.org/#/c/51973
+  icehouse:
     - https://review.openstack.org/#/c/61419
+
+  havana:
     - https://review.openstack.org/#/c/61425
 
   type: gerrit

@@ -16,10 +16,10 @@ reference: http://lists.openstack.org/pipermail/openstack-announce/2013-May/0001
 affected-products:
 
   - product: keystone
-    version: TODO
+    version: Folsom
 
   - product: python-keystoneclient
-    version: TODO
+    version: Versions after 0.2.0
 
 vulnerabilities:
 
@@ -57,8 +57,10 @@ issues:
 
 reviews:
 
-  links:
+  python-keystone-0.2.4:
     - https://review.openstack.org/#/c/30742
+
+  folsom:
     - https://review.openstack.org/#/c/30743
 
   type: gerrit

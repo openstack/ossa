@@ -15,7 +15,7 @@ reference: http://lists.openstack.org/pipermail/openstack-announce/2013-February
 affected-products:
 
   - product: nova
-    version: TODO
+    version: All versions
 
 vulnerabilities:
 
@@ -53,11 +53,14 @@ issues:
 
 reviews:
 
-  links:
+  grizzly:
     - https://review.openstack.org/#/c/22086
-    - https://review.openstack.org/#/c/22616
-    - https://review.openstack.org/#/c/22872
-    - https://review.openstack.org/#/c/23768
+
+  folsom:
     - https://review.openstack.org/#/c/22758
+
+  essex:
+    - https://review.openstack.org/#/c/22872
+
 
   type: gerrit

@@ -15,7 +15,7 @@ reference: http://lists.openstack.org/pipermail/openstack/2013-July/000076.html
 affected-products:
 
   - product: python-glanceclient
-    version: TODO
+    version: All versions
 
 vulnerabilities:
 
@@ -48,7 +48,7 @@ issues:
 
 reviews:
 
-  links:
+  python-glanceclient:
     - https://review.openstack.org/#/c/33464
 
   type: gerrit
