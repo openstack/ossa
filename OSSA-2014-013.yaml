@@ -48,9 +48,13 @@ issues:
 
 reviews:
 
-  links:
+  juno:
     - https://review.openstack.org/#/c/84425
+
+  icehouse:
     - https://review.openstack.org/#/c/84735
+
+  havana:
     - https://review.openstack.org/#/c/86024
 
   type: gerrit

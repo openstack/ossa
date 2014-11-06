@@ -15,7 +15,7 @@ reference: http://lists.openstack.org/pipermail/openstack-announce/2014-June/000
 affected-products:
 
   - product: swift
-    version: TODO
+    version: 1.11.0 to 1.13.1
 
 vulnerabilities:
 
@@ -48,8 +48,10 @@ issues:
 
 reviews:
 
-  links:
+  juno:
     - https://review.openstack.org/#/c/101031
+
+  icehouse:
     - https://review.openstack.org/#/c/101032
 
   type: gerrit

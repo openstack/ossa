@@ -14,7 +14,7 @@ reference: http://lists.openstack.org/pipermail/openstack-announce/2014-January/
 affected-products:
 
   - product: nova
-    version: TODO
+    version: Grizzly and later
 
 vulnerabilities:
 
@@ -47,9 +47,13 @@ issues:
 
 reviews:
 
-  links:
+  icehouse:
     - https://review.openstack.org/#/c/58852
+
+  havana:
     - https://review.openstack.org/#/c/60548
+
+  grizzly:
     - https://review.openstack.org/#/c/60550
 
   type: gerrit

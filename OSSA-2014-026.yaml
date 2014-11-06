@@ -18,7 +18,7 @@ reference: http://lists.openstack.org/pipermail/openstack-announce/2014-August/0
 affected-products:
 
   - product: keystone
-    version: '2014.1 versions up to 2014.1.1'
+    version: 2014.1 versions up to 2014.1.1
 
 vulnerabilities:
 
@@ -85,11 +85,13 @@ issues:
 
 reviews:
 
-  links:
+  juno:
     - https://review.openstack.org/#/c/111106
     - https://review.openstack.org/#/c/109747
     - https://review.openstack.org/#/c/109819
     - https://review.openstack.org/#/c/109820
+
+  icehouse:
     - https://review.openstack.org/#/c/112087
     - https://review.openstack.org/#/c/111772
     - https://review.openstack.org/#/c/112083

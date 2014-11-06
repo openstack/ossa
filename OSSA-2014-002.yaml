@@ -17,7 +17,7 @@ reference: http://lists.openstack.org/pipermail/openstack-announce/2014-January/
 affected-products:
 
   - product: swift
-    version: TODO
+    version: All supported versions
 
 vulnerabilities:
 
@@ -50,9 +50,13 @@ issues:
 
 reviews:
 
-  links:
+  icehouse:
     - https://review.openstack.org/#/c/67185
+
+  havana:
     - https://review.openstack.org/#/c/67186
+
+  grizzly:
     - https://review.openstack.org/#/c/67187
 
   type: gerrit

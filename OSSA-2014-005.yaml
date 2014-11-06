@@ -15,7 +15,7 @@ reference: http://lists.openstack.org/pipermail/openstack-announce/2014-February
 affected-products:
 
   - product: python-swiftclient
-    version: TODO
+    version: 1.0 version up to 1.9.0
 
 vulnerabilities:
 
@@ -48,7 +48,7 @@ issues:
 
 reviews:
 
-  links:
+  python-swiftclient-2.0:
     - https://review.openstack.org/#/c/69187
 
   type: gerrit

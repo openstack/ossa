@@ -14,7 +14,7 @@ reference: http://lists.openstack.org/pipermail/openstack-announce/2014-July/000
 affected-products:
 
   - product: neutron
-    version: TODO
+    version: up to 2013.2.3, and 2014.1 versions up to 2014.1.1
 
 vulnerabilities:
 
@@ -47,9 +47,13 @@ issues:
 
 reviews:
 
-  links:
+  juno:
     - https://review.openstack.org/#/c/107734
+
+  icehouse:
     - https://review.openstack.org/#/c/107733
+
+  havana:
     - https://review.openstack.org/#/c/107731
 
   type: gerrit

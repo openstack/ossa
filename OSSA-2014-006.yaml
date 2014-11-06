@@ -17,7 +17,7 @@ reference: http://lists.openstack.org/pipermail/openstack-announce/2014-March/00
 affected-products:
 
   - product: keystone
-    version: TODO
+    version: 2013.1 up to 2013.1.4 and 2013.2 versions up to 2013.2.2
 
 vulnerabilities:
 
@@ -50,9 +50,13 @@ issues:
 
 reviews:
 
-  links:
+  icehouse:
     - https://review.openstack.org/#/c/60743
+
+  havana:
     - https://review.openstack.org/#/c/75521
+
+  grizzly:
     - https://review.openstack.org/#/c/75526
 
   type: gerrit

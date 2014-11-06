@@ -20,7 +20,7 @@ reference: http://lists.openstack.org/pipermail/openstack-announce/2014-July/000
 affected-products:
 
   - product: horizon
-    version: TODO
+    version: up to 2013.2.3, and 2014.1 versions up to 2014.1.1
 
 vulnerabilities:
 
@@ -91,9 +91,13 @@ issues:
 
 reviews:
 
-  links:
+  juno:
     - https://review.openstack.org/#/c/105476
+
+  icehouse:
     - https://review.openstack.org/#/c/105477
+
+  havana:
     - https://review.openstack.org/#/c/105478
 
   type: gerrit

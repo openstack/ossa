@@ -18,7 +18,7 @@ reference: http://lists.openstack.org/pipermail/openstack-announce/2014-March/00
 affected-products:
 
   - product: python-keystoneclient
-    version: TODO
+    version: All versions up to 0.6.0
 
 vulnerabilities:
 
@@ -51,7 +51,7 @@ issues:
 
 reviews:
 
-  links:
+  python-keystoneclient-0.7.0:
     - https://review.openstack.org/#/c/81078
 
   type: gerrit

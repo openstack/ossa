@@ -18,7 +18,7 @@ reference: http://lists.openstack.org/pipermail/openstack-announce/2014-February
 affected-products:
 
   - product: glance
-    version: TODO
+    version: 2013.2 versions up to 2013.2.1
 
 vulnerabilities:
 
@@ -51,8 +51,10 @@ issues:
 
 reviews:
 
-  links:
+  icehouse:
     - https://review.openstack.org/#/c/71419
+
+  havana:
     - https://review.openstack.org/#/c/72473
 
   type: gerrit

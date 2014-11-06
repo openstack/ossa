@@ -16,7 +16,7 @@ reference: http://lists.openstack.org/pipermail/openstack-announce/2014-April/00
 affected-products:
 
   - product: horizon
-    version: TODO
+    version: 2013.2 versions up to 2013.2.3
 
 vulnerabilities:
 
@@ -49,9 +49,13 @@ issues:
 
 reviews:
 
-  links:
+  juno:
     - https://review.openstack.org/#/c/86059
+
+  icehouse:
     - https://review.openstack.org/#/c/86054
+
+  havana:
     - https://review.openstack.org/#/c/86056
 
   type: gerrit

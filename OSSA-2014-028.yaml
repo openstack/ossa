@@ -16,7 +16,7 @@ reference: http://lists.openstack.org/pipermail/openstack-announce/2014-August/0
 affected-products:
 
   - product: glance
-    version: 'up to 2013.2.3 and 2014.1 versions up to 2014.1.2'
+    version: up to 2013.2.3 and 2014.1 versions up to 2014.1.2
 
 vulnerabilities:
 
@@ -54,9 +54,13 @@ issues:
 
 reviews:
 
-  links:
+  juno:
     - https://review.openstack.org/#/c/91764
+
+  icehouse:
     - https://review.openstack.org/#/c/115280
+
+  havana:
     - https://review.openstack.org/#/c/115289
 
   type: gerrit

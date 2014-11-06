@@ -16,7 +16,7 @@ reference: http://lists.openstack.org/pipermail/openstack-announce/2014-May/0002
 affected-products:
 
   - product: keystone
-    version: TODO
+    version: 2014.1
 
 vulnerabilities:
 
@@ -49,10 +49,11 @@ issues:
 
 reviews:
 
-  links:
+  juno:
     - https://review.openstack.org/#/c/94396
     - https://review.openstack.org/#/c/94470
+
+  icehouse:
     - https://review.openstack.org/#/c/94397
-    - https://review.openstack.org/#/c/95263
 
   type: gerrit
