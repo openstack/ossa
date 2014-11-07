@@ -1,0 +1,64 @@
+date: 2014-09-25
+
+id: OSSA-2014-030
+
+title: 'TLS cert verification option not honoured in paste configs'
+
+description: 'Qin Zhao from IBM reported a vulnerability in keystonemiddleware
+  (formerly shipped as python-keystoneclient). When the "insecure" option
+  is set in a paste configuration file it is effectively ignored,
+  regardless of its value. As a result certificate verification will be
+  disabled, leaving TLS connections open to MITM attacks. All versions of
+  keystonemiddleware with TLS settings configured via a paste.ini file are
+  affected by this flaw.'
+
+reference: http://lists.openstack.org/pipermail/openstack-announce/2014-September/000281.html
+
+affected-products:
+
+  - product: keystonemiddleware
+    version: versions up to 1.1.1
+
+  - product: python-keystoneclient
+    version: versions up to 0.10.1
+
+vulnerabilities:
+
+  - cve-id: CVE-2014-7144
+    impact-assessment:
+      source: 'Red Hat Product Security'
+      rating: moderate
+      assessment:
+        type: CVSS2
+        score: 4.3
+        detail: AV:N/AC:M/Au:N/C:N/I:P/A:N
+    classification:
+      source: 'Red Hat Product Security'
+      type: CWE
+      detail: CWE-295
+
+reporters:
+
+  - name: 'Qin Zhao'
+    affiliation: IBM
+    reported:
+      - CVE-2014-7144
+
+
+issues:
+
+  links:
+    - https://launchpad.net/bugs/1353315
+
+  type: launchpad
+
+reviews:
+
+  keystonemiddleware-1.2.0:
+    - https://review.openstack.org/113191
+
+  python-keystone-0.11.0:
+    - https://review.openstack.org/112232
+
+
+  type: gerrit

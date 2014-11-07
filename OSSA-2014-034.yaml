@@ -1,0 +1,58 @@
+date: 2014-10-09
+
+id: OSSA-2014-034
+
+title: 'Swift metadata constraints are not correctly enforced'
+
+description: 'Rajaneesh Singh reported a vulnerability in the way Swift enforces
+  metadata constraints. By adding metadata in several separate calls, an
+  authenticated attacker can bypass the max_meta_count constraint,
+  potentially resulting in the storage of more metadata than allowed in
+  configuration.'
+
+reference: http://lists.openstack.org/pipermail/openstack-announce/2014-October/000291.html
+
+affected-products:
+
+  - product: swift
+    version: up to 2.1.0
+
+vulnerabilities:
+
+  - cve-id: CVE-2014-7960
+    impact-assessment:
+      source: 'Red Hat Product Security'
+      rating: moderate
+      assessment:
+        type: CVSS2
+        score: 4
+        detail: AV:N/AC:L/Au:S/C:N/I:N/A:P
+    classification:
+      source: 'Red Hat Product Security'
+      type: CWE
+      detail: CWE-400
+
+reporters:
+
+  - name: 'Rajaneesh Singh'
+    affiliation: UNKNOWN
+    reported:
+      - CVE-2014-7960
+
+
+issues:
+
+  links:
+    - https://launchpad.net/bugs/1365350
+
+  type: launchpad
+
+reviews:
+
+  juno:
+    - https://review.openstack.org/125360
+
+  icehouse:
+    - https://review.openstack.org/126645
+
+  type: gerrit

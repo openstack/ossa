@@ -1,0 +1,62 @@
+date: 2014-09-16
+
+id: OSSA-2014-029
+
+title: 'Configuration option leak through Keystone catalog'
+
+description: 'Brant Knudson from IBM reported a vulnerability in Keystone catalog url
+  replacement. By creating a malicious endpoint a privileged user may
+  reveal configuration options resulting in sensitive information, like
+  master admin_token, being exposed through the service url. All Keystone
+  setups that allow non-admin users to create endpoints are affected.'
+
+
+reference: http://lists.openstack.org/pipermail/openstack-announce/2014-September/000275.html
+
+affected-products:
+
+  - product: keystone
+    version: up to 2013.2.3 and 2014.1 versions up to 2014.1.2.1
+
+vulnerabilities:
+
+  - cve-id: CVE-2014-3621
+    impact-assessment:
+      source: 'Red Hat Product Security'
+      rating: important
+      assessment:
+        type: CVSS2
+        score: 3.6
+        detail: AV:N/AC:H/Au:S/C:P/I:P/A:N
+    classification:
+      source: 'Red Hat Product Security'
+      type: CWE
+      detail: CWE-200
+
+reporters:
+
+  - name: 'Brant Knudson'
+    affiliation: IBM
+    reported:
+      - CVE-2014-3621
+
+
+issues:
+
+  links:
+    - https://launchpad.net/bugs/1354208
+
+  type: launchpad
+
+reviews:
+
+  juno:
+    - https://review.openstack.org/121889
+
+  icehouse:
+    - https://review.openstack.org/121890
+
+  havana:
+    - https://review.openstack.org/121891
+
+  type: gerrit
