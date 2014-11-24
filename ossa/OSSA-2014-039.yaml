@@ -1,0 +1,70 @@
+date: 2014-11-19
+
+id: OSSA-2014-039
+
+title: 'Neutron DoS through invalid DNS configuration'
+
+description: 'Henry Yamauchi, Charles Neill and Michael Xin from Rackspace reported
+    a vulnerability in Neutron. By configuring a maliciously crafted
+    dns_nameservers an authenticated user may crash Neutron service
+    resulting in a denial of service attack. All Neutron setups are affected.'
+
+reference: http://lists.openstack.org/pipermail/openstack-announce/2014-November/000303.html
+
+affected-products:
+
+  - product: neutron
+    version: up to 2014.1.3 and 2014.2
+
+vulnerabilities:
+
+  - cve-id: CVE-2014-7821
+    impact-assessment:
+      source: 'Red Hat Product Security'
+      rating: moderate
+      assessment:
+        type: CVSS2
+        score: 4.0
+        detail: AV:N/AC:L/Au:S/C:N/I:N/A:P
+    classification:
+      source: 'Red Hat Product Security'
+      type: CWE
+      detail: TODO
+
+
+reporters:
+
+  - name: 'Henry Yamauchi'
+    affiliation: Rackspace
+    reported:
+      - CVE-2014-7821
+
+  - name: 'Charles Neill'
+    affiliation: Rackspace
+    reported:
+      - CVE-2014-7821
+
+  - name: 'Michael Xin'
+    affiliation: Rackspace
+    reported:
+      - CVE-2014-7821
+
+issues:
+
+  links:
+    - https://launchpad.net/bugs/1378450
+
+  type: launchpad
+
+reviews:
+
+  kilo:
+    - https://review.openstack.org/135616
+
+  juno:
+    - https://review.openstack.org/135623
+
+  icehouse:
+    - https://review.openstack.org/135624
+
+  type: gerrit
