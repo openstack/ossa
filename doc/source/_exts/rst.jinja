@@ -1,0 +1,77 @@
+==============={% for _ in title %}={% endfor %}
+
+{{ id }}: {{ title }}
+==============={% for _ in title %}={% endfor %}
+
+
+:Date: {{ date | ossa_date }}
+:CVE: {{ vulnerabilities | cve_list }}
+
+
+Affects
+~~~~~~~
+{% for affected in affected_products %}
+- {{ affected['product'].capitalize() }}: {{ affected['version'] }}
+{% endfor %}
+
+
+Description
+~~~~~~~~~~~
+{{ description }}
+{% if errata %}
+
+
+Errata
+~~~~~~
+{{ errata_text }}
+{% endif %}
+
+
+Patches
+~~~~~~~
+{% for release in reviews|sort  %}
+{% if release != 'type' %}
+{% for link in reviews[release] %}
+- {{ link | trim }} ({{ release.capitalize() | trim }})
+{% endfor %}
+{% endif %}
+{% endfor %}
+
+
+Credits
+~~~~~~~
+{% for reporter in reporters %}
+{% if 'affiliation' in reporter and reporter['affiliation'] and reporter['affiliation'] != 'UNKNOWN' %}
+- {{ reporter['name'] | trim | indent }} from {{ reporter ['affiliation'] }} ({{ reporter['reported'] | csv_list }})
+{% else %}
+- {{ reporter['name'] | trim | indent }} ({{ reporter['reported'] | csv_list }})
+{% endif %}
+{% endfor %}
+
+
+References
+~~~~~~~~~~
+{% for link in issues['links'] %}
+- {{ link }}
+{% endfor %}
+{% for vuln in vulnerabilities %}
+- http://cve.mitre.org/cgi-bin/cvename.cgi?name={{ vuln['cve-id'] }}
+{% endfor %}
+{% if notes %}
+
+
+Notes
+~~~~~
+{% for note in notes %}
+- {{ note }}
+{% endfor %}
+{% endif %}
+{% if errata %}
+
+
+OSSA History
+~~~~~~~~~~~~
+{% for change in errata_history %}
+- {{ change }}
+{% endfor %}
+{% endif %}

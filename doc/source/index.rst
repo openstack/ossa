@@ -5,10 +5,10 @@
 These pages contain published OpenStack Security Advisories.
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :glob:
 
-   ossa/index
+   ./ossa/*
 
 .. seealso::
 

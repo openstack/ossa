@@ -2,3 +2,7 @@
 doc/build
 *.egg-info
 pbr*.egg
+*.pyc
+*.swp
+
+ossa/*.rst
