@@ -23,7 +23,7 @@ Description
 
 Errata
 ~~~~~~
-{{ errata_text }}
+{{ errata }}
 {% endif %}
 
 
@@ -42,7 +42,8 @@ Credits
 ~~~~~~~
 {% for reporter in reporters %}
 {% if 'affiliation' in reporter and reporter['affiliation'] and reporter['affiliation'] != 'UNKNOWN' %}
-- {{ reporter['name'] | trim | indent }} from {{ reporter ['affiliation'] }} ({{ reporter['reported'] | csv_list }})
+- {{ reporter['name'] | trim | indent }} from {{ reporter ['affiliation'] }}{% if 'reported' in reporter %} ({{ reporter['reported'] | csv_list }}){% endif %}
+
 {% else %}
 - {{ reporter['name'] | trim | indent }} ({{ reporter['reported'] | csv_list }})
 {% endif %}
@@ -54,16 +55,16 @@ References
 {% for link in issues['links'] %}
 - {{ link }}
 {% endfor %}
-{% for vuln in vulnerabilities %}
+{% for vuln in vulnerabilities %}{% if vuln['cve-id'] != 'Requested' %}
 - http://cve.mitre.org/cgi-bin/cvename.cgi?name={{ vuln['cve-id'] }}
-{% endfor %}
+{% endif %}{% endfor %}
 {% if notes %}
 
 
 Notes
 ~~~~~
 {% for note in notes %}
-- {{ note }}
+- {{ note | wordwrap(width=77, break_long_words=False, wrapstring='\n  ') }}
 {% endfor %}
 {% endif %}
 {% if errata %}

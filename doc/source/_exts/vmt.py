@@ -29,7 +29,7 @@ def to_snake_case(d):
 
 def to_paragraphs(d, *args):
     for k in args:
-        if type(d[k]) == str:
+        if k in d and type(d[k]) == str:
             d[k] = '\n'.join(textwrap.wrap(d[k]))
 
 
@@ -59,7 +59,7 @@ def render_template(template, data, **kwargs):
 def render(source, template, **kwargs):
     vals = yaml.safe_load(open(source).read())
     to_snake_case(vals)
-    to_paragraphs(vals, 'description')
+    to_paragraphs(vals, 'description', 'errata')
     return render_template(template, vals, **kwargs)
 
 
