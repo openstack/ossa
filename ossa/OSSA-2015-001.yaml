@@ -1,0 +1,49 @@
+date: 2015-01-08
+
+id: OSSA-2015-001
+
+title: 'L3 agent denial of service with radvd 2.0+'
+
+description: 'Ihar Hrachyshka from Red Hat reported a vulnerability in Neutron. By
+    creating 8 routers and assigning each of them a non-provider ipv6
+    subnet, a malicious user may block router update processing for all
+    tenants, potentially resulting in a Denial of Service. Only Neutron
+    setups running with radvd 2.0+ are affected.'
+
+affected-products:
+
+  - product: neutron
+    version: 2014.2 version up to 2014.2.1
+
+vulnerabilities:
+
+  - cve-id: CVE-2014-8153
+
+reporters:
+
+  - name: 'Ihar Hrachyshka'
+    affiliation: Red Hat
+    reported:
+      - CVE-2014-8153
+
+issues:
+
+  links:
+    - https://launchpad.net/bugs/1399172
+
+  type: launchpad
+
+reviews:
+
+  kilo:
+    - https://review.openstack.org/138688
+
+  juno:
+    - https://review.openstack.org/141575
+
+  type: gerrit
+
+notes:
+  - 'This fix will be included in a future 2014.2.2 release.'
+  - 'The OSSA announce format for the 2015 advisories has been changed to RST.'
+
