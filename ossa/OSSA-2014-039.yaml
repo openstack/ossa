@@ -9,7 +9,9 @@ description: 'Henry Yamauchi, Charles Neill and Michael Xin from Rackspace repor
     dns_nameservers an authenticated user may crash Neutron service
     resulting in a denial of service attack. All Neutron setups are affected.'
 
-reference: http://lists.openstack.org/pipermail/openstack-announce/2014-November/000303.html
+errata: 'The former fix did not take into account the usage of hostnames as
+    nameserver and caused a regression for this use-case. This update
+    provides an additional fix for that issue.'
 
 affected-products:
 
@@ -59,12 +61,23 @@ issues:
 reviews:
 
   kilo:
-    - https://review.openstack.org/135616
+    - https://review.openstack.org/135616 - original
+    - https://review.openstack.org/137560 -   errata
 
   juno:
-    - https://review.openstack.org/135623
+    - https://review.openstack.org/135623 - original
+    - https://review.openstack.org/139061 -   errata
 
   icehouse:
-    - https://review.openstack.org/135624
+    - https://review.openstack.org/135624 - original
+    - https://review.openstack.org/139063 -   errata
 
   type: gerrit
+
+notes:
+  - 'These fixes are included in the 2014.2.1 release and will be included in
+    a future 2014.1.4 release.'
+
+errata_history:
+  - 2014-12-10 - Errata 1
+  - 2014-11-19 - Original Version
