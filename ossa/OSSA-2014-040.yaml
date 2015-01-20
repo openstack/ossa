@@ -1,0 +1,55 @@
+date: 2014-12-09
+
+id: OSSA-2014-040
+
+title: 'Horizon denial of service attack through login page'
+
+description: 'Eric Peterson from Time Warner Cable reported a vulnerability in Horizon. By
+    making repeated requests to the Horizon login page a remote attacker may
+    generate unwanted session records, potentially resulting in a denial of
+    service. Only Horizon setups using a db or memcached session engine are
+    affected.'
+
+affected-products:
+
+  - product: horizon
+    version: up to 2014.1.3 and 2014.2 version up to 2014.2.1
+
+vulnerabilities:
+
+  - cve-id: CVE-2014-8124
+
+reporters:
+
+  - name: 'Eric Peterson'
+    affiliation: Time Warner Cable
+    reported:
+      - CVE-2014-8124
+
+issues:
+
+  links:
+    - https://launchpad.net/bugs/1394370
+
+  type: launchpad
+
+reviews:
+
+  kilo:
+    - https://review.openstack.org/140353
+
+  juno:
+    - https://review.openstack.org/140358
+
+  icehouse:
+    - https://review.openstack.org/140356
+
+  django_openstack_auth:
+    - https://review.openstack.org/140352
+
+  type: gerrit
+
+notes:
+  - 'This fix will be included in future 2014.1.3 and 2014.2.1 releases.'
+  - 'The django_openstack_auth Horizon dependency requires the additional
+     patch above.'
