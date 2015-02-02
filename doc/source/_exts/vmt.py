@@ -77,10 +77,12 @@ def build_advisories(app):
 
 def reverse_toctree(app, doctree, docname):
     """Reverse the order of entries in the root toctree if 'glob' is used."""
-    if docname == "index":
+    if docname in ["index", "ossalist"]:
         for node in doctree.traverse():
             if node.tagname == "toctree" and node.get("glob"):
                 node["entries"].reverse()
+                if docname == "index":
+                    node["entries"] = node["entries"][0:5]
                 break
 
 
