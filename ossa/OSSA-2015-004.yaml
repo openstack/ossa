@@ -1,0 +1,58 @@
+date: 2015-02-23
+
+id: OSSA-2015-004
+
+title: 'Glance import task leaks image in backend'
+
+description: 'Abhishek Kekane from NTT and Mike Fedosin from Mirantis reported a
+    vulnerability in the Glance import task. By creating numerous images using
+    the task API and deleting them, an authenticated attacker may accumulate
+    untracked image data in the backend resulting in potential resource
+    exhaustion and denial of service. All glance setups using API v2 are
+    affected.'
+
+affected-products:
+
+  - product: glance
+    version: 2014.2 versions through 2014.2.2
+
+vulnerabilities:
+
+  - cve-id: CVE-2014-9684
+  - cve-id: CVE-2015-1881
+
+reporters:
+
+  - name: 'Abhishek Kekane'
+    affiliation: NTT
+    reported:
+      - CVE-2015-1881
+
+  - name: 'Mike Fedosin'
+    affiliation: Mirantis
+    reported:
+      - CVE-2014-9684
+
+issues:
+
+  links:
+    - https://launchpad.net/bugs/1420696
+    - https://launchpad.net/bugs/1371118
+
+  type: launchpad
+
+reviews:
+
+  kilo:
+    - https://review.openstack.org/156493
+    - https://review.openstack.org/122427
+
+  juno:
+    - https://review.openstack.org/156553
+    - https://review.openstack.org/157067
+
+  type: gerrit
+
+notes:
+  - 'This fix will be included in the kilo-3 development milestone and in
+     future 2014.2.3 (juno) release.'
