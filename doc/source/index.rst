@@ -95,7 +95,7 @@ together to improve security in OpenStack, in particular working on:
 * Facilitation - Support security products and vendors wanting to be part of
   the OpenStack community.
 
-See the Security_Teams_ page for the full list of security-oriented teams you
-can join.
+See the `Security Teams`_ wiki page for the full list of security-oriented
+teams you can join.
 
-.. _Security_Teams: http://wiki.openstack.org/SecurityTeams
+.. _Security Teams: http://wiki.openstack.org/SecurityTeams
