@@ -1,0 +1,50 @@
+date: 2015-04-14
+
+id: OSSA-2015-006
+
+title: 'Unauthorized delete of versioned Swift object'
+
+description: 'Clay Gerrard from SwiftStack reported a vulnerability in Swift object
+    versioning. An authenticated user can delete the most recent version of any
+    versioned object whose name is known if the user have listing access to the
+    x-versions-location container. Only Swift setups with allow_version setting
+    are affected.'
+
+affected-products:
+
+  - product: swift
+    version: versions through 2.2.2
+
+vulnerabilities:
+
+  - cve-id: CVE-2015-1856
+
+reporters:
+
+  - name: 'Clay Gerrard'
+    affiliation: SwiftStack
+    reported:
+      - CVE-2015-1856
+
+issues:
+
+  links:
+    - https://launchpad.net/bugs/1430645
+
+  type: launchpad
+
+reviews:
+
+  kilo:
+    - https://review.openstack.org/173361
+
+  juno:
+    - https://review.openstack.org/173363
+
+  icehouse:
+    - https://review.openstack.org/173366
+
+  type: gerrit
+
+notes:
+  - 'This fix will be included in the upcoming 2.3.0 release.'
