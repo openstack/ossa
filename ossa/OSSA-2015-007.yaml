@@ -1,0 +1,59 @@
+date: 2015-04-14
+
+id: OSSA-2015-007
+
+title: 'S3Token TLS cert verification option not honored'
+
+description: 'Brant Knudson from IBM reported a vulnerability in keystonemiddleware
+    (formerly shipped as python-keystoneclient). When the ''insecure'' option is
+    set in a S3Token paste configuration file its value is effectively ignored
+    and instead assumed to be true. As a result certificate verification will be
+    disabled, leaving TLS connections open to MITM attacks. Note that it''s
+    unusual to explicitly add this option and then set it to false, so the impact
+    of this bug is thought to be limited. All versions of s3_token middleware
+    with TLS settings configured are affected by this flaw.'
+
+affected-products:
+
+  - product: python-keystoneclient
+    version: versions through 1.3.0
+
+  - product: keystonemiddleware
+    version: versions through 1.5.0
+
+vulnerabilities:
+
+  - cve-id: CVE-2015-1852
+
+reporters:
+
+  - name: 'Brant Knudson'
+    affiliation: IBM
+    reported:
+      - CVE-2015-1852
+
+issues:
+
+  links:
+    - https://launchpad.net/bugs/1411063
+
+  type: launchpad
+
+reviews:
+
+  kilo:
+    - https://review.openstack.org/173365 (keystonemiddleware)
+    - https://review.openstack.org/173370 (python-keystoneclient)
+
+  juno:
+    - https://review.openstack.org/173376 (keystonemiddleware)
+    - https://review.openstack.org/173377 (python-keystoneclient)
+
+  icehouse:
+    - https://review.openstack.org/173378 (python-keystoneclient)
+
+  type: gerrit
+
+notes:
+  - 'This fix will be included in keystonemiddleware 1.6.0 release
+     and python-keystoneclient 1.4.0 release.'
