@@ -2,6 +2,12 @@
  OpenStack Security
 ====================
 
+.. toctree::
+   :hidden:
+
+   vmt-process
+
+
 Security is a fundamental goal of the OpenStack architecture and needs to
 be addressed at all layers of the stack. Like any complex, evolving system
 security has to be vigilantly pursued, and exposures eliminated. We need
@@ -74,12 +80,7 @@ Specifically, we are responsible for the following functions:
   community, the Team will ensure that proper credit is given to security
   researchers who responsibly report issues in OpenStack.
 
-.. seealso::
-
-  See the Vulnerability_Management_ page in the wiki for details on our
-  open process.
-
-.. _Vulnerability_Management: https://wiki.openstack.org/wiki/Vulnerability_Management
+See :doc:`vmt-process` for details on our open process.
 
 Other Security Teams in OpenStack
 ---------------------------------
