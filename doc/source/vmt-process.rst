@@ -147,9 +147,11 @@ In preparation for this, make sure you have a core developer and a
 stable maintainer available to help pushing the fix at disclosure
 time.
 
-On the disclosure hour, push patches to Gerrit for review on master
-and supported stable branches, open bug, fast-track approvals
+On the disclosure hour, open bug, push patches to Gerrit for review
+on master and supported stable branches, fast-track approvals
 (referencing the bug).
+
+Embargo reminder can be removed at that point.
 
 Publish OSSA
 ^^^^^^^^^^^^
@@ -199,6 +201,31 @@ warrant an advisory.
 +----------+-----------+-------------------------------------------+
 | Class Z  |           | When due process fails                    |
 +----------+-----------+-------------------------------------------+
+
+OSSA Task status
+----------------
+
+Here is a summary of the different OSSA task status meanings:
+
++---------------+--------------------------------------------------+
+| Status        | Meaning                                          |
++===============+==================================================+
+| Incomplete    | It is still unclear whenever the bug warrants an |
+|               | advisory                                         |
++---------------+--------------------------------------------------+
+| Confirmed     | The vulnerability is confirmed, impact           |
+|               | description is in progress                       |
++---------------+--------------------------------------------------+
+| Triaged       | Impact description has been submitted for review |
++---------------+--------------------------------------------------+
+| In Progress   | CVE has been requested                           |
++---------------+--------------------------------------------------+
+| Fix committed | Pre-OSSA has been communicated                   |
++---------------+--------------------------------------------------+
+| Fix released  | All patches have been merged                     |
++---------------+--------------------------------------------------+
+| Won't Fix     | Doesn't fit with the project plans, sorry        |
++---------------+--------------------------------------------------+
 
 Extent of Disclosure
 --------------------
@@ -390,8 +417,57 @@ names, for example ``cve-2013-4183-master-havana.patch`` or
 OpenStack Security Advisories
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-We send two separate emails, to avoid off-topic replies to
-oss-security list:
+The document is first submitted as a yaml description to the ossa
+project using this template::
+
+    date: YYYY-MM-DD
+
+    id: OSSA-$NUM
+
+    title: '$TITLE'
+
+    description: '$DESCRIPTION_CONTENT'
+
+    affected-products:
+
+      - product: $PROJECT
+        version: $AFFECTED_VERSIONS
+
+    vulnerabilities:
+
+      - cve-id: $CVE
+
+    reporters:
+
+      - name: '$CREDIT'
+        affiliation: $CREDIT_AFFILIATION
+        reported:
+          - $CVE
+
+    issues:
+
+      links:
+        - https://launchpad.net/bugs/$BUG
+
+      type: launchpad
+
+    reviews:
+
+      kilo:
+        - https://review.openstack.org/$MASTER_REVIEW
+
+      juno:
+        - https://review.openstack.org/$STABLE_REVIEW
+
+      type: gerrit
+
+    notes:
+      - 'This fix will be included in the $MILESTONE development milestone and in
+         a future $NEXTSTABLE release.'
+
+Once approved, use the 'Show Source' button from the gate-ossa-docs output
+to get the generated RST document. We send two separate emails, to
+avoid off-topic replies to oss-security list:
 
 * *To:* openstack-announce@lists.openstack.org, openstack@lists.openstack.org
 * *To:* oss-security@lists.openwall.com
@@ -399,31 +475,9 @@ oss-security list:
 Subject and content for both emails is identical:
 
 * *Subject:* [OSSA $NUM] $TITLE ($CVE)
+* *Body:* The generated RST document
 
-::
-
-    OpenStack Security Advisory: $NUM
-    CVE: $CVE
-    Date: December 13, 2011
-    $DESCRIPTION
-
-    Havana (development branch) fix:
-    https://review.openstack.org/$MASTER_REVIEW
-
-    Grizzly fix:
-    https://review.openstack.org/$STABLE_REVIEW
-
-    Notes:
-    This fix will be included in the $MILESTONE development milestone and in
-    a future $NEXTSTABLE release.
-
-    References:
-    http://cve.mitre.org/cgi-bin/cvename.cgi?name=$CVE
-    https://launchpad.net/bugs/$BUG
-
-    --
-    $VMT_COORDINATOR_NAME
-    OpenStack Vulnerability Management Team
+Notes:
 
 * Email must be GPG-signed.
 * $CVE must always be of the form CVE-YYYY-XXXX
