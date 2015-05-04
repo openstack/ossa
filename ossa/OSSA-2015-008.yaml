@@ -1,0 +1,50 @@
+date: 2015-05-04
+
+id: OSSA-2015-008
+
+title: 'Potential Keystone cache backend password leak in log'
+
+description: 'Eric Brown from VMware reported a vulnerability in Keystone. The
+    backend_argument configuration option content is being logged, and it may
+    contain sensitive information for specific backends (like a password for
+    MongoDB). An attacker with read access to Keystone logs may therefore obtain
+    sensitive data about certain backends. All Keystone setups are potentially
+    impacted.'
+
+affected-products:
+
+  - product: keystone
+    version: versions through 2014.1.4, and 2014.2 versions through 2014.2.3
+
+vulnerabilities:
+
+  - cve-id: CVE-2015-3646
+
+reporters:
+
+  - name: 'Eric Brown'
+    affiliation: VMware
+    reported:
+      - CVE-2015-3646
+
+issues:
+
+  links:
+    - https://launchpad.net/bugs/1443598
+
+  type: launchpad
+
+reviews:
+
+  juno:
+    - https://review.openstack.org/173116
+
+  icehouse:
+    - https://review.openstack.org/175519
+
+  type: gerrit
+
+notes:
+  - 'This fix will be included in future 2014.1.5 (icehouse) and 2014.2.4
+     (juno) releases.'
+  - 'The 2015.1.0 (kilo) release is not affected.'
