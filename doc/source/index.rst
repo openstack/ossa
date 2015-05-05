@@ -44,8 +44,12 @@ How to Report Security Issues to OpenStack
 We provide two ways to report issues to the OpenStack Vulnerability Management
 Team depending on how sensitive the issue is:
 
-* Open a bug in Launchpad and mark it as a 'security bug'. This will make the
-  bug Private and only accessible to the Vulnerability Management Team.
+* Search for the corresponding project at https://launchpad.net/ and after
+  selecting it, click the 'Report a bug' link at the right. Fill in the
+  'Summary' and 'Further information' fields describing the issue, then
+  click the 'This bug is a security vulnerability' checkbox near the bottom
+  of the page before submitting it. This will make the bug Private and only
+  accessible to the Vulnerability Management Team.
 
 * If the issue is extremely sensitive, please send an encrypted email to one
   of the Team's members. Their GPG keys can be found below, and are also
