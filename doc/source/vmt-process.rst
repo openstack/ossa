@@ -288,7 +288,7 @@ avoid private disclosure to other individuals not already approved
 for access to this information, and provide this same reminder to
 those who are made aware of the issue prior to publication. All
 discussion should remain confined to this private bug report, and
-any proposed fixes should be added as to the bug as attachments.
+any proposed fixes should be added to the bug as attachments.
 
 Impact Description ($DESCRIPTION)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
