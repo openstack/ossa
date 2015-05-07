@@ -109,3 +109,17 @@ See the `Security Teams`_ wiki page for the full list of security-oriented
 teams you can join.
 
 .. _Security Teams: http://wiki.openstack.org/SecurityTeams
+
+
+OpenStack secure development guidelines
+---------------------------------------
+
+The OpenStack security team have collaboratively developed this set of
+guidelines and best practices to help avoid common mistakes that lead
+to security vulnerabilities within the OpenStack platform.
+
+.. toctree::
+   :maxdepth: 1
+   :glob:
+
+   ./guidelines/*
