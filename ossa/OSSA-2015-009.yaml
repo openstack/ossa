@@ -1,0 +1,45 @@
+date: 2015-05-15
+
+id: OSSA-2015-009
+
+title: 'Persistent XSS in Horizon metadata dashboard'
+
+description: 'Sunil Yadav from IBM Security Services reported a persistent XSS in Horizon.
+    An authenticated user may conduct a persistent XSS attack by setting a
+    malicious metadata to a Glance image, a Nova flavor or a Host Aggregate and
+    tricking an administrator to load the update metadata page. Once executed in
+    a legitimate context this attack may result in a privilege escalation. All
+    Horizon setups are affected.'
+
+affected-products:
+
+  - product: horizon
+    version: version 2015.1.0
+
+vulnerabilities:
+
+  - cve-id: CVE-2015-3988
+
+reporters:
+
+  - name: 'Sunil Yadav'
+    affiliation: IBM
+    reported:
+      - CVE-2015-3988
+
+issues:
+
+  links:
+    - https://launchpad.net/bugs/1449260
+
+  type: launchpad
+
+reviews:
+
+  kilo:
+    - https://review.openstack.org/179429
+
+  type: gerrit
+
+notes:
+  - 'This fix will be included in a future 2015.1.1 (kilo) releases.'
