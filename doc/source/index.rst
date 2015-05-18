@@ -68,14 +68,24 @@ Team depending on how sensitive the issue is:
 
 .. _`GPG key for Grant`: http://keyserver.ubuntu.com:11371/pks/lookup?search=0x551a2252
 
-OpenStack Vulnerability Management Team
----------------------------------------
 
-The OpenStack Vulnerability Management team is a very small group of experts
-in vulnerability management drawn from the OpenStack community. Our job is
-facilitating the reporting of vulnerabilities, coordinating security fixes
-and handling progressive disclosure of the vulnerability information.
-Specifically, we are responsible for the following functions:
+OpenStack Security Team
+-----------------------
+
+The OpenStack security team runs an number of initiatives aimed at improving
+the overall security of OpenStack projects and ensuring that security incidents
+are handled in a coordinated fashion.  Key initiatives that fall within the
+security team's areas of responsibility are outlined below.
+
+
+Vulnerability Management
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+An autonomous subgroup of vulnerability management specialists with in the
+security team make up the OpenStack vulnerability management team (VMT).
+Their job is facilitating the reporting of vulnerabilities, coordinating
+security fixes and handling progressive disclosure of the vulnerability
+information. Specifically, they are responsible for the following functions:
 
 * Vulnerability Management: All vulnerabilities discovered by community
   members (or users) can be reported to the Team.
@@ -91,28 +101,80 @@ Specifically, we are responsible for the following functions:
 
 See :doc:`vmt-process` for details on our open process.
 
-Other Security Teams in OpenStack
----------------------------------
 
-Other teams of security-conscious people in the OpenStack community work
-together to improve security in OpenStack, in particular working on:
+OpenStack Security Notes
+~~~~~~~~~~~~~~~~~~~~~~~~
 
-* Introduce security improvements - Brainstorm and implement security
-  improvements for OpenStack core projects.
+Security Notes advise users of security related issues. Security notes are
+similar to advisories; they often address vulnerabilities in 3rd party tools
+typically used within OpenStack deployments and provide guidance on common
+configuration mistakes that can result in an insecure operating environment.
 
-* Audits - Coordinate security auditing efforts between members.
+A list of `security notes <https://wiki.openstack.org/wiki/Security_Notes>`_
+is available online, but are also published on the OpenStack mailing list as they
+are released.
 
-* Facilitation - Support security products and vendors wanting to be part of
-  the OpenStack community.
+Security tool development
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
-See the `Security Teams`_ wiki page for the full list of security-oriented
-teams you can join.
+The security team are constantly looking at ways to introduce tooling and
+automation to improve the overall security of OpenStack projects. Some of these
+projects are outlined below.
 
-.. _Security Teams: http://wiki.openstack.org/SecurityTeams
+Bandit - A security linter
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Bandit is a security linter for Python source code, utilizing the ast module
+from the Python standard library. The **ast** module is used to convert source code
+into a parsed tree of Python syntax nodes. Bandit allows users to define custom
+tests that are performed against those nodes. At the completion of testing,
+a report is generated that lists security issues identified within the
+target source code.
+
+Bandit is currently a stand-alone tool which can be downloaded by end-users and
+run against arbitrary source code. Although early in development it is already
+adding value to the OpenStack code base with several projects leveraging it
+in their CI gate tests. As the project matures the desire is to see widespread
+adoption of Bandit in the OpenStack community.
+
+Bandit can be obtained by cloning the `repository <https://git.openstack.org/openstack/bandit.git>`_.
+The README.rst file contains documentation regarding installation, usage,
+and configuration.
+
+* `Bandit Git Repository <https://git.openstack.org/cgit/openstack/bandit>`_
+* `Bandit Gerrit <https://review.openstack.org/#/q/bandit,n,z>`_
+* `Bandit Launchpad <https://bugs.launchpad.net/bandit>`_
+
+Anchor - Ephemeral PKI
+^^^^^^^^^^^^^^^^^^^^^^
+
+Anchor is a lightweight, open source, Public Key Infrastructure (PKI), which
+uses automated provisioning of short-term certificates to enable cryptographic
+trust in OpenStack services. Certificates are typically valid for 12-24 hours
+and are issued based on the result from a policy enforcing decision engine.
+Short term certificates enable passive revocation, to bypass the issues with
+the traditional revocation mechanisms used in most PKI deployments.
+
+* `Anchor Git Repository <https://git.openstack.org/cgit/openstack/anchor>`_
+* `Anchor Gerrit <https://review.openstack.org/#/q/anchor,n,z>`_
+* `Anchor Launchpad <https://bugs.launchpad.net/anchor>`_
 
 
-OpenStack secure development guidelines
----------------------------------------
+OpenStack Security Guide
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+The OpenStack Security Guide provides best practices learned by cloud operators
+while hardening their OpenStack deployments. This book was written by a close
+community of security experts from the OpenStack Security Group in an intense
+week-long effort at an undisclosed location. One of the goals for this book is
+to bring together interested members to capture their collective knowledge
+and give it to the OpenStack community.
+
+Read `the guide <http://docs.openstack.org/sec/>`_ online today.
+
+
+Secure development guidelines
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The OpenStack security team have collaboratively developed this set of
 guidelines and best practices to help avoid common mistakes that lead
