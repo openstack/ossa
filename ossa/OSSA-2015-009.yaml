@@ -1,4 +1,4 @@
-date: 2015-05-15
+date: 2015-05-25
 
 id: OSSA-2015-009
 
@@ -14,7 +14,7 @@ description: 'Sunil Yadav from IBM Security Services reported a persistent XSS i
 affected-products:
 
   - product: horizon
-    version: version 2015.1.0
+    version: 2014.2 versions through 2014.2.3 and version 2015.1.0
 
 vulnerabilities:
 
@@ -36,10 +36,17 @@ issues:
 
 reviews:
 
-  kilo:
+  liberty:
     - https://review.openstack.org/179429
+
+  kilo:
+    - https://review.openstack.org/183656
+
+  juno:
+    - https://review.openstack.org/183659
 
   type: gerrit
 
 notes:
-  - 'This fix will be included in a future 2015.1.1 (kilo) releases.'
+  - 'This fix will be included in future 2014.2.4 (juno) and 2015.1.1 (kilo)
+     releases.'
