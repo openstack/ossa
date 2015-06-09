@@ -56,7 +56,7 @@ Team depending on how sensitive the issue is:
   available from popular public GPG key servers.
 
   * Jeremy Stanley (jeremy@openstack.org): `GPG key for Jeremy`_
-  * Tristan Cacqueray (tristan.cacqueray@enovance.com): `GPG key for Tristan`_
+  * Tristan Cacqueray (tdecacqu@redhat.com): `GPG key for Tristan`_
   * Thierry Carrez (thierry@openstack.org): `GPG key for Thierry`_
   * Grant Murphy (grant.murphy@hp.com): `GPG key for Grant`_
 
