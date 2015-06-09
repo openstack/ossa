@@ -1,0 +1,53 @@
+date: 2015-06-09
+
+id: OSSA-2015-010
+
+title: 'XSS in Horizon Heat stack creation'
+
+description: 'Nikita Konovalov from Mirantis reported a vulnerability in Horizon.
+    By tricking a Horizon user into using a malicious template in the
+    Orchestration/Stack section of Horizon, a remote attacker may trigger
+    a cross-site-scripting vulnerability during the stack creation. It
+    may result in potential assets theft like user access credentials.
+    Only setups exposing the orchestration dashboard in Horizon
+    are affected.'
+
+affected-products:
+
+  - product: horizon
+    version: 2014.2 versions through 2014.2.3 and version 2015.1.0
+
+vulnerabilities:
+
+  - cve-id: CVE-2015-3219
+
+reporters:
+
+  - name: 'Nikita Konovalov'
+    affiliation: Mirantis
+    reported:
+      - CVE-2015-3219
+
+issues:
+
+  links:
+    - https://launchpad.net/bugs/1453074
+
+  type: launchpad
+
+reviews:
+
+  liberty:
+    - https://review.openstack.org/189820
+
+  kilo:
+    - https://review.openstack.org/189822
+
+  juno:
+    - https://review.openstack.org/189821
+
+  type: gerrit
+
+notes:
+  - 'This fix will be included in future 2014.2.4 (juno) and 2015.1.1 (kilo)
+     releases.'
