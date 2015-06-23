@@ -1,0 +1,55 @@
+date: 2015-06-23
+
+id: OSSA-2015-012
+
+title: 'Neutron L2 agent DoS through incorrect allowed address pairs'
+
+description: 'Darragh O''Reilly from HP reported a vulnerability in Neutron.
+    By adding an address pair which is rejected as invalid by the ipset
+    tool, an authenticated user may crash the Neutron L2 agent resulting
+    in a denial of service attack. Neutron setups using the IPTables
+    firewall driver are affected.'
+
+affected-products:
+
+  - product: neutron
+    version: 2014.2 versions through 2014.2.3 and 2015.1.0 version
+
+vulnerabilities:
+
+  - cve-id: CVE-2015-3221
+
+reporters:
+
+  - name: 'Darragh O''Reilly'
+    affiliation: HP
+    reported:
+      - CVE-2015-3221
+
+issues:
+
+  links:
+    - https://launchpad.net/bugs/1461054
+
+  type: launchpad
+
+reviews:
+
+  liberty:
+    - https://review.openstack.org/194695
+
+  kilo:
+    - https://review.openstack.org/194697
+
+  juno:
+    - https://review.openstack.org/194696
+
+  type: gerrit
+
+notes:
+  - 'This fix will be included in future 2014.2.4 (juno)
+     and 2015.1.1 (kilo) releases.'
+  - 'Zero prefixed address pairs are no longer accepted by the Juno API,
+     users need to use 0.0.0.0/1 and 128.0.0.1/1 or ::/1 and 8000::/1 instead.
+     The fix_zero_length_ip_prefix.py tool is provided to clean ports
+     previously configured with a zero prefixed address pair'
