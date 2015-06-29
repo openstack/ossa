@@ -244,6 +244,18 @@ Vulnerability reporters retain final control over the disclosure of
 their findings. If for some reason they are uncomfortable with our
 process, their choice of disclosure terms prevails.
 
+Embargo Exceptions
+^^^^^^^^^^^^^^^^^^
+
+To keep the embargo period short and effective, the VMT may
+choose to open bug reports. Issues that take too much time
+to be fixed (e.g., more than 2 weeks) or issues that require
+a complex patch are usually better solved in the open.
+
+Whenever such a case occurs, the ossg-coresec group is
+subscribed to the bug report in order to discuss whether or not
+it's imperative to keep that particular bug private.
+
 Downstream Stakeholders
 ^^^^^^^^^^^^^^^^^^^^^^^
 
