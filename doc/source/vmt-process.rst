@@ -29,7 +29,7 @@ vulnerabilities in one or two previous releases of OpenStack, in
 addition to the master branch (next version under development), for
 all `security supported projects`_.
 
-.. _security supported projects: https://wiki.openstack.org/wiki/Security_supported_projects
+.. _security supported projects: http://governance.openstack.org/reference/tags/vulnerability_managed.html
 
 Process
 -------
