@@ -1,0 +1,48 @@
+date: 2015-07-28
+
+id: OSSA-2015-013
+
+title: 'Glance task flow may fail to delete image from backend'
+
+description: 'Abhishek Kekane from NTT reported a vulnerability in Glance.
+    By creating numerous images using the import task flow API and deleting
+    them, an authenticated attacker may accumulate untracked image data in the
+    backend resulting in potential resource exhaustion and denial of
+    service. All glance setups are affected.'
+
+affected-products:
+
+  - product: glance
+    version: versions 2015.1.0
+
+vulnerabilities:
+
+  - cve-id: CVE-2015-3289
+
+reporters:
+
+  - name: 'Abhishek Kekane'
+    affiliation: NTT
+    reported:
+      - CVE-2015-3289
+
+issues:
+
+  links:
+    - https://launchpad.net/bugs/1454087
+
+  type: launchpad
+
+reviews:
+
+  liberty:
+    - https://review.openstack.org/#/c/181345/
+
+  kilo:
+    - https://review.openstack.org/#/c/181816/
+
+
+  type: gerrit
+
+notes:
+  - 'This fix will be included in the future 2015.1.1 (kilo) release.'
