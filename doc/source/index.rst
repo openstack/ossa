@@ -66,6 +66,37 @@ Team depending on how sensitive the issue is:
 .. _`GPG key for Grant`: http://keyserver.ubuntu.com:11371/pks/lookup?search=0x551a2252
 
 
+How to Propose and Review a Security Patch
+------------------------------------------
+
+.. note::
+
+    The patch development and review process for security patches is different
+    from normal patches in OpenStack. Because the gerrit review process is
+    public, all security bugs must have patches proposed to and reviewed in
+    the Launchpad bug report comments.
+
+After a patch for the reported bug has been developed locally, you the patch author need to share that with the community. This is a simple process, but it is different than the normal OpenStack workflow.
+
+* Export it using the `format-patch` command::
+
+    git format-patch --stdout HEAD~1 >path/to/local/file.patch
+
+  Now you have the patch saved locally and you can attach it in a comment
+  on the Launchpad bug page.
+
+* For reviewers, to review that attached patch, run the following command::
+
+    git am <~path/to/local/file.patch
+
+  This applies the patch locally as a commit, including the commit message,
+  author, date, and all other metadata. However, if the patch author did
+  not use `format-patch` to export the patch (perhaps they only used
+  `git show >local.patch`), then the patch can be applied locally with::
+
+    git apply path/to/local/file.patch
+
+
 OpenStack Security Team
 -----------------------
 
