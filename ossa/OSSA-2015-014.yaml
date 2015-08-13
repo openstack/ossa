@@ -1,0 +1,48 @@
+date: 2015-08-13
+
+id: OSSA-2015-014
+
+title: 'Glance v2 API host file disclosure through qcow2 backing file'
+
+description: 'Eric Harney from Red Hat reported a vulnerability in Glance. By
+    importing a qcow2 image with a malicious backing file, an
+    authenticated user may mislead Glance import task action, resulting
+    in the disclosure of any file on the Glance server for which the
+    Glance process user has access to. Only setups using the Glance V2
+    API are affected by this flaw.'
+
+affected-products:
+
+  - product: glance
+    version: 2015.1 versions through 2015.1.1
+
+vulnerabilities:
+
+  - cve-id: CVE-2015-5163
+
+reporters:
+
+  - name: 'Eric Harney'
+    affiliation: Red Hat
+    reported:
+      - CVE-2015-5163
+
+issues:
+
+  links:
+    - https://launchpad.net/bugs/1471912
+
+  type: launchpad
+
+reviews:
+
+  liberty:
+    - https://review.openstack.org/212567
+
+  kilo:
+    - https://review.openstack.org/212568
+
+  type: gerrit
+
+notes:
+  - 'This fix will be included in the future 2015.1.2 (kilo) release.'
