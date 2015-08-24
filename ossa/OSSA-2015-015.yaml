@@ -1,0 +1,56 @@
+date: 2015-08-25
+
+id: OSSA-2015-015
+
+title: 'Nova instance migration process does not stop when instance is deleted'
+
+description: 'George Shuklin from Webzilla LTD reported a vulnerability in Nova
+    migration process. By resizing and deleting an instance repeatedly an
+    authenticated user may overcome his quota and overload Nova computes
+    node resulting in a denial of service attack. All Nova setups are
+    affected.'
+
+affected-products:
+
+  - product: nova
+    version: versions through 2014.2.3 and 2015.1 versions through 2015.1.1
+
+vulnerabilities:
+
+  - cve-id: CVE-2015-3241
+
+reporters:
+
+  - name: 'George Shuklin'
+    affiliation: Webzilla LTD
+    reported:
+      - CVE-2015-3241
+
+issues:
+
+  links:
+    - https://launchpad.net/bugs/1387543
+
+  type: launchpad
+
+reviews:
+
+  liberty:
+    - https://review.openstack.org/194861
+    - https://review.openstack.org/192986
+
+  kilo:
+    - https://review.openstack.org/213234
+    - https://review.openstack.org/209856
+
+  juno:
+    - https://review.openstack.org/208876
+    - https://review.openstack.org/214528
+
+  type: gerrit
+
+notes:
+  - 'This fix requires oslo.concurrency >= 1.8.2 for Kilo and >= 2.3.0 for
+     Liberty. Juno fix embeds a patched version of oslo.concurrency'
+  - 'This fix will be included in future 2014.2.4 (juno) and 2015.1.2 (kilo)
+     releases.'
