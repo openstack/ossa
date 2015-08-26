@@ -1,0 +1,58 @@
+date: 2015-08-26
+
+id: OSSA-2015-016
+
+title: 'Information leak via Swift tempurls'
+
+description: 'Richard Hawkins from Rackspace and Swift core reviewers reported a
+    vulnerability in Swift tempurls. When in possession of a tempurl key
+    authorized for PUT, a malicious actor may retrieve other objects in
+    the same Swift account (tenant). All Swift setups are affected.'
+
+affected-products:
+
+  - product: swift
+    version: versions through 2.3.0
+
+vulnerabilities:
+
+  - cve-id: CVE-2015-5223
+
+reporters:
+
+  - name: 'Richard Hawkins'
+    affiliation: Rackspace
+    reported:
+      - CVE-2015-5223
+
+  - name: 'Swift core reviewers'
+    affiliation: OpenStack
+    reported:
+      - CVE-2015-5223
+
+issues:
+
+  links:
+    - https://launchpad.net/bugs/1453948
+    - https://launchpad.net/bugs/1449212
+
+  type: launchpad
+
+reviews:
+
+  liberty:
+    - https://review.openstack.org/217259
+    - https://review.openstack.org/217260
+
+  kilo:
+    - https://review.openstack.org/217254
+    - https://review.openstack.org/217255
+
+  juno:
+    - https://review.openstack.org/217253
+
+  type: gerrit
+
+notes:
+  - 'This fix will be included in future 2014.2.4 (juno) and 2015.1.2 (kilo)
+     releases.'
