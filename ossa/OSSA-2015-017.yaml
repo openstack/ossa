@@ -1,0 +1,57 @@
+date: 2015-09-01
+
+id: OSSA-2015-017
+
+title: 'Nova may fail to delete images in resize state'
+
+description: 'George Shuklin from Webzilla LTD and Tushar Patil from NTT DATA, Inc
+    independently reported a vulnerability in Nova resize state. If an
+    authenticated user deletes an instance while it is in resize state,
+    it will cause the original instance to not be deleted from the
+    compute node it was running on. An attacker can use this to launch a
+    denial of service attack. All Nova setups are affected.'
+
+affected-products:
+
+  - product: nova
+    version: 2014.2 versions through 2014.2.3, and 2015.1 versions through 2015.1.1
+
+vulnerabilities:
+
+  - cve-id: CVE-2015-3280
+
+reporters:
+
+  - name: 'George Shuklin'
+    affiliation: Webzilla LTD
+    reported:
+      - CVE-2015-3280
+
+  - name: 'Tushar Patil'
+    affiliation: NTT Data
+    reported:
+      - CVE-2015-3280
+
+issues:
+
+  links:
+    - https://launchpad.net/bugs/1392527
+
+  type: launchpad
+
+reviews:
+
+  liberty:
+    - https://review.openstack.org/219299
+
+  kilo:
+    - https://review.openstack.org/219300
+
+  juno:
+    - https://review.openstack.org/219301
+
+  type: gerrit
+
+notes:
+  - 'This fix will be included in future 2014.2.4 (juno) and 2015.1.2 (kilo)
+     releases.'
