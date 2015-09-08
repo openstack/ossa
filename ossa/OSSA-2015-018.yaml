@@ -1,0 +1,51 @@
+date: 2015-09-08
+
+id: OSSA-2015-018
+
+title: 'Neutron firewall rules bypass through port update'
+
+description: 'Kevin Benton from Mirantis reported a vulnerability in Neutron. By
+    changing the device owner of an instance''s port right after it is
+    created, an authenticated user may prevent application of firewall rules
+    and so avoid IP anti-spoofing controls. All Neutron setups using the ML2
+    plugin or a plugin that relies on the security groups AMQP API are affected.'
+
+affected-products:
+
+  - product: neutron
+    version: versions through 2014.2.3 and 2015.1 versions through 2015.1.1
+
+vulnerabilities:
+
+  - cve-id: CVE-2015-5240
+
+reporters:
+
+  - name: 'Kevin Benton'
+    affiliation: Mirantis
+    reported:
+      - CVE-2015-5240
+
+issues:
+
+  links:
+    - https://launchpad.net/bugs/1489111
+
+  type: launchpad
+
+reviews:
+
+  liberty:
+    - https://review.openstack.org/221342
+
+  kilo:
+    - https://review.openstack.org/221344
+
+  juno:
+    - https://review.openstack.org/221345
+
+  type: gerrit
+
+notes:
+  - 'This fix will be included in future 2014.2.4 (juno) and 2015.1.2 (kilo)
+     releases.'
