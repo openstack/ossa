@@ -57,7 +57,7 @@ Team depending on how sensitive the issue is:
 
   * Jeremy Stanley (jeremy@openstack.org): `GPG key for Jeremy`_
   * Tristan Cacqueray (tdecacqu@redhat.com): `GPG key for Tristan`_
-  * Grant Murphy (grant.murphy@hp.com): `GPG key for Grant`_
+  * Grant Murphy (grant.murphy@hpe.com): `GPG key for Grant`_
 
 .. _`GPG key for Jeremy`: http://keyserver.ubuntu.com:11371/pks/lookup?search=0x48f9961143495829
 
