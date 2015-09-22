@@ -1,0 +1,54 @@
+date: 2015-09-22
+
+id: OSSA-2015-019
+
+title: 'Glance image status manipulation'
+
+description: 'Hemanth Makkapati of Rackspace reported a vulnerability in
+    Glance. By submitting a HTTP PUT request with a
+    "x-image-meta-status" header, a tenant can manipulate the
+    status of their images. A malicious tenant may exploit this
+    flaw to reactivate disabled images, bypass storage quotas and
+    in some cases replace image contents. Setups using the Glance
+    v1 API allow the illegal modification of image status. Setups
+    which also use the v2 API may allow a subsequent re-upload of
+    image contents.'
+
+affected-products:
+
+  - product: glance
+    version: <=2014.2.3, >=2015.1.0, <=2015.1.1
+
+vulnerabilities:
+
+  - cve-id: CVE-2015-5251
+
+reporters:
+
+  - name: 'Hemanth Makkapati'
+    affiliation: Rackspace
+    reported:
+      - CVE-2015-5251
+
+issues:
+
+  links:
+    - https://bugs.launchpad.net/bugs/1482371
+  type: launchpad
+
+reviews:
+
+  liberty:
+    - https://review.openstack.org/226336
+
+  kilo:
+    - https://review.openstack.org/226337
+
+  juno:
+    - https://review.openstack.org/226338
+
+  type: gerrit
+
+notes:
+  - 'This fix will be included in future 2014.2.4 (juno) and 2015.1.2 (kilo)
+     releases.'
