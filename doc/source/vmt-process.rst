@@ -321,20 +321,20 @@ havana still will have point releases:
 
 ::
 
-    Affects: 2011.2 versions through 2013.1.2, and 2013.2 versions through 2013.2.1
+    Affects: >=2011.2, <=2013.1.2, and >=2013.2, <=2013.2.1
 
 Once the last Grizzly point release is released, that line becomes:
 
 ::
 
-    Affects: 2011.2 versions through 2013.2.1
+    Affects: >=2011.2, <=2013.2.1
 
 If the oldest version affected is not easily identified, leave it
 open-ended:
 
 ::
 
-    Affects: versions through 2013.2.1
+    Affects: <=2013.2.1
 
 CVE Request Email (Private Issues)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
