@@ -1,0 +1,64 @@
+date: 2015-10-01
+
+id: OSSA-2015-020
+
+title: 'Glance storage overrun'
+
+description: 'Mike Fedosin and Alexei Galkin from Mirantis reported a vulnerability in
+    Glance. By deleting images that are being uploaded using a token that is
+    about to expire, a malicious user can overcome the storage quota and
+    accumulate untracked image data in the backend resulting in potential
+    resource exhaustion and denial of service. All Glance setups using the V1 API
+    are affected and all setups using the V2 API with the registry db_api enabled
+    are affected.'
+
+affected-products:
+
+  - product: glance
+    version: <=2014.2.3, >=2015.1.0, <=2015.1.1
+
+vulnerabilities:
+
+  - cve-id: CVE-2015-5286
+
+reporters:
+
+  - name: 'Mike Fedosin'
+    affiliation: Mirantis
+    reported:
+      - CVE-2015-5286
+
+  - name: 'Alexei Galkin'
+    affiliation: Mirantis
+    reported:
+      - CVE-2015-5286
+
+issues:
+
+  links:
+    - https://bugs.launchpad.net/bugs/1498163
+  type: launchpad
+
+reviews:
+
+  mitaka:
+    - https://review.openstack.org/229943
+    - https://review.openstack.org/229971
+
+  liberty:
+    - https://review.openstack.org/230056
+    - https://review.openstack.org/229972
+
+  kilo:
+    - https://review.openstack.org/229945
+    - https://review.openstack.org/229973
+
+  juno:
+    - https://review.openstack.org/229946
+    - https://review.openstack.org/229975
+
+  type: gerrit
+
+notes:
+  - 'This fix will be included in future 2014.2.4 (juno) and 2015.1.2 (kilo)
+     releases.'
