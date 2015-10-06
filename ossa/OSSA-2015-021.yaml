@@ -1,0 +1,53 @@
+date: 2015-10-06
+
+id: OSSA-2015-021
+
+title: 'Nova network security group changes are not applied to running instances'
+
+description: 'Sreekumar S. and Suntao independently reported a vulnerability in Nova
+    network. Security group changes silently fail to be applied to already
+    running instances, potentially resulting in instances not being protected by
+    the security group. All Nova network setups are affected.'
+
+affected-products:
+
+  - product: nova
+    version: "<=2014.2.3, >=2015.1.0, <=2015.1.1"
+
+vulnerabilities:
+
+  - cve-id: CVE-2015-7713
+
+reporters:
+
+  - name: 'Sreekumar S.'
+    reported:
+      - CVE-2015-7713
+
+  - name: 'Suntao'
+    reported:
+      - CVE-2015-7713
+
+issues:
+
+  links:
+    - https://bugs.launchpad.net/bugs/1491307
+    - https://bugs.launchpad.net/bugs/1484738
+  type: launchpad
+
+reviews:
+
+  liberty:
+    - https://review.openstack.org/222022
+
+  kilo:
+    - https://review.openstack.org/222023
+
+  juno:
+    - https://review.openstack.org/222026
+
+  type: gerrit
+
+notes:
+  - 'This fix will be included in future 2014.2.4 (juno) and 2015.1.2 (kilo)
+     releases.'
