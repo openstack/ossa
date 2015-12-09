@@ -183,9 +183,13 @@ warrant an advisory.
 |          |           | yet, security note for all versions,      |
 |          |           | e.g., poor architecture / design          |
 +----------+-----------+-------------------------------------------+
+| Class B3 | OSSN      | A vulnerability in experimental or        |
+|          |           | debugging features not intended for       |
+|          |           | production use                            |
++----------+-----------+-------------------------------------------+
 | Class C1 | Potential | Not considered a practical vulnerability  |
 |          | OSSN      | (but some people might assign a CVE for   |
-|          |           | it)                                       |
+|          |           | it), e.g. one depending on UUID guessing  |
 +----------+-----------+-------------------------------------------+
 | Class C2 | Potential | A vulnerability, but not in OpenStack     |
 |          | OSSN      | supported code, e.g., in a dependency     |
