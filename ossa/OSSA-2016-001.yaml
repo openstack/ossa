@@ -1,0 +1,63 @@
+date: 2016-01-07
+
+id: OSSA-2016-001
+
+title: 'Nova host data leak through snapshot'
+
+description: 'Matthew Booth from Red Hat reported a vulnerability in Nova instance
+    snapshot. By overwriting the disk inside an instance with a malicious
+    image and requesting a snapshot, an authenticated user would be able to
+    read an arbitrary file from the compute host. Note that the host file
+    needs to be readable by the nova user to be exposed except when using
+    lvm for instance storage, when all files readable by root are exposed.
+    Only setups using libvirt to spawn instances are vulnerable. Of these,
+    setups which use filesystem storage, and do not set "use_cow_images =
+    False" in Nova configuration are not affected. Setups which use ceph or
+    lvm for instance storage, and setups which use filesystem storage with
+    "use_cow_images = False" are all affected.'
+
+
+affected-products:
+
+  - product: nova
+    version: "<=2015.1.2, ==12.0.0"
+
+vulnerabilities:
+
+  - cve-id: CVE-2015-7548
+
+reporters:
+
+  - name: 'Matthew Booth'
+    affiliation: Red Hat
+    reported:
+      - CVE-2015-7548
+
+issues:
+
+  links:
+    - https://bugs.launchpad.net/bugs/1524274
+  type: launchpad
+
+reviews:
+
+  mitaka:
+    - https://review.openstack.org/264812
+    - https://review.openstack.org/264813
+    - https://review.openstack.org/264814
+
+  liberty:
+    - https://review.openstack.org/264815
+    - https://review.openstack.org/264816
+    - https://review.openstack.org/264817
+
+  kilo:
+    - https://review.openstack.org/264819
+    - https://review.openstack.org/264820
+    - https://review.openstack.org/264821
+
+  type: gerrit
+
+notes:
+  - 'This fix will be included in future 2015.1.3 (kilo) and 12.0.1 (liberty)
+     releases.'
