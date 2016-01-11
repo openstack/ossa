@@ -1,0 +1,52 @@
+date: 2016-01-11
+
+id: OSSA-2016-002
+
+title: 'Xen connection password leak in logs via StorageError'
+
+description: 'Matt Riedemann from IBM reported an information disclosure
+    vulnerability in Nova. If a StorageError occurs when attempting to
+    connect a volume using the Xen API, the connection parameters will
+    be logged. These parameters may include credentials that are not
+    masked. An attacker with read access to Nova logs could use these
+    credentials with the Xen API directly. Only Nova deployments using
+    the Xen backend are affected by this flaw.'
+
+affected-products:
+
+  - product: nova
+    version: ">=2014.2 <= 2015.1.2, == 12.0.0"
+
+vulnerabilities:
+
+  - cve-id: CVE-2015-8749
+
+reporters:
+
+  - name: 'Matt Riedemann'
+    affiliation: IBM
+    reported:
+      - CVE-2015-8749
+
+issues:
+
+  links:
+    - https://bugs.launchpad.net/bugs/1516765
+  type: launchpad
+
+reviews:
+
+  mitaka:
+    - https://review.openstack.org/245987
+
+  liberty:
+    - https://review.openstack.org/247825
+
+  kilo:
+    - https://review.openstack.org/249239
+
+  type: gerrit
+
+notes:
+  - 'This fix will be included in future 2015.1.3 (kilo) and 12.0.1 (liberty)
+     releases.'
