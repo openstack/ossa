@@ -1,0 +1,52 @@
+date: 2016-01-19
+
+id: OSSA-2016-003
+
+title: 'Heat denial of service through template-validate'
+
+description: 'Steven Hardy from Red Hat reported a vulnerability in Heat template
+    validation. By referencing a local file like /dev/zero, an authenticated user
+    may trick the heat engine service to load arbitrary local file content
+    resulting in a Denial of Service attack through memory exhaustion. Note that
+    the file content is not written back to the user, though the user can
+    determine if a file exists and if it is readable by heat-engine. All Heat
+    setups are affected.'
+
+affected-products:
+
+  - product: heat
+    version: "<=2015.1.2, ==5.0.0"
+
+vulnerabilities:
+
+  - cve-id: CVE-2015-5295
+
+reporters:
+
+  - name: 'Steven Hardy'
+    affiliation: Red Hat
+    reported:
+      - CVE-2015-5295
+
+issues:
+
+  links:
+    - https://bugs.launchpad.net/bugs/1496277
+  type: launchpad
+
+reviews:
+
+  mitaka:
+    - https://review.openstack.org/269689
+
+  liberty:
+    - https://review.openstack.org/269691
+
+  kilo:
+    - https://review.openstack.org/269692
+
+  type: gerrit
+
+notes:
+  - 'This fix will be included in future 2015.1.3 (kilo) and 5.0.1 (liberty)
+     releases.'
