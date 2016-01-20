@@ -3,15 +3,9 @@ import glob
 import os
 import sys
 import textwrap
-import traceback
 
-from docutils import nodes
-from docutils.parsers import rst
-from docutils.statemachine import ViewList
 from jinja2 import FileSystemLoader
 from jinja2.environment import Environment
-from sphinx.util.nodes import nested_parse_with_titles
-from sphinx.addnodes import toctree
 import yaml
 
 reload(sys)
@@ -29,7 +23,7 @@ def to_snake_case(d):
 
 def to_paragraphs(d, *args):
     for k in args:
-        if k in d and type(d[k]) == str:
+        if k in d and (isinstance(d[k], str) or isinstance(d[k], unicode)):
             d[k] = '\n'.join(textwrap.wrap(d[k]))
 
 
@@ -57,7 +51,7 @@ def render_template(template, data, **kwargs):
 
 
 def render(source, template, **kwargs):
-    vals = yaml.safe_load(open(source).read())
+    vals = yaml.safe_load(open(source).read().decode('utf-8'))
     to_snake_case(vals)
     to_paragraphs(vals, 'description', 'errata')
     return render_template(template, vals, **kwargs)
