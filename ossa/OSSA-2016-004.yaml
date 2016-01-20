@@ -1,0 +1,62 @@
+date: 2016-01-20
+
+id: OSSA-2016-004
+
+title: 'Swift proxy-server DoS through Large Object'
+
+description: 'Romain LE DISEZ from OVH and Örjan Persson from Kiliaro independently
+    reported two vulnerabilities in Swift Large Object. By repeatedly
+    requesting and interrupting connections to a Large Object (Dynamic or
+    Static) URL, a remote attacker may exhausts Swift proxy-server
+    resources, potentially resulting in a denial of service. Note that there
+    are two distinct bugs that can exhaust proxy resources, one for client
+    connection (client to proxy), one for servers connection (proxy to
+    server). All Swift setup are affected.'
+
+affected-products:
+
+  - product: swift
+    version: ">=2.2.1 <= 2.3.0, >= 2.4.0 <= 2.5.0"
+
+vulnerabilities:
+
+  - cve-id: CVE-2016-0737 (client to proxy)
+  - cve-id: CVE-2016-0738 (proxy to server)
+
+reporters:
+
+  - name: 'Romain LE DISEZ'
+    affiliation: OVH
+    reported:
+      - CVE-2016-0737
+
+  - name: 'Örjan Persson'
+    affiliation: Kiliaro
+    reported:
+      - CVE-2016-0738
+
+issues:
+
+  links:
+    - https://bugs.launchpad.net/bugs/1466549 (client to proxy)
+    - https://bugs.launchpad.net/bugs/1493303 (proxy to server)
+  type: launchpad
+
+reviews:
+
+  mitaka:
+    - https://review.openstack.org/270233 (proxy to server)
+
+  liberty:
+    - https://review.openstack.org/270235 (proxy to server)
+
+  kilo:
+    - https://review.openstack.org/270234 (proxy to server)
+    - https://review.openstack.org/217750 (client to proxy)
+
+  type: gerrit
+
+notes:
+  - 'The client to proxy issue (CVE-2016-0737) is already fixed in Liberty'
+  - 'The remaining fix will be included in future 2.3.1 (Kilo) and 2.5.1 (Liberty)
+     releases.'
