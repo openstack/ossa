@@ -465,8 +465,6 @@ project using this template::
       links:
         - https://launchpad.net/bugs/$BUG
 
-      type: launchpad
-
     reviews:
 
       kilo:

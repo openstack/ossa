@@ -1,0 +1,59 @@
+date: 2016-01-29
+
+id: OSSA-2016-005
+
+title: 'Potential reuse of revoked Identity tokens'
+
+description: 'Liu Sheng reported a vulnerability in Keystone. By manipulating a token
+    content, an authenticated user may prevent its revocation. This can allow
+    unauthorized access to cloud resources if a revoked token is
+    intercepted by an attacker. Only keystone setups using PKI or PKIZ token
+    are affected'
+
+affected-products:
+
+  - product: keystone
+    version: "<= 2015.1.2, >= 8.0.0 <= 8.0.1"
+
+  - product: keystonemiddleware
+    version: ">= 1.5.0 <= 1.5.3, >= 1.6.0 <= 2.3.2"
+
+vulnerabilities:
+
+  - cve-id: CVE-2015-7546
+
+reporters:
+
+  - name: 'Liu Sheng'
+    affiliation: Huawei
+    reported:
+      - CVE-2015-7546
+
+issues:
+
+  links:
+    - https://bugs.launchpad.net/bugs/1490804
+    - https://wiki.openstack.org/wiki/OSSN/OSSN-0062
+
+reviews:
+
+  mitaka:
+    - https://review.openstack.org/258141 (keystone)
+    - https://review.openstack.org/258143 (keystonemiddleware)
+
+  liberty:
+    - https://review.openstack.org/266022 (keystone)
+    - https://review.openstack.org/265988 (keystonemiddleware)
+
+  kilo:
+    - https://review.openstack.org/266045 (keystone)
+    - https://review.openstack.org/266607 (keystonemiddleware)
+
+  type: gerrit
+
+notes:
+  - 'The keystone fix is included in 2015.1.3 (Kilo) and will be included in a future
+     8.0.2 (Liberty) releases.'
+  - 'The keystonemiddleware fix will be included in future 1.5.4 (Kilo) and 2.3.3
+     (Liberty) releases.'
+  - 'Both keystone and keystonemiddleware needs to be updated'
