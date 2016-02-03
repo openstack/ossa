@@ -1,0 +1,56 @@
+date: 2016-02-03
+
+id: OSSA-2016-006
+
+title: 'Glance image status manipulation through locations removal'
+
+description: 'Erno Kuvaja from HPE reported a vulnerability in Glance. By removing the last
+    location of an image, an authenticated user may change the image status back
+    to queued and may be able to upload new image data resulting in a broken
+    Glance''s immutability promise. A malicious tenant may exploit this flaw to
+    silently replace image data it owns, regardless of the original creator or
+    the visibility settings. Only setups with show_multiple_locations enabled
+    (not default) are affected.'
+
+affected-products:
+
+  - product: glance
+    version: "<=2015.1.2, >=11.0.0 <= 11.0.1"
+
+vulnerabilities:
+
+  - cve-id: CVE-2016-0757
+
+reporters:
+
+  - name: 'Erno Kuvaja'
+    affiliation: HPE
+    reported:
+      - CVE-2016-0757
+
+issues:
+
+  links:
+    - https://bugs.launchpad.net/bugs/1525915
+
+reviews:
+
+  mitaka:
+    - https://review.openstack.org/275737
+
+  liberty:
+    - https://review.openstack.org/275736
+
+  kilo:
+    - https://review.openstack.org/275735
+
+  type: gerrit
+
+notes:
+  - 'This fix will be included in future 2015.1.3 (kilo) and 11.0.2 (liberty)
+     releases.'
+  - 'The proposed fix prevents the removal of the last location of an image so
+     that an active image is always available. This action was previously
+     incorrectly allowed and the fix might break some users who are relying on
+     the false assumption that it would be ok to replace the data of existing
+     image in the special case that the multiple locations has been configured.'
