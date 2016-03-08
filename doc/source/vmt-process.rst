@@ -320,25 +320,25 @@ Impact Description ($DESCRIPTION)
     $CREDIT reported a vulnerability in... By doing... a... may...
     resulting in... Only setups.... are affected.
 
-The AFFECTED_VERSIONS should read like this, while both grizzly and
-havana still will have point releases:
+The AFFECTED_VERSIONS should read like this, while both Kilo and
+Liberty still will have stable releases:
 
 ::
 
-    Affects: >=2011.2, <=2013.1.2, and >=2013.2, <=2013.2.1
+    Affects: >=2015.1.0 <=2015.1.3, >=12.0.0 <=12.0.3
 
-Once the last Grizzly point release is released, that line becomes:
+Once the last Kilo point release is released, that line becomes:
 
 ::
 
-    Affects: >=2011.2, <=2013.2.1
+    Affects: >=12.0.0 <=12.0.3
 
 If the oldest version affected is not easily identified, leave it
 open-ended:
 
 ::
 
-    Affects: <=2013.2.1
+    Affects: <=2015.1.3
 
 CVE Request Email (Private Issues)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -410,7 +410,7 @@ Downstream Stakeholders Notification Email (Private Issues)
 
     Proposed patch:
     See attached patches. Unless a flaw is discovered in them, these patches
-    will be merged to $BRANCHES on the public disclosure date.
+    will be merged to their corresponding branches on the public disclosure date.
 
     CVE: $CVE
 
@@ -476,8 +476,7 @@ project using this template::
       type: gerrit
 
     notes:
-      - 'This fix will be included in the $MILESTONE development milestone and in
-         a future $NEXTSTABLE release.'
+      - 'Optional note such as cross project version requirements'
 
 Once approved, use the 'Show Source' button from the gate-ossa-docs output
 to get the generated RST document. We send two separate emails, to
