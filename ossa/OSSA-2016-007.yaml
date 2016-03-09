@@ -10,6 +10,10 @@ description: 'Matthew Booth from Red Hat reported a vulnerability in Nova instan
     arbitrary files from the compute host. Only setups using libvirt driver with
     raw storage and setting "use_cow_images = False" (not default) are affected.'
 
+errata: 'The former fix did not take into account the usage of non-disk-image
+    backends and caused a regression for this use-case. This update provides an
+    additional fix for that issue.'
+
 affected-products:
 
   - product: nova
@@ -30,20 +34,28 @@ issues:
 
   links:
     - https://bugs.launchpad.net/bugs/1548450
+    - https://bugs.launchpad.net/bugs/1555287
 
 reviews:
 
   mitaka:
-    - https://review.openstack.org/289957
+    - https://review.openstack.org/289957 - original
+    - https://review.openstack.org/290715 - errata
 
   liberty:
-    - https://review.openstack.org/289958
+    - https://review.openstack.org/289958 - original
+    - https://review.openstack.org/290843 - errata
 
   kilo:
-    - https://review.openstack.org/289960
+    - https://review.openstack.org/289960 - original
+    - https://review.openstack.org/290847 - errata
 
   type: gerrit
 
 notes:
-  - 'This fix will be included in future 2015.1.3 (kilo) and 12.0.3 (liberty)
+  - 'This fix will be included in future 2015.1.4 (kilo) and 12.0.3 (liberty)
      releases.'
+
+errata_history:
+  - 2016-03-09 - Errata 1
+  - 2016-03-08 - Original Version
