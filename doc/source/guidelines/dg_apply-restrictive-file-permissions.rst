@@ -74,13 +74,113 @@ which is only readable and writable by the owner of that file.
     import os
 
     flags = os.O_WRONLY | os.O_CREAT | os.EXLC
-    with os.fdopen(os.open('testfile.txt', flags, 0600), 'w') as fout:
+    with os.fdopen(os.open('testfile.txt', flags, 0o600), 'w') as fout:
         fout.write("secrets!")
 
 Note that it is also important to verify the owner and group of the
 file. It is particularly important to note which other users are part of a
 group that you grant access to. The best practice is that if group access is
 not needed, do not grant it. This is the principle of least privilege.
+
+
+Testing guide
+~~~~~~~~~~~~~
+
+It should be possible to test anything that performs file creation to make sure
+that permissions are being set correctly. The following example inspects that the
+file is created with expected permissions and that an exception is raised if the
+file already exists.
+
+.. code:: python
+
+    import stat
+    import os
+    import unittest
+
+
+    def do_something(path, mode):
+        flags = os.O_WRONLY | os.O_CREAT | os.O_EXCL
+        return os.fdopen(os.open(path, flags, 0o600), mode)
+
+    class TestFileCreation(unittest.TestCase):
+
+        def test_correct_permissions(self):
+            """
+            Make sure that a file can be created with specific permissions
+            """
+            test_file = "demo.txt"
+            with do_something(test_file, "w") as fout:
+                fout.write("blah blah blah")
+
+            finfo = os.stat(test_file)
+            assert(finfo.st_mode & stat.S_IRUSR)
+            assert(finfo.st_mode & stat.S_IWUSR)
+            assert(not finfo.st_mode & stat.S_IXUSR)
+            assert(not finfo.st_mode & stat.S_IRGRP)
+            assert(not finfo.st_mode & stat.S_IWGRP)
+            assert(not finfo.st_mode & stat.S_IXGRP)
+            assert(not finfo.st_mode & stat.S_IROTH)
+            assert(not finfo.st_mode & stat.S_IWOTH)
+            assert(not finfo.st_mode & stat.S_IXOTH)
+
+            os.remove(test_file)
+
+        def test_file_exists(self):
+            """
+            If the file already exists an OSError should be raised.
+            """
+            test_file = "demo2.txt"
+
+            # simulate file already placed at location by attacker
+            with open(test_file, "w") as fout:
+                fout.write("nasty attacker stuff")
+
+            # ensure that we can't open the file
+            with self.assertRaises(OSError):
+                with do_something(test_file, "w") as fout:
+                    fout.write("this should never happen..")
+
+            os.remove(test_file)
+
+
+
+You can also use mock to ensure that any calls to os.open are made with
+restrictive permissions.
+
+.. code:: python
+
+    import os
+    import mock
+    import unittest
+
+    def do_something(dummy_file):
+        flags = os.O_WRONLY | os.O_CREAT | os.O_EXCL
+        with os.fdopen(os.open(dummy_file, flags, 0o600), "w") as fout:
+            fout.write("blah blah")
+
+        print("doing something")
+
+
+    class TestUsingMock(unittest.TestCase):
+
+        def test_do_something(self):
+            """
+            Make sure that any file created is done with sufficiently secure permissions.
+            """
+            with mock.patch('os.open') as os_open, mock.patch('os.fdopen') as os_fdopen:
+
+                # setup test call
+                dummy_file = "dummy.txt"
+                os_open.return_value = 123
+                do_something(dummy_file)
+
+                # ensure the file is being created with specific flags
+                # and permission set
+                flags = os.O_WRONLY | os.O_CREAT | os.O_EXCL
+                os_open.assert_called_with(dummy_file, flags, 0o600)
+                os_fdopen.assert_called_with(123, "w")
+
+
 
 Consequences
 ------------
