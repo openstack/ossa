@@ -12,7 +12,9 @@ description: 'Matthew Booth from Red Hat reported a vulnerability in Nova instan
 
 errata: 'The former fix did not take into account the usage of non-disk-image
     backends and caused a regression for this use-case. This update provides an
-    additional fix for that issue.'
+    additional fix for that issue. Moreover, the kilo backport caused a regression
+    in live migration where the disk info file is JSON encoded. This second update
+    provides an additional fix for stable/kilo.'
 
 affected-products:
 
@@ -35,6 +37,7 @@ issues:
   links:
     - https://bugs.launchpad.net/bugs/1548450
     - https://bugs.launchpad.net/bugs/1555287
+    - https://bugs.launchpad.net/bugs/1558697
 
 reviews:
 
@@ -49,6 +52,7 @@ reviews:
   kilo:
     - https://review.openstack.org/289960 - original
     - https://review.openstack.org/290847 - errata
+    - https://review.openstack.org/294205 - errata#2
 
   type: gerrit
 
@@ -57,5 +61,6 @@ notes:
      releases.'
 
 errata_history:
+  - 2016-03-30 - Errata 2
   - 2016-03-09 - Errata 1
   - 2016-03-08 - Original Version
