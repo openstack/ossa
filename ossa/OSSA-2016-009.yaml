@@ -1,0 +1,65 @@
+date: 2016-06-14
+
+id: OSSA-2016-009
+
+title: 'Neutron IPTables firewall anti-spoof protection bypass'
+
+description: 'Romain Aviolat from Nagravision and Dustin Lundquist from
+    Blue Box Group, Inc independently reported vulnerabilities in Neutron
+    anti-spoof protection. By forging DHCP discovery messages or non-IP
+    traffic, such as ARP or ICMPv6, an instance may spoof IP or MAC source
+    addresses on attached networks resulting in denial of services and/or
+    traffic interception. Moreover when L2population isn''t used, other
+    tenants attached to a shared network are also vulnerable. Neutron
+    setups using the IPTables firewall driver are affected.'
+
+affected-products:
+
+  - product: neutron
+    version: "<=7.0.4, >=8.0.0 <=8.1.0"
+
+vulnerabilities:
+
+  - cve-id: CVE-2016-5362
+    note: "DHCP spoofing"
+  - cve-id: CVE-2016-5363
+    note: "MAC source address spoofing"
+  - cve-id: CVE-2015-8914
+    note: "ICMPv6 source address spoofing"
+
+reporters:
+
+  - name: 'Romain Aviolat'
+    affiliation: Nagravision
+    reported:
+      - CVE-2015-8914
+
+  - name: 'Dustin Lundquist'
+    affiliation: Blue Box Group, Inc
+    reported:
+      - CVE-2016-5362
+      - CVE-2016-5363
+
+issues:
+  links:
+    - https://bugs.launchpad.net/bugs/1502933 (ICMPv6)
+    - https://bugs.launchpad.net/bugs/1558658 (MAC, DHCP)
+
+reviews:
+
+  newton:
+    - https://review.openstack.org/299021 (MAC)
+    - https://review.openstack.org/300202 (DHCP)
+    - https://review.openstack.org/300233 (ICMPv6)
+
+  mitaka:
+    - https://review.openstack.org/299023 (MAC)
+    - https://review.openstack.org/303563 (DHCP)
+    - https://review.openstack.org/310648 (ICMPv6)
+
+  liberty:
+    - https://review.openstack.org/299025 (MAC)
+    - https://review.openstack.org/303572 (DHCP)
+    - https://review.openstack.org/310652 (ICMPv6)
+
+  type: gerrit
