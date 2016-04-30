@@ -228,6 +228,8 @@ Here is a summary of the different OSSA task status meanings:
 +---------------+--------------------------------------------------+
 | Fix released  | All patches have been merged                     |
 +---------------+--------------------------------------------------+
+| Opinion       | Issue is likely a Class B/C/D, waiting for OSSN  |
++---------------+--------------------------------------------------+
 | Won't Fix     | Doesn't fit with the project plans, sorry        |
 +---------------+--------------------------------------------------+
 
