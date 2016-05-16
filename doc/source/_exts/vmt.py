@@ -35,8 +35,14 @@ def csv_list_formatter(value):
     return ", ".join(value)
 
 
+def cve_formater(value):
+    if 'note' in value:
+        return "%s (%s)" % (value['cve-id'], value['note'])
+    return value['cve-id']
+
+
 def cve_list_formatter(value):
-    return ', '.join([x['cve-id'] for x in value])
+    return ',\n      '.join([cve_formater(x) for x in value])
 
 
 def render_template(template, data, **kwargs):
