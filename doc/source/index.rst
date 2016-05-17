@@ -58,12 +58,15 @@ Team depending on how sensitive the issue is:
   * Jeremy Stanley (jeremy@openstack.org): `GPG key for Jeremy`_
   * Tristan Cacqueray (tdecacqu@redhat.com): `GPG key for Tristan`_
   * Grant Murphy (grant.murphy@hpe.com): `GPG key for Grant`_
+  * Morgan Fainberg (morgan.fainberg@gmail.com): `GPG key for Morgan`_
 
 .. _`GPG key for Jeremy`: http://keyserver.ubuntu.com:11371/pks/lookup?search=0x48f9961143495829
 
 .. _`GPG key for Tristan`: http://keyserver.ubuntu.com:11371/pks/lookup?search=0x925CC5D8
 
 .. _`GPG key for Grant`: http://keyserver.ubuntu.com:11371/pks/lookup?search=0x551a2252
+
+.. _`GPG key for Morgan`: http://keyserver.ubuntu.com:11371/pks/lookup?search=0x0D1A8C8423CF3C86BF420F7BB9A83CEFA07C6D8A
 
 
 How to Propose and Review a Security Patch
