@@ -1,0 +1,46 @@
+date: 2016-05-23
+
+id: OSSA-2016-008
+
+title: 'Incorrect Audit IDs in Keystone Fernet Tokens can result in revocation bypass'
+
+description: 'Lance Bragstad (Rackspace) reported a vulnerability in the Keystone
+    Fernet Token Provider. By rescoping a token a user will receive a new token
+    without correct audit_ids, these incorrect audit_ids will prevent the entire
+    chain of tokens from being revoked properly. This vulnerability does not impact
+    revoking a token by its individual audit_id. Only deployments with Keystone
+    configured to use Fernet tokens are impacted.'
+
+affected-products:
+
+  - product: keystone
+    version: "==9.0.0"
+
+vulnerabilities:
+
+  - cve-id: CVE-2016-4911
+
+reporters:
+
+  - name: 'Lance Bragstad'
+    affiliation: Rackspace
+    reported:
+      - CVE-2016-4911
+
+issues:
+
+  links:
+    - https://bugs.launchpad.net/bugs/1577558
+
+reviews:
+
+  newton:
+    - https://review.openstack.org/#/c/311886/
+
+  mitaka:
+    - https://review.openstack.org/#/c/312582/
+
+type: gerrit
+
+notes:
+  - 'This fix was included in the openstack/keystone 9.0.1 (mitaka) release.'
