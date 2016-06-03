@@ -323,25 +323,26 @@ Impact Description ($DESCRIPTION)
     By doing [action] a [actor] may [impact] resulting in [consequence].
     Only [project deployment mode] are affected.
 
-The AFFECTED_VERSIONS should read like this, while both Kilo and
-Liberty still will have stable releases:
+The AFFECTED_VERSIONS needs to stay valid after the fix is released.
+For example, when kilo, liberty and mitaka are still security supported,
+the AFFECTED_VERSIONS of keystone should read like this:
 
 ::
 
-    Affects: >=2015.1.0 <=2015.1.3, >=12.0.0 <=12.0.3
+    Affects: >=2015.1.0 <=2015.1.4, >=8.0.0 <=8.1.0 and ==9.0.0
 
-Once the last Kilo point release is released, that line becomes:
+Once kilo reaches end of life, that line becomes:
 
 ::
 
-    Affects: >=12.0.0 <=12.0.3
+    Affects: >=8.0.0 <=8.1.0 and ==9.0.0
 
 If the oldest version affected is not easily identified, leave it
 open-ended:
 
 ::
 
-    Affects: <=2015.1.3
+    Affects: <=8.1.0 and ==9.0.0
 
 CVE Request Email (Private Issues)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
