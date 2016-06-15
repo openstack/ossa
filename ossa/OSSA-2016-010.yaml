@@ -1,0 +1,50 @@
+date: 2016-06-15
+
+id: OSSA-2016-010
+
+title: 'XSS in Horizon client side template'
+
+description: 'Beth Lancaster and Brandon Sawyers from Virginia Tech reported a
+    vulnerability in Horizon. By injecting Angularjs template in dashboard forms,
+    such as image''s description, an authenticated user may trigger a
+    cross-site-scripting vulnerability when another user browses the affected pages.
+    It may result in potential assets theft like user access credentials.
+    All Horizon setups are affected.'
+
+affected-products:
+
+  - product: horizon
+    version: "<=8.0.1, >=9.0.0 <=9.0.1"
+
+vulnerabilities:
+
+  - cve-id: CVE-2016-4428
+
+reporters:
+
+  - name: 'Beth Lancaster'
+    affiliation: Virginia Tech
+    reported:
+      - CVE-2016-4428
+
+  - name: 'Brandon Sawyers'
+    affiliation: Virginia Tech
+    reported:
+      - CVE-2016-4428
+
+issues:
+  links:
+    - https://bugs.launchpad.net/bugs/1567673
+
+reviews:
+
+  newton:
+    - https://review.openstack.org/329998
+
+  mitaka:
+    - https://review.openstack.org/329996
+
+  liberty:
+    - https://review.openstack.org/329997
+
+  type: gerrit
