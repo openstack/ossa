@@ -319,8 +319,9 @@ Impact Description ($DESCRIPTION)
     Affects: $AFFECTED_VERSIONS
 
     Description:
-    $CREDIT reported a vulnerability in... By doing... a... may...
-    resulting in... Only setups.... are affected.
+    $CREDIT reported a vulnerability in [project feature name].
+    By doing [action] a [actor] may [impact] resulting in [consequence].
+    Only [project deployment mode] are affected.
 
 The AFFECTED_VERSIONS should read like this, while both Kilo and
 Liberty still will have stable releases:
