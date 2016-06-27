@@ -232,6 +232,10 @@ Here is a summary of the different OSSA task status meanings:
 +---------------+--------------------------------------------------+
 | Won't Fix     | Doesn't fit with the project plans, sorry        |
 +---------------+--------------------------------------------------+
+| Invalid       | Class E and Z, not a bug or vulnerability. No    |
+|               | further action to be taken                       |
++---------------+--------------------------------------------------+
+
 
 Extent of Disclosure
 --------------------
