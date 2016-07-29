@@ -198,7 +198,8 @@ warrant an advisory.
 |          | OSSN      | (some) security implications, e.g.,       |
 |          |           | strengthening opportunities               |
 +----------+-----------+-------------------------------------------+
-| Class E  |           | Not a vulnerability at all                |
+| Class E  |           | Neither a vulnerability nor hardening     |
+|          |           | opportunity                               |
 +----------+-----------+-------------------------------------------+
 | Class Y  |           | Vulnerability only found in development   |
 |          |           | release                                   |
