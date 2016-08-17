@@ -18,31 +18,22 @@ be addressed at all layers of the stack. Like any complex, evolving system
 security has to be vigilantly pursued, and exposures eliminated. We need
 your help.
 
-If you think you've identified a vulnerability, please work with us to
-rectify and disclose the issue responsibly.
+OpenStack has two mechanisms for communicating security information with
+downstream stakeholders, "Advisories" and "Notes". OpenStack Security
+Advisories (OSSA) are created to deal with severe security issues in OpenStack
+for which a fix is available - OSSA's are issued by the OpenStack Vulnerability
+Management Team (VMT). OpenStack Security Notes (OSSN) are used for security
+issues which do not qualify for an advisory, typically design issues,
+deployment and configuration vulnerabilities.
 
-Recent OpenStack Security Advisories
-------------------------------------
 
-.. toctree::
-   :maxdepth: 1
-   :glob:
-
-   ./ossa/*
-
-You can find the complete list of published advisories here:
-
-.. toctree::
-   :maxdepth: 1
-   :glob:
-
-   ossalist
-
-How to Report Security Issues to OpenStack
+How to report security issues to OpenStack
 ------------------------------------------
 
-We provide two ways to report issues to the OpenStack Vulnerability Management
-Team depending on how sensitive the issue is:
+If you think you've identified a vulnerability, please work with us to rectify
+and disclose the issue responsibly. We provide two ways to report issues to the
+OpenStack Vulnerability Management Team depending on how sensitive the issue
+is:
 
 * Search for the corresponding project at https://launchpad.net/ and after
   selecting it, click the 'Report a bug' link at the right. Fill in the
@@ -69,8 +60,79 @@ Team depending on how sensitive the issue is:
 .. _`GPG key for Morgan`: http://keyserver.ubuntu.com:11371/pks/lookup?search=0x0D1A8C8423CF3C86BF420F7BB9A83CEFA07C6D8A
 
 
-How to Propose and Review a Security Patch
-------------------------------------------
+Security information for OpenStack deployers
+--------------------------------------------
+
+There are three main sources of security guidance for OpenStack deployers:
+
+* OpenStack Security Advisories (OSSA)
+* OpenStack Security Notes (OSSN)
+* OpenStack Security Guide
+* OpenStack Security Project blog
+
+
+OpenStack Security Advisories (OSSA)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Recent OSSAs:
+
+.. toctree::
+   :maxdepth: 1
+   :glob:
+
+   ./ossa/*
+
+You can find the complete list of published advisories here:
+
+.. toctree::
+   :maxdepth: 1
+   :glob:
+
+   ossalist
+
+
+OpenStack Security Notes
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+Security Notes advise users of security related issues. Security notes are
+similar to advisories; they often address vulnerabilities in third party tools
+typically used within OpenStack deployments and provide guidance on common
+configuration mistakes that can result in an insecure operating environment.
+
+The complete set of `security notes <https://wiki.openstack.org/wiki/Security_Notes>`_
+is available online, but they are also published on the OpenStack mailing list
+when they are released.
+
+
+OpenStack Security Guide
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+The OpenStack Security Guide provides best practice information for OpenStack
+deployers. This guide was written by a community of security experts from the
+OpenStack Security Project, based on experience gained while hardening
+OpenStack deployments. The guide covers topics including compute and storage
+hardening, rate limiting, compliance, and cryptography; it is the starting
+point for anyone looking to securely deploy OpenStack.
+
+Read `the guide <http://docs.openstack.org/sec/>`_ online today.
+
+
+OpenStack Security Project blog
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The Security Project also maintain a blog, with posts about current and future
+projects, presentations and other information that doesnt fit in anywhere else:
+`<http://openstack-security.github.io/>`_
+
+
+
+
+Security information for OpenStack developers
+---------------------------------------------
+
+
+How to propose and review a security patch
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. note::
 
@@ -100,13 +162,27 @@ After a patch for the reported bug has been developed locally, you the patch aut
     git apply path/to/local/file.patch
 
 
-OpenStack Security Team
------------------------
+Secure development guidelines
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The OpenStack security team runs an number of initiatives aimed at improving
+The OpenStack security team have collaboratively developed this set of
+guidelines and best practices to help avoid common mistakes that lead to
+security vulnerabilities within the OpenStack platform.
+
+.. toctree::
+  :maxdepth: 1
+  :glob:
+
+  ./guidelines/*
+
+
+OpenStack Security Project
+--------------------------
+
+The OpenStack Security Project runs an number of initiatives aimed at improving
 the overall security of OpenStack projects and ensuring that security incidents
 are handled in a coordinated fashion.  Key initiatives that fall within the
-security team's areas of responsibility are outlined below.
+security project's areas of responsibility are outlined below.
 
 
 Vulnerability Management
@@ -133,34 +209,22 @@ information. Specifically, they are responsible for the following functions:
 See :doc:`vmt-process` for details on our open process.
 
 
-OpenStack Security Notes
-~~~~~~~~~~~~~~~~~~~~~~~~
-
-Security Notes advise users of security related issues. Security notes are
-similar to advisories; they often address vulnerabilities in 3rd party tools
-typically used within OpenStack deployments and provide guidance on common
-configuration mistakes that can result in an insecure operating environment.
-
-A list of `security notes <https://wiki.openstack.org/wiki/Security_Notes>`_
-is available online, but are also published on the OpenStack mailing list as they
-are released.
-
 Security tool development
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The security team are constantly looking at ways to introduce tooling and
+The Security project are constantly looking at ways to introduce tooling and
 automation to improve the overall security of OpenStack projects. Some of these
 projects are outlined below.
 
-Bandit - A security linter
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+Bandit - static analysis for Python
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Bandit is a security linter for Python source code, utilizing the ast module
-from the Python standard library. The **ast** module is used to convert source code
-into a parsed tree of Python syntax nodes. Bandit allows users to define custom
-tests that are performed against those nodes. At the completion of testing,
-a report is generated that lists security issues identified within the
-target source code.
+Bandit is a security static analysis tool for Python source code, utilizing the
+ast module from the Python standard library. The **ast** module is used to
+convert source code into a parsed tree of Python syntax nodes. Bandit allows
+users to define custom tests that are performed against those nodes. At the
+completion of testing, a report is generated that lists security issues
+identified within the target source code.
 
 Bandit is currently a stand-alone tool which can be downloaded by end-users and
 run against arbitrary source code. Although early in development it is already
@@ -176,7 +240,7 @@ and configuration.
 * `Bandit Gerrit <https://review.openstack.org/#/q/bandit,n,z>`_
 * `Bandit Launchpad <https://bugs.launchpad.net/bandit>`_
 
-Anchor - Ephemeral PKI
+Anchor - ephemeral PKI
 ^^^^^^^^^^^^^^^^^^^^^^
 
 Anchor is a lightweight, open source, Public Key Infrastructure (PKI), which
@@ -189,30 +253,3 @@ the traditional revocation mechanisms used in most PKI deployments.
 * `Anchor Git Repository <https://git.openstack.org/cgit/openstack/anchor>`_
 * `Anchor Gerrit <https://review.openstack.org/#/q/anchor,n,z>`_
 * `Anchor Launchpad <https://bugs.launchpad.net/anchor>`_
-
-
-OpenStack Security Guide
-~~~~~~~~~~~~~~~~~~~~~~~~
-
-The OpenStack Security Guide provides best practices learned by cloud operators
-while hardening their OpenStack deployments. This book was written by a close
-community of security experts from the OpenStack Security Group in an intense
-week-long effort at an undisclosed location. One of the goals for this book is
-to bring together interested members to capture their collective knowledge
-and give it to the OpenStack community.
-
-Read `the guide <http://docs.openstack.org/sec/>`_ online today.
-
-
-Secure development guidelines
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-The OpenStack security team have collaboratively developed this set of
-guidelines and best practices to help avoid common mistakes that lead
-to security vulnerabilities within the OpenStack platform.
-
-.. toctree::
-   :maxdepth: 1
-   :glob:
-
-   ./guidelines/*
