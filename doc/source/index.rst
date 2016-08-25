@@ -42,22 +42,29 @@ is:
   of the page before submitting it. This will make the bug Private and only
   accessible to the Vulnerability Management Team.
 
-* If the issue is extremely sensitive, please send an encrypted email to one
-  of the Team's members. Their GPG keys can be found below, and are also
-  available from popular public GPG key servers.
+* If the issue is extremely sensitive or you're otherwise unable to use the
+  bug tracker directly, please send an E-mail message to one or more of the
+  Team's members. You're encouraged to encrypt messages to their OpenPGP
+  keys, which can be found linked below and also on the keyserver network
+  with the following fingerprints:
 
-  * Jeremy Stanley (jeremy@openstack.org): `GPG key for Jeremy`_
-  * Tristan Cacqueray (tdecacqu@redhat.com): `GPG key for Tristan`_
-  * Grant Murphy (grant.murphy@hpe.com): `GPG key for Grant`_
-  * Morgan Fainberg (morgan.fainberg@gmail.com): `GPG key for Morgan`_
+  * Jeremy Stanley <jeremy@openstack.org>:
+    `key 0x97ae496fc02dec9fc353b2e748f9961143495829`_ (details__)
+  * Tristan Cacqueray <tdecacqu@redhat.com>:
+    `key 0xeb103de8b5e69e631c6ff17922b9a05c925cc5d8`_ (details__)
+  * Grant Murphy <grant.murphy@hpe.com>:
+    `key 0xd43efd39c7104e9d3550dd3e9de43b9e551a2252`_ (details__)
+  * Morgan Fainberg <morgan.fainberg@gmail.com>:
+    `key 0x0d1a8c8423cf3c86bf420f7bb9a83cefa07c6d8a`_ (details__)
 
-.. _`GPG key for Jeremy`: http://keyserver.ubuntu.com:11371/pks/lookup?search=0x48f9961143495829
-
-.. _`GPG key for Tristan`: http://keyserver.ubuntu.com:11371/pks/lookup?search=0x925CC5D8
-
-.. _`GPG key for Grant`: http://keyserver.ubuntu.com:11371/pks/lookup?search=0x551a2252
-
-.. _`GPG key for Morgan`: http://keyserver.ubuntu.com:11371/pks/lookup?search=0x0D1A8C8423CF3C86BF420F7BB9A83CEFA07C6D8A
+.. _`key 0x97ae496fc02dec9fc353b2e748f9961143495829`: _static/0x97ae496fc02dec9fc353b2e748f9961143495829.txt
+.. __: https://sks-keyservers.net/pks/lookup?op=vindex&search=0x97ae496fc02dec9fc353b2e748f9961143495829&fingerprint=on
+.. _`key 0xeb103de8b5e69e631c6ff17922b9a05c925cc5d8`: _static/0xeb103de8b5e69e631c6ff17922b9a05c925cc5d8.txt
+.. __: https://sks-keyservers.net/pks/lookup?op=vindex&search=0xeb103de8b5e69e631c6ff17922b9a05c925cc5d8&fingerprint=on
+.. _`key 0xd43efd39c7104e9d3550dd3e9de43b9e551a2252`: _static/0xd43efd39c7104e9d3550dd3e9de43b9e551a2252.txt
+.. __: https://sks-keyservers.net/pks/lookup?op=vindex&search=0xd43efd39c7104e9d3550dd3e9de43b9e551a2252&fingerprint=on
+.. _`key 0x0d1a8c8423cf3c86bf420f7bb9a83cefa07c6d8a`: _static/0x0d1a8c8423cf3c86bf420f7bb9a83cefa07c6d8a.txt
+.. __: https://sks-keyservers.net/pks/lookup?op=vindex&search=0x0d1a8c8423cf3c86bf420f7bb9a83cefa07c6d8a&fingerprint=on
 
 
 Security information for OpenStack deployers
