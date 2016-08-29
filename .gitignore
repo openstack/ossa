@@ -4,5 +4,7 @@ doc/build
 pbr*.egg
 *.pyc
 *.swp
+AUTHORS
+ChangeLog
 
 ossa/*.rst
