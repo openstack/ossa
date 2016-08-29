@@ -63,7 +63,7 @@ is:
 Security information for OpenStack deployers
 --------------------------------------------
 
-There are three main sources of security guidance for OpenStack deployers:
+There are four main sources of security guidance for OpenStack deployers:
 
 * OpenStack Security Advisories (OSSA)
 * OpenStack Security Notes (OSSN)
