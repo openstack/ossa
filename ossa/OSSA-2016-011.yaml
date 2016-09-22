@@ -1,0 +1,45 @@
+date: 2016-09-21
+
+id: OSSA-2016-011
+
+title: 'Nova may fail to delete images in resize state regression'
+
+description: 'Rajesh Tailor from Red Hat reported a vulnerability in Nova. If an
+    authenticated user deletes an instance while it is in resize state, it will
+    cause the original instance to not be deleted from the compute node it was
+    running on. An attacker can use this to launch a denial of service attack.
+    All Nova setups are affected.'
+
+affected-products:
+
+  - product: nova
+    version: "==13.0.0"
+
+vulnerabilities:
+
+  - cve-id: CVE-2016-7498
+
+reporters:
+
+  - name: 'Rajesh Tailor'
+    affiliation: Red Hat
+    reported:
+      - CVE-2016-7498
+
+issues:
+  links:
+    - https://bugs.launchpad.net/bugs/1589821
+
+reviews:
+  newton:
+    - https://review.openstack.org/326262
+
+  mitaka:
+    - https://review.openstack.org/327398
+
+  type: gerrit
+
+notes:
+  - 'This bug is similar to OSSA-2015-017 (CVE-2015-3280) and was re-introduced
+    in the first release of Mitaka version of Nova and it was re-fixed in
+    nova-13.1.0.'
