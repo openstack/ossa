@@ -1,0 +1,58 @@
+date: 2016-10-06
+
+id: OSSA-2016-012
+
+title: Malicious qemu-img input may exhaust resources in Cinder, Glance, Nova
+
+description: >
+  Richard W.M. Jones of Red Hat reported a vulnerability that
+  affects OpenStack Cinder, Glance and Nova. By providing a
+  maliciously crafted disk image an attacker can consume
+  considerable amounts of RAM and CPU time resulting in a denial of
+  service via resource exhaustion. Any project which makes calls to
+  qemu-img without appropriate ulimit restrictions in place is
+  affected by this flaw.
+
+affected-products:
+  - product: cinder
+    version: "<=7.0.2, >=8.0.0 <=8.1.1"
+  - product: glance
+    version: "<=11.0.1, ==12.0.0"
+  - product: nova
+    version: "<=12.0.4, ==13.0.0"
+
+vulnerabilities:
+  - cve-id: CVE-2015-5162
+
+reporters:
+  - name: Richard W.M. Jones
+    affiliation: Red Hat
+    reported:
+      - CVE-2015-5162
+
+issues:
+  links:
+    - https://launchpad.net/bugs/1449062
+
+reviews:
+  ocata:
+    - https://review.openstack.org/375099 (cinder)
+    - https://review.openstack.org/375526 (glance)
+  newton:
+    - https://review.openstack.org/375102 (cinder)
+    - https://review.openstack.org/377734 (glance)
+    - https://review.openstack.org/307663 (nova)
+  mitaka:
+    - https://review.openstack.org/375625 (cinder)
+    - https://review.openstack.org/377736 (glance)
+    - https://review.openstack.org/326327 (nova)
+  liberty:
+    - https://review.openstack.org/382573 (cinder)
+    - https://review.openstack.org/378012 (glance)
+    - https://review.openstack.org/327624 (nova)
+
+notes:
+  - >
+    Separate Ocata patches are listed for Cinder and Glance, as they
+    were fixed during the Newton release freeze after it branched
+    from master.
