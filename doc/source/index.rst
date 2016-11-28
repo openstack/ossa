@@ -52,8 +52,6 @@ is:
     `key 0x97ae496fc02dec9fc353b2e748f9961143495829`_ (details__)
   * Tristan Cacqueray <tdecacqu@redhat.com>:
     `key 0xeb103de8b5e69e631c6ff17922b9a05c925cc5d8`_ (details__)
-  * Grant Murphy <grantcmurphy@gmail.com>:
-    `key 0xd43efd39c7104e9d3550dd3e9de43b9e551a2252`_ (details__)
   * Morgan Fainberg <morgan.fainberg@gmail.com>:
     `key 0x0d1a8c8423cf3c86bf420f7bb9a83cefa07c6d8a`_ (details__)
 
@@ -61,8 +59,6 @@ is:
 .. __: https://sks-keyservers.net/pks/lookup?op=vindex&search=0x97ae496fc02dec9fc353b2e748f9961143495829&fingerprint=on
 .. _`key 0xeb103de8b5e69e631c6ff17922b9a05c925cc5d8`: _static/0xeb103de8b5e69e631c6ff17922b9a05c925cc5d8.txt
 .. __: https://sks-keyservers.net/pks/lookup?op=vindex&search=0xeb103de8b5e69e631c6ff17922b9a05c925cc5d8&fingerprint=on
-.. _`key 0xd43efd39c7104e9d3550dd3e9de43b9e551a2252`: _static/0xd43efd39c7104e9d3550dd3e9de43b9e551a2252.txt
-.. __: https://sks-keyservers.net/pks/lookup?op=vindex&search=0xd43efd39c7104e9d3550dd3e9de43b9e551a2252&fingerprint=on
 .. _`key 0x0d1a8c8423cf3c86bf420f7bb9a83cefa07c6d8a`: _static/0x0d1a8c8423cf3c86bf420f7bb9a83cefa07c6d8a.txt
 .. __: https://sks-keyservers.net/pks/lookup?op=vindex&search=0x0d1a8c8423cf3c86bf420f7bb9a83cefa07c6d8a&fingerprint=on
 
