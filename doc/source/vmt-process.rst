@@ -496,7 +496,7 @@ avoid off-topic replies to oss-security list:
 
 Subject and content for both emails is identical:
 
-* *Subject:* [OSSA $NUM] $TITLE ($CVE)
+* *Subject:* [OSSA-$NUM] $TITLE ($CVE)
 * *Body:* The generated RST document
 
 Notes:
