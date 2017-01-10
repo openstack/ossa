@@ -219,6 +219,20 @@ The Security project are constantly looking at ways to introduce tooling and
 automation to improve the overall security of OpenStack projects. Some of these
 projects are outlined below.
 
+Anchor - ephemeral PKI
+^^^^^^^^^^^^^^^^^^^^^^
+
+Anchor is a lightweight, open source, Public Key Infrastructure (PKI), which
+uses automated provisioning of short-term certificates to enable cryptographic
+trust in OpenStack services. Certificates are typically valid for 12-24 hours
+and are issued based on the result from a policy enforcing decision engine.
+Short term certificates enable passive revocation, to bypass the issues with
+the traditional revocation mechanisms used in most PKI deployments.
+
+* `Anchor Git Repository <https://git.openstack.org/cgit/openstack/anchor>`_
+* `Anchor Gerrit <https://review.openstack.org/#/q/anchor,n,z>`_
+* `Anchor Launchpad <https://bugs.launchpad.net/anchor>`_
+
 Bandit - static analysis for Python
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -243,16 +257,23 @@ and configuration.
 * `Bandit Gerrit <https://review.openstack.org/#/q/bandit,n,z>`_
 * `Bandit Launchpad <https://bugs.launchpad.net/bandit>`_
 
-Anchor - ephemeral PKI
-^^^^^^^^^^^^^^^^^^^^^^
+Syntribos - Python API security testing tool
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Anchor is a lightweight, open source, Public Key Infrastructure (PKI), which
-uses automated provisioning of short-term certificates to enable cryptographic
-trust in OpenStack services. Certificates are typically valid for 12-24 hours
-and are issued based on the result from a policy enforcing decision engine.
-Short term certificates enable passive revocation, to bypass the issues with
-the traditional revocation mechanisms used in most PKI deployments.
+Syntribos is an open source automated API security testing tool that is
+maintained by members of the `OpenStack Security Project <https://wiki.openstack.org/wiki/Security>`_.
 
-* `Anchor Git Repository <https://git.openstack.org/cgit/openstack/anchor>`_
-* `Anchor Gerrit <https://review.openstack.org/#/q/anchor,n,z>`_
-* `Anchor Launchpad <https://bugs.launchpad.net/anchor>`_
+Given a simple configuration file and an example HTTP request, syntribos
+can replace any API URL, URL parameter, HTTP header and request body
+field with a given set of strings. Syntribos iterates through each position
+in the request automatically. The tool aims to automatically detect common
+security defects such as SQL injection, LDAP injection, buffer overflow, etc.
+In addition, it can be used to help identify new security defects
+by automated fuzzing.
+
+Syntribos can be installed directly from `pypi with pip <https://pypi.python.org/pypi/pip>`_.
+
+* `Syntribos developer documentation <http://docs.openstack.org/developer/syntribos/>`_
+* `Syntribos Git Repository <https://git.openstack.org/cgit/openstack/syntribos>`_
+* `Syntribos Gerrit <https://review.openstack.org/#/q/syntribos,n,z>`_
+* `Syntribos Launchpad <https://bugs.launchpad.net/syntribos>`_
