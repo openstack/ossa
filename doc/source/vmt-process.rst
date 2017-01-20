@@ -404,7 +404,7 @@ Email must be GPG-signed but not encrypted.
 Downstream Stakeholders Notification Email (Private Issues)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-* *To:* Downstream stakeholders
+* *To:* embargo-notice@lists.openstack.org
 * *Subject:* [pre-OSSA] Vulnerability in OpenStack $PROJECT ($CVE)
 
 ::
