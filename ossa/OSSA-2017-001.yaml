@@ -1,0 +1,37 @@
+date: 2017-01-26
+
+id: OSSA-2017-001
+
+title: CatchErrors leaks sensitive values in oslo.middleware
+
+description: >
+  Divya K Konoor with IBM reported a vulnerability in oslo.middleware.
+  Software using the CatchError class may include sensitive values in
+  the error message accompanying a Traceback, resulting in their
+  disclosure. For example, complete API requests (including keystone
+  tokens in their headers) may leak into neutron error logs.
+
+affected-products:
+  - product: oslo.middleware
+    version: "<=3.8.0, >=3.9.0 <=3.19.0, >=3.20.0 <=3.23.0"
+
+vulnerabilities:
+  - cve-id: CVE-2017-2592
+
+reporters:
+  - name: Divya K Konoor
+    affiliation: IBM
+    reported:
+      - CVE-2017-2592
+
+issues:
+  links:
+    - https://launchpad.net/bugs/1628031
+
+reviews:
+  ocata:
+    - https://review.openstack.org/425730
+  newton:
+    - https://review.openstack.org/425732
+  mitaka:
+    - https://review.openstack.org/425734
