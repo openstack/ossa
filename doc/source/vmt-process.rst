@@ -1,4 +1,4 @@
-.. :Copyright: 2015, OpenStack Vulnerability Management Team
+.. :Copyright: 2017, OpenStack Vulnerability Management Team
 .. :License: This work is licensed under a Creative Commons
              Attribution 3.0 Unported License.
              http://creativecommons.org/licenses/by/3.0/legalcode
@@ -25,9 +25,10 @@ Supported versions
 ------------------
 
 The Vulnerability Management team coordinates patches fixing
-vulnerabilities in one or two previous releases of OpenStack, in
-addition to the master branch (next version under development), for
-all `security supported projects`_.
+vulnerabilities in supported stable branches (corresponding to
+previous major releases) of OpenStack, in addition to the master
+branch (next version under development), for all `security supported
+projects`_.
 
 .. _security supported projects: http://governance.openstack.org/reference/tags/vulnerability_managed.html
 
@@ -48,41 +49,76 @@ Reception
 
 A report can be received either as a private encrypted email to one
 of the VMT members, or as a Launchpad security bug (check the box
-marked "this is a security issue"). Reports received in private
-should have their bug description prefaced by an embargo reminder
-which can be removed once the bug is switched to a public state.
+marked "this is a security issue").
 
-The first steps are to confirm the validity of the report, create a
-Launchpad bug if necessary, add an ossa bugtask and subscribe the
-project's core security review team or `Vulnerability Management
-Liaison`_ for confirmation of impact and determination of
-affected branches. Reports starting with an "Incomplete" ossa
-bugtask should have a corresponding incomplete reception message
-added in a comment. Once we confirm that we will issue an OSSA for
-it, switch the ossa bugtask status to *Confirmed*. If the need for
-an OSSA is challenged, the ossa bugtask status should be set to
-*Incomplete* until that question is resolved.
+The first steps performed by the VMT are to confirm the validity of
+the report, create a Launchpad bug if necessary, prefix the
+description with an `embargo reminder`_, add an ossa bugtask and
+subscribe the project's core security review team for confirmation
+of impact and determination of affected branches. Reports starting
+with an *Incomplete* ossa bugtask should have a corresponding
+`incomplete reception`_ message added in a comment. Once the VMT
+confirms an OSSA is warranted, the ossa bugtask status will be set
+to *Confirmed*. If the need for an OSSA is challenged, the ossa
+bugtask status should be set back to *Incomplete* until that
+question is resolved.
+
+For some lower-risk issues or problems which may only be easy to
+solve in future releases, the ossa bugtask will be set to *Opinion*
+and the core security reviewers for the OpenStack Security team will
+be subscribed to determine whether they wish to issue an OSSN (these
+reports may still sometimes remain under embargo until the OSSN is
+issued). If no OSSA is warranted and there is no benefit to an OSSN_
+then the ossa bugtask will be set to *Won't Fix* or *Invalid*
+(depending on the specific situation) and the bug state switched
+from *Private Security* to *Public*, optionally adding the
+*security* bug tag if the report concerns a potential security
+hardening opportunity. The specifics are indexed in the `report
+taxonomy`_ and `task status`_ tables.
+
+.. _embargo reminder: #reception-embargo-reminder-private-issues
+.. _incomplete reception: #reception-incomplete-message-unconfirmed-issues
+.. _OSSN: https://wiki.openstack.org/wiki/Security_Notes
+.. _report taxonomy: #incident-report-taxonomy
+.. _task status: #ossa-task-status
+
+Patch development
+^^^^^^^^^^^^^^^^^
+
+For a private report, the reporter (automatic if reported directly
+as a bug) and the affected projects' core security review teams plus
+anyone they deem necessary to develop and validate a fix are added
+to the bug's subscription list. A fix is proposed as a patch to the
+current master branch (as well as any affected supported branches)
+and attached to the private bug report, **not sent to the public
+code review system**.
+
+For public reports, there is no need to directly subscribe anyone
+and patches can be submitted directly to the code review system
+instead of as bug attachments (though the bug should be referenced
+in any commit messages so it will be updated automatically).
+
+If project-side delays are encountered at this or any subsequent
+stage of the process, the VMT and other interested parties may reach
+out to that project's `Vulnerability Management Liaison`_ requesting
+more immediate attention to the issue.
 
 .. _Vulnerability Management Liaison: https://wiki.openstack.org/wiki/CrossProjectLiaisons#Vulnerability_management
 
-Patch Development
-^^^^^^^^^^^^^^^^^
-
-The reporter, or the PTL, or any person that the PTL deems necessary
-to develop the fix is added to the security bug subscription list. A
-fix is proposed as a patch to the current master branch (as well as
-any affected supported branches) and attached to the bug.
-
-Patch Review
+Patch review
 ^^^^^^^^^^^^
 
-Once the initial patch has been posted, core developers of the
-project are added to the bug subscription list so that the proposed
-patch can be pre-approved for merging. Patches need to be
-pre-approved so that they can be fast-tracked through review at
+For a private report once the initial patch has been attached to the
+bug, core reviewers on the subscription list from the project in
+question should review it and suggest updates or pre-approve it for
+merging. Privately-developed patches need to be pre-approved so that
+they can be fast-tracked through public code review later at
 disclosure time.
 
-Draft Impact Description
+For public reports, OpenStack's usual public code review and
+approval processes apply.
+
+Draft impact description
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 In the mean time, the VMT coordinator prepares a vulnerability
@@ -96,13 +132,13 @@ describe impact and mitigation mechanisms. The VMT coordinator
 should use the template below. Once the description is posted, the
 ossa bugtask status should be switched to *Triaged*.
 
-Review Impact Description
+Review impact description
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The description is validated by the reporter and the PTL.
 
-CVE Assignment
-^^^^^^^^^^^^^^
+Send CVE request
+^^^^^^^^^^^^^^^^
 
 To ensure full traceability, we get a CVE assigned before the issue
 is communicated to a larger public. This is generally done as the
@@ -112,14 +148,14 @@ an encrypted+signed email in order to get a CVE assigned. If the
 issue is already public, the CVE request should be sent to the
 oss-security list instead, including links to public bugs.
 
-Get Assigned CVE
+Get assigned CVE
 ^^^^^^^^^^^^^^^^
 
 The CNA returns the assigned CVE. It is added to the Launchpad bug
 (see "link to CVE" at the top-right), and the bug is retitled to
 "$TITLE ($CVE)".
 
-Embargoed Disclosure
+Embargoed disclosure
 ^^^^^^^^^^^^^^^^^^^^
 
 Once the patches are approved and the CVE is assigned, a signed
@@ -140,8 +176,8 @@ advance notification is sent. Instead the OSSA bugtask is set to fix
 committed status once the CVE assignment is received OSSA is
 drafting begins immediately.
 
-Open Bug, Push Patches
-^^^^^^^^^^^^^^^^^^^^^^
+Open bug, Push patch
+^^^^^^^^^^^^^^^^^^^^
 
 In preparation for this, make sure you have a core developer and a
 stable maintainer available to help pushing the fix at disclosure
@@ -160,6 +196,15 @@ Shortly after pushing the patches (potentially waiting for the first
 test runs to complete), publish the advisory to the OpenStack ML.
 Wait until all patches merged to supported branches before setting
 the ossa bugtask status to *Fix released*.
+
+All patches merged
+^^^^^^^^^^^^^^^^^^
+
+Patches approved in code review do not necessarily merge
+immediately, but should be tracked closely until they do (if the bug
+number is correctly identified in commit messages then it will be
+automatically updated to reflect this as well). Subsequent security
+point releases of affected software may then be tagged if warranted.
 
 Incident Report Taxonomy
 ------------------------
@@ -255,7 +300,7 @@ Vulnerability reporters retain final control over the disclosure of
 their findings. If for some reason they are uncomfortable with our
 process, their choice of disclosure terms prevails.
 
-Embargo Exceptions
+Embargo exceptions
 ^^^^^^^^^^^^^^^^^^
 
 To keep the embargo period short and effective, the VMT may
@@ -267,7 +312,7 @@ Whenever such a case occurs, the ossg-coresec group is
 subscribed to the bug report in order to discuss whether or not
 it's imperative to keep that particular bug private.
 
-Downstream Stakeholders
+Downstream stakeholders
 ^^^^^^^^^^^^^^^^^^^^^^^
 
 OpenStack as an upstream project is used in a number of
@@ -288,7 +333,7 @@ please submit an email with a rationale to member(s) of the VMT_.
 Templates
 ---------
 
-Reception Incomplete Message (Unconfirmed Issues)
+Reception incomplete message (unconfirmed issues)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Since this report concerns a possible security risk, an incomplete
@@ -297,7 +342,7 @@ reviewers for the affected project or projects confirm the bug and
 discuss the scope of any vulnerability along with potential
 solutions.
 
-Reception Embargo Reminder (Private Issues)
+Reception embargo reminder (private issues)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 This issue is being treated as a potential security risk under
@@ -313,7 +358,7 @@ those who are made aware of the issue prior to publication. All
 discussion should remain confined to this private bug report, and
 any proposed fixes should be added to the bug as attachments.
 
-Impact Description ($DESCRIPTION)
+Impact description ($DESCRIPTION)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 ::
@@ -349,7 +394,7 @@ open-ended:
 
     Affects: <=8.1.0 and ==9.0.0
 
-CVE Request Email (Private Issues)
+CVE request email (private issues)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * *To:* CNA
@@ -371,10 +416,9 @@ CVE Request Email (Private Issues)
     $VMT_COORDINATOR_NAME
     OpenStack Vulnerability Management Team
 
-
 Email must be GPG-signed and GPG-encrypted.
 
-CVE Request Email (Public Issues)
+CVE request email (public issues)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * *To:* oss-security@lists.openwall.com
@@ -385,8 +429,8 @@ CVE Request Email (Public Issues)
 
     A vulnerability was discovered in OpenStack (see below). In order to
     ensure full traceability, we need a CVE number assigned that we can
-    attach to further notifications. This issue is already public, although an
-    advisory was not sent yet.
+    attach to further notifications. This issue is already public,
+    although an advisory was not sent yet.
 
     $DESCRIPTION
 
@@ -395,42 +439,51 @@ CVE Request Email (Public Issues)
 
     Thanks in advance,
 
-    --
+    -- 
     $VMT_COORDINATOR_NAME
     OpenStack Vulnerability Management Team
 
 Email must be GPG-signed but not encrypted.
 
-Downstream Stakeholders Notification Email (Private Issues)
+Downstream stakeholders notification email (private issues)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+We send two separate emails, to avoid off-topic replies to linux-distros:
+
 * *To:* embargo-notice@lists.openstack.org
+* *To:* linux-distros@vs.openwall.org
+
+Subject and content for both emails is identical:
+
 * *Subject:* [pre-OSSA] Vulnerability in OpenStack $PROJECT ($CVE)
 
 ::
 
-    This is an advance warning of a vulnerability discovered in OpenStack,
-    to give you, as downstream stakeholders, a chance to coordinate the
-    release of fixes and reduce the vulnerability window. Please treat the
-    following information as confidential until the proposed public
-    disclosure date.
+    This is an advance warning of a vulnerability discovered in
+    OpenStack, to give you, as downstream stakeholders, a chance to
+    coordinate the release of fixes and reduce the vulnerability window.
+    Please treat the following information as confidential until the
+    proposed public disclosure date.
 
     $DESCRIPTION
 
     Proposed patch:
-    See attached patches. Unless a flaw is discovered in them, these patches
-    will be merged to their corresponding branches on the public disclosure date.
+    See attached patches. Unless a flaw is discovered in them, these
+    patches will be merged to their corresponding branches on the public
+    disclosure date.
 
     CVE: $CVE
 
     Proposed public disclosure date/time:
     $DISCLOSURE, 1500UTC
-    Please do not make the issue public (or release public patches) before
-    this coordinated embargo date.
+    Please do not make the issue public (or release public patches)
+    before this coordinated embargo date.
 
-    Regards,
-
-    --
+    Original private report:
+    https://launchpad.net/bugs/$BUG
+    For access to read and comment on this report, please reply to me
+    with your Launchpad username and I will subscribe you.
+    -- 
     $VMT_COORDINATOR_NAME
     OpenStack Vulnerability Management Team
 
@@ -439,8 +492,8 @@ something unique and descriptive for the patch attachment file
 names, for example ``cve-2013-4183-master-havana.patch`` or
 ``cve-2013-4183-stable-grizzly.patch``.
 
-OpenStack Security Advisories
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+OpenStack security advisories (OSSA)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The document is first submitted as a yaml description to the ossa
 project using this template::
