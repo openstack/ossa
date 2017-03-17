@@ -1,0 +1,37 @@
+date: 2017-04-04
+
+id: OSSA-2017-003
+
+title: XSS in Horizon federation mappings UI
+
+description: >
+   Eric Brown from VMware reported a vulnerability in Horizon. By creating a
+   malicious federation mapping, an adminstrator may conduct a persistent XSS
+   attack. All Horizon setups are affected.
+
+affected-products:
+  - product: horizon
+    version: ">=9.0.0 <=9.1.1, >=10.0.0 <=10.0.2, ==11.0.0"
+
+vulnerabilities:
+  - cve-id: CVE-2017-7400
+
+reporters:
+  - name: Eric Brown
+    affiliation: VMware
+    reported:
+      - CVE-2017-7400
+
+issues:
+  links:
+    - https://launchpad.net/bugs/1667086
+
+reviews:
+  pike:
+    - https://review.openstack.org/442277
+  ocata:
+    - https://review.openstack.org/442453
+  newton:
+    - https://review.openstack.org/442454
+  mitaka:
+    - https://review.openstack.org/442455
