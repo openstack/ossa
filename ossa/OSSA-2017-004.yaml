@@ -1,0 +1,39 @@
+date: 2017-04-25
+
+id: OSSA-2017-004
+
+title: Incorrect role assignment with federated Keystone
+
+description: >
+  Boris Bobrov from Mail.Ru reported a vulnerability in Keystone Federation. An
+  authenticated user may receive all the roles assigned to the user's project
+  regardless of the federation mapping when there are rules in which
+  group-based assignments are not used. For example, by requesting an admin
+  user to get a role in their project, the user may be granted the admin
+  privileges for new scoped tokens. All setups using the Keystone federation
+  without group based assignments rules are affected.
+
+affected-products:
+  - product: keystone
+    version: ">=10.0.0 <=10.0.1, ==11.0.0"
+
+vulnerabilities:
+  - cve-id: CVE-2017-2673
+
+reporters:
+  - name: Boris Bobrov
+    affiliation: Mail.Ru
+    reported:
+      - CVE-2017-2673
+
+issues:
+  links:
+    - https://launchpad.net/bugs/1677723
+
+reviews:
+  pike:
+    - https://review.openstack.org/459705
+  ocata:
+    - https://review.openstack.org/459732
+  newton:
+    - https://review.openstack.org/459713
