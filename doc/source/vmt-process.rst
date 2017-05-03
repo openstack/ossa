@@ -140,18 +140,49 @@ The description is validated by the reporter and the PTL.
 Send CVE request
 ^^^^^^^^^^^^^^^^
 
-To ensure full traceability, we get a CVE assigned before the issue
-is communicated to a larger public. This is generally done as the
-patch gets nearer to final approval. The ossa bugtask status is set
-to *In progress* and the approved description is sent to a CNA in
-an encrypted+signed email in order to get a CVE assigned. If the
-issue is already public, the CVE request should be sent to the
-oss-security list instead, including links to public bugs.
+To ensure full traceability, we attempt to obtain a CVE assignment
+before the issue is communicated to a larger public. This is
+generally done as the patch gets nearer to final approval. The ossa
+bugtask status is set to *In progress* and the approved impact
+description is submitted through `MITRE's CVE Request form`_. The
+*request type* is ``Request a CVE ID``, the *e-mail address* should
+be that of the requester (generally the assigned VMT coordinator in
+the case of reports officially managed by the VMT), and for
+embargoed reports the coordinator's OpenPGP key should be pasted
+into the field provided.
+
+In the *required* section set the checkboxes indicating the product
+is not CNA-covered and that no prior CVE ID has been assigned,
+select an appropriate *vulnerability  type* (using ``Other or
+Unknown`` to enter a freeform type if there is nothing relevant on
+the drop-down), set the *vendor* to ``OpenStack``, and the *product*
+and *version* fields to match the ``$PROJECTS`` and
+``$AFFECTED_VERSIONS`` from the impact description. In the
+*optional* section set the radio button for *confirmed/acknowledged*
+to ``Yes``, choose an appropriate *attack type* in the drop-down
+(often this is ``Context-dependent`` for our cases), check the
+relevant *impact* checkboxes, attempt to fill in the *affected
+components* and *attack vector* fields if possible, paste in the
+*suggested description* from the prose of the impact description
+(usually omitting the first sentence as it's redundant with other
+fields), put the ``$CREDIT`` details in the *discoverer/credits*
+field, and the bug URL (along with Gerrit URLs for patches if
+already public) in the *references* field. If the report is still
+private, note that in the *additional information* field like ``This
+report is currently under embargo and no disclosure date has been
+scheduled at this time.``
+
+At the bottom of the page, fill in the *security code* and click the
+*submit request* button. If some fields contain invalid data they
+will be highlighted red; correct these, update the *security code*
+and *submit request* again until you get a confirmation page.
+
+.. _MITRE's CVE Request form: https://cveform.mitre.org/
 
 Get assigned CVE
 ^^^^^^^^^^^^^^^^
 
-The CNA returns the assigned CVE. It is added to the Launchpad bug
+MITRE returns the assigned CVE. It is added to the Launchpad bug
 (see "link to CVE" at the top-right), and the bug is retitled to
 "$TITLE ($CVE)".
 
@@ -188,6 +219,14 @@ on master and supported stable branches, fast-track approvals
 (referencing the bug).
 
 Embargo reminder can be removed at that point.
+
+`MITRE's CVE Request form`_ should be used again at this point, but
+instead select a *request type* of ``Notify CVE about a
+publication`` and fill in the coordinator's *e-mail address*,
+provide a *link to the advisory* (the URL to it on
+https://security.openstack.org/ if this was an official OSSA), the
+*CVE IDs* covered, and the *date published*. Once more, fill in the
+*security code* at the bottom of the page and *submit request*.
 
 Publish OSSA
 ^^^^^^^^^^^^
