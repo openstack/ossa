@@ -48,7 +48,7 @@ is:
   keys, which can be found linked below and also on the keyserver network
   with the following fingerprints:
 
-  * Jeremy Stanley <jeremy@openstack.org>:
+  * Jeremy Stanley <fungi@yuggoth.org>:
     `key 0x97ae496fc02dec9fc353b2e748f9961143495829`_ (details__)
   * Tristan Cacqueray <tdecacqu@redhat.com>:
     `key 0xeb103de8b5e69e631c6ff17922b9a05c925cc5d8`_ (details__)
