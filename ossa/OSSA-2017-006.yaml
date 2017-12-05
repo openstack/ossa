@@ -2,9 +2,7 @@ date: 2017-12-05
 
 id: OSSA-2017-006
 
-title: >
-  Nova FilterScheduler doubles resource allocations during rebuild with new
-  image
+title: Nova FilterScheduler doubles resource allocations during rebuild with new image
 
 description: >
   Matt Riedemann from Huawei reported a vulnerability in OpenStack Nova's
