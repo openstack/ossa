@@ -1,0 +1,43 @@
+date: 2018-04-20
+
+id: OSSA-2018-001
+
+title: Raw underlying encrypted volume access
+
+description: >
+  Lee Yarwood (Red Hat) reported a vulnerability in Nova encrypted
+  volumes handling. By detaching and reattaching an encrypted volume
+  an attacker may access the underlying raw volume and corrupt the
+  LUKS header resuling in a denial of service attack on the compute host.
+  All Nova setups supporting encrypted volumes are affected.
+
+affected-products:
+  - product: nova
+    version: ">=15.0.0 <=15.1.0, >=16.0.0 <=16.1.1"
+
+vulnerabilities:
+  - cve-id: CVE-2017-18191
+
+reporters:
+  - name: Lee Yarwood
+    affiliation: Red Hat
+    reported:
+      - CVE-2017-18191
+
+issues:
+  links:
+    - https://launchpad.net/bugs/1739593
+
+reviews:
+  queens:
+    - https://review.openstack.org/460243
+
+  pike:
+    - https://review.openstack.org/543569
+
+  ocata:
+    - https://review.openstack.org/561604
+
+notes:
+  - Pike and Ocata patches disable encrypted volume swapping, this feature
+    is now only supported in Nova version >= 17.0.0.
