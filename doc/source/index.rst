@@ -56,6 +56,8 @@ is:
     `key 0x0d1a8c8423cf3c86bf420f7bb9a83cefa07c6d8a`_ (details__)
   * Gage Hugo <gage.hugo@gmail.com>:
     `key 0x8051d8f814e350e55681f906314347391dc96c24`_ (details__)
+  * Matthew Thode <mthode@mthode.org>:
+    `key 0x14b91caaf68c4849f90ca41333ed3fd25afc78ba`_ (details__)
 
 .. _`key 0x97ae496fc02dec9fc353b2e748f9961143495829`: _static/0x97ae496fc02dec9fc353b2e748f9961143495829.txt
 .. __: https://sks-keyservers.net/pks/lookup?op=vindex&search=0x97ae496fc02dec9fc353b2e748f9961143495829&fingerprint=on
@@ -65,6 +67,8 @@ is:
 .. __: https://sks-keyservers.net/pks/lookup?op=vindex&search=0x0d1a8c8423cf3c86bf420f7bb9a83cefa07c6d8a&fingerprint=on
 .. _`key 0x8051d8f814e350e55681f906314347391dc96c24`: _static/0x8051d8f814e350e55681f906314347391dc96c24.txt
 .. __: https://sks-keyservers.net/pks/lookup?op=vindex&search=0x8051d8f814e350e55681f906314347391dc96c24&fingerprint=on
+.. _`key 0x14b91caaf68c4849f90ca41333ed3fd25afc78ba`: _static/0x14b91caaf68c4849f90ca41333ed3fd25afc78ba.txt
+.. __: https://sks-keyservers.net/pks/lookup?op=vindex&search=0x14b91caaf68c4849f90ca41333ed3fd25afc78ba&fingerprint=on
 
 
 Security information for OpenStack deployers
