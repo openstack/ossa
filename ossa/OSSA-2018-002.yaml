@@ -1,0 +1,41 @@
+date: 2018-07-25
+
+id: OSSA-2018-002
+
+title: GET /v3/OS-FEDERATION/projects leaks project information
+
+description: >
+  Kristi Nikolla with Boston University reported a vulnerability
+  in Keystone federation. By doing GET /v3/OS-FEDERATION/projects
+  an authenticated user may discover projects they have no
+  authority to access, leaking all projects in the deployment and
+  their attributes.
+  Only Keystone with the /v3/OS-FEDERATION endpoint enabled via
+  policy.json is affected.
+
+affected-products:
+  - product: keystone
+    version: '<11.0.4, ==12.0.0, ==13.0.0'
+
+vulnerabilities:
+  - cve-id: CVE-2018-14432
+
+reporters:
+  - name: Kristi Nikolla
+    affiliation: Boston University
+    reported:
+      - CVE-2018-14432
+
+issues:
+  links:
+    - https://launchpad.net/bugs/1779205
+
+reviews:
+  rocky:
+    - https://review.openstack.org/585782
+  queens:
+    - https://review.openstack.org/585788
+  pike:
+    - https://review.openstack.org/585792
+  ocata:
+    - https://review.openstack.org/585802
