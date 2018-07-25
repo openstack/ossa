@@ -218,6 +218,8 @@ On the disclosure hour, open bug, push patches to Gerrit for review
 on master and supported stable branches, fast-track approvals
 (referencing the bug).
 
+Update the Launchpad bug title to "[OSSA-$NUM] $TITLE".
+
 Embargo reminder can be removed at that point.
 
 `MITRE's CVE Request form`_ should be used again at this point, but
