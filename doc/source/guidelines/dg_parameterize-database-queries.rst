@@ -95,25 +95,28 @@ be created.
         cur = con.cursor()
         cur.execute(query)
 
-Correct
-^^^^^^^
+Better
+^^^^^^
 
 In this example the query is created using pythons standard, unsafe
 '%' operator. MySQL's 'escape\_string' method is used to perform escaping
-on the query string immediately before executing it.
+on the user input string prior to inclusion in the string.
 
 .. code:: python
 
     import MySQLdb
 
-    query = "select username from users where username = '%s'" % name
+    query = "select username from users where username = '%s'" % MySQLdb.escape_string(name)
     con = MySQLdb.connect('localhost', 'testuser', 'test623', 'testdb');
 
     with con:
         cur = con.cursor()
-        cur.execute(MySQLdb.escape_string(query))
+        cur.execute(query)
 
-An alternative, but also correct, way to do this using a parameterized
+Correct
+^^^^^^^
+
+The correct way to do this using a parameterized
 query might look like the following:
 
 .. code:: python
