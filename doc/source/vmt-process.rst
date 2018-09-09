@@ -436,57 +436,6 @@ open-ended:
 
     Affects: <=8.1.0 and ==9.0.0
 
-CVE request email (private issues)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-* *To:* CNA
-* *Subject:* CVE request for vulnerability in OpenStack $PROJECT
-
-::
-
-    A vulnerability was discovered in OpenStack (see below). In order to
-    ensure full traceability, we need a CVE number assigned that we can
-    attach to private and public notifications. Please treat the
-    following information as confidential until further public
-    disclosure.
-
-    $DESCRIPTION
-
-    Thanks in advance,
-
-    --
-    $VMT_COORDINATOR_NAME
-    OpenStack Vulnerability Management Team
-
-Email must be GPG-signed and GPG-encrypted.
-
-CVE request email (public issues)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-* *To:* oss-security@lists.openwall.com
-* *Cc:* cve-assign@mitre.org
-* *Subject:* CVE request for vulnerability in OpenStack $PROJECT
-
-::
-
-    A vulnerability was discovered in OpenStack (see below). In order to
-    ensure full traceability, we need a CVE number assigned that we can
-    attach to further notifications. This issue is already public,
-    although an advisory was not sent yet.
-
-    $DESCRIPTION
-
-    References:
-    https://launchpad.net/bugs/$BUG
-
-    Thanks in advance,
-
-    -- 
-    $VMT_COORDINATOR_NAME
-    OpenStack Vulnerability Management Team
-
-Email must be GPG-signed but not encrypted.
-
 Downstream stakeholders notification email (private issues)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
