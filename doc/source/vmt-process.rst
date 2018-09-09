@@ -210,7 +210,7 @@ drafting begins immediately.
 Open bug, Push patch
 ^^^^^^^^^^^^^^^^^^^^
 
-In preparation for this, make sure you have a core developer and a
+In preparation for this, make sure you have a core reviewer and a
 stable maintainer available to help pushing the fix at disclosure
 time.
 
