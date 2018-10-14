@@ -59,6 +59,11 @@ is:
   * Matthew Thode <mthode@mthode.org>:
     `key 0x14b91caaf68c4849f90ca41333ed3fd25afc78ba`_ (details__)
 
+.. Static key files are generated with the following command:
+   ( gpg2 --fingerprint 0x97ae496fc02dec9fc353b2e748f9961143495829
+   gpg2 --armor --export-options export-clean,export-minimal \
+   --export 0x97ae496fc02dec9fc353b2e748f9961143495829 ) > \
+   doc/source/_static/0x97ae496fc02dec9fc353b2e748f9961143495829.txt
 .. _`key 0x97ae496fc02dec9fc353b2e748f9961143495829`: _static/0x97ae496fc02dec9fc353b2e748f9961143495829.txt
 .. __: https://sks-keyservers.net/pks/lookup?op=vindex&search=0x97ae496fc02dec9fc353b2e748f9961143495829&fingerprint=on
 .. _`key 0xeb103de8b5e69e631c6ff17922b9a05c925cc5d8`: _static/0xeb103de8b5e69e631c6ff17922b9a05c925cc5d8.txt
