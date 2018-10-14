@@ -55,7 +55,7 @@ is:
   * Morgan Fainberg <morgan.fainberg@gmail.com>:
     `key 0x0d1a8c8423cf3c86bf420f7bb9a83cefa07c6d8a`_ (details__)
   * Gage Hugo <gage.hugo@gmail.com>:
-    `key 0x8051d8f814e350e55681f906314347391dc96c24`_ (details__)
+    `key 0x59ad76e5c2c722ebfa7a4a1fe7a8fd2b76febd11`_ (details__)
   * Matthew Thode <mthode@mthode.org>:
     `key 0x14b91caaf68c4849f90ca41333ed3fd25afc78ba`_ (details__)
 
@@ -65,8 +65,8 @@ is:
 .. __: https://sks-keyservers.net/pks/lookup?op=vindex&search=0xeb103de8b5e69e631c6ff17922b9a05c925cc5d8&fingerprint=on
 .. _`key 0x0d1a8c8423cf3c86bf420f7bb9a83cefa07c6d8a`: _static/0x0d1a8c8423cf3c86bf420f7bb9a83cefa07c6d8a.txt
 .. __: https://sks-keyservers.net/pks/lookup?op=vindex&search=0x0d1a8c8423cf3c86bf420f7bb9a83cefa07c6d8a&fingerprint=on
-.. _`key 0x8051d8f814e350e55681f906314347391dc96c24`: _static/0x8051d8f814e350e55681f906314347391dc96c24.txt
-.. __: https://sks-keyservers.net/pks/lookup?op=vindex&search=0x8051d8f814e350e55681f906314347391dc96c24&fingerprint=on
+.. _`key 0x59ad76e5c2c722ebfa7a4a1fe7a8fd2b76febd11`: _static/0x59ad76e5c2c722ebfa7a4a1fe7a8fd2b76febd11.txt
+.. __: https://sks-keyservers.net/pks/lookup?op=vindex&search=0x59ad76e5c2c722ebfa7a4a1fe7a8fd2b76febd11&fingerprint=on
 .. _`key 0x14b91caaf68c4849f90ca41333ed3fd25afc78ba`: _static/0x14b91caaf68c4849f90ca41333ed3fd25afc78ba.txt
 .. __: https://sks-keyservers.net/pks/lookup?op=vindex&search=0x14b91caaf68c4849f90ca41333ed3fd25afc78ba&fingerprint=on
 
