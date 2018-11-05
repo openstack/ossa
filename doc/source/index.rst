@@ -232,20 +232,6 @@ The Security project are constantly looking at ways to introduce tooling and
 automation to improve the overall security of OpenStack projects. Some of these
 projects are outlined below.
 
-Anchor - ephemeral PKI
-^^^^^^^^^^^^^^^^^^^^^^
-
-Anchor is a lightweight, open source, Public Key Infrastructure (PKI), which
-uses automated provisioning of short-term certificates to enable cryptographic
-trust in OpenStack services. Certificates are typically valid for 12-24 hours
-and are issued based on the result from a policy enforcing decision engine.
-Short term certificates enable passive revocation, to bypass the issues with
-the traditional revocation mechanisms used in most PKI deployments.
-
-* `Anchor Git Repository <https://git.openstack.org/cgit/openstack/anchor>`_
-* `Anchor Gerrit <https://review.openstack.org/#/q/anchor,n,z>`_
-* `Anchor Launchpad <https://bugs.launchpad.net/anchor>`_
-
 Bandit - static analysis for Python
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
