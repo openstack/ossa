@@ -1,6 +1,6 @@
 - project:
     templates:
-      - build-openstack-sphinx-docs
+      - build-openstack-docs-pti
     post:
       jobs:
         - publish-security
