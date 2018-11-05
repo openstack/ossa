@@ -1,15 +1,15 @@
 #!/usr/bin/env python
 import glob
 import os
-import sys
 import textwrap
 
 from jinja2 import FileSystemLoader
 from jinja2.environment import Environment
 import yaml
 
-reload(sys)
-sys.setdefaultencoding("utf-8")
+from sphinx.util import logging
+
+LOG = logging.getLogger(__name__)
 
 
 def to_snake_case(d):
@@ -23,7 +23,7 @@ def to_snake_case(d):
 
 def to_paragraphs(d, *args):
     for k in args:
-        if k in d and (isinstance(d[k], str) or isinstance(d[k], unicode)):
+        if k in d and isinstance(d[k], str):
             d[k] = '\n'.join(textwrap.wrap(d[k]))
 
 
@@ -57,7 +57,7 @@ def render_template(template, data, **kwargs):
 
 
 def render(source, template, **kwargs):
-    vals = yaml.safe_load(open(source).read().decode('utf-8'))
+    vals = yaml.safe_load(open(source).read())
     to_snake_case(vals)
     to_paragraphs(vals, 'description', 'errata')
     return render_template(template, vals, **kwargs)
@@ -87,6 +87,6 @@ def reverse_toctree(app, doctree, docname):
 
 
 def setup(app):
-    app.info('Loading the vmt extension')
+    LOG.info('Loading the vmt extension')
     app.connect('builder-inited', build_advisories)
     app.connect("doctree-resolved", reverse_toctree)
