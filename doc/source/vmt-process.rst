@@ -535,7 +535,7 @@ Once approved, use the 'Show Source' button from the gate-ossa-docs output
 to get the generated RST document. We send two separate emails, to
 avoid off-topic replies to oss-security list:
 
-* *To:* openstack-announce@lists.openstack.org, openstack@lists.openstack.org
+* *To:* openstack-announce@lists.openstack.org, openstack-discuss@lists.openstack.org
 * *To:* oss-security@lists.openwall.com
 
 Subject and content for both emails is identical:
