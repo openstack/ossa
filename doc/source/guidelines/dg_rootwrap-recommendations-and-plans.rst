@@ -47,7 +47,7 @@ Instead, a better approach is multi-faceted:
 -  Utilize available privilege separation mechanisms currently available
    in the Linux operating system
 -  Move away from calling external commands where possible
--  Permit santiization of input to privileged tasks
+-  Permit sanitization of input to privileged tasks
 -  Increase ease of use around auditing privileged task implementations
 -  Permit each project to have domain-specific tasks
 -  Share common tasks with other projects
