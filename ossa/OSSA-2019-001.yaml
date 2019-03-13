@@ -1,0 +1,44 @@
+date: 2019-03-13
+
+id: OSSA-2019-001
+
+title: Unsupported dport option prevents applying security groups
+
+description: >
+  Erik Olof Gunnar Andersson with Blizzard Entertainment reported a
+  vulnerability in Neutron's iptables firewall module. By setting a
+  destination port in a security group rule along with a protocol
+  which doesn't support that option (for example, VRRP), an
+  authenticated user may block further application of security group
+  rules for instances from any project/tenant on the compute hosts
+  to which it's applied. Only deployments using the iptables
+  security group driver are affected.
+
+affected-products:
+  - product: neutron
+    version: '<10.0.8, >=11.0.0 <11.0.7, >=12.0.0 <12.0.6, >=13.0.0 <13.0.3'
+
+vulnerabilities:
+  - cve-id: CVE-2019-9735
+
+reporters:
+  - name: Erik Olof Gunnar Andersson
+    affiliation: Blizzard Entertainment
+    reported:
+      - CVE-2019-9735
+
+issues:
+  links:
+    - https://launchpad.net/bugs/1818385
+
+reviews:
+  ocata:
+    - https://review.openstack.org/640791
+  pike:
+    - https://review.openstack.org/640790
+  queens:
+    - https://review.openstack.org/640702
+  rocky:
+    - https://review.openstack.org/640685
+  stein:
+    - https://review.openstack.org/640619
