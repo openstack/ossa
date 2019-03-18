@@ -531,9 +531,11 @@ project using this template::
     notes:
       - 'Optional note such as cross project version requirements'
 
-Once approved, use the 'Show Source' button from the gate-ossa-docs output
-to get the generated RST document. We send two separate emails, to
-avoid off-topic replies to oss-security list:
+Once approved, view the gate-ossa-docs output and browse to the
+rendered HTML advisory, then alter the URL to insert ``_sources/``
+before the first path component and change the file extension to
+``rst`` to get the generated RST document. We send two separate
+emails, to avoid off-topic replies to oss-security list:
 
 * *To:* openstack-announce@lists.openstack.org, openstack-discuss@lists.openstack.org
 * *To:* oss-security@lists.openwall.com
