@@ -133,7 +133,7 @@ Again, the preferable approach is to only allow known safe attributes,
 and sanitize the content of those attribute values. If the content is not
 sanitized, the following vulnerable code could occur:
 
-.. code:: javascript
+.. code:: none
 
     function add_image(link) {
       document.write('<img src="' + link + '"'></img>'');
@@ -149,7 +149,7 @@ arbitrary code:
 
 A more secure implementation of the above would be:
 
-.. code:: javascript
+.. code:: none
 
     function add_image(link) {
       clean = link.replace(/"/g, '&quot;');
