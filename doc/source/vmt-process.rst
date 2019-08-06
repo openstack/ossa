@@ -521,10 +521,10 @@ project using this template::
     reviews:
 
       kilo:
-        - https://review.openstack.org/$MASTER_REVIEW
+        - https://review.opendev.org/$MASTER_REVIEW
 
       juno:
-        - https://review.openstack.org/$STABLE_REVIEW
+        - https://review.opendev.org/$STABLE_REVIEW
 
       type: gerrit
 
