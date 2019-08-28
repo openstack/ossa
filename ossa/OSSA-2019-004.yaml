@@ -1,0 +1,46 @@
+date: 2019-08-29
+
+id: OSSA-2019-004
+
+title: 'Ageing time of 0 disables linuxbridge MAC learning'
+
+description: >
+  James Denton with Rackspace reported a vulnerability in os-vif, the
+  Nova/Neutron network integration library. A hard-coded MAC ageing
+  time of 0 disables MAC learning in linuxbridge, forcing obligatory
+  Ethernet flooding for non-local destinations which both impedes
+  network performance and allows users to possibly view the content of
+  packets for instances belonging to other tenants sharing the same
+  network. Only deployments using the linuxbridge backend are
+  affected.
+
+affected-products:
+
+  - product: 'os-vif'
+    version: '>=1.15.0<1.15.2, 1.16.0'
+
+vulnerabilities:
+
+  - cve-id: CVE-2019-15753
+
+reporters:
+
+  - name: 'James Denton'
+    affiliation: 'Rackspace'
+    reported:
+      - CVE-2019-15753
+
+issues:
+
+  links:
+    - https://launchpad.net/bugs/1837252
+
+reviews:
+
+  train:
+    - https://review.opendev.org/672834
+
+  stein:
+    - https://review.opendev.org/678098
+
+  type: gerrit
