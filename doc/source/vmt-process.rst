@@ -498,35 +498,28 @@ project using this template::
     description: '$DESCRIPTION_CONTENT'
 
     affected-products:
-
       - product: $PROJECT
         version: $AFFECTED_VERSIONS
 
     vulnerabilities:
-
       - cve-id: $CVE
 
     reporters:
-
       - name: '$CREDIT'
         affiliation: $CREDIT_AFFILIATION
         reported:
           - $CVE
 
     issues:
-
       links:
         - https://launchpad.net/bugs/$BUG
 
     reviews:
-
       kilo:
         - https://review.opendev.org/$MASTER_REVIEW
 
       juno:
         - https://review.opendev.org/$STABLE_REVIEW
-
-      type: gerrit
 
     notes:
       - 'Optional note such as cross project version requirements'
