@@ -1,0 +1,61 @@
+date: 2019-10-07
+
+id: OSSA-2019-005
+
+title: 'Octavia Amphora-Agent not requiring Client-Certificate'
+
+description: >
+  Daniel Preussker reported a vulnerability in amphora-agent,
+  running within Octavia Amphora Instances which allows
+  unauthenticated access from the management network.
+  This leads to information disclosure and also allows
+  changes to the configuration of the Amphora via simple HTTP
+  requests because cmd/agent.py gunicorn cert_reqs option is
+  incorrectly set to True instead of ssl.CERT_REQUIRED.
+
+affected-products:
+
+  - product: 'octavia'
+    version: '>=0.10.0 <2.1.2, >=3.0.0 <3.2.0, >=4.0.0 <4.1.0'
+
+vulnerabilities:
+
+  - cve-id: CVE-2019-17134
+
+reporters:
+
+  - name: 'Daniel Preussker'
+    reported:
+      - CVE-2019-17134
+
+issues:
+
+  links:
+    - https://storyboard.openstack.org/#!/story/2006660
+
+reviews:
+
+  train:
+    - https://review.opendev.org/686541
+
+  stein:
+    - https://review.opendev.org/686543
+
+  rocky:
+    - https://review.opendev.org/686544
+
+  queens:
+    - https://review.opendev.org/686545
+
+  pike:
+    - https://review.opendev.org/686546
+
+  ocata:
+    - https://review.opendev.org/686547
+
+  type: gerrit
+
+notes:
+  - The stable/ocata and stable/pike branches are under extended
+    maintenance and will receive no new point releases, but patches
+    for them are provided as a courtesy.
