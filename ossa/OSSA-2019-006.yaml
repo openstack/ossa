@@ -1,0 +1,49 @@
+date: 2019-12-09
+
+id: OSSA-2019-006
+
+title: 'Credentials API allows listing and retrieving of all users credentials'
+
+description: >
+    Daniel Preussker reported a vulnerability in Keystone's list credentials
+    API. Any user with a role on a project is able to list any credentials
+    with the /v3/credentials API when [oslo_policy] enforce_scope is false.
+    Users with a role on a project are able to view any other users
+    credentials, which could leak sign-on information for Time-based One
+    Time Passwords (TOTP) or othewise. Deployments running keystone with
+    [oslo_policy] enforce_scope set to false are affected. There will be a
+    slight performance impact for the list credentials API once this issue
+    is fixed.
+
+affected-products:
+
+  - product: 'keystone'
+    version: '==15.0.0, ==16.0.0'
+
+vulnerabilities:
+
+  - cve-id: CVE-2019-19687
+
+reporters:
+
+  - name: 'Daniel Preussker'
+    reported:
+      - CVE-2019-19687
+
+issues:
+
+  links:
+    - https://bugs.launchpad.net/keystone/+bug/1855080
+
+reviews:
+
+  ussuri:
+    - https://review.opendev.org/697355
+
+  train:
+    - https://review.opendev.org/697611
+
+  stein:
+    - https://review.opendev.org/697731
+
+  type: gerrit
