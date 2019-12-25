@@ -1,2 +1,2 @@
 Records of each security advisory issued by the OpenStack VMT
-http://security.openstack.org
+https://security.openstack.org
