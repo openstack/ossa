@@ -6,7 +6,7 @@ title: XSS in Horizon federation mappings UI
 
 description: >
    Eric Brown from VMware reported a vulnerability in Horizon. By creating a
-   malicious federation mapping, an adminstrator may conduct a persistent XSS
+   malicious federation mapping, an administrator may conduct a persistent XSS
    attack. All Horizon setups are affected.
 
 affected-products:
