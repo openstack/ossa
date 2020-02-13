@@ -48,12 +48,13 @@ Reception
 ^^^^^^^^^
 
 A report can be received either as a private encrypted email to one
-of the VMT members, or as a Launchpad security bug (check the box
-marked "this is a security issue").
+of the VMT members, or as a StoryBoard or Launchpad security bug
+(check the box marked "this is a security issue").
 
 The first steps performed by the VMT are to confirm the validity of
-the report, create a Launchpad bug if necessary, prefix the
-description with an `embargo reminder`_, add an ossa bugtask and
+the report, create a bug in StoryBoard or Launchpad if one does not
+yet exist, prefix the description with an `embargo reminder`_
+including an end date for its embargo, add an ossa bugtask and
 subscribe the project's core security review team for confirmation
 of impact and determination of affected branches. Reports starting
 with an *Incomplete* ossa bugtask should have a corresponding
@@ -182,9 +183,9 @@ and *submit request* again until you get a confirmation page.
 Get assigned CVE
 ^^^^^^^^^^^^^^^^
 
-MITRE returns the assigned CVE. It is added to the Launchpad bug
-(see "link to CVE" at the top-right), and the bug is retitled to
-"$TITLE ($CVE)".
+MITRE returns the assigned CVE. It is added to the bug (see "link to
+CVE" at the top-right in Launchpad or use a story comment in
+StoryBoard), and the bug is retitled to "$TITLE ($CVE)".
 
 Embargoed disclosure
 ^^^^^^^^^^^^^^^^^^^^
@@ -196,11 +197,11 @@ excluding Monday/Friday and holiday periods, at 1500 UTC. No
 stakeholder is supposed to deploy public patches before disclosure
 date.
 
-Once the email is sent, the ossa bugtask status should be set to
-*Fix committed*. At that point we can also add downstream
-stakeholders to the Launchpad bug, if they use Launchpad for
-security patches. This means adding  ~canonical-security to the bug
-subscribers.
+Once the email is sent, the OSSA bugtask status should be set to
+*Fix committed* if the report uses Launchpad. At that point we can
+also add downstream stakeholders to the bug. This means adding
+~canonical-security to the bug subscribers in Launchpad, for
+example.
 
 For non-embargoed, public vulnerabilities no separate downstream
 advance notification is sent. Instead the OSSA bugtask is set to fix
@@ -218,7 +219,7 @@ On the disclosure hour, open bug, push patches to Gerrit for review
 on master and supported stable branches, fast-track approvals
 (referencing the bug).
 
-Update the Launchpad bug title to "[OSSA-$NUM] $TITLE".
+Update the bug title to "[OSSA-$NUM] $TITLE".
 
 Embargo reminder can be removed at that point.
 
@@ -246,6 +247,14 @@ immediately, but should be tracked closely until they do (if the bug
 number is correctly identified in commit messages then it will be
 automatically updated to reflect this as well). Subsequent security
 point releases of affected software may then be tagged if warranted.
+
+Abnormal embargo termination
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+If a report is held in embargo for 90 days without a fix, or
+significant details of the report are disclosed in a public venue,
+the embargo is terminated by a VMT coordinator at that time and
+subsequent process switches to the public report workflow instead.
 
 Incident Report Taxonomy
 ------------------------
@@ -348,11 +357,8 @@ Embargo exceptions
 To keep the embargo period short and effective, the VMT may
 choose to open bug reports. Issues that take too much time
 to be fixed (e.g., more than 2 weeks) or issues that require
-a complex patch are usually better solved in the open.
-
-Whenever such a case occurs, the ossg-coresec group is
-subscribed to the bug report in order to discuss whether or not
-it's imperative to keep that particular bug private.
+a complex patch are usually better solved in the open. Only under
+unusual circumstances should any embargo extend past 90 days.
 
 Downstream stakeholders
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -378,27 +384,38 @@ Templates
 Reception incomplete message (unconfirmed issues)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Since this report concerns a possible security risk, an incomplete
-security advisory task has been added while the core security
-reviewers for the affected project or projects confirm the bug and
-discuss the scope of any vulnerability along with potential
-solutions.
+::
+
+  Since this report concerns a possible security risk, an incomplete
+  security advisory task has been added while the core security
+  reviewers for the affected project or projects confirm the bug and
+  discuss the scope of any vulnerability along with potential
+  solutions.
 
 Reception embargo reminder (private issues)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-This issue is being treated as a potential security risk under
-embargo. Please do not make any public mention of embargoed
-(private) security vulnerabilities before their coordinated
-publication by the OpenStack Vulnerability Management Team in the
-form of an official OpenStack Security Advisory. This includes
-discussion of the bug or associated fixes in public forums such as
-mailing lists, code review systems and bug trackers. Please also
-avoid private disclosure to other individuals not already approved
-for access to this information, and provide this same reminder to
-those who are made aware of the issue prior to publication. All
-discussion should remain confined to this private bug report, and
-any proposed fixes should be added to the bug as attachments.
+::
+
+  This issue is being treated as a potential security risk under
+  embargo. Please do not make any public mention of embargoed
+  (private) security vulnerabilities before their coordinated
+  publication by the OpenStack Vulnerability Management Team in the
+  form of an official OpenStack Security Advisory. This includes
+  discussion of the bug or associated fixes in public forums such as
+  mailing lists, code review systems and bug trackers. Please also
+  avoid private disclosure to other individuals not already approved
+  for access to this information, and provide this same reminder to
+  those who are made aware of the issue prior to publication. All
+  discussion should remain confined to this private bug report, and
+  any proposed fixes should be added to the bug as attachments. This
+  embargo shall not extend past $NINETY_DAYS and will be made
+  public by or on that date if no fix is identified.
+
+The NINETY_DAYS value should be 90 days from the date the report is
+accepted by the coordinator and project reviewers are subscribed. It
+can be trivially calculated with the ``date -I -d90days`` shell
+command.
 
 Impact description ($DESCRIPTION)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

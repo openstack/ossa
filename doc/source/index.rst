@@ -35,12 +35,12 @@ and disclose the issue responsibly. We provide two ways to report issues to the
 OpenStack Vulnerability Management Team depending on how sensitive the issue
 is:
 
-* Search for the corresponding project at https://launchpad.net/ and after
-  selecting it, click the 'Report a bug' link at the right. Fill in the
-  'Summary' and 'Further information' fields describing the issue, then
-  click the 'This bug is a security vulnerability' checkbox near the bottom
-  of the page before submitting it. This will make the bug Private and only
-  accessible to the Vulnerability Management Team.
+* Search for the corresponding project at https://storyboard.openstack.org/ or
+  https://launchpad.net/ and after selecting it, click the 'Report a bug' link
+  at the right. Fill in the 'Summary' and 'Further information' fields
+  describing the issue, then click the 'This bug is a security vulnerability'
+  checkbox near the bottom of the page before submitting it. This will make the
+  bug Private and only accessible to the Vulnerability Management Team.
 
 * If the issue is extremely sensitive or you're otherwise unable to use the
   bug tracker directly, please send an E-mail message to one or more of the
@@ -56,6 +56,13 @@ is:
     `key 0x59ad76e5c2c722ebfa7a4a1fe7a8fd2b76febd11`_ (details__)
   * Matthew Thode <mthode@mthode.org>:
     `key 0x14b91caaf68c4849f90ca41333ed3fd25afc78ba`_ (details__)
+
+.. note::
+
+  All private reports of suspected vulnerabilities are embargoed for a maximum
+  of 90 days. Unless unusual circumstances arise, any defect reported in
+  private will be made public within 90 calendar days from when it is received,
+  even if a solution has not been identified.
 
 .. Static key files are generated with the following command:
    ( gpg2 --fingerprint 0x97ae496fc02dec9fc353b2e748f9961143495829
@@ -151,7 +158,7 @@ How to propose and review a security patch
     The patch development and review process for security patches is different
     from normal patches in OpenStack. Because the gerrit review process is
     public, all security bugs must have patches proposed to and reviewed in
-    the Launchpad bug report comments.
+    the StoryBoard or Launchpad report comments.
 
 After a patch for the reported bug has been developed locally, you the patch author need to share that with the community. This is a simple process, but it is different than the normal OpenStack workflow.
 
@@ -160,7 +167,7 @@ After a patch for the reported bug has been developed locally, you the patch aut
     git format-patch --stdout HEAD~1 >path/to/local/file.patch
 
   Now you have the patch saved locally and you can attach it in a comment
-  on the Launchpad bug page.
+  on the bug page.
 
 * For reviewers, to review that attached patch, run the following command::
 
