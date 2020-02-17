@@ -1,0 +1,47 @@
+date: 2020-02-19
+
+id: OSSA-2020-001
+
+title: Nova can leak consoleauth token into log files
+
+description: >
+    Paul Carlton from HP reported a vulnerability in Nova. An attacker with
+    read access to the service’s logs may obtain tokens used for console
+    access. All Nova setups using novncproxy are affected.
+
+affected-products:
+  - product: Nova
+    version: '<18.2.4,>=19.0.0<19.1.0,>=20.0.0<20.1.0'
+
+vulnerabilities:
+  - cve-id: CVE-2015-9543
+
+reporters:
+  - name: Paul Carlton
+    affiliation: HP
+    reported:
+      - CVE-2015-9543
+
+issues:
+  links:
+    - https://launchpad.net/bugs/1492140
+
+reviews:
+  ussuri:
+    - https://review.opendev.org/220622
+
+  train:
+    - https://review.opendev.org/696685
+
+  stein:
+    - https://review.opendev.org/702181
+
+  rocky:
+    - https://review.opendev.org/704255
+
+  queens:
+    - https://review.opendev.org/707845
+
+notes:
+  - The stable/queens branch is under extended maintenance and will receive no
+    new point releases, but a patch for it is provided as a courtesy.
