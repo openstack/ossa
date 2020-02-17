@@ -51,31 +51,31 @@ A report can be received either as a private encrypted email to one
 of the VMT members, or as a StoryBoard or Launchpad security bug
 (check the box marked "this is a security issue").
 
-The first steps performed by the VMT are to confirm the validity of
-the report, create a bug in StoryBoard or Launchpad if one does not
-yet exist, prefix the description with an `embargo reminder`_
-including an end date for its embargo, add an ossa bugtask and
-subscribe the project's core security review team for confirmation
-of impact and determination of affected branches. Reports starting
-with an *Incomplete* ossa bugtask should have a corresponding
-`incomplete reception`_ message added in a comment. Once the VMT
-confirms an OSSA is warranted, the ossa bugtask status will be set
-to *Confirmed*. If the need for an OSSA is challenged, the ossa
-bugtask status should be set back to *Incomplete* until that
-question is resolved.
+The first steps performed by the VMT are to:
 
-For some lower-risk issues or problems which may only be easy to
-solve in future releases, the ossa bugtask will be set to *Opinion*
-and the core security reviewers for the OpenStack Security team will
-be subscribed to determine whether they wish to issue an OSSN (these
-reports may still sometimes remain under embargo until the OSSN is
-issued). If no OSSA is warranted and there is no benefit to an OSSN_
-then the ossa bugtask will be set to *Won't Fix* or *Invalid*
-(depending on the specific situation) and the bug state switched
-from *Private Security* to *Public*, optionally adding the
-*security* bug tag if the report concerns a potential security
-hardening opportunity. The specifics are indexed in the `report
-taxonomy`_ and `task status`_ tables.
+* create a bug in StoryBoard or Launchpad if one does not yet exist
+* check that the report indicates the correct project and adjust as
+  necessary
+* prefix the report description with an `embargo reminder`_
+  including an end date for its embargo
+* add a *Todo/Incomplete* task for the openstack/ossa or ossa
+  project
+* subscribe the project's core security review team for confirmation
+  of impact and determination of affected branches
+* add a comment with an `incomplete reception`_ message
+
+Once the VMT confirms an OSSA is warranted, the ossa bugtask status
+will be set to *Progress/Confirmed*. If the need for an OSSA is
+challenged, the ossa bugtask status should be set back to
+*Todo/Incomplete* until that question is resolved.
+
+If no OSSA is warranted and there is no benefit to an OSSN_ then the
+ossa bugtask will be set to *Won't Fix* or *Invalid* (depending on
+the tracker and situation) and the bug state switched from *Private
+Security* to *Public*, optionally adding a *security* bug tag if the
+report concerns a potential security hardening opportunity. The
+specifics are indexed in the `report taxonomy`_ and `task status`_
+tables.
 
 .. _embargo reminder: #reception-embargo-reminder-private-issues
 .. _incomplete reception: #reception-incomplete-message-unconfirmed-issues
@@ -131,7 +131,8 @@ The description should properly credit the reporter, specify
 affected versions (including unsupported ones) and accurately
 describe impact and mitigation mechanisms. The VMT coordinator
 should use the template below. Once the description is posted, the
-ossa bugtask status should be switched to *Triaged*.
+openstack/ossa or ossa bugtask status should be switched to
+*Review/Triaged*.
 
 Review impact description
 ^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -195,13 +196,8 @@ email with the vulnerability description is sent to the downstream
 stakeholders. The disclosure date is set to 3-5 business days,
 excluding Monday/Friday and holiday periods, at 1500 UTC. No
 stakeholder is supposed to deploy public patches before disclosure
-date.
-
-Once the email is sent, the OSSA bugtask status should be set to
-*Fix committed* if the report uses Launchpad. At that point we can
-also add downstream stakeholders to the bug. This means adding
-~canonical-security to the bug subscribers in Launchpad, for
-example.
+date. Once the email is sent, any stakeholders who reply requesting
+subscription to the report may be added.
 
 For non-embargoed, public vulnerabilities no separate downstream
 advance notification is sent. Instead the OSSA bugtask is set to fix
@@ -308,30 +304,22 @@ OSSA Task status
 
 Here is a summary of the different OSSA task status meanings:
 
-+---------------+--------------------------------------------------+
-| Status        | Meaning                                          |
-+===============+==================================================+
-| Incomplete    | It is still unclear whenever the bug warrants an |
-|               | advisory                                         |
-+---------------+--------------------------------------------------+
-| Confirmed     | The vulnerability is confirmed, impact           |
-|               | description is in progress                       |
-+---------------+--------------------------------------------------+
-| Triaged       | Impact description has been submitted for review |
-+---------------+--------------------------------------------------+
-| In Progress   | CVE has been requested                           |
-+---------------+--------------------------------------------------+
-| Fix committed | Pre-OSSA has been communicated                   |
-+---------------+--------------------------------------------------+
-| Fix released  | All patches have been merged                     |
-+---------------+--------------------------------------------------+
-| Opinion       | Issue is likely a Class B/C/D, waiting for OSSN  |
-+---------------+--------------------------------------------------+
-| Won't Fix     | Doesn't fit with the project plans, sorry        |
-+---------------+--------------------------------------------------+
-| Invalid       | Class E and Z, not a bug or vulnerability. No    |
-|               | further action to be taken                       |
-+---------------+--------------------------------------------------+
++---------------------+--------------------------------------------+
+| Status              | Meaning                                    |
++=====================+============================================+
+| Todo/Incomplete     | It is still unclear whenever the report    |
+|                     | warrants an advisory                       |
++---------------------+--------------------------------------------+
+| Progress/Confirmed  | The vulnerability is confirmed, impact     |
+|                     | description is in progress                 |
++---------------------+--------------------------------------------+
+| Review/Triaged      | Impact description has been submitted for  |
+|                     | review                                     |
++---------------------+--------------------------------------------+
+| Merged/Fix Released | All patches have been merged               |
++---------------------+--------------------------------------------+
+| Invalid/Won't Fix   | No further action to be taken              |
++---------------------+--------------------------------------------+
 
 
 Extent of Disclosure
