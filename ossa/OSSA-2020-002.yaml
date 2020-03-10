@@ -1,0 +1,54 @@
+date: 2020-03-10
+
+id: OSSA-2020-002
+
+title: Unprivileged users can retrieve, use and manipulate share networks
+
+description: >
+    Tobias Rydberg from City Network Hosting AB reported a vulnerability with
+    the manila's share network APIs. An attacker can retrieve and manipulate
+    share networks that do not belong to them if they possess the share
+    network ID. By exploiting this vulnerability, they can view and
+    manipulate share network subnets and use the share network to create
+    resources such as shares and share groups.
+
+affected-products:
+  - product: manila
+    version: '<7.4.1, >=8.0.0 <8.1.1, >=9.0.0 <9.1.1'
+
+vulnerabilities:
+  - cve-id: CVE-2020-9543
+
+reporters:
+  - name: Tobias Rydberg
+    affiliation: City Network Hosting AB
+    reported:
+      - CVE-2020-9543
+
+issues:
+  links:
+    - https://launchpad.net/bugs/1861485
+
+reviews:
+  ussuri:
+    - https://review.opendev.org/712158
+
+  train:
+    - https://review.opendev.org/712163
+
+  stein:
+    - https://review.opendev.org/712164
+
+  rocky:
+    - https://review.opendev.org/712165
+
+  queens:
+    - https://review.opendev.org/712166
+
+  pike:
+    - https://review.opendev.org/712167
+
+notes:
+  - The stable/queens and stable/pike branches are under extended maintenance
+    and will receive no new point releases, but patches for them are provided
+    as a courtesy.
