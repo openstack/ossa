@@ -1,0 +1,50 @@
+date: 2020-05-06
+
+id: OSSA-2020-005
+
+title: OAuth1 request token authorize silently ignores roles parameter
+
+description: >
+    kay reported a vulnerability in Keystone's OAuth1 Token API. The list of
+    roles provided for an OAuth1 access token are ignored, so when an OAuth1
+    access token is used to request a keystone token, the keystone token will
+    contain every role assignment the creator had for the project instead
+    of the provided subset of roles. This results in the provided keystone token
+    having more role assignments than the creator intended, possibly giving
+    unintended escalated access.
+
+affected-products:
+  - product: keystone
+    version: '<15.0.1, ==16.0.0'
+
+vulnerabilities:
+  - cve-id: Pending
+
+reporters:
+  - name: kay
+    reported:
+      - CVE Pending
+
+issues:
+  links:
+    - https://launchpad.net/bugs/1873290
+
+reviews:
+  victoria:
+    - https://review.opendev.org/725885
+
+  ussuri:
+    - https://review.opendev.org/725887
+
+  train:
+    - https://review.opendev.org/725890
+
+  stein:
+    - https://review.opendev.org/725892
+
+  rocky:
+    - https://review.opendev.org/725894
+
+notes:
+  - The stable/rocky branch is under extended maintenance and will receive no
+    new point releases, but a patch for it is provided as a courtesy.
