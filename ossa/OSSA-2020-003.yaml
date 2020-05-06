@@ -1,0 +1,47 @@
+date: 2020-05-06
+
+id: OSSA-2020-003
+
+title: Keystone does not check signature TTL of the EC2 credential auth method
+
+description: >
+    kay reported a vulnerability with keystone's EC2 API. Keystone doesn't
+    have a signature TTL check for AWS signature V4 and an attacker can
+    sniff the auth header, then use it to reissue an openstack token
+    an unlimited number of times.
+
+affected-products:
+  - product: keystone
+    version: '<15.0.1, ==16.0.0'
+
+vulnerabilities:
+  - cve-id: Pending
+
+reporters:
+  - name: kay
+    reported:
+      - CVE Pending
+
+issues:
+  links:
+    - https://launchpad.net/bugs/1872737
+
+reviews:
+  victoria:
+    - https://review.opendev.org/724124
+
+  ussuri:
+    - https://review.opendev.org/724746
+
+  train:
+    - https://review.opendev.org/724954
+
+  stein:
+    - https://review.opendev.org/725069
+
+  rocky:
+    - https://review.opendev.org/725385
+
+notes:
+  - The stable/rocky branch is under extended maintenance and will receive no
+    new point releases, but a patch for it is provided as a courtesy.
