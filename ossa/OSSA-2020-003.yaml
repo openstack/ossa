@@ -10,17 +10,20 @@ description: >
     sniff the auth header, then use it to reissue an openstack token
     an unlimited number of times.
 
+errata: >
+  CVE-2020-12692 was assigned after the original publication date.
+
 affected-products:
   - product: keystone
     version: '<15.0.1, ==16.0.0'
 
 vulnerabilities:
-  - cve-id: Pending
+  - cve-id: CVE-2020-12692
 
 reporters:
   - name: kay
     reported:
-      - CVE Pending
+      - CVE-2020-12692
 
 issues:
   links:
@@ -45,3 +48,7 @@ reviews:
 notes:
   - The stable/rocky branch is under extended maintenance and will receive no
     new point releases, but a patch for it is provided as a courtesy.
+
+errata_history:
+  - 2020-05-07 - Errata 1
+  - 2020-05-06 - Original Version
