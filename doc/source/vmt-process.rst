@@ -398,7 +398,7 @@ Reception embargo reminder (private issues)
   discussion should remain confined to this private bug report, and
   any proposed fixes should be added to the bug as attachments. This
   embargo shall not extend past $NINETY_DAYS and will be made
-  public by or on that date if no fix is identified.
+  public by or on that date even if no fix is identified.
 
 The NINETY_DAYS value should be 90 days from the date the report is
 accepted by the coordinator and project reviewers are subscribed. It
