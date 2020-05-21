@@ -280,7 +280,7 @@ warrant an advisory.
 +----------+-----------+-------------------------------------------+
 | Class C1 | Potential | Not considered a practical vulnerability  |
 |          | OSSN      | (but some people might assign a CVE for   |
-|          |           | it), e.g. one depending on UUID guessing  |
+|          |           | it)                                       |
 +----------+-----------+-------------------------------------------+
 | Class C2 | Potential | A vulnerability, but not in OpenStack     |
 |          | OSSN      | supported code, e.g., in a dependency     |
