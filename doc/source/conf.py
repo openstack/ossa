@@ -44,8 +44,9 @@ source_suffix = '.rst'
 #source_encoding = 'utf-8-sig'
 
 # Setting for openstackdocstheme:
-repository_name = "openstack/ossa"
-bug_project = 'ossa'
+openstackdocs_repo_name = "openstack/ossa"
+openstackdocs_auto_name = False
+openstackdocs_bug_project = 'ossa'
 
 # The master toctree document.
 master_doc = 'index'
@@ -84,7 +85,7 @@ add_module_names = False
 show_authors = False
 
 # The name of the Pygments (syntax highlighting) style to use.
-pygments_style = 'sphinx'
+pygments_style = 'native'
 
 # A list of ignored prefixes for module index sorting.
 modindex_common_prefix = []
