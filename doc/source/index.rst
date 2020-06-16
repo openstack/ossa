@@ -50,8 +50,6 @@ is:
 
   * Jeremy Stanley <fungi@yuggoth.org>:
     `key 0x97ae496fc02dec9fc353b2e748f9961143495829`_ (details__)
-  * Tristan Cacqueray <tdecacqu@redhat.com>:
-    `key 0xeb103de8b5e69e631c6ff17922b9a05c925cc5d8`_ (details__)
   * Gage Hugo <gage.hugo@gmail.com>:
     `key 0x59ad76e5c2c722ebfa7a4a1fe7a8fd2b76febd11`_ (details__)
   * Matthew Thode <mthode@mthode.org>:
@@ -71,8 +69,6 @@ is:
    doc/source/_static/0x97ae496fc02dec9fc353b2e748f9961143495829.txt
 .. _`key 0x97ae496fc02dec9fc353b2e748f9961143495829`: _static/0x97ae496fc02dec9fc353b2e748f9961143495829.txt
 .. __: https://sks-keyservers.net/pks/lookup?op=vindex&search=0x97ae496fc02dec9fc353b2e748f9961143495829&fingerprint=on
-.. _`key 0xeb103de8b5e69e631c6ff17922b9a05c925cc5d8`: _static/0xeb103de8b5e69e631c6ff17922b9a05c925cc5d8.txt
-.. __: https://sks-keyservers.net/pks/lookup?op=vindex&search=0xeb103de8b5e69e631c6ff17922b9a05c925cc5d8&fingerprint=on
 .. _`key 0x59ad76e5c2c722ebfa7a4a1fe7a8fd2b76febd11`: _static/0x59ad76e5c2c722ebfa7a4a1fe7a8fd2b76febd11.txt
 .. __: https://sks-keyservers.net/pks/lookup?op=vindex&search=0x59ad76e5c2c722ebfa7a4a1fe7a8fd2b76febd11&fingerprint=on
 .. _`key 0x14b91caaf68c4849f90ca41333ed3fd25afc78ba`: _static/0x14b91caaf68c4849f90ca41333ed3fd25afc78ba.txt
