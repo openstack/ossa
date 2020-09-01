@@ -13,7 +13,7 @@ LOG = logging.getLogger(__name__)
 
 
 def to_snake_case(d):
-    for k in d:
+    for k in dict(d):
         v = d[k]
         del d[k]
         d[k.replace('-', '_')] = v
