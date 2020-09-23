@@ -68,11 +68,11 @@ is:
    --export 0x97ae496fc02dec9fc353b2e748f9961143495829 ) > \
    doc/source/_static/0x97ae496fc02dec9fc353b2e748f9961143495829.txt
 .. _`key 0x97ae496fc02dec9fc353b2e748f9961143495829`: _static/0x97ae496fc02dec9fc353b2e748f9961143495829.txt
-.. __: https://sks-keyservers.net/pks/lookup?op=vindex&search=0x97ae496fc02dec9fc353b2e748f9961143495829&fingerprint=on
+.. __: http://pool.sks-keyservers.net:11371/pks/lookup?op=vindex&search=0x97ae496fc02dec9fc353b2e748f9961143495829&fingerprint=on
 .. _`key 0x59ad76e5c2c722ebfa7a4a1fe7a8fd2b76febd11`: _static/0x59ad76e5c2c722ebfa7a4a1fe7a8fd2b76febd11.txt
-.. __: https://sks-keyservers.net/pks/lookup?op=vindex&search=0x59ad76e5c2c722ebfa7a4a1fe7a8fd2b76febd11&fingerprint=on
+.. __: http://pool.sks-keyservers.net:11371/pks/lookup?op=vindex&search=0x59ad76e5c2c722ebfa7a4a1fe7a8fd2b76febd11&fingerprint=on
 .. _`key 0x14b91caaf68c4849f90ca41333ed3fd25afc78ba`: _static/0x14b91caaf68c4849f90ca41333ed3fd25afc78ba.txt
-.. __: https://sks-keyservers.net/pks/lookup?op=vindex&search=0x14b91caaf68c4849f90ca41333ed3fd25afc78ba&fingerprint=on
+.. __: http://pool.sks-keyservers.net:11371/pks/lookup?op=vindex&search=0x14b91caaf68c4849f90ca41333ed3fd25afc78ba&fingerprint=on
 
 
 Security information for OpenStack deployers
