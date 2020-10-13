@@ -24,7 +24,8 @@ def to_snake_case(d):
 def to_paragraphs(d, *args):
     for k in args:
         if k in d and isinstance(d[k], str):
-            d[k] = '\n'.join(textwrap.wrap(d[k]))
+            d[k] = '\n'.join(textwrap.wrap(
+                d[k], break_long_words=False, break_on_hyphens=False))
 
 
 def ossa_date_formatter(value):
