@@ -1,0 +1,42 @@
+date: 2020-10-12
+
+id: OSSA-2020-007
+
+title: Remote code execution in blazar-dashboard
+
+description: >
+  Lukas Euler (Positive Security) reported a vulnerability in blazar-dashboard.
+  A user allowed to access the Blazar dashboard in Horizon may trigger code
+  execution on the Horizon host as the user the Horizon service runs under.
+  This may result in Horizon host unauthorized access and further compromise of
+  the Horizon service. All setups using the Horizon dashboard with the
+  blazar-dashboard plugin are affected.
+
+affected-products:
+  - product: blazar-dashboard
+    version: '<1.3.1, ==2.0.0, ==3.0.0'
+
+vulnerabilities:
+  - cve-id: CVE-2020-26943
+
+reporters:
+  - name: Lukas Euler
+    affiliation: Positive Security
+    reported:
+      - CVE-2020-26943
+
+issues:
+  links:
+    - https://launchpad.net/bugs/1895688
+
+reviews:
+  wallaby:
+    - https://review.opendev.org/755810
+  victoria:
+    - https://review.opendev.org/756064
+  ussuri:
+    - https://review.opendev.org/755812
+  train:
+    - https://review.opendev.org/755813
+  stein:
+    - https://review.opendev.org/755814
