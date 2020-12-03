@@ -1,0 +1,34 @@
+date: 2020-12-03
+
+id: OSSA-2020-008
+
+title: Open redirect in workflow forms
+
+description: >
+  Pritam Singh (Red Hat) reported a vulnerability in Horizon's workflow
+  forms. Previously there was a lack of validation on the "next" parameter,
+  which would allow someone to supply a malicious URL in Horizon that can
+  cause an automatic redirect to the provided malicious URL.
+
+affected-products:
+  - product: horizon
+    version: ' <15.3.2, >=16.0.0 <16.2.1, >=17.0.0 <18.3.3, >=18.4.0 <18.6.0'
+
+vulnerabilities:
+  - cve-id: CVE-2020-29565
+
+reporters:
+  - name: Pritam Singh
+    affiliation: Red Hat
+    reported:
+      - CVE-2020-29565
+
+issues:
+  links:
+    - https://launchpad.net/bugs/1865026
+
+reviews:
+  train:
+    - https://review.opendev.org/758841
+  stein:
+    - https://review.opendev.org/758843
