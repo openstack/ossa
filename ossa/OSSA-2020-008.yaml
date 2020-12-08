@@ -28,6 +28,10 @@ issues:
     - https://launchpad.net/bugs/1865026
 
 reviews:
+  victoria:
+    - https://review.opendev.org/750207
+  ussuri:
+    - https://review.opendev.org/752703
   train:
     - https://review.opendev.org/758841
   stein:
