@@ -36,3 +36,14 @@ reviews:
     - https://review.opendev.org/758841
   stein:
     - https://review.opendev.org/758843
+  rocky:
+    - https://review.opendev.org/765945
+  queens:
+    - https://review.opendev.org/765950
+  pike:
+    - https://review.opendev.org/765951
+
+notes:
+  - The stable/rocky, stable/queens, and stable/pike branches are under
+    extended maintenance and will receive no new point releases, but patches
+    for them are provided as a courtesy.
