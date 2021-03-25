@@ -1,5 +1,5 @@
 # needed for doc build
 Jinja2>=2.7.3
-PyYAML==3.11
+PyYAML==5.4
 sphinx>=2.0.0,!=2.1.0 # BSD
 openstackdocstheme>=2.2.1 # Apache-2.0
