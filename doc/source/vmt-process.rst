@@ -72,14 +72,12 @@ ossa bugtask will be set to *Won't Fix* or *Invalid* (depending on
 the tracker and situation) and the bug state switched from *Private
 Security* to *Public*, optionally adding a *security* bug tag if the
 report concerns a potential security hardening opportunity. The
-specifics are indexed in the `report taxonomy`_ and `task status`_
+specifics are indexed in the `report taxonomy`_ and :ref:`task status`
 tables.
 
 .. _embargo reminder: #reception-embargo-reminder-private-issues
 .. _incomplete reception: #reception-incomplete-message-unconfirmed-issues
 .. _OSSN: https://wiki.openstack.org/wiki/Security_Notes
-.. _report taxonomy: #incident-report-taxonomy
-.. _task status: #ossa-task-status
 
 Patch development
 ^^^^^^^^^^^^^^^^^
@@ -250,8 +248,10 @@ significant details of the report are disclosed in a public venue,
 the embargo is terminated by a VMT coordinator at that time and
 subsequent process switches to the public report workflow instead.
 
-Incident Report Taxonomy
-------------------------
+.. _incident report taxonomy:
+
+Report Taxonomy
+---------------
 
 The VMT is now using this classification list in order to assist
 vulnerability report triage, especially whenever a bug does not
@@ -296,6 +296,8 @@ warrant an advisory.
 +----------+-----------+-------------------------------------------+
 | Class Z  |           | When due process fails                    |
 +----------+-----------+-------------------------------------------+
+
+.. _task status:
 
 OSSA Task status
 ----------------
