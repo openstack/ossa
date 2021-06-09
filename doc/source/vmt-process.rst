@@ -7,7 +7,7 @@
  Vulnerability Management Process
 ==================================
 
-The OpenStack vulnerability management team (VMT_) is responsible
+The OpenStack :ref:`Vulnerability Management Team` is responsible
 for coordinating the progressive disclosure of a vulnerability.
 
 Members of the team are independent and security-minded folks who
@@ -18,8 +18,6 @@ stakeholder, the member does not give their employer prior notice of
 any vulnerabilities. In order to reduce the disclosure of
 vulnerability in the early stages, membership of this team is
 intentionally limited to a small number of people.
-
-.. _VMT: https://launchpad.net/~openstack-vuln-mgmt
 
 Supported versions
 ------------------
@@ -364,7 +362,8 @@ stakeholders to react.
 
 If you're currently not a referenced stakeholder and think you
 should definitely be included on that email distribution list,
-please submit an email with a rationale to member(s) of the VMT_.
+please submit an email with a rationale to member(s) of the
+:ref:`Vulnerability Management Team`.
 
 Templates
 ---------

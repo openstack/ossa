@@ -44,16 +44,8 @@ is:
 
 * If the issue is extremely sensitive or you're otherwise unable to use the
   bug tracker directly, please send an E-mail message to one or more of the
-  Team's members. You're encouraged to encrypt messages to their OpenPGP
-  keys, which can be found linked below and also on the keyserver network
-  with the following fingerprints:
-
-  * Jeremy Stanley <fungi@yuggoth.org>:
-    `key 0x97ae496fc02dec9fc353b2e748f9961143495829`_ (details__)
-  * Gage Hugo <gage.hugo@gmail.com>:
-    `key 0x59ad76e5c2c722ebfa7a4a1fe7a8fd2b76febd11`_ (details__)
-  * Matthew Thode <mthode@mthode.org>:
-    `key 0x14b91caaf68c4849f90ca41333ed3fd25afc78ba`_ (details__)
+  `Vulnerability Management Team`_'s members. You're encouraged to encrypt
+  messages to their OpenPGP keys.
 
 .. note::
 
@@ -61,6 +53,44 @@ is:
   of 90 days. Unless unusual circumstances arise, any defect reported in
   private will be made public within 90 calendar days from when it is received,
   even if a solution has not been identified.
+
+
+.. _openstack security project:
+.. _vulnerability management:
+.. _vulnerability management team:
+
+Vulnerability Management Team
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+An autonomous subgroup of vulnerability management specialists with in the
+security team make up the OpenStack vulnerability management team (VMT).
+Their job is facilitating the reporting of vulnerabilities, coordinating
+security fixes and handling progressive disclosure of the vulnerability
+information. Specifically, they are responsible for the following functions:
+
+* Vulnerability Management: All vulnerabilities discovered by community
+  members (or users) can be reported to the Team.
+
+* Vulnerability Tracking: The Team will curate a set of vulnerability related
+  issues in the issue tracker. Some of these issues will be private to the
+  Team and the affected product leads, but once remediated, all vulnerabilities
+  will be public.
+
+* Responsible Disclosure: As part of our commitment to work with the security
+  community, the Team will ensure that proper credit is given to security
+  researchers who responsibly report issues in OpenStack.
+
+To directly reach members of the VMT, contact them at the following addresses
+(optionally encrypted for the indicated OpenPGP keys):
+
+* Jeremy Stanley <fungi@yuggoth.org>:
+  `key 0x97ae496fc02dec9fc353b2e748f9961143495829`_ (details__)
+* Gage Hugo <gage.hugo@gmail.com>:
+  `key 0x59ad76e5c2c722ebfa7a4a1fe7a8fd2b76febd11`_ (details__)
+* Matthew Thode <mthode@mthode.org>:
+  `key 0x14b91caaf68c4849f90ca41333ed3fd25afc78ba`_ (details__)
+
+See :doc:`vmt-process` for details on our open process.
 
 .. Static key files are generated with the following command:
    ( gpg2 --fingerprint 0x97ae496fc02dec9fc353b2e748f9961143495829
@@ -73,7 +103,6 @@ is:
 .. __: http://pool.sks-keyservers.net:11371/pks/lookup?op=vindex&search=0x59ad76e5c2c722ebfa7a4a1fe7a8fd2b76febd11&fingerprint=on
 .. _`key 0x14b91caaf68c4849f90ca41333ed3fd25afc78ba`: _static/0x14b91caaf68c4849f90ca41333ed3fd25afc78ba.txt
 .. __: http://pool.sks-keyservers.net:11371/pks/lookup?op=vindex&search=0x14b91caaf68c4849f90ca41333ed3fd25afc78ba&fingerprint=on
-
 
 Security information for OpenStack deployers
 --------------------------------------------
@@ -190,35 +219,3 @@ security vulnerabilities within the OpenStack platform.
 
   ./guidelines/*
 
-
-OpenStack Security Project
---------------------------
-
-The OpenStack Security Project runs an number of initiatives aimed at improving
-the overall security of OpenStack projects and ensuring that security incidents
-are handled in a coordinated fashion.  Key initiatives that fall within the
-security project's areas of responsibility are outlined below.
-
-
-Vulnerability Management
-~~~~~~~~~~~~~~~~~~~~~~~~
-
-An autonomous subgroup of vulnerability management specialists with in the
-security team make up the OpenStack vulnerability management team (VMT).
-Their job is facilitating the reporting of vulnerabilities, coordinating
-security fixes and handling progressive disclosure of the vulnerability
-information. Specifically, they are responsible for the following functions:
-
-* Vulnerability Management: All vulnerabilities discovered by community
-  members (or users) can be reported to the Team.
-
-* Vulnerability Tracking: The Team will curate a set of vulnerability related
-  issues in the issue tracker. Some of these issues will be private to the
-  Team and the affected product leads, but once remediated, all vulnerabilities
-  will be public.
-
-* Responsible Disclosure: As part of our commitment to work with the security
-  community, the Team will ensure that proper credit is given to security
-  researchers who responsibly report issues in OpenStack.
-
-See :doc:`vmt-process` for details on our open process.
