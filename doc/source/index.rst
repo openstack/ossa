@@ -35,12 +35,16 @@ and disclose the issue responsibly. We provide two ways to report issues to the
 OpenStack Vulnerability Management Team depending on how sensitive the issue
 is:
 
-* Search for the corresponding project at https://storyboard.openstack.org/ or
-  https://launchpad.net/ and after selecting it, click the 'Report a bug' link
-  at the right. Fill in the 'Summary' and 'Further information' fields
-  describing the issue, then click the 'This bug is a security vulnerability'
-  checkbox near the bottom of the page before submitting it. This will make the
-  bug Private and only accessible to the Vulnerability Management Team.
+* Check the project's documentation to determine where it receives bug reports.
+  If on https://storyboard.openstack.org/ then log in and create a new story,
+  making sure to check both the **Private** and **Vulnerability or
+  Security-related** checkboxes, and selecting the relevant project for the
+  initial task before saving. If on https://bugs.launchpad.net/ then find the
+  project there, log in click the 'Report a bug' link at the right, fill in the
+  'Summary' and 'Further information' fields describing the issue, then click
+  the 'This bug is a security vulnerability' checkbox near the bottom of the
+  page before submitting it. This will make the bug Private and only accessible
+  to the Vulnerability Management Team.
 
 * If the issue is extremely sensitive or you're otherwise unable to use the
   bug tracker directly, please send an E-mail message to one or more of the
