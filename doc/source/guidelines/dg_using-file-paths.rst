@@ -81,15 +81,15 @@ defeat path traversal.
     def is_safe_path(basedir, path, follow_symlinks=True):
         # resolves symbolic links
         if follow_symlinks:
-             matchpath = os.path.realpath(path).startswith(basedir)
+            matchpath = os.path.realpath(path)
         else:
-             matchpath = os.path.abspath(path).startswith(basedir)
+            matchpath = os.path.abspath(path)
         return basedir == os.path.commonpath((basedir, matchpath))
 
 
     def main(args):
         for arg in args:
-            if is_safe_path(os.getcwd(), path):
+            if is_safe_path(os.getcwd(), arg):
                 print("safe: {}".format(arg))
             else:
                 print("unsafe: {}".format(arg))
