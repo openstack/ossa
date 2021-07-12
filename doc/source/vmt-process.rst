@@ -427,20 +427,30 @@ the AFFECTED_VERSIONS of keystone should read like this:
 
 ::
 
-    Affects: >=2015.1.0 <=2015.1.4, >=8.0.0 <=8.1.0 and ==9.0.0
+    Affects: >=2015.1.0 <2015.1.5, >=8.0.0 <8.1.1 and ==9.0.0
 
 Once kilo reaches end of life, that line becomes:
 
 ::
 
-    Affects: >=8.0.0 <=8.1.0 and ==9.0.0
+    Affects: >=8.0.0 <8.1.1 and ==9.0.0
 
 If the oldest version affected is not easily identified, leave it
 open-ended:
 
 ::
 
-    Affects: <=8.1.0 and ==9.0.0
+    Affects: <8.1.1 and ==9.0.0
+
+By convention, the ``<`` version is the next possible patchlevel
+release following three-component SemVer rules, so if the current
+highest affected version on a given branch is ``8.1.0`` then the
+affected versions includes ``<8.1.1`` even though the next actual
+version tagged might well be ``8.2.0`` or ``9.0.0`` (but since we
+don't know what the next version will necessarily be at the time of
+publication, we choose the lowest possible version it could be).
+This convention also makes it clear that prerelease versions may not
+be sufficient to address the vulnerability.
 
 Downstream stakeholders notification email (private issues)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
