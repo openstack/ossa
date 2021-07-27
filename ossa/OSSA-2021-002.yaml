@@ -1,0 +1,62 @@
+date: 2021-07-29
+
+id: OSSA-2021-002
+
+title: Open Redirect in noVNC proxy
+
+description: >
+  Swe Aung, Shahaan Ayyub, and Salman Khan with the Monash University Cyber
+  Security team reported a vulnerability affecting Nova's noVNC proxying
+  implementation which exposed access to a well-known redirect behavior in the
+  Python standard library's http.server.SimpleHTTPRequestHandler and thus
+  noVNC's WebSockifyRequestHandler which uses it. By convincing a user to
+  follow a specially-crafted novncproxy URL, the user could be redirected to an
+  unrelated site under control of the attacker in an attempt to convince them
+  to divulge credentials or other sensitive data. All Nova deployments with
+  novncproxy enabled are affected.
+
+affected-products:
+  - product: Nova
+    version: '<21.2.3, >=22.0.0 <22.2.3, >=23.0.0 <23.0.2'
+
+vulnerabilities:
+  - cve-id: CVE-2021-3654
+
+reporters:
+  - name: Swe Aung
+    affiliation: Monash University Cyber Security team
+    reported:
+      - CVE-2021-3654
+  - name: Shahaan Ayyub
+    affiliation: Monash University Cyber Security team
+    reported:
+      - CVE-2021-3654
+  - name: Salman Khan
+    affiliation: Monash University Cyber Security team
+    reported:
+      - CVE-2021-3654
+
+issues:
+  links:
+    - https://launchpad.net/bugs/1927677
+    - https://bugs.python.org/issue32084
+
+reviews:
+  xena:
+    - https://review.opendev.org/791297
+
+  wallaby:
+    - https://review.opendev.org/791577
+
+  victoria:
+    - https://review.opendev.org/791805
+
+  ussuri:
+    - https://review.opendev.org/791806
+
+  train:
+    - https://review.opendev.org/791807
+
+notes:
+  - The stable/train branch is under extended maintenance and will receive no
+    new point releases, but a patch for it is provided as a courtesy.
