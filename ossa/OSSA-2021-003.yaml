@@ -1,0 +1,46 @@
+date: 2021-08-10
+
+id: OSSA-2021-003
+
+title: Account name and UUID oracles in account locking
+
+description: >
+  Samuel de Medeiros Queiroz with Oi Cloud reported a vulnerability affecting
+  Keystone account locking. By guessing the name of an account and failing to
+  authenticate multiple times, any unauthenticated actor could both confirm the
+  account exists and obtain that account's corresponding UUID, which might be
+  leveraged for other unrelated attacks. All Keystone deployments enabling
+  security_compliance.lockout_failure_attempts are affected.
+
+affected-products:
+  - product: Keystone
+    version: '>=10.0.0 <16.0.2, >=17.0.0 <17.0.1, >=18.0.0 <18.0.1, >=19.0.0 <19.0.1'
+
+vulnerabilities:
+  - cve-id: CVE-2021-38155
+
+reporters:
+  - name: Samuel de Medeiros Queiroz
+    affiliation: Oi Cloud
+    reported:
+      - CVE-2021-38155
+
+issues:
+  links:
+    - https://launchpad.net/bugs/1688137
+
+reviews:
+  xena:
+    - https://review.opendev.org/759940
+
+  wallaby:
+    - https://review.opendev.org/790440
+
+  victoria:
+    - https://review.opendev.org/790442
+
+  ussuri:
+    - https://review.opendev.org/790443
+
+  train:
+    - https://review.opendev.org/790444
