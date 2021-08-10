@@ -1,0 +1,56 @@
+date: 2021-08-17
+
+id: OSSA-2021-004
+
+title: Linuxbridge ARP filter bypass on Netfilter platforms
+
+description: >
+  Jake Yip with ARDC and Justin Mammarella with the University of Melbourne
+  reported a vulnerability in Neutron's linuxbridge driver on newer
+  Netfilter-based platforms (the successor to IPTables). By sending carefully
+  crafted packets, anyone in control of a server instance connected to the
+  virtual switch can impersonate the hardware addresses of other systems on the
+  network, resulting in denial of service or in some cases possibly
+  interception of traffic intended for other destinations. Only deployments
+  using the linuxbridge driver with ebtables-nft are affected.
+
+affected-products:
+  - product: Neutron
+    version: '<16.4.1, >=17.0.0 <17.1.3, ==18.0.0'
+
+vulnerabilities:
+  - cve-id: CVE-2021-38598
+
+reporters:
+  - name: Jake Yip
+    affiliation: ARDC
+    reported:
+      - CVE-2021-38598
+  - name: Justin Mammarella
+    affiliation: University of Melbourne
+    reported:
+      - CVE-2021-38598
+
+issues:
+  links:
+    - https://launchpad.net/bugs/1938670
+
+reviews:
+  xena:
+    - https://review.opendev.org/785177
+
+  wallaby:
+    - https://review.opendev.org/785917
+
+  victoria:
+    - https://review.opendev.org/804056
+
+  ussuri:
+    - https://review.opendev.org/804057
+
+  train:
+    - https://review.opendev.org/804058
+
+notes:
+  - The stable/train branch is under extended maintenance and will receive no
+    new point releases, but a patch for it is provided as a courtesy.
