@@ -1,0 +1,44 @@
+date: 2021-08-31
+
+id: OSSA-2021-005
+
+title: Arbitrary dnsmasq reconfiguration via extra_dhcp_opts
+
+description: >
+  Pavel Toporkov reported a vulnerability in Neutron. By supplying a specially
+  crafted extra_dhcp_opts value, an authenticated user may add arbitrary
+  configuration to the dnsmasq process in order to crash the service, change
+  parameters for other tenants sharing the same interface, or otherwise alter
+  that daemon's behavior. This vulnerability may also be used to trigger a
+  configuration parsing buffer overflow in versions of dnsmasq prior to 2.81,
+  which could lead to remote code execution. All Neutron deployments are
+  affected.
+
+affected-products:
+  - product: Neutron
+    version: '<16.4.1, >=17.0.0 <17.2.1, >=18.0.0 <18.1.1'
+
+vulnerabilities:
+  - cve-id: CVE-2021-40085
+
+reporters:
+  - name: Pavel Toporkov
+    reported:
+      - CVE-2021-40085
+
+issues:
+  links:
+    - https://launchpad.net/bugs/1939733
+
+reviews:
+  xena:
+    - https://review.opendev.org/806746
+
+  wallaby:
+    - https://review.opendev.org/806748
+
+  victoria:
+    - https://review.opendev.org/806749
+
+  ussuri:
+    - https://review.opendev.org/806750
