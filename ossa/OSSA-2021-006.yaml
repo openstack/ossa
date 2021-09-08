@@ -1,0 +1,59 @@
+date: 2021-09-09
+
+id: OSSA-2021-006
+
+title: Routes middleware memory leak for nonexistent controllers
+
+description: >
+  Slawek Kaplonski with Red Hat reported a vulnerability in Neutron's routes
+  middleware. By making API requests involving nonexistent controllers, an
+  authenticated user may cause the API worker to consume increasing amounts of
+  memory, resulting in API performance degradation or denial of service. All
+  Neutron deployments are affected.
+
+affected-products:
+  - product: Neutron
+    version: '<16.4.1, >=17.0.0 <17.2.1, >=18.0.0 <18.1.1'
+
+vulnerabilities:
+  - cve-id: CVE-2021-40797
+
+reporters:
+  - name: Slawek Kaplonski
+    affiliation: Red Hat
+    reported:
+      - CVE-2021-40797
+
+issues:
+  links:
+    - https://launchpad.net/bugs/1942179
+
+reviews:
+  xena:
+    - https://review.opendev.org/807335
+
+  wallaby:
+    - https://review.opendev.org/807632
+
+  victoria:
+    - https://review.opendev.org/807633
+
+  ussuri:
+    - https://review.opendev.org/807634
+
+  train:
+    - https://review.opendev.org/807635
+
+  stein:
+    - https://review.opendev.org/807636
+
+  rocky:
+    - https://review.opendev.org/807637
+
+  queens:
+    - https://review.opendev.org/807638
+
+notes:
+  - The stable/train, stable/stein, stable/rocky, and stable/queens branches
+    are under extended maintenance and will receive no new point releases, but
+    patches for them are provided as a courtesy.
