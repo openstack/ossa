@@ -42,3 +42,20 @@ reviews:
 
   ussuri:
     - https://review.opendev.org/806750
+
+  train:
+    - https://review.opendev.org/806707
+
+  stein:
+   - https://review.opendev.org/806708
+
+  rocky:
+   - https://review.opendev.org/806862
+
+  queens:
+   - https://review.opendev.org/806709
+
+notes:
+  - The stable/train, stable/stein, stable/rocky, and stable/queens branches
+    are under extended maintenance and will receive no new point releases, but
+    patches for them are provided as a courtesy.
