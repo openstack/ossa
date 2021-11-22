@@ -458,12 +458,12 @@ Downstream stakeholders notification email (private issues)
 We send two separate emails, to avoid off-topic replies to linux-distros:
 
 * *To:* embargo-notice@lists.openstack.org
-* *To:* linux-distros@vs.openwall.org
-
-Subject and content for both emails is identical:
-
 * *Subject:* [pre-OSSA] Vulnerability in OpenStack $PROJECT ($CVE)
 
+* *To:* linux-distros@vs.openwall.org
+* *Subject:* [vs] Vulnerability in OpenStack $PROJECT ($CVE)
+
+The message body for both emails should be identical:
 ::
 
     This is an advance warning of a vulnerability discovered in
@@ -498,6 +498,11 @@ Proposed patches are attached, email must be GPG-signed. Use
 something unique and descriptive for the patch attachment file
 names, for example ``cve-2013-4183-master-havana.patch`` or
 ``cve-2013-4183-stable-grizzly.patch``.
+
+Note that the post to linux-distros should be encrypted to the key
+at https://oss-security.openwall.org/wiki/mailing-lists/distros and
+expect replies to arrive encrypted for the key with which you signed
+your message.
 
 OpenStack security advisories (OSSA)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
