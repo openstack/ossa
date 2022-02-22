@@ -23,12 +23,10 @@ Supported versions
 ------------------
 
 The Vulnerability Management team coordinates patches fixing
-vulnerabilities in supported stable branches (corresponding to
+vulnerabilities in maintained stable branches (corresponding to
 previous major releases) of OpenStack, in addition to the master
-branch (next version under development), for all `security supported
-projects`_.
-
-.. _security supported projects: http://governance.openstack.org/reference/tags/vulnerability_managed.html
+branch (next version under development), for all :ref:`repositories
+overseen`.
 
 Process
 -------
@@ -97,10 +95,10 @@ in any commit messages so it will be updated automatically).
 
 If project-side delays are encountered at this or any subsequent
 stage of the process, the VMT and other interested parties may reach
-out to that project's `Vulnerability Management Liaison`_ requesting
-more immediate attention to the issue.
+out to that project's `security liaison`_ requesting more immediate
+attention to the issue.
 
-.. _Vulnerability Management Liaison: https://wiki.openstack.org/wiki/CrossProjectLiaisons#Vulnerability_management
+.. _security liaison: https://wiki.openstack.org/wiki/CrossProjectLiaisons#Vulnerability_management
 
 Patch review
 ^^^^^^^^^^^^

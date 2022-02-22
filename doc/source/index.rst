@@ -10,6 +10,7 @@
 .. toctree::
    :hidden:
 
+   repos-overseen
    vmt-process
 
 
