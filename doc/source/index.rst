@@ -88,26 +88,23 @@ information. Specifically, they are responsible for the following functions:
 To directly reach members of the VMT, contact them at the following addresses
 (optionally encrypted for the indicated OpenPGP keys):
 
-* Jeremy Stanley <fungi@yuggoth.org>:
-  `key 0x97ae496fc02dec9fc353b2e748f9961143495829`_ (details__)
-* Gage Hugo <gage.hugo@gmail.com>:
-  `key 0x59ad76e5c2c722ebfa7a4a1fe7a8fd2b76febd11`_ (details__)
-* Matthew Thode <mthode@mthode.org>:
-  `key 0x14b91caaf68c4849f90ca41333ed3fd25afc78ba`_ (details__)
-
-See :doc:`vmt-process` for details on our open process.
-
 .. Static key files are generated with the following command:
    ( gpg2 --fingerprint 0x97ae496fc02dec9fc353b2e748f9961143495829
    gpg2 --armor --export-options export-clean,export-minimal \
    --export 0x97ae496fc02dec9fc353b2e748f9961143495829 ) > \
    doc/source/_static/0x97ae496fc02dec9fc353b2e748f9961143495829.txt
-.. _`key 0x97ae496fc02dec9fc353b2e748f9961143495829`: _static/0x97ae496fc02dec9fc353b2e748f9961143495829.txt
-.. __: http://pool.sks-keyservers.net:11371/pks/lookup?op=vindex&search=0x97ae496fc02dec9fc353b2e748f9961143495829&fingerprint=on
-.. _`key 0x59ad76e5c2c722ebfa7a4a1fe7a8fd2b76febd11`: _static/0x59ad76e5c2c722ebfa7a4a1fe7a8fd2b76febd11.txt
-.. __: http://pool.sks-keyservers.net:11371/pks/lookup?op=vindex&search=0x59ad76e5c2c722ebfa7a4a1fe7a8fd2b76febd11&fingerprint=on
-.. _`key 0x14b91caaf68c4849f90ca41333ed3fd25afc78ba`: _static/0x14b91caaf68c4849f90ca41333ed3fd25afc78ba.txt
-.. __: http://pool.sks-keyservers.net:11371/pks/lookup?op=vindex&search=0x14b91caaf68c4849f90ca41333ed3fd25afc78ba&fingerprint=on
+
+* Jeremy Stanley <fungi@yuggoth.org>:
+  `key 0x97ae496fc02dec9fc353b2e748f9961143495829
+  <_static/0x97ae496fc02dec9fc353b2e748f9961143495829.txt>`_
+* Gage Hugo <gage.hugo@gmail.com>:
+  `key 0x59ad76e5c2c722ebfa7a4a1fe7a8fd2b76febd11
+  <_static/0x59ad76e5c2c722ebfa7a4a1fe7a8fd2b76febd11.txt>`_
+* Matthew Thode <mthode@mthode.org>:
+  `key 0x14b91caaf68c4849f90ca41333ed3fd25afc78ba
+  <_static/0x14b91caaf68c4849f90ca41333ed3fd25afc78ba.txt>`_
+
+See :doc:`vmt-process` for details on our open process.
 
 Security information for OpenStack deployers
 --------------------------------------------
