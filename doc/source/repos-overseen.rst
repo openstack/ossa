@@ -9,9 +9,11 @@
  Repositories Overseen
 =======================
 
-Reports of suspected vulnerabilities for the following OpenStack
-source repositories officially fall under Vulnerability Management
-Team (VMT) oversight:
+While the Vulnerability Management Team (VMT) is available to assist
+developers on request even if their projects are not explicitly
+opted into this list, reports of suspected vulnerabilities for the
+following OpenStack source repositories officially fall under direct
+VMT oversight:
 
 * `openstack/barbican <https://opendev.org/openstack/barbican>`_
 * `openstack/castellan <https://opendev.org/openstack/castellan>`_
