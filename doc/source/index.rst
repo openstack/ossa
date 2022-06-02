@@ -114,7 +114,6 @@ There are four main sources of security guidance for OpenStack deployers:
 * OpenStack Security Advisories (OSSA)
 * OpenStack Security Notes (OSSN)
 * OpenStack Security Guide
-* OpenStack Security Project blog
 
 
 OpenStack Security Advisories (OSSA)
@@ -161,16 +160,6 @@ hardening, rate limiting, compliance, and cryptography; it is the starting
 point for anyone looking to securely deploy OpenStack.
 
 Read `the guide <http://docs.openstack.org/sec/>`_ online today.
-
-
-OpenStack Security Project blog
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-The Security Project also maintain a blog, with posts about current and future
-projects, presentations and other information that doesnt fit in anywhere else:
-`<http://openstack-security.github.io/>`_
-
-
 
 
 Security information for OpenStack developers
