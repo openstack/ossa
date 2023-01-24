@@ -1,0 +1,110 @@
+date: 2023-01-24
+
+id: OSSA-2023-002
+
+title: Arbitrary file access through custom VMDK flat descriptor
+
+description: >
+  Guillaume Espanel, Pierre Libeau, Arnaud Morin and Damien Rannou (OVH)
+  reported a vulnerability in VMDK image processing for Cinder, Glance and
+  Nova. By supplying a specially created VMDK flat image which references a
+  specific backing file path, an authenticated user may convince systems to
+  return a copy of that file's contents from the server resulting in
+  unauthorized access to potentially sensitive data. All Cinder deployments are
+  affected; only Glance deployments with image conversion enabled are affected;
+  all Nova deployments are affected.
+
+affected-products:
+  - product: Cinder, Glance, Nova
+    version: 'Cinder <19.1.2, >=20.0.0 <20.0.2, ==21.0.0; Glance <23.0.1, >=24.0.0 <24.1.1, ==25.0.0; Nova <24.1.2, >=25.0.0 <25.0.2, ==26.0.0'
+
+vulnerabilities:
+  - cve-id: CVE-2022-47951
+
+reporters:
+  - name: Guillaume Espanel
+    affiliation: OVH
+    reported:
+      - CVE-2022-47951
+  - name: Pierre Libeau
+    affiliation: OVH
+    reported:
+      - CVE-2022-47951
+  - name: Arnaud Morin
+    affiliation: OVH
+    reported:
+      - CVE-2022-47951
+  - name: Damien Rannou
+    affiliation: OVH
+    reported:
+      - CVE-2022-47951
+
+issues:
+  links:
+    - https://launchpad.net/bugs/1996188
+
+reviews:
+  2023.1/antelope(cinder):
+    - https://review.opendev.org/871615
+
+  zed(cinder):
+    - https://review.opendev.org/871618
+
+  yoga(cinder):
+    - https://review.opendev.org/871620
+
+  xena(cinder):
+    - https://review.opendev.org/871625
+
+  wallaby(cinder):
+    - https://review.opendev.org/871627
+
+  victoria(cinder):
+    - https://review.opendev.org/871628
+
+  ussuri(cinder):
+    - https://review.opendev.org/871629
+
+  train(cinder):
+    - https://review.opendev.org/871631
+
+  2023.1/antelope(glance):
+    - https://review.opendev.org/871613
+
+  zed(glance):
+    - https://review.opendev.org/871614
+
+  yoga(glance):
+    - https://review.opendev.org/871617
+
+  xena(glance):
+    - https://review.opendev.org/871619
+
+  wallaby(glance):
+    - https://review.opendev.org/871621
+
+  victoria(glance):
+    - https://review.opendev.org/871623
+
+  ussuri(glance):
+    - https://review.opendev.org/871626
+
+  train(glance):
+    - https://review.opendev.org/871630
+
+  2023.1/antelope(nova):
+    - https://review.opendev.org/871612
+
+  zed(nova):
+    - https://review.opendev.org/871616
+
+  yoga(nova):
+    - https://review.opendev.org/871624
+
+  xena(nova):
+    - https://review.opendev.org/871622
+
+notes:
+  - The stable/wallaby, stable/victoria, stable/ussuri, and stable/train
+    branches are under extended maintenance and will receive no new point
+    releases, but patches for them are provided as a courtesy where possible.
