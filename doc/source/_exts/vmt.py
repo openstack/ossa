@@ -21,13 +21,6 @@ def to_snake_case(d):
             to_snake_case(d)
 
 
-def to_paragraphs(d, *args):
-    for k in args:
-        if k in d and isinstance(d[k], str):
-            d[k] = '\n'.join(textwrap.wrap(
-                d[k], break_long_words=False, break_on_hyphens=False))
-
-
 def ossa_date_formatter(value):
     return "{:%B %d, %Y}".format(value)
 
@@ -60,7 +53,6 @@ def render_template(template, data, **kwargs):
 def render(source, template, **kwargs):
     vals = yaml.safe_load(open(source).read())
     to_snake_case(vals)
-    to_paragraphs(vals, 'description', 'errata')
     return render_template(template, vals, **kwargs)
 
 
