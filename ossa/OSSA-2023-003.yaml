@@ -107,7 +107,9 @@ errata: >
   An additional nova patch is required to fix a minor regression in
   periodic tasks and some nova-manage actions (errata 1). Also a patch
   to tempest is needed to account for behavior changes with fixes in
-  place (errata 2).
+  place (errata 2). The stable/wallaby branch fix for nova introduced
+  a regression which was addressed through subsequent adjustment of
+  its patches after the advisory was published (errata 3).
 
 affected-products:
   - product: cinder
@@ -209,6 +211,7 @@ notes:
     as a courtesy where available.
 
 errata_history:
+  - 2023-05-15 - Errata 3
   - 2023-05-10 - Errata 2
   - 2023-05-10 - Errata 1
   - 2023-05-10 - Original Version
