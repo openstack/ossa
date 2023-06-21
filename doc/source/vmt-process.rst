@@ -352,7 +352,7 @@ Downstream stakeholders
 OpenStack as an upstream project is used in a number of
 distributions, products, private and public service offerings that
 are negatively affected by vulnerabilities. In the spirit of
-responsible disclosure, this ecosystem, collectively known as the
+coordinated disclosure, this ecosystem, collectively known as the
 downstream stakeholders, needs to be warned in advance to be able to
 prepare patches and roll them out in a coordinated fashion on
 disclosure day. The embargo period is kept voluntarily small (3-5

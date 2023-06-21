@@ -81,7 +81,7 @@ information. Specifically, they are responsible for the following functions:
   Team and the affected product leads, but once remediated, all vulnerabilities
   will be public.
 
-* Responsible Disclosure: As part of our commitment to work with the security
+* Coordinated Disclosure: As part of our commitment to work with the security
   community, the Team will ensure that proper credit is given to security
   researchers who responsibly report issues in OpenStack.
 
