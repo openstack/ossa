@@ -74,12 +74,12 @@ Requirements
 
 3. Repositories must have versioned releases to qualify for VMT
    oversight. Vulnerabilities warrant advisories if they appear in
-   official releases or on `maintained <phases>`_ stable branches.
-   Vulnerabilities only present in master since the last release, or
-   only on branches under `extended maintenance <phases>`_, will not
-   have their disclosure coordinated by the VMT. Pre-releases,
-   release candidates and milestones are not considered official
-   releases for the purpose of this policy.
+   official releases or on *maintained* stable branches (see `Stable
+   Branch Maintenance Phases`_). Vulnerabilities only present in
+   master since the last release, or only on *unmaintained*
+   branches, will not have their disclosure coordinated by the VMT.
+   Pre-releases, release candidates and milestones are not
+   considered official releases for the purpose of this policy.
 
 4. The defect tracker for each overseen repository must be
    configured to initially only provide access for the VMT for
@@ -149,10 +149,11 @@ A repository should only be removed from VMT oversight under extreme
 circumstances, when the VMT is no longer able to adequately handle
 its vulnerabilities. Care should be taken to only discontinue
 vulnerability management for future non-patch releases, while
-continuing to handle vulnerabilities on prior `maintained <phases>`_
-branches if at all possible until such time as they reach `extended
-maintenance <phases>`_ or `end of life <phases>`_.
+continuing to handle vulnerabilities on prior *maintained* branches
+if at all possible until such time as they become *unmaintained* or
+reach *end of life*. See the Project Team Guide section on `Stable
+Branch Maintenance Phases`_ for detailed explanations of these terms.
 
 .. _teams: https://governance.openstack.org/tc/reference/projects/
 .. _security liaison: https://wiki.openstack.org/wiki/CrossProjectLiaisons#Vulnerability_management
-.. _phases: https://docs.openstack.org/project-team-guide/stable-branches.html#maintenance-phases
+.. _stable branch maintenance phases: https://docs.openstack.org/project-team-guide/stable-branches.html#maintenance-phases
