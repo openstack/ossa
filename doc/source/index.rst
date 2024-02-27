@@ -10,7 +10,9 @@
 .. toctree::
    :hidden:
 
+   reporting
    repos-overseen
+   vmt
    vmt-process
 
 
@@ -31,33 +33,7 @@ deployment and configuration vulnerabilities.
 How to report security issues to OpenStack
 ------------------------------------------
 
-If you think you've identified a vulnerability, please work with us to rectify
-and disclose the issue together. We provide two ways to report issues to the
-OpenStack Vulnerability Management Team depending on how sensitive the issue
-is:
-
-* Check the project's documentation to determine where it receives bug reports.
-  If on https://storyboard.openstack.org/ then log in and create a new story,
-  making sure to check both the **Private** and **Vulnerability or
-  Security-related** checkboxes, and selecting the relevant project for the
-  initial task before saving. If on https://bugs.launchpad.net/ then find the
-  project there, log in click the 'Report a bug' link at the right, fill in the
-  'Summary' and 'Further information' fields describing the issue, then click
-  the 'This bug is a security vulnerability' checkbox near the bottom of the
-  page before submitting it. This will make the bug Private and only accessible
-  to the Vulnerability Management Team.
-
-* If the issue is extremely sensitive or you're otherwise unable to use the
-  bug tracker directly, please send an E-mail message to one or more of the
-  `Vulnerability Management Team`_'s members. You're encouraged to encrypt
-  messages to their OpenPGP keys.
-
-.. note::
-
-  All private reports of suspected vulnerabilities are embargoed for a maximum
-  of 90 days. Unless unusual circumstances arise, any defect reported in
-  private will be made public within 90 calendar days from when it is received,
-  even if a solution has not been identified.
+For detailed vulnerability reporting instructions, see :doc:`reporting`.
 
 
 .. _openstack security project:
@@ -67,41 +43,7 @@ is:
 Vulnerability Management Team
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-An autonomous subgroup of vulnerability management specialists with in the
-security team make up the OpenStack vulnerability management team (VMT).
-Their job is facilitating the reporting of vulnerabilities, coordinating
-security fixes and handling progressive disclosure of the vulnerability
-information. Specifically, they are responsible for the following functions:
-
-* Vulnerability Management: All vulnerabilities discovered by community
-  members (or users) can be reported to the Team.
-
-* Vulnerability Tracking: The Team will curate a set of vulnerability related
-  issues in the issue tracker. Some of these issues will be private to the
-  Team and the affected product leads, but once remediated, all vulnerabilities
-  will be public.
-
-* Coordinated Disclosure: As part of our commitment to work with the security
-  community, the Team will ensure that proper credit is given to security
-  researchers who report issues in OpenStack.
-
-To directly reach members of the VMT, contact them at the following addresses
-(optionally encrypted for the indicated OpenPGP keys):
-
-.. Static key files are generated with the following command:
-   ( gpg2 --fingerprint 0x97ae496fc02dec9fc353b2e748f9961143495829
-   gpg2 --armor --export-options export-clean,export-minimal \
-   --export 0x97ae496fc02dec9fc353b2e748f9961143495829 ) > \
-   doc/source/_static/0x97ae496fc02dec9fc353b2e748f9961143495829.txt
-
-* Jeremy Stanley <fungi@yuggoth.org>:
-  `key 0x97ae496fc02dec9fc353b2e748f9961143495829
-  <_static/0x97ae496fc02dec9fc353b2e748f9961143495829.txt>`_
-* Matthew Thode <mthode@mthode.org>:
-  `key 0x14b91caaf68c4849f90ca41333ed3fd25afc78ba
-  <_static/0x14b91caaf68c4849f90ca41333ed3fd25afc78ba.txt>`_
-
-See :doc:`vmt-process` for details on our open process.
+See :doc:`vmt` for the list of OpenStack Vulnerability Managers.
 
 Security information for OpenStack deployers
 --------------------------------------------
