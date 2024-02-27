@@ -32,7 +32,7 @@ How to report security issues to OpenStack
 ------------------------------------------
 
 If you think you've identified a vulnerability, please work with us to rectify
-and disclose the issue responsibly. We provide two ways to report issues to the
+and disclose the issue together. We provide two ways to report issues to the
 OpenStack Vulnerability Management Team depending on how sensitive the issue
 is:
 
@@ -83,7 +83,7 @@ information. Specifically, they are responsible for the following functions:
 
 * Coordinated Disclosure: As part of our commitment to work with the security
   community, the Team will ensure that proper credit is given to security
-  researchers who responsibly report issues in OpenStack.
+  researchers who report issues in OpenStack.
 
 To directly reach members of the VMT, contact them at the following addresses
 (optionally encrypted for the indicated OpenPGP keys):
