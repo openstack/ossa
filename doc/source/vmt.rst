@@ -40,5 +40,8 @@ To directly reach members of the VMT, contact them at the following addresses
 * Matthew Thode <mthode@mthode.org>:
   `key 0x14b91caaf68c4849f90ca41333ed3fd25afc78ba
   <_static/0x14b91caaf68c4849f90ca41333ed3fd25afc78ba.txt>`_
+* Jay Faulkner <jay@jvf.cc>:
+  `key 0xbc5d589ac18b498b96a84fad6b75d939b424c6d4
+  <_static/0xbc5d589ac18b498b96a84fad6b75d939b424c6d4.txt>`_
 
 See :doc:`vmt-process` for details on our open process.
