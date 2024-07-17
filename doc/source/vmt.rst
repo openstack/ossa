@@ -43,5 +43,8 @@ To directly reach members of the VMT, contact them at the following addresses
 * Jay Faulkner <jay@jvf.cc>:
   `key 0xbc5d589ac18b498b96a84fad6b75d939b424c6d4
   <_static/0xbc5d589ac18b498b96a84fad6b75d939b424c6d4.txt>`_
+* Brian Rosmaita <rosmaita.fossdev@gmail.com>:
+  `key 0x5b47a3fdd66cabb249786653e834c62762d8856c
+  <_static/0x5b47a3fdd66cabb249786653e834c62762d8856c.txt>`_
 
 See :doc:`vmt-process` for details on our open process.
