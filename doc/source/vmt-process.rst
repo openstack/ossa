@@ -140,38 +140,72 @@ To ensure full traceability, we attempt to obtain a CVE assignment
 before the issue is communicated to a larger public. This is
 generally done as the patch gets nearer to final approval. The ossa
 bugtask status is set to *In progress* and the approved impact
-description is submitted through `MITRE's CVE Request form`_. The
-*request type* is ``Request a CVE ID``, the *e-mail address* should
-be that of the requester (generally the assigned VMT coordinator in
-the case of reports officially managed by the VMT), and for
-embargoed reports the coordinator's OpenPGP key should be pasted
-into the field provided.
+description is submitted through `MITRE's CVE Request form`_.
 
-In the *required* section set the checkboxes indicating the product
-is not CNA-covered and that no prior CVE ID has been assigned,
-select an appropriate *vulnerability  type* (using ``Other or
-Unknown`` to enter a freeform type if there is nothing relevant on
-the drop-down), set the *vendor* to ``OpenStack``, and the *product*
-and *version* fields to match the ``$PROJECTS`` and
-``$AFFECTED_VERSIONS`` from the impact description. In the
-*optional* section set the radio button for *confirmed/acknowledged*
-to ``Yes``, choose an appropriate *attack type* in the drop-down
-(often this is ``Context-dependent`` for our cases), check the
-relevant *impact* checkboxes, attempt to fill in the *affected
-components* and *attack vector* fields if possible, paste in the
-*suggested description* from the prose of the impact description
-(usually omitting the first sentence as it's redundant with other
-fields), put the ``$CREDIT`` details in the *discoverer/credits*
-field, and the bug URL (along with Gerrit URLs for patches if
-already public) in the *references* field. If the report is still
-private, note that in the *additional information* field like ``This
-report is currently under embargo and no disclosure date has been
-scheduled at this time.``
+OpenStack's security classifications don't match exactly to what
+MITRE expects, so here's a checklist for filling out the request
+form.  (The form grows input fields dynamically as you fill it out.)
 
-At the bottom of the page, fill in the *security code* and click the
-*submit request* button. If some fields contain invalid data they
-will be highlighted red; correct these, update the *security code*
-and *submit request* again until you get a confirmation page.
+
+- At the top of the page
+
+  * The *request type* is ``Report Vulnerability/Request CVE ID``
+  * The *e-mail address* should be that of the requester (generally the
+    assigned VMT coordinator in the case of reports officially managed
+    by the VMT)
+  * **For embargoed reports**, the coordinator's OpenPGP key should be pasted
+    into the field provided.
+
+- In the "Before submitting this request ..." box
+
+  * set the checkbox indicating the product is not CNA-covered
+  * set the checkbox that no prior CVE ID has been assigned
+
+- In the *Required* section
+
+  * select an appropriate *vulnerability  type* (using ``Other or
+    Unknown`` to enter a freeform type if there is nothing relevant
+    on the drop-down)
+
+    * this will generate a new required field for *other vulnerability
+      type* where you can put a CWE identifier (if you know of one that
+      matches) or ``CWE-noinfo`` (if you don't)
+
+  * set the *vendor* to ``OpenStack``
+  * set the *product* and *version* fields to match the ``$PROJECTS`` and
+    ``$AFFECTED_VERSIONS`` from the impact description
+
+- In the *Optional* section
+
+  * set the radio button for *confirmed/acknowledged* to ``Yes``
+  * choose an appropriate *attack type* in the drop-down (often this is
+    ``Context-dependent`` for our cases)
+  * check the relevant *impact* checkboxes
+
+    * if you check "Other", a free text field will open where you can type
+      in the impact
+
+  * attempt to fill in the *affected component(s)* and *attack vector*
+    fields if possible
+  * paste in the *suggested description* from the prose of the impact
+    description (usually omitting the first sentence as it's redundant with
+    other fields in the form)
+  * put the ``$CREDIT`` details in the *discoverer/credits* field
+  * in the *references* field, put the bug URL (along with Gerrit URLs for
+    patches if already public)
+  * **if the report is still private**, note this in the *additional
+    information* field with some text like ``This report is currently under
+    embargo and no disclosure date has been scheduled at this time.``
+
+- At the bottom of the page
+
+  * fill in the *security code*
+  * click the *submit request* button
+
+If some fields contain invalid data they will be highlighted red; correct
+these, update the *security code* and *submit request* again until you get
+a confirmation page.  Note: if you navigate away from the page, you may lose
+everything you have typed in.
 
 .. _MITRE's CVE Request form: https://cveform.mitre.org/
 
