@@ -39,7 +39,7 @@ description: |+
   -------------
   Images in the Ironic image cache should be purged.  To purge the cache,
   stop the Ironic conductor and remove the files in the
-  ``[pxe]/instance_master_path`` directory on that conductor node.
+  ``[pxe]instance_master_path`` directory on that conductor node.
 
   Supported image formats
   -----------------------
