@@ -22,8 +22,14 @@ VMT oversight:
 * `openstack/glance_store <https://opendev.org/openstack/glance_store>`_
 * `openstack/heat <https://opendev.org/openstack/heat>`_
 * `openstack/horizon <https://opendev.org/openstack/horizon>`_
+* `openstack/ironic <https://opendev.org/openstack/ironic>`_
+* `openstack/ironic-inspector <https://opendev.org/openstack/ironic-inspector>`_
+* `openstack/ironic-lib <https://opendev.org/openstack/ironic-lib>`_
+* `openstack/ironic-python-agent <https://opendev.org/openstack/ironic>`_
 * `openstack/keystone <https://opendev.org/openstack/keystone>`_
 * `openstack/keystonemiddleware <https://opendev.org/openstack/keystonemiddleware>`_
+* `openstack/networking-baremetal <https://opendev.org/openstack/networking-baremetal>`_
+* `openstack/networking-generic-switch <https://opendev.org/openstack/networking-generic-switch>`_
 * `openstack/neutron <https://opendev.org/openstack/neutron>`_
 * `openstack/neutron-lib <https://opendev.org/openstack/neutron-lib>`_
 * `openstack/nova <https://opendev.org/openstack/nova>`_
@@ -33,6 +39,8 @@ VMT oversight:
 * `openstack/python-cinderclient <https://opendev.org/openstack/python-cinderclient>`_
 * `openstack/python-glanceclient <https://opendev.org/openstack/python-glanceclient>`_
 * `openstack/python-heatclient <https://opendev.org/openstack/python-heatclient>`_
+* `openstack/python-ironicclient <https://opendev.org/openstack/python-ironicclient>`_
+* `openstack/python-ironic-inspector-client <https://opendev.org/openstack/python-ironic-inspector-client>`_
 * `openstack/python-keystoneclient <https://opendev.org/openstack/python-keystoneclient>`_
 * `openstack/python-neutronclient <https://opendev.org/openstack/python-neutronclient>`_
 * `openstack/python-novaclient <https://opendev.org/openstack/python-novaclient>`_
@@ -49,6 +57,7 @@ VMT oversight:
 * `openstack/sahara-plugin-spark <https://opendev.org/openstack/sahara-plugin-spark>`_
 * `openstack/sahara-plugin-storm <https://opendev.org/openstack/sahara-plugin-storm>`_
 * `openstack/sahara-plugin-vanilla <https://opendev.org/openstack/sahara-plugin-vanilla>`_
+* `openstack/sushy <https://opendev.org/openstack/sushy>`_
 * `openstack/swift <https://opendev.org/openstack/swift>`_
 * `openstack/trove <https://opendev.org/openstack/trove>`_
 
