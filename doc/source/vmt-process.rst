@@ -229,23 +229,27 @@ subscription to the report may be added.
 
 For non-embargoed, public vulnerabilities no separate downstream
 advance notification is sent. Instead the OSSA bugtask is set to fix
-committed status once the CVE assignment is received OSSA is
+committed status once the CVE assignment is received and OSSA
 drafting begins immediately.
 
 Open bug, Push patch
 ^^^^^^^^^^^^^^^^^^^^
 
-In preparation for this, make sure you have a core reviewer and a
-stable maintainer available to help pushing the fix at disclosure
+In preparation for this, make sure you have a **core reviewer** and a
+**stable maintainer** available to help pushing the fix at disclosure
 time.
 
-On the disclosure hour, open bug, push patches to Gerrit for review
-on master and supported stable branches, fast-track approvals
-(referencing the bug).
+On the disclosure hour:
 
-Update the bug title to "[OSSA-$NUM] $TITLE".
-
-Embargo reminder can be removed at that point.
+#. Remove the embargo reminder on the Launchpad bug
+#. Open the bug to make it public.  Launchpad will send initial notification
+   emails to everyone who has subscribed to any of the affected projects
+#. Remind the people pushing patches that they should have "Closes-bug"
+   or "Related-bug" lines in the commit messages referencing the bug
+#. Push patches to Gerrit for review on master and supported stable branches;
+   fast-track approvals because the patches have already been reviewed
+   on the Launchpad bug
+#. Update the bug title to "[OSSA-$NUM] $TITLE"
 
 `MITRE's CVE Request form`_ should be used again at this point, but
 instead select a *request type* of ``Notify CVE about a
@@ -402,17 +406,6 @@ please submit an email with a rationale to member(s) of the
 Templates
 ---------
 
-Reception incomplete message (unconfirmed issues)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-::
-
-  Since this report concerns a possible security risk, an incomplete
-  security advisory task has been added while the core security
-  reviewers for the affected project or projects confirm the bug and
-  discuss the scope of any vulnerability along with potential
-  solutions.
-
 Reception embargo reminder (private issues)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -433,10 +426,25 @@ Reception embargo reminder (private issues)
   embargo shall not extend past $NINETY_DAYS and will be made
   public by or on that date even if no fix is identified.
 
-The NINETY_DAYS value should be 90 days from the date the report is
+The ``NINETY_DAYS`` value should be 90 days from the date the report is
 accepted by the coordinator and project reviewers are subscribed. It
 can be trivially calculated with the ``date -I -d90days`` shell
-command.
+command.  As mentioned earlier, this embargo reminder is added at the
+*beginning* of the "Bug Description" field on the bug report.
+
+Reception incomplete message (unconfirmed issues)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+::
+
+  Since this report concerns a possible security risk, an incomplete
+  security advisory task has been added while the core security
+  reviewers for the affected project or projects confirm the bug and
+  discuss the scope of any vulnerability along with potential
+  solutions.
+
+This sentence should be added as (or included in) the first comment on
+the bug report.
 
 Impact description ($DESCRIPTION)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -453,9 +461,9 @@ Impact description ($DESCRIPTION)
     By doing [action] a [actor] may [impact] resulting in [consequence].
     Only [project deployment mode] are affected.
 
-The AFFECTED_VERSIONS needs to stay valid after the fix is released.
+The ``AFFECTED_VERSIONS`` needs to stay valid after the fix is released.
 For example, when kilo, liberty and mitaka are still security supported,
-the AFFECTED_VERSIONS of keystone should read like this:
+the ``AFFECTED_VERSIONS`` of keystone should read like this:
 
 ::
 
@@ -489,11 +497,24 @@ Downstream stakeholders notification email (private issues)
 
 We send two separate emails, to avoid off-topic replies to linux-distros:
 
-* *To:* embargo-notice@lists.openstack.org
-* *Subject:* [pre-OSSA] Vulnerability in OpenStack $PROJECT ($CVE)
+1. *To:* embargo-notice@lists.openstack.org
 
-* *To:* linux-distros@vs.openwall.org
-* *Subject:* [vs] Vulnerability in OpenStack $PROJECT ($CVE)
+   * *Subject:* [pre-OSSA] Vulnerability in OpenStack $PROJECT ($CVE)
+   * **This email must be signed with the VMT sender's OpenPGP key.**
+     This is the key whose fingerprint is posted at
+     https://security.openstack.org/vmt.html
+
+2. *To:* linux-distros@vs.openwall.org
+
+   * *Subject:* [vs] Vulnerability in OpenStack $PROJECT ($CVE)
+   * This email must be
+
+     * signed with the VMT sender's OpenPGP key, *and*
+     * encrypted with the linux-distros public key (see below)
+     * note the subject line: the first four characters must be
+       :literal:`[vs]\ ` (that is, left-square-bracket, lowercase 'v',
+       lowercase 's', right-square-bracket, space) or the list automation
+       may reject the email
 
 The message body for both emails should be identical:
 ::
@@ -525,11 +546,30 @@ The message body for both emails should be identical:
     -- 
     $VMT_COORDINATOR_NAME
     OpenStack Vulnerability Management Team
+    https://security.openstack.org/vmt.html
 
-Proposed patches are attached, email must be GPG-signed. Use
-something unique and descriptive for the patch attachment file
-names, for example ``cve-2013-4183-master-havana.patch`` or
-``cve-2013-4183-stable-grizzly.patch``.
+Use iso-8601-style YYYY-MM-DD for ``DISCLOSURE``.
+
+Proposed patches are attached to the email.  Use something unique and
+descriptive for the patch attachment file names, for example,
+``cve-2013-4183-master-havana.patch`` or
+``cve-2013-4183-stable-grizzly.patch``.  Since the patches attached to
+the Launchpad bug may have been written before a CVE number was obtained,
+you may have to rename the patches.  Ideally, the patch file name will
+contain the CVE number, the OpenStack component name (when more than one
+component is involved), and the branch to which the patch applies.
+
+.. note::
+   A requirement for the linux-distros mailing list is that attachment file
+   names should be alphanumeric, except that dot, minus sign, and underscore
+   characters are allowed within the file names (but not as the first
+   character of a file name), so keep this in mind when renaming the patch
+   files.
+
+As mentioned above, both emails must be GPG-signed.  Make sure you're using
+the key whose fingerprint is posted on https://security.openstack.org/vmt.html
+so that there's a public place associated with the OpenStack VMT where your
+key can be independently located.
 
 Note that the post to linux-distros should be encrypted to the key
 at https://oss-security.openwall.org/wiki/mailing-lists/distros and
@@ -577,6 +617,20 @@ project using this template::
     notes:
       - 'Optional note such as cross project version requirements'
 
+.. note::
+   The ``DESCRIPTION_CONTENT`` is extracted from the yaml file
+   and inserted directly into the generated restructured text
+   file.  Thus it may include RST markup, as appropriate (in other
+   words, don't overdo it).  See the OSSA yaml files in the repository
+   for examples.
+
+   Another implication of this is that line length for the description
+   is determined by what you use in the YAML file.  Since you'll
+   eventually be pasting the contents of the generated RST file into
+   an email message, you may therefore want to keep the line length in
+   the description content to a length that will not require wrapping
+   in the email.
+
 Once approved, view the gate-ossa-docs output and browse to the
 rendered HTML advisory, then alter the URL to insert ``_sources/``
 before the first path component and change the file extension to
@@ -595,4 +649,4 @@ Notes:
 
 * Email must be GPG-signed.
 * $CVE must always be of the form CVE-YYYY-XXXX
-* $NUM is of the form YYYY-XX
+* $NUM is of the form YYYY-XXX
