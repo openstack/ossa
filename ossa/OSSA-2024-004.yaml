@@ -1,0 +1,74 @@
+date: 2024-10-03
+
+id: OSSA-2024-004
+
+title: Ironic fails to verify checksums of supplied image_source URLs
+       when configured to convert images to raw for streaming
+
+description: |+
+  Julia Kreger of Red Hat noticed a vulnerability in image validation for
+  Ironic, in which images may not have their checksum validated before
+  conversion, potentially permitting man-in-the-middle attacks modifying
+  image data.
+
+affected-products:
+  - product: Ironic
+    version: '<21.4.4, >=22.0.0 <23.0.3, >=23.1.0 <24.1.3, >=25.0.0, <26.1.0'
+
+vulnerabilities:
+  - cve-id: CVE-2024-47211
+
+reporters:
+  - name: Julia Kreger
+    affiliation: Red Hat
+    reported: CVE-2024-47211
+
+issues:
+  links:
+    - https://launchpad.net/bugs/2076289
+
+reviews:
+  2025.1/epoxy (ironic):
+    - https://review.opendev.org/c/openstack/ironic/+/931293
+
+  2024.2/dalmatian(ironic):
+    - https://review.opendev.org/c/openstack/ironic/+/931294
+
+  2024.1/caracal(ironic):
+    - https://review.opendev.org/c/openstack/ironic/+/931295
+
+  2023.2/bobcat(ironic):
+    - https://review.opendev.org/c/openstack/ironic/+/931299
+
+  2023.1/antelope(ironic):
+    - https://review.opendev.org/c/openstack/ironic/+/931300
+
+  unmaintained/zed(ironic):
+    - https://review.opendev.org/c/openstack/ironic/+/931301
+
+  unmaintained/yoga(ironic):
+    - https://review.opendev.org/c/openstack/ironic/+/931302
+
+  unmaintained/xena(ironic):
+    - https://review.opendev.org/c/openstack/ironic/+/931303
+
+  unmaintained/wallaby(ironic):
+    - https://review.opendev.org/c/openstack/ironic/+/931304
+
+  unmaintained/victoria(ironic):
+    - https://review.opendev.org/c/openstack/ironic/+/931305
+
+  bugfix/26.0 (ironic):
+    - https://review.opendev.org/c/openstack/ironic/+/931296
+
+  bugfix/25.0 (ironic):
+    - https://review.opendev.org/c/openstack/ironic/+/931297
+
+  bugfix/24.0 (ironic):
+    - https://review.opendev.org/c/openstack/ironic/+/931298
+
+notes:
+  - No other Ironic-adjacent projects, including Ironic-Python-Agent, require
+    patching to resolve this vulnerability.
+  - As usual, we will provide updated releases off maintained branches, but will
+  - not create new releases off bugfix or unmaintained branches.
