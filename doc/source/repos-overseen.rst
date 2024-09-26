@@ -25,7 +25,7 @@ VMT oversight:
 * `openstack/ironic <https://opendev.org/openstack/ironic>`_
 * `openstack/ironic-inspector <https://opendev.org/openstack/ironic-inspector>`_
 * `openstack/ironic-lib <https://opendev.org/openstack/ironic-lib>`_
-* `openstack/ironic-python-agent <https://opendev.org/openstack/ironic>`_
+* `openstack/ironic-python-agent <https://opendev.org/openstack/ironic-python-agent>`_
 * `openstack/keystone <https://opendev.org/openstack/keystone>`_
 * `openstack/keystonemiddleware <https://opendev.org/openstack/keystonemiddleware>`_
 * `openstack/networking-baremetal <https://opendev.org/openstack/networking-baremetal>`_
