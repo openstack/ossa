@@ -71,4 +71,4 @@ notes:
   - No other Ironic-adjacent projects, including Ironic-Python-Agent, require
     patching to resolve this vulnerability.
   - As usual, we will provide updated releases off maintained branches, but will
-  - not create new releases off bugfix or unmaintained branches.
+    not create new releases off bugfix or unmaintained branches.
