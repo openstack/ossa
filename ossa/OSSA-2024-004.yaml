@@ -21,7 +21,8 @@ vulnerabilities:
 reporters:
   - name: Julia Kreger
     affiliation: Red Hat
-    reported: CVE-2024-47211
+    reported:
+      - CVE-2024-47211
 
 issues:
   links:

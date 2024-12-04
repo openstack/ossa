@@ -21,7 +21,8 @@ vulnerabilities:
 reporters:
   - name: Tore Anderson
     affiliation: Redpill Linpro AS
-    reported: CVE-2024-53916
+    reported:
+      - CVE-2024-53916
 
 issues:
   links:
