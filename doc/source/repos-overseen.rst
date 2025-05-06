@@ -9,50 +9,9 @@
  Repositories Overseen
 =======================
 
-While the Vulnerability Management Team (VMT) is available to assist
-developers on request even if their projects are not explicitly
-opted into this list, reports of suspected vulnerabilities for the
-following OpenStack source repositories officially fall under direct
-VMT oversight:
-
-* `openstack/barbican <https://opendev.org/openstack/barbican>`_
-* `openstack/castellan <https://opendev.org/openstack/castellan>`_
-* `openstack/cinder <https://opendev.org/openstack/cinder>`_
-* `openstack/glance <https://opendev.org/openstack/glance>`_
-* `openstack/glance_store <https://opendev.org/openstack/glance_store>`_
-* `openstack/heat <https://opendev.org/openstack/heat>`_
-* `openstack/horizon <https://opendev.org/openstack/horizon>`_
-* `openstack/ironic <https://opendev.org/openstack/ironic>`_
-* `openstack/ironic-inspector <https://opendev.org/openstack/ironic-inspector>`_
-* `openstack/ironic-lib <https://opendev.org/openstack/ironic-lib>`_
-* `openstack/ironic-python-agent <https://opendev.org/openstack/ironic-python-agent>`_
-* `openstack/keystone <https://opendev.org/openstack/keystone>`_
-* `openstack/keystonemiddleware <https://opendev.org/openstack/keystonemiddleware>`_
-* `openstack/networking-baremetal <https://opendev.org/openstack/networking-baremetal>`_
-* `openstack/networking-generic-switch <https://opendev.org/openstack/networking-generic-switch>`_
-* `openstack/neutron <https://opendev.org/openstack/neutron>`_
-* `openstack/neutron-lib <https://opendev.org/openstack/neutron-lib>`_
-* `openstack/nova <https://opendev.org/openstack/nova>`_
-* `openstack/os-brick <https://opendev.org/openstack/os-brick>`_
-* `openstack/oslo.config <https://opendev.org/openstack/oslo.config>`_
-* `openstack/python-barbicanclient <https://opendev.org/openstack/python-barbicanclient>`_
-* `openstack/python-cinderclient <https://opendev.org/openstack/python-cinderclient>`_
-* `openstack/python-glanceclient <https://opendev.org/openstack/python-glanceclient>`_
-* `openstack/python-heatclient <https://opendev.org/openstack/python-heatclient>`_
-* `openstack/python-ironicclient <https://opendev.org/openstack/python-ironicclient>`_
-* `openstack/python-ironic-inspector-client <https://opendev.org/openstack/python-ironic-inspector-client>`_
-* `openstack/python-keystoneclient <https://opendev.org/openstack/python-keystoneclient>`_
-* `openstack/python-neutronclient <https://opendev.org/openstack/python-neutronclient>`_
-* `openstack/python-novaclient <https://opendev.org/openstack/python-novaclient>`_
-* `openstack/python-swiftclient <https://opendev.org/openstack/python-swiftclient>`_
-* `openstack/python-troveclient <https://opendev.org/openstack/python-troveclient>`_
-* `openstack/sushy <https://opendev.org/openstack/sushy>`_
-* `openstack/swift <https://opendev.org/openstack/swift>`_
-* `openstack/trove <https://opendev.org/openstack/trove>`_
-
-The `teams`_ responsible for maintenance of the source code within
-these repositories have agreed to meet the expectations enumerated
-below.
+Reports of suspected vulnerabilities for all OpenStack source
+repositories officially fall under direct VMT oversight as long as
+they meet the expectations enumerated below.
 
 Requirements
 ------------
@@ -134,24 +93,5 @@ Requirements
    a recommendation in order to keep the VMT's workload to a
    necessary minimum, but is not a strict requirement.
 
-Updating
---------
-
-Proposals to add or remove repositories in the oversight list will
-be evaluated by the VMT following OpenStack's code review process.
-
-Deprecation
------------
-
-A repository should only be removed from VMT oversight under extreme
-circumstances, when the VMT is no longer able to adequately handle
-its vulnerabilities. Care should be taken to only discontinue
-vulnerability management for future non-patch releases, while
-continuing to handle vulnerabilities on prior *maintained* branches
-if at all possible until such time as they become *unmaintained* or
-reach *end of life*. See the Project Team Guide section on `Stable
-Branch Maintenance Phases`_ for detailed explanations of these terms.
-
-.. _teams: https://governance.openstack.org/tc/reference/projects/
 .. _security liaison: https://wiki.openstack.org/wiki/CrossProjectLiaisons#Vulnerability_management
 .. _stable branch maintenance phases: https://docs.openstack.org/project-team-guide/stable-branches.html#maintenance-phases
