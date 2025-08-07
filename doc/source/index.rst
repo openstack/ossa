@@ -101,6 +101,16 @@ point for anyone looking to securely deploy OpenStack.
 Read `the guide <http://docs.openstack.org/sec/>`_ online today.
 
 
+Release Artifact Signatures
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Deliverable artifacts for OpenStack releases, primarily Git tags and Python
+package files (``.tar.gz`` sdists and ``.whl`` wheels), are signed by our
+release automation. You can find more details in `the Cryptographic Signatures
+section of the OpenStack Releases site
+<https://releases.openstack.org/#cryptographic-signatures>`_.
+
+
 Security information for OpenStack developers
 ---------------------------------------------
 
