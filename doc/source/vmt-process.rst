@@ -221,7 +221,7 @@ Embargoed disclosure
 
 Once the patches are approved and the CVE is assigned, a signed
 email with the vulnerability description is sent to the downstream
-stakeholders. The disclosure date is set to 3-5 business days,
+stakeholders. The disclosure date is set to 5-10 business days,
 excluding Monday/Friday and holiday periods, at 1500 UTC. No
 stakeholder is supposed to deploy public patches before disclosure
 date. Once the email is sent, any stakeholders who reply requesting
