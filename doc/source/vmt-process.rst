@@ -322,7 +322,7 @@ warrant an advisory.
 | Class D  | Potential | Not a vulnerability, just a bug with      |
 |          | OSSN      | (some) security implications, e.g.,       |
 |          |           | strengthening opportunities / misleading  |
-|          |           | documentation                             |
+|          |           | documentation / admin-only risks          |
 +----------+-----------+-------------------------------------------+
 | Class E  |           | Neither a vulnerability nor hardening     |
 |          |           | opportunity                               |
