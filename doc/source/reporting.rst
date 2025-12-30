@@ -34,3 +34,10 @@ is:
   of 90 days. Unless unusual circumstances arise, any defect reported in
   private will be made public within 90 calendar days from when it is received,
   even if a solution has not been identified.
+
+Bug Bounties
+------------
+
+OpenStack is a community-run free/libre open source project. We gladly accept
+reports of suspected vulnerabilities, but we do not have any sort of bounty or
+reward program.
