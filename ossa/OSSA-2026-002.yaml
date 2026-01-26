@@ -1,0 +1,44 @@
+date: 2026-01-17
+
+id: OSSA-2026-002
+
+title: Nova calls qemu-img without format restrictions for resize
+
+description: >
+  Dan Smith from Red Hat reported a vulnerability in nova. By
+  writing a malicious QCOW header to a root or ephemeral disk and
+  then triggering a resize, a user may convince Nova's flat image
+  backend to call qemu-img without a format restriction resulting in
+  an unsafe image resize operation that could destroy data on the
+  host system. Only compute nodes using the Flat image backend
+  (usually configured with use_cow_images=False) are affected.
+
+affected-products:
+  - product: nova
+    version: '<30.2.2, >=31.0.0 <31.2.1, >=32.0.0 <32.1.1'
+
+vulnerabilities:
+  - cve-id: 'CVE-2026-24709'
+
+reporters:
+  - name: Dan Smith
+    affiliation: Red Hat
+    reported:
+      - 'CVE-2026-24708'
+
+issues:
+  links:
+    - https://launchpad.net/bugs/2137507
+
+reviews:
+  2026.1/gazpacho:
+    - https://review.opendev.org/977100
+
+  2025.2/flamingo:
+    - https://review.opendev.org/977101
+
+  2025.1/epoxy:
+    - https://review.opendev.org/977103
+
+  2024.2/dalmatian:
+    - https://review.opendev.org/977104
