@@ -13,12 +13,17 @@ description: >
   host system. Only compute nodes using the Flat image backend
   (usually configured with use_cow_images=False) are affected.
 
+errata: >
+  The original advisory incorrectly referred and linked to
+  CVE-2026-24709 in some places, but CVE-2026-24708 is the correct
+  identifier.
+
 affected-products:
   - product: nova
     version: '<30.2.2, >=31.0.0 <31.2.1, >=32.0.0 <32.1.1'
 
 vulnerabilities:
-  - cve-id: 'CVE-2026-24709'
+  - cve-id: 'CVE-2026-24708'
 
 reporters:
   - name: Dan Smith
@@ -42,3 +47,7 @@ reviews:
 
   2024.2/dalmatian:
     - https://review.opendev.org/977104
+
+errata_history:
+  - 2026-02-17 - Errata 1
+  - 2026-02-17 - Original Version
