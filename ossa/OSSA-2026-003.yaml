@@ -1,0 +1,47 @@
+date: 2026-03-03
+
+id: OSSA-2026-003
+
+title: Remote code execution through Vitrage query parser
+
+description: >
+  Khalil Lemtaffah (Nokia) reported a vulnerability in the Vitrage query
+  parser. A user allowed to access the Vitrage API may trigger code execution
+  on the Vitrage service host as the user the Vitrage service runs under. This
+  may result in unauthorized access to the host and further compromise of the
+  Vitrage service. All deployments exposing the Vitrage API are affected.
+
+affected-products:
+  - product: vitrage
+    version: '<12.0.1, ==13.0.0, ==14.0.0, ==15.0.0'
+
+vulnerabilities:
+  - cve-id: CVE-2026-28370
+
+reporters:
+  - name: Khalil Lemtaffah
+    affiliation: Nokia
+    reported:
+      - CVE-2026-28370
+
+issues:
+  links:
+    - https://storyboard.openstack.org/#!/story/2011539
+
+reviews:
+  2026.1/gazpacho:
+    - https://review.opendev.org/962617
+  2025.2/flamingo:
+    - https://review.opendev.org/962658
+  2025.1/epoxy:
+    - https://review.opendev.org/962646
+  2024.2/dalmatian:
+    - https://review.opendev.org/962712
+  2024.1/caracal:
+    - https://review.opendev.org/962713
+  2023.1/antelope:
+    - https://review.opendev.org/962671
+
+notes:
+  - The stable/2023.1 branch is unmaintained and will receive no new point
+    releases, but a patch for it is provided as a courtesy.
