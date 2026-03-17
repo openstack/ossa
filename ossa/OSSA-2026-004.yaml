@@ -1,0 +1,133 @@
+date: 2026-03-19
+
+id: OSSA-2026-004
+
+title: Server-Side Request Forgery (SSRF) vulnerabilities in OpenStack Glance image import functionality
+
+description: |+
+  Hyeongeun_Ji of Open the Window and Abhishek Kekane of Red Hat
+  reported multiple Server-Side Request Forgery (SSRF)
+  vulnerabilities in Glance image import. By use of HTTP redirects,
+  an authenticated user can bypass URL validation checks and
+  redirect to internal services.
+
+  Only glance image import functionality is affected. In particular,
+  the 'web-download' and 'glance-download' import methods are
+  subject to this vulnerability, as is the optional (not enabled by
+  default) 'ovf_process' image import plugin.  We discuss each of
+  the vulnerabilities in turn below.
+
+  web-download Import Method SSRF
+  -------------------------------
+  The web-download import method has two SSRF vulnerabilities:
+
+  HTTP Redirect Bypass
+  ++++++++++++++++++++
+  The web-download import method did not validate redirect
+  destinations when following HTTP redirects. An attacker could
+  provide an initial URL that passed validation but redirected to an
+  internal or disallowed resource; the redirected URL was not
+  subject to security checks.
+
+  This is fixed by implementing a SafeRedirectHandler that validates
+  redirect destinations before following them, using same
+  validate_import_uri() checks as the initial URL.
+
+  IP Address Encoding Bypass
+  ++++++++++++++++++++++++++
+  The web-download import method URL validation could be bypassed by
+  encoding IP addresses in alternative formats (decimal integer,
+  hexadecimal, octal).  For example, 127.0.0.1 could be encoded as
+  2130706433 (decimal) or 0x7f000001 (hexadecimal) to bypass
+  blacklist checks.
+
+  This is fixed by implementing a normalize_hostname() function that
+  uses the Python standard library ipaddress module to validate IP
+  addresses. The ipaddress module only accepts standard
+  dotted-decimal notation for IPv4 and standard format for IPv6,
+  automatically rejecting all encoded formats (decimal, hexadecimal,
+  octal). Any attempt to use encoded IP formats is rejected, thereby
+  preventing SSRF bypass attacks.
+
+  glance-download Import Method SSRF
+  ----------------------------------
+  The glance-download import method had redirect validation bypass
+  vulnerabilities in two steps of the import flow:
+
+  Image Data Download
+  +++++++++++++++++++
+  When downloading image data from a remote Glance endpoint,
+  redirects were not validated, allowing attackers to redirect to
+  internal services.
+
+  Metadata Fetch
+  ++++++++++++++
+  When fetching image metadata from a remote Glance endpoint,
+  redirects were not validated, allowing attackers to redirect to
+  internal services.
+
+  Both steps are fixed by using the SafeRedirectHandler described
+  earlier to validate redirect destinations before following them.
+
+  OVF Processing SSRF
+  -------------------
+  The OVF processing functionality had critical SSRF vulnerability
+  with zero protection - no URI validation, no redirect validation,
+  and no IP normalization. The code directly called
+  urllib.request.urlopen(uri) without any validation checks. This is
+  fixed by adding URI validation using validate_import_uri() and
+  redirect validation using SafeRedirectHandler.
+
+affected-products:
+  - product: Glance
+    version: '<29.1.1, >=30.0.0 <30.1.1, ==31.0.0'
+
+vulnerabilities:
+  - cve-id: CVE-2026-pending
+
+reporters:
+  - name: Hyeongeun_Ji
+    affiliation: Open the Window
+    reported:
+      - CVE-2026-pending
+  - name: Abhishek Kekane
+    affiliation: Red Hat
+    reported:
+      - CVE-2026-pending
+
+issues:
+  links:
+    - https://launchpad.net/bugs/2138602
+    - https://launchpad.net/bugs/2138672
+    - https://launchpad.net/bugs/2138675
+
+reviews:
+  2026.2/hibiscus:
+    - https://review.opendev.org/981295
+
+  2026.1/gazpacho:
+    - https://review.opendev.org/981296
+
+  2025.2/flamingo:
+    - https://review.opendev.org/981297
+
+  2025.1/epoxy:
+    - https://review.opendev.org/981298
+
+  2024.2/dalmatian:
+    - https://review.opendev.org/981299
+
+  2023.1/antelope:
+    - https://review.opendev.org/981300
+    
+notes:
+  - A CVE request was filed with MITRE on 2026-02-16.
+  - Prereleases of OpenStack software are not official production
+    releases and so not covered by the affected versions list.
+    The first Glance release candidate for gazpacho (32.0.0.0rc1)
+    is vulnerable; 32.0.0.0rc2 will contain the fix.
+  - The unmaintained/2023.1 branch, being unmaintained, will receive
+    no new point releases, but a patch for it is provided as a
+    courtesy.
+
+  
