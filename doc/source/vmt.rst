@@ -46,5 +46,8 @@ To directly reach members of the VMT, contact them at the following addresses
 * Brian Rosmaita <rosmaita.fossdev@gmail.com>:
   `key 0x5b47a3fdd66cabb249786653e834c62762d8856c
   <_static/0x5b47a3fdd66cabb249786653e834c62762d8856c.txt>`_
+* Goutham Pacha Ravi <gouthampravi@gmail.com>:
+  `key 0xc28e5597e53ea617da3e93790638dad3b82c3988
+  <_static/0xc28e5597e53ea617da3e93790638dad3b82c3988.txt>`_
 
 See :doc:`vmt-process` for details on our open process.
