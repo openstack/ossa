@@ -78,22 +78,27 @@ description: |+
   fixed by adding URI validation using validate_import_uri() and
   redirect validation using SafeRedirectHandler.
 
+errata: >
+  CVE-2026-34881 was assigned by MITRE after publication.  If any
+  other CNA has assigned a CVE themselves in the meantime, please
+  reject it so that we don't end up with duplicates.
+
 affected-products:
   - product: Glance
     version: '<29.1.1, >=30.0.0 <30.1.1, ==31.0.0'
 
 vulnerabilities:
-  - cve-id: CVE-2026-pending
+  - cve-id: CVE-2026-34881
 
 reporters:
   - name: Hyeongeun_Ji
     affiliation: Open the Window
     reported:
-      - CVE-2026-pending
+      - CVE-2026-34881
   - name: Abhishek Kekane
     affiliation: Red Hat
     reported:
-      - CVE-2026-pending
+      - CVE-2026-34881
 
 issues:
   links:
@@ -119,7 +124,7 @@ reviews:
 
   2023.1/antelope:
     - https://review.opendev.org/981300
-    
+
 notes:
   - A CVE request was filed with MITRE on 2026-02-16.
   - Prereleases of OpenStack software are not official production
@@ -130,4 +135,6 @@ notes:
     no new point releases, but a patch for it is provided as a
     courtesy.
 
-  
+errata_history:
+  - 2026-03-31 - Errata 1
+  - 2026-03-19 - Original Version
