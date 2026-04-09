@@ -1,0 +1,52 @@
+date: 2026-04-09
+
+id: OSSA-2026-006
+
+title: DOM-based XSS in Skyline Console via unsanitized instance console log rendering
+
+description: >
+  Myunghyun Lee (Team Open the Window, Stealien SSL 6th)
+  reported a DOM-based Cross-Site Scripting (XSS) vulnerability in
+  Skyline Console. The instance console log viewer rendered log content
+  in a new browser window using document.write() without sanitizing or
+  escaping the output. Deployments where administrators use the Skyline
+  Console web interface to view instance console logs are affected.
+
+affected-products:
+  - product: skyline-console
+    version: '<5.0.1, ==6.0.0, ==7.0.0'
+
+vulnerabilities:
+  - cve-id: CVE-2026-pending
+
+reporters:
+  - name: Myunghyun Lee
+    affiliation: Team Open the Window, Stealien SSL 6th
+    reported:
+      - CVE-2026-pending
+
+issues:
+  links:
+    - https://launchpad.net/bugs/2138575
+
+reviews:
+  2026.1/gazpacho:
+    - https://review.opendev.org/973351
+
+  2025.2/flamingo:
+    - https://review.opendev.org/982350
+
+  2025.1/epoxy:
+    - https://review.opendev.org/982355
+
+  2024.2/dalmatian:
+    - https://review.opendev.org/982356
+
+notes:
+  - Until upgraded, operators should restrict or avoid use of "View
+    Full Log" for instances where console output may be influenced by
+    untrusted users.
+  - A CVE request was filed with MITRE on 2026-03-25.
+  - The fix was merged on the master branch before the stable/2026.1
+    branch was cut, so no specific stable/2026.1 patch exists. The
+    fix is included in the gazpacho (8.0.0) release.
