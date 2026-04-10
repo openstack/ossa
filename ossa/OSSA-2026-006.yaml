@@ -12,18 +12,23 @@ description: >
   escaping the output. Deployments where administrators use the Skyline
   Console web interface to view instance console logs are affected.
 
+errata: >
+  CVE-2026-40212 was assigned by MITRE after publication. If any
+  other CNA has assigned a CVE themselves in the meantime, please
+  reject it so that we don't end up with duplicates.
+
 affected-products:
   - product: skyline-console
     version: '<5.0.1, ==6.0.0, ==7.0.0'
 
 vulnerabilities:
-  - cve-id: CVE-2026-pending
+  - cve-id: CVE-2026-40212
 
 reporters:
   - name: Myunghyun Lee
     affiliation: Team Open the Window, Stealien SSL 6th
     reported:
-      - CVE-2026-pending
+      - CVE-2026-40212
 
 issues:
   links:
@@ -50,3 +55,7 @@ notes:
   - The fix was merged on the master branch before the stable/2026.1
     branch was cut, so no specific stable/2026.1 patch exists. The
     fix is included in the gazpacho (8.0.0) release.
+
+errata_history:
+  - 2026-04-10 - Errata 1
+  - 2026-04-09 - Original Version
