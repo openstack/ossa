@@ -1,0 +1,63 @@
+date: 2026-04-14
+
+id: OSSA-2026-007
+
+title: LDAP identity backend does not convert enabled attribute to boolean
+
+description: >
+  Benedikt Trefzer and Andrew Bogott independently reported a
+  vulnerability in the Keystone LDAP identity backend. When the
+  user_enabled_invert configuration option was False (the default),
+  Keystone did not correctly interpret the LDAP enabled attribute,
+  causing users disabled in LDAP to be treated as enabled and allowed
+  to authenticate. Deployments using the LDAP identity backend
+  without user_enabled_invert=True or user_enabled_emulation are
+  affected.
+
+affected-products:
+  - product: keystone
+    version: '>=8.0.0 <25.0.1, >=26.0.0 <26.1.1, >=27.0.0 <27.0.1, >=28.0.0 <28.0.1'
+
+vulnerabilities:
+  - cve-id: CVE-2026-pending
+
+reporters:
+  - name: Benedikt Trefzer
+    affiliation: Cirrax GmbH
+    reported:
+      - CVE-2026-pending
+  - name: Andrew Bogott
+    affiliation: Wikimedia Foundation
+    reported:
+      - CVE-2026-pending
+  - name: Grzegorz Grasza
+    affiliation: Red Hat
+    reported:
+      - CVE-2026-pending
+
+issues:
+  links:
+    - https://launchpad.net/bugs/2121152
+    - https://launchpad.net/bugs/2141713
+
+reviews:
+  2026.1/gazpacho:
+    - https://review.opendev.org/958205
+
+  2025.2/flamingo:
+    - https://review.opendev.org/982407
+
+  2025.1/epoxy:
+    - https://review.opendev.org/982408
+
+  2024.2/dalmatian:
+    - https://review.opendev.org/982409
+
+notes:
+  - To work around this vulnerability, set user_enabled_invert=True and
+    use an LDAP attribute with inverted semantics such as nsAccountLock,
+    or use user_enabled_emulation with group-based enabled status.
+  - A CVE request was filed with MITRE on 2026-04-10.
+  - The fix was merged on the master branch before the stable/2026.1
+    branch was cut, so no specific stable/2026.1 patch exists. The
+    fix is included in the gazpacho (29.0.0) release.
