@@ -1,0 +1,60 @@
+date: 2026-04-27
+
+id: OSSA-2026-008
+
+title: Command Injection in Ironic IPMI Console Implementations
+
+description: >
+  Dmitry Tantsur and Tuomo Tanskanen from the Metal3.io Security Team
+  reported a vulnerability in Ironic's IPMI console backends. A
+  project manager for the project marked as a ``node.owner`` can inject
+  arbitrary commands which a conductor executes on console activation.
+
+  No console backends are enabled by default in Ironic. Only
+  installations which have set ``[conductor]/enabled_console_interfaces`` to
+  enable either ``ipmitool-shellinabox`` or ``ipmitool-socat`` are vulnerable.
+
+affected-products:
+  - product: ironic
+    version: '>=4.3.0 <26.1.6, >=27.0.0 <29.0.5, >=30.0.0 <32.0.1, >=33.0.0 <35.0.1'
+
+vulnerabilities:
+  - cve-id: CVE-2026-pending
+
+reporters:
+  - name: Dmitry Tantsur
+    affiliation: Metal3.io Security Team
+
+  - name: Tuomo Tanskanen
+    affiliation: Metal3.io Security Team
+
+issues:
+  links:
+    - https://launchpad.net/bugs/2148331
+
+reviews:
+  2026.1/gazpacho:
+    - https://review.opendev.org/c/openstack/ironic/+/986235
+
+  2025.2/flamingo:
+    - https://review.opendev.org/c/openstack/ironic/+/986361
+
+  2025.1/epoxy:
+    - https://review.opendev.org/c/openstack/ironic/+/986362
+
+  2024.2/dalmatian:
+    - https://review.opendev.org/c/openstack/ironic/+/986363
+
+  2024.1/caracal (unmaintained):
+    - https://review.opendev.org/c/openstack/ironic/+/986417
+
+  2023.1/antelope (unmaintained):
+    - https://review.opendev.org/c/openstack/ironic/+/986418
+
+notes:
+  - A CVE request was filed with MITRE on 2026-04-27.
+  - Patches for unmaintained branches are provided as a courtesy.
+  - The ``ipmitool-shellinabox`` console interface is already scheduled
+    for removal from Ironic for lack of security support for shellinabox.
+    Security sensitive operators are strongly encouraged to stop use of this
+    console interface immediately.
