@@ -1,0 +1,48 @@
+date: 2026-04-27
+
+id: OSSA-2026-009
+
+title: Unauthenticated session flood via login redirect storage
+
+description: >
+  Erichen (Institute of Computing Technology, Chinese Academy of
+  Sciences) reported a denial of service vulnerability in Horizon.
+  The login view stores a post-login redirect URL in the server-side
+  session before the user authenticates. Because each unauthenticated
+  request without a session cookie triggers a new persistent session
+  entry, an attacker can exhaust the session storage backend
+  (Memcached, Redis, or database) by sending repeated requests to
+  ``/auth/login/?next=URL``. When the backend reaches capacity, legitimate
+  sessions are evicted, logging out administrators and preventing them
+  from accessing the dashboard. This is a regression of CVE-2014-8124.
+  Deployments running Horizon from the 2026.1 (Gazpacho) release
+  series with default session configuration are affected. Earlier
+  release series do not contain the vulnerable code.
+
+affected-products:
+  - product: horizon
+    version: '>=25.6.0 <25.7.3'
+
+vulnerabilities:
+  - cve-id: CVE-2026-43002
+
+reporters:
+  - name: Erichen
+    affiliation: Institute of Computing Technology, Chinese Academy of Sciences
+    reported:
+      - CVE-2026-43002
+
+issues:
+  links:
+    - https://launchpad.net/bugs/2150331
+
+reviews:
+  2026.1/gazpacho:
+    - https://review.opendev.org/c/openstack/horizon/+/986834
+
+notes:
+  - This vulnerability was introduced in commit 3e2ff4e06 (Horizon
+    25.6.0) and only affects the 2026.1 (Gazpacho) release series.
+    Earlier releases are not affected.
+  - This is a regression of CVE-2014-8124. The original middleware-level
+    fix remains effective, but the new view-layer session write bypasses it.
