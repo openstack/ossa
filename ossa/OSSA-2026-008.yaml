@@ -14,12 +14,14 @@ description: >
   installations which have set ``[conductor]/enabled_console_interfaces`` to
   enable either ``ipmitool-shellinabox`` or ``ipmitool-socat`` are vulnerable.
 
+errata: 'When the original advisory was published a CVE number was not assigned. CVE-2026-42510 was assigned on 2026-04-29.'
+
 affected-products:
   - product: ironic
     version: '>=4.3.0 <26.1.6, >=27.0.0 <29.0.5, >=30.0.0 <32.0.1, >=33.0.0 <35.0.1'
 
 vulnerabilities:
-  - cve-id: CVE-2026-pending
+  - cve-id: 'CVE-2026-42510'
 
 reporters:
   - name: Dmitry Tantsur
@@ -58,3 +60,8 @@ notes:
     for removal from Ironic for lack of security support for shellinabox.
     Security sensitive operators are strongly encouraged to stop use of this
     console interface immediately.
+
+errata_history:
+  - 2026-04-29 - Errata 1
+  - 2026-04-27 - Original Version
+
