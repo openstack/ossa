@@ -1,0 +1,59 @@
+date: 2026-05-05
+
+id: OSSA-2026-010
+
+title: Credential Forwarding to Arbitrary Endpoints via Ironic's idrac Configuration molds Feature
+
+description: >
+  Dmitry Tantsur and Tuomo Tanskanen from the Metal3.io Security Team reported
+  a vulnerability in Ironic's configuration mold import code for idrac. When
+  importing a configuration mold, a user invoking molds can request
+  authorization to be sent to a remote endpoint. The credential forwarded is a
+  time-limited Keystone token (which provides access to all OpenStack services
+  Ironic is authorized for); or basic credentials configured for molds
+  storage.
+
+  Operators choose the URL and the attacker has to already be authenticated
+  with permissions to execute clean/deploy steps, but the arbitrary URL for
+  the authorization request is user-controlled and not validated by Ironic.
+
+affected-products:
+  - product: ironic
+    version: '>=17.0.0 <26.1.6, >=27.0.0 <29.0.5, >=30.0.0 <32.0.1, >=33.0.0 <35.0.1'
+
+vulnerabilities:
+  - cve-id: 'CVE-2026-42997'
+
+reporters:
+  - name: Dmitry Tantsur
+    affiliation: Metal3.io Security Team
+
+  - name: Tuomo Tanskanen
+    affiliation: Metal3.io Security Team
+
+issues:
+  links:
+    - https://bugs.launchpad.net/ironic/+bug/2148317
+
+reviews:
+  2026.1/gazpacho:
+    - https://review.opendev.org/c/openstack/ironic/+/986725
+
+  2025.2/flamingo:
+    - https://review.opendev.org/c/openstack/ironic/+/986737
+
+  2025.1/epoxy:
+    - https://review.opendev.org/c/openstack/ironic/+/986767
+
+  2024.2/dalmatian:
+    - https://review.opendev.org/c/openstack/ironic/+/986815
+
+  2024.1/caracal (unmaintained):
+    - https://review.opendev.org/c/openstack/ironic/+/986816
+
+  2023.1/antelope (unmaintained):
+    - https://review.opendev.org/c/openstack/ironic/+/986817
+
+notes:
+  - The molds feature was deprecated in the 2024.1 (Caracal) release and has
+    been removed during development of the 2026.2 (Hibiscus) release.
