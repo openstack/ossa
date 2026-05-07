@@ -1,0 +1,75 @@
+date: 2026-05-07
+
+id: OSSA-2026-011
+
+title: Multiple access control vulnerabilities in Cyborg accelerator management
+
+description: >
+  Sean Mooney from Red Hat reported multiple access control
+  vulnerabilities in OpenStack Cyborg. Default policy rules for
+  device, deployable, and
+  attribute API endpoints use an unconditional allow check that grants
+  access to any authenticated user regardless of roles or project
+  scope (CVE-2026-40213). Separately, Accelerator Request (ARQ)
+  resources lack project ownership enforcement, allowing any
+  authenticated user to enumerate, delete, or manipulate ARQs
+  belonging to other projects (CVE-2026-40214). All Cyborg
+  deployments are affected.
+
+affected-products:
+  - product: cyborg
+    version: '>=3.0.0 <14.0.1, >=15.0.0 <15.0.1, >=16.0.0 <16.0.1'
+
+vulnerabilities:
+  - cve-id: CVE-2026-40213
+  - cve-id: CVE-2026-40214
+
+reporters:
+  - name: Sean Mooney
+    affiliation: Red Hat
+    reported:
+      - CVE-2026-40213
+      - CVE-2026-40214
+
+issues:
+  links:
+    - https://launchpad.net/bugs/2143263
+    - https://launchpad.net/bugs/2144056
+
+reviews:
+  2026.2/hibiscus:
+    - https://review.opendev.org/c/openstack/cyborg/+/987680
+    - https://review.opendev.org/c/openstack/cyborg/+/987681
+    - https://review.opendev.org/c/openstack/cyborg/+/987682
+    - https://review.opendev.org/c/openstack/cyborg/+/987683
+    - https://review.opendev.org/c/openstack/cyborg/+/987684
+    - https://review.opendev.org/c/openstack/cyborg/+/987685
+    - https://review.opendev.org/c/openstack/cyborg/+/987686
+
+  2026.1/gazpacho:
+    - https://review.opendev.org/c/openstack/cyborg/+/987687
+    - https://review.opendev.org/c/openstack/cyborg/+/987688
+    - https://review.opendev.org/c/openstack/cyborg/+/987689
+    - https://review.opendev.org/c/openstack/cyborg/+/987690
+    - https://review.opendev.org/c/openstack/cyborg/+/987691
+
+  2025.2/flamingo:
+    - https://review.opendev.org/c/openstack/cyborg/+/987692
+    - https://review.opendev.org/c/openstack/cyborg/+/987693
+    - https://review.opendev.org/c/openstack/cyborg/+/987694
+    - https://review.opendev.org/c/openstack/cyborg/+/987695
+    - https://review.opendev.org/c/openstack/cyborg/+/987696
+    - https://review.opendev.org/c/openstack/cyborg/+/987697
+
+  2025.1/epoxy:
+    - https://review.opendev.org/c/openstack/cyborg/+/987698
+    - https://review.opendev.org/c/openstack/cyborg/+/987699
+    - https://review.opendev.org/c/openstack/cyborg/+/987700
+    - https://review.opendev.org/c/openstack/cyborg/+/987701
+    - https://review.opendev.org/c/openstack/cyborg/+/987702
+    - https://review.opendev.org/c/openstack/cyborg/+/987703
+
+notes:
+  - CVE-2026-40213 (policy bypass) affects versions 5.0.0 and later.
+    CVE-2026-40214 (missing ownership) affects versions 3.0.0 and
+    later. The affected-products range covers both.
