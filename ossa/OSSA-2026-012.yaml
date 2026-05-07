@@ -1,0 +1,69 @@
+date: 2026-05-11
+
+id: OSSA-2026-012
+
+title: Remote Code Execution in Ironic conductor when Anaconda driver enabled
+
+description: >
+  Dmitry Tantsur (Red Hat) and Tuomo Tanskanen (Ericsson Software Technology)
+  from the Metal3.io Security Team reported a vulnerability in Ironic's
+  anaconda deploy interface. Users who can set
+  ``node.instance_info['ks_template']`` can achieve remove code execution on
+  the ironic-conductor process, as the template is rendered without
+  sandboxing.
+
+  In the default configuration, Ironic is not vulnerable to this issue. However,
+  operators who have enabled the anaconda deploy interface by adding it to
+  ``[conductor]/enabled_deploy_interfaces`` and have untrusted users with access
+  to modify ``node.instance_info`` are at risk.
+
+affected-products:
+  - product: ironic
+    version: '>=17.0.0 <26.1.7, >=27.0.0 <29.0.6, >=30.0.0 <32.0.2, >=33.0.0 <35.0.2'
+
+vulnerabilities:
+  - cve-id: 'CVE-2026-44916'
+
+reporters:
+  - name: Dmitry Tantsur
+    affiliation: Red Hat
+
+  - name: Tuomo Tanskanen
+    affiliation: Ericsson Software Technology
+
+issues:
+  links:
+    - https://bugs.launchpad.net/ironic/+bug/2148307
+
+reviews:
+  2026.1/gazpacho:
+    - https://review.opendev.org/c/openstack/ironic/+/987774
+
+  2025.2/flamingo:
+    - https://review.opendev.org/c/openstack/ironic/+/987775
+
+  2025.1/epoxy:
+    - https://review.opendev.org/c/openstack/ironic/+/987776
+
+  2024.1/caracal (unmaintained):
+    - https://review.opendev.org/c/openstack/ironic/+/987777
+
+  2023.1/antelope (unmaintained):
+    - https://review.opendev.org/c/openstack/ironic/+/987778
+
+  bugfix/34.0:
+    - https://review.opendev.org/c/openstack/ironic/+/987920
+
+  bugfix/33.0:
+    - https://review.opendev.org/c/openstack/ironic/+/987921
+
+  bugfix/31.0:
+    - https://review.opendev.org/c/openstack/ironic/+/987922
+
+notes:
+  - Releases 2024.1 (caracal) and 2023.1 (antelope) are unmaintained. Patches
+    are provided as a courtesy. Releases 2023.2 (bobcat) and
+    2024.2 (dalmation) are end of life and have not had patches provided. See
+    https://releases.openstack.org for more information on supported releases.
+  - Ironic bugfix branch patches will be available in git for interested
+    operators. We will not perform an additional release from these branches.
