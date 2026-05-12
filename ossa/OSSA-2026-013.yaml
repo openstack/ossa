@@ -1,0 +1,88 @@
+date: 2026-05-19
+
+id: OSSA-2026-013
+
+title: Denial of Service in Ironic under specially crafted deployment requests
+
+description: |
+  Erichen of the Institute of Computing Technology at the Chinese Academy of
+  Sciences reported a vulnerability in Ironic's image handling code where an
+  authenticated and appropriately authorized user could request a special
+  device or file path be deployed, where checksum evaluation would occur in
+  advance of file path checking being asserted. This was a change introduced
+  as a follow-up to soften CVE-2024-47211 image handling since "files on disk"
+  are considered artifacts placed by the deployer/manager of the Ironic
+  deployment.
+
+  The result was that the user could request a deployment where the requested
+  disk image was a special file, such as "file:///dev/zero", which would
+  consume a conductor thread. This is a direct result of the auto-checksum
+  behavior attempting to checksum the file.
+
+  Repeated similar requests could then be leveraged to exhaust the available pool of
+  Ironic conductor threads resulting in a denial-of-service until the service is
+  restarted.
+
+  Any authenticated user with access to write to ``node.instance_info`` and
+  deploy a node can trigger this DoS.
+
+affected-products:
+  - product: ironic
+    version: '>=23.0.4 <29.0.6, >=30.0.0 <32.0.2, >=33.0.0 <35.0.2'
+
+vulnerabilities:
+  - cve-id: 'CVE-2026-44919'
+
+reporters:
+  - name: Erichen
+    affiliation: Institute of Computing Technology, Chinese Academy of Sciences
+
+issues:
+  links:
+    - https://bugs.launchpad.net/ironic/+bug/2150332
+
+reviews:
+  2026.2/hibiscus:
+    - https://review.opendev.org/c/openstack/ironic/+/988325
+
+  2026.1/gazpacho:
+    - https://review.opendev.org/c/openstack/ironic/+/988355
+
+  2025.2/flamingo:
+    - https://review.opendev.org/c/openstack/ironic/+/988356
+
+  2025.1/epoxy:
+    - https://review.opendev.org/c/openstack/ironic/+/988357
+
+  2024.1/caracal (unmaintained):
+    - https://review.opendev.org/c/openstack/ironic/+/988359
+
+  2023.1/antelope (unmaintained):
+    - https://review.opendev.org/c/openstack/ironic/+/988480
+
+  bugfix/34.0:
+    - https://review.opendev.org/c/openstack/ironic/+/988764
+
+  bugfix/33.0:
+    - https://review.opendev.org/c/openstack/ironic/+/988765
+
+notes:
+  - Operators and vendors who backported
+    https://review.opendev.org/q/Ib2fd5dcbee9a9d1c7e32770ec3d9b6cb20a2e2a
+    titled "Calculate missing checksum for file:// based images"
+    are vulnerable to this issue. Backports were made available to Xena,
+    Wallaby, and Victoria releases which did not land in OpenDev Gerrit.
+    Backports to the Zed, 2023.1, 2023.2, 2024.1, 2024.2, release branches
+    occured and were merged into OpenDev Gerrit, but were not universally
+    released to release branch and maintenance policies of the OpenStack
+    project. The affected product versions range covers these releases
+    as released by the OpenStack community.
+  - Operators or vendors who may have backported patches independently
+    of upstream should take the action of backporting this fix along with
+    ensuring that they have the appropriate fix for OSSA-2025-001, from
+    https://review.opendev.org/q/I2fa995439ee500f9dd82ec8ccfa1a25ee8e1179c
+    if not already backported.
+  - Patches are provided for active Ironic bugfix branches. Bugfix branches
+    will not get an updated release of Ironic.
+  - Patches are provided for unmaintained branches as a courtesy. These
+    branches will not recieve updated releases.
