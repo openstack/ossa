@@ -117,16 +117,30 @@ Draft impact description
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 In the mean time, the VMT coordinator prepares a vulnerability
-description that will be communicated to downstream stakeholders,
-and will serve as the basis for the Security Advisory that will be
-finally published.
+impact description that will be used as initial input for a CVE
+request, and forms the basis for eventual communication to
+downstream stakeholders as well as the Security Advisory that will
+be finally published.
 
-The description should properly credit the reporter, specify
+An impact description is intentionally brief: typically a short
+title (suitable for an E-mail subject line), a few fields about the
+reporter, project name and affected versions, followed by a single
+paragraph approximately three or four sentences in length. The
+target audience for our advisories, and thus the impact description
+itself, is an end user trying to decide whether they need to apply
+the accompanying fix and what might happen if they don't. It doesn't
+need to go into detail about software internals or how the fix is
+implemented; anyone interested in that level of information can find
+it in the bug report or change review.
+
+The impact description should properly credit the reporter, specify
 affected versions (including unsupported ones) and accurately
-describe impact and mitigation mechanisms. The VMT coordinator
-should use the template below. Once the description is posted, the
+describe impact and mitigation mechanisms using the `impact
+description template`_ below. Once the description is posted, the
 openstack/ossa or ossa bugtask status should be switched to
-*Review/Triaged*.
+*Review/Triaged*. **NOTE:** A full draft advisory is not needed at
+this time, and will be built around the impact description later in
+the process when eventually required.
 
 Review impact description
 ^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -445,6 +459,8 @@ Reception incomplete message (unconfirmed issues)
 
 This sentence should be added as (or included in) the first comment on
 the bug report.
+
+.. _impact description template:
 
 Impact description ($DESCRIPTION)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
