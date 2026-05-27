@@ -1,0 +1,41 @@
+date: 2026-05-27
+
+id: OSSA-2026-014
+
+title: Swift proxy-server denial of service via truncated s3api chunked upload
+
+description: >
+  Alistair Coles from NVIDIA reported a denial of service
+  vulnerability in Swift's s3api middleware. An authenticated user
+  can send a truncated aws-chunked PUT request that causes a
+  proxy-server worker to enter an infinite loop, consuming CPU and
+  memory until the process becomes permanently unresponsive.
+  Deployments running Swift 2.36.0 or later with the s3api
+  middleware enabled are affected.
+
+affected-products:
+  - product: swift
+    version: '>=2.36.0 <2.36.2, >=2.37.0 <2.37.2'
+
+vulnerabilities:
+  - cve-id: CVE-2026-49017
+
+reporters:
+  - name: Alistair Coles
+    affiliation: NVIDIA
+    reported:
+      - CVE-2026-49017
+
+issues:
+  links:
+    - https://launchpad.net/bugs/2152205
+
+reviews:
+  2026.2/hibiscus:
+    - https://review.opendev.org/987957
+
+  2026.1/gazpacho:
+    - https://review.opendev.org/990261
+
+  2025.2/flamingo:
+    - https://review.opendev.org/990262
