@@ -1,0 +1,106 @@
+date: 2026-05-28
+
+id: OSSA-2026-015
+
+title: Multiple credential delegation and authorization bypass vulnerabilities in Keystone
+
+description: >
+  Boris Bobrov from SAP SE reported that an authenticated attacker
+  can inject RBAC policy targets via the JSON request body, bypassing
+  authorization on any policy-protected endpoint to read credential
+  secrets, create credentials for arbitrary users, and escalate to
+  cloud admin (CVE-2026-42999). Application credential authentication
+  does not verify the caller owns the credential, enabling user
+  impersonation within a shared project (CVE-2026-42998). This
+  impersonation can be chained with trusts to escalate from member
+  to admin, with the resulting trust persisting independently
+  (CVE-2026-43000). Tim Shepherd from roiai.ca reported that
+  application credentials scoped to one project can create EC2
+  credentials for a different project (CVE-2026-43001). Erichen
+  from the Institute of Computing Technology, Chinese Academy of
+  Sciences reported that federated users can maintain access
+  indefinitely by repeatedly rescoping tokens before expiry, as each
+  rescope issues a fresh full-TTL token instead of inheriting the
+  original expiry (CVE-2026-44394). Additionally, Artem Goncharov
+  from SysEleven GmbH identified related issues in trust-scoped token
+  handling and policy enforcement during investigation. All
+  Keystone deployments are affected; CVE-2026-44394 only affects
+  SAML2/OIDC deployments.
+
+affected-products:
+  - product: keystone
+    version: '>=14.0.0 <27.0.2, >=28.0.0 <28.0.2, >=29.0.0 <29.0.2'
+
+vulnerabilities:
+  - cve-id: CVE-2026-42998
+  - cve-id: CVE-2026-42999
+  - cve-id: CVE-2026-43000
+  - cve-id: CVE-2026-43001
+  - cve-id: CVE-2026-44394
+
+reporters:
+  - name: Boris Bobrov
+    affiliation: SAP SE
+    reported:
+      - CVE-2026-42998
+      - CVE-2026-42999
+      - CVE-2026-43000
+
+  - name: Tim Shepherd
+    affiliation: roiai.ca
+    reported:
+      - CVE-2026-43001
+
+  - name: Erichen
+    affiliation: Institute of Computing Technology, Chinese Academy of Sciences
+    reported:
+      - CVE-2026-44394
+
+  - name: Artem Goncharov
+    affiliation: SysEleven GmbH
+
+issues:
+  links:
+    - https://launchpad.net/bugs/2148398
+    - https://launchpad.net/bugs/2148477
+    - https://launchpad.net/bugs/2149775
+    - https://launchpad.net/bugs/2149789
+    - https://launchpad.net/bugs/2150089
+    - https://launchpad.net/bugs/2150379
+
+reviews:
+  2026.2/hibiscus:
+    - https://review.opendev.org/990485
+    - https://review.opendev.org/990486
+    - https://review.opendev.org/990487
+    - https://review.opendev.org/990488
+    - https://review.opendev.org/990489
+
+  2026.1/gazpacho:
+    - https://review.opendev.org/990490
+    - https://review.opendev.org/990491
+    - https://review.opendev.org/990492
+    - https://review.opendev.org/990493
+    - https://review.opendev.org/990494
+
+  2025.2/flamingo:
+    - https://review.opendev.org/990495
+    - https://review.opendev.org/990496
+    - https://review.opendev.org/990497
+    - https://review.opendev.org/990498
+    - https://review.opendev.org/990499
+
+  2025.1/epoxy:
+    - https://review.opendev.org/990500
+    - https://review.opendev.org/990501
+    - https://review.opendev.org/990502
+    - https://review.opendev.org/990503
+    - https://review.opendev.org/990504
+
+notes:
+  - The fix for CVE-2026-42999 modifies the trust policy structure.
+    Deployments with customized trust policies may experience issues
+    with image upload and Heat service functionality until the custom
+    policy is updated.
+  - CVE-2026-44394 only affects deployments using SAML2 or OIDC
+    federation.
