@@ -1,0 +1,47 @@
+date: 2026-05-28
+
+id: OSSA-2026-016
+
+title: Neutron tagging policy bypass allows project readers to mutate tags
+
+description: >
+  Tim Shephard from roiai.ca reported a policy enforcement bypass
+  in Neutron's tagging controller. The controller enforces plural
+  policy action names on single-tag write operations while the
+  defined policy rules use singular names. The mismatched names
+  evaluate as allowed under default policy, permitting a project
+  reader to create and update tags on same-project resources.
+  Deployments running Neutron 26.0.0 or later are affected.
+
+affected-products:
+  - product: neutron
+    version: '>=26.0.0 <26.0.4, >=27.0.0 <27.0.3, >=28.0.0 <28.0.1'
+
+vulnerabilities:
+  - cve-id: CVE-2026-pending
+
+reporters:
+  - name: Tim Shephard
+    affiliation: roiai.ca
+    reported:
+      - CVE-2026-pending
+
+issues:
+  links:
+    - https://launchpad.net/bugs/2150132
+
+reviews:
+  2026.2/hibiscus:
+    - https://review.opendev.org/989099
+
+  2026.1/gazpacho:
+    - https://review.opendev.org/989374
+
+  2025.2/flamingo:
+    - https://review.opendev.org/989375
+
+  2025.1/epoxy:
+    - https://review.opendev.org/989376
+
+notes:
+  - CVE assignment is pending (MITRE CAN-2026-2030611).
