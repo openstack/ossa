@@ -10,12 +10,17 @@ description: >
   can send a truncated aws-chunked PUT request that causes a
   proxy-server worker to enter an infinite loop, consuming CPU and
   memory until the process becomes permanently unresponsive.
-  Deployments running Swift 2.36.0 or later with the s3api
+  Deployments running Swift 2.35.1 or later with the s3api
   middleware enabled are affected.
+
+errata: >
+  The original advisory listed versions 2.36.0 and later as affected.
+  Swift 2.35.1 and 2.35.2 (2025.1/epoxy) are also affected because
+  aws-chunked support was backported to the 2025.1 branch.
 
 affected-products:
   - product: swift
-    version: '>=2.36.0 <2.36.2, >=2.37.0 <2.37.2'
+    version: '>=2.35.1 <2.35.3, >=2.36.0 <2.36.2, >=2.37.0 <2.37.2'
 
 vulnerabilities:
   - cve-id: CVE-2026-49017
@@ -39,3 +44,10 @@ reviews:
 
   2025.2/flamingo:
     - https://review.opendev.org/990262
+
+  2025.1/epoxy:
+    - https://review.opendev.org/990355
+
+errata_history:
+  - 2026-05-29 - Errata 1
+  - 2026-05-27 - Original Version
