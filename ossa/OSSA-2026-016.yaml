@@ -13,18 +13,20 @@ description: >
   reader to create and update tags on same-project resources.
   Deployments running Neutron 26.0.0 or later are affected.
 
+errata: 'When the original advisory was published a CVE number was not assigned. CVE-2026-49299 was assigned on 2026-05-28.'
+
 affected-products:
   - product: neutron
     version: '>=26.0.0 <26.0.4, >=27.0.0 <27.0.3, >=28.0.0 <28.0.1'
 
 vulnerabilities:
-  - cve-id: CVE-2026-pending
+  - cve-id: CVE-2026-49299
 
 reporters:
   - name: Tim Shephard
     affiliation: roiai.ca
     reported:
-      - CVE-2026-pending
+      - CVE-2026-49299
 
 issues:
   links:
@@ -43,5 +45,7 @@ reviews:
   2025.1/epoxy:
     - https://review.opendev.org/989376
 
-notes:
-  - CVE assignment is pending (MITRE CAN-2026-2030611).
+
+errata_history:
+  - 2026-05-28 - Errata 1
+  - 2026-05-28 - Original Version
