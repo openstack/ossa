@@ -1,0 +1,50 @@
+date: 2026-06-04
+
+id: OSSA-2026-021
+
+title: Neutron port RBAC policy bypass allows project managers to set trusted device owners on shared networks
+
+description: >
+  Tim Shephard from roiai.ca reported a policy enforcement bypass in
+  Neutron's default port RBAC rules. A project manager can create or
+  update a port on a shared network owned by another project and set
+  ``device_owner`` to a trusted network-service value such as
+  ``network:dhcp``. Depending on backend and deployment, this can
+  bypass anti-spoofing and security group protections. This is a
+  regression of CVE-2015-5240 (OSSA-2015-018) introduced by the
+  manager role support change. Deployments running Neutron 25.0.0 or
+  later are affected.
+
+affected-products:
+  - product: neutron
+    version: '>=25.0.0 <25.2.4, >=26.0.0 <26.0.4, >=27.0.0 <27.0.3, ==28.0.0'
+
+vulnerabilities:
+  - cve-id: CVE-2026-pending
+
+reporters:
+  - name: Tim Shephard
+    affiliation: roiai.ca
+    reported:
+      - CVE-2026-pending
+
+issues:
+  links:
+    - https://launchpad.net/bugs/2152115
+
+reviews:
+  2026.2/hibiscus:
+    - https://review.opendev.org/990273
+
+  2026.1/gazpacho:
+    - https://review.opendev.org/990353
+
+  2025.2/flamingo:
+    - https://review.opendev.org/990356
+
+  2025.1/epoxy:
+    - https://review.opendev.org/991523
+
+notes:
+  - A CVE request has been filed with MITRE (CAN-2026-2030702).
+  - This is a regression of CVE-2015-5240 (OSSA-2015-018).
