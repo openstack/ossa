@@ -1,0 +1,68 @@
+date: 2026-06-03
+
+id: OSSA-2026-019
+
+title: File Extraction from Ironic conductor via pxe_template
+
+description: >
+  Dmitry Tantsur (Red Hat) and Tuomo Tanskanen (Ericsson Software Technology)
+  from the Metal3.io Security Team reported a vulnerability in Ironic's
+  boot interfaces. A project owner or manager with access to modify
+  ``node.driver_info[pxe_template]`` can set it to ``/etc/ironic/ironic.conf``
+  or any other sensitive file readable by the conductor process. Ironic will
+  then place this "template file" into a TFTP or HTTP server for netbooting,
+  where it can be fetched by anything with network access to the conductor.
+
+  Ironic intends on completely removing this feature in a future release.
+
+affected-products:
+  - product: ironic
+    version: '>=17.0.0 <26.1.7, >=27.0.0 <29.0.6, >=30.0.0 <32.0.2, >=33.0.0 <35.0.2'
+
+vulnerabilities:
+  - cve-id: 'CVE-2026-44917'
+
+reporters:
+  - name: Dmitry Tantsur
+    affiliation: Red Hat
+
+  - name: Tuomo Tanskanen
+    affiliation: Ericsson Software Technology
+
+issues:
+  links:
+    - https://bugs.launchpad.net/ironic/+bug/2148319
+
+reviews:
+  2026.2/hibiscus (development):
+    - https://review.opendev.org/c/openstack/ironic/+/991367
+
+  2026.1/gazpacho:
+    - https://review.opendev.org/c/openstack/ironic/+/991376
+
+  2025.2/flamingo:
+    - https://review.opendev.org/c/openstack/ironic/+/991379
+
+  2025.1/epoxy:
+    - https://review.opendev.org/c/openstack/ironic/+/991382
+
+  2024.1/caracal (unmaintained):
+    - https://review.opendev.org/c/openstack/ironic/+/991385
+
+  2023.1/antelope (unmaintained):
+    - https://review.opendev.org/c/openstack/ironic/+/991389
+
+  bugfix/34.0:
+    - https://review.opendev.org/c/openstack/ironic/+/991370
+
+  bugfix/33.0:
+    - https://review.opendev.org/c/openstack/ironic/+/991373
+
+notes:
+  - Releases 2024.1 (caracal) and 2023.1 (antelope) are unmaintained. Patches
+    are provided as a courtesy. Releases 2023.2 (bobcat) and
+    2024.2 (dalmation) are end of life and have not had patches provided. See
+    https://releases.openstack.org for more information on supported releases.
+  - Ironic bugfix branch patches will be available in git for interested
+    operators. We will not perform an additional release from these branches.
+
