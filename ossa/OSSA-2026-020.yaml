@@ -1,0 +1,77 @@
+date: 2026-06-03
+
+id: OSSA-2026-020
+
+title: Mistral policy enforcement bypass allows unauthorized public resource creation and arbitrary code execution
+
+description: >
+  Eduardo Gonzalez Gutierrez and Arnaud Morin (OVHcloud) reported
+  that several Mistral API endpoints do not enforce access policies,
+  allowing any authenticated user to create public resources and
+  upload arbitrary code that executes on Mistral executor workers.
+  An attacker could extract sensitive data including service
+  credentials from the worker. Deployments exposing the Mistral
+  API are affected.
+
+affected-products:
+  - product: mistral
+    version: '>=20.0.0 <20.1.1, ==21.0.0, ==22.0.0'
+
+vulnerabilities:
+  - cve-id: CVE-2026-41283
+
+reporters:
+  - name: Eduardo Gonzalez Gutierrez
+    affiliation: Independent
+    reported:
+      - CVE-2026-41283
+
+  - name: Arnaud Morin
+    affiliation: OVHcloud
+    reported:
+      - CVE-2026-41283
+
+issues:
+  links:
+    - https://launchpad.net/bugs/2147178
+
+reviews:
+  2026.2/hibiscus:
+    - https://review.opendev.org/991392
+    - https://review.opendev.org/991393
+    - https://review.opendev.org/991394
+    - https://review.opendev.org/991395
+    - https://review.opendev.org/991396
+    - https://review.opendev.org/991397
+    - https://review.opendev.org/991398
+    - https://review.opendev.org/991399
+
+  2026.1/gazpacho:
+    - https://review.opendev.org/991400
+    - https://review.opendev.org/991401
+    - https://review.opendev.org/991402
+    - https://review.opendev.org/991403
+    - https://review.opendev.org/991404
+    - https://review.opendev.org/991405
+    - https://review.opendev.org/991406
+    - https://review.opendev.org/991407
+
+  2025.2/flamingo:
+    - https://review.opendev.org/991408
+    - https://review.opendev.org/991409
+    - https://review.opendev.org/991410
+    - https://review.opendev.org/991411
+    - https://review.opendev.org/991412
+    - https://review.opendev.org/991413
+    - https://review.opendev.org/991414
+    - https://review.opendev.org/991415
+
+  2025.1/epoxy:
+    - https://review.opendev.org/991416
+    - https://review.opendev.org/991417
+    - https://review.opendev.org/991418
+    - https://review.opendev.org/991419
+    - https://review.opendev.org/991420
+    - https://review.opendev.org/991421
+    - https://review.opendev.org/991422
+    - https://review.opendev.org/991423
