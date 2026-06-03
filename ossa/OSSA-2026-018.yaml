@@ -1,0 +1,71 @@
+date: 2026-06-03
+
+id: OSSA-2026-018
+
+title: File overwrite on Ironic conductor via path traversal in ISO handling
+
+description: >
+  Dmitry Tantsur (Red Hat) and Tuomo Tanskanen (Ericsson Software Technology)
+  from the Metal3.io Security Team reported a vulnerability in Ironic's
+  ISO handling code. A maliciously crafted ISO image can cause Ironic to
+  perform path traversal and overwrite files on a conductor's disk.
+
+  Similarly, in the anaconda deploy interface, the same vulnerability can be
+  exploited to perform path traversal and overwrite files on the target disk
+  during deployment.
+
+  Any Ironic user who has access to deploy nodes using configdrive, a virtual
+  media-based boot interface or the anaconda deploy interface can exploit
+  this issue.
+
+affected-products:
+  - product: ironic
+    version: '>=17.0.0 <26.1.7, >=27.0.0 <29.0.6, >=30.0.0 <32.0.2, >=33.0.0 <35.0.2'
+
+vulnerabilities:
+  - cve-id: 'CVE-2026-48681'
+
+reporters:
+  - name: Dmitry Tantsur
+    affiliation: Red Hat
+
+  - name: Tuomo Tanskanen
+    affiliation: Ericsson Software Technology
+
+issues:
+  links:
+    - https://bugs.launchpad.net/ironic/+bug/2148333
+
+reviews:
+  2026.2/hibiscus (development):
+    - https://review.opendev.org/c/openstack/ironic/+/991366
+
+  2026.1/gazpacho:
+    - https://review.opendev.org/c/openstack/ironic/+/991375
+
+  2025.2/flamingo:
+    - https://review.opendev.org/c/openstack/ironic/+/991378
+
+  2025.1/epoxy:
+    - https://review.opendev.org/c/openstack/ironic/+/991381
+
+  2024.1/caracal (unmaintained):
+    - https://review.opendev.org/c/openstack/ironic/+/991384
+
+  2023.1/antelope (unmaintained):
+    - https://review.opendev.org/c/openstack/ironic/+/991388
+
+  bugfix/34.0:
+    - https://review.opendev.org/c/openstack/ironic/+/991369
+
+  bugfix/33.0:
+    - https://review.opendev.org/c/openstack/ironic/+/991372
+
+notes:
+  - Releases 2024.1 (caracal) and 2023.1 (antelope) are unmaintained. Patches
+    are provided as a courtesy. Releases 2023.2 (bobcat) and
+    2024.2 (dalmation) are end of life and have not had patches provided. See
+    https://releases.openstack.org for more information on supported releases.
+  - Ironic bugfix branch patches will be available in git for interested
+    operators. We will not perform an additional release from these branches.
+

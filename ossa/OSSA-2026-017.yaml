@@ -1,0 +1,70 @@
+date: 2026-06-03
+
+id: OSSA-2026-017
+
+title: Script injection during node boot via linux command line override
+
+description: >
+  Dmitry Tantsur (Red Hat) and Tuomo Tanskanen (Ericsson Software Technology)
+  from the Metal3.io Security Team reported a vulnerability in Ironic's
+  kernel command line override code. A user with access to add or modify
+  ``node.driver_info`` or ``node.instance_info`` can create a crafted value
+  to enable iPXE script execution during the boot process.
+
+affected-products:
+  - product: ironic
+    version: '>=17.0.0 <26.1.7, >=27.0.0 <29.0.6, >=30.0.0 <32.0.2, >=33.0.0 <35.0.2'
+
+vulnerabilities:
+  - cve-id: 'CVE-2026-46447'
+
+reporters:
+  - name: Dmitry Tantsur
+    affiliation: Red Hat
+
+  - name: Tuomo Tanskanen
+    affiliation: Ericsson Software Technology
+
+issues:
+  links:
+    - https://bugs.launchpad.net/ironic/+bug/2150624
+
+reviews:
+  2026.2/hibscus (development):
+    - https://review.opendev.org/c/openstack/ironic/+/991365
+
+  2026.1/gazpacho:
+    - https://review.opendev.org/c/openstack/ironic/+/991374
+
+  2025.2/flamingo:
+    - https://review.opendev.org/c/openstack/ironic/+/991377
+
+  2025.1/epoxy:
+    - https://review.opendev.org/c/openstack/ironic/+/991380
+
+  2024.1/caracal (unmaintained):
+    - https://review.opendev.org/c/openstack/ironic/+/991383
+
+  2023.1/antelope (unmaintained):
+    - https://review.opendev.org/c/openstack/ironic/+/991387
+
+  bugfix/34.0:
+    - https://review.opendev.org/c/openstack/ironic/+/991368
+
+  bugfix/33.0:
+    - https://review.opendev.org/c/openstack/ironic/+/991371
+
+notes:
+  - Releases 2024.1 (caracal) and 2023.1 (antelope) are unmaintained. Patches
+    are provided as a courtesy. Releases 2023.2 (bobcat) and
+    2024.2 (dalmation) are end of life and have not had patches provided. See
+    https://releases.openstack.org for more information on supported releases.
+  - Ironic bugfix branch patches will be available in git for interested
+    operators. We will not perform an additional release from these branches.
+  - This fix removes the ability to put some valid -- but unlikely -- special
+    characters into kernel command line overrides. There is an escape hatch
+    for impacted clouds; setting
+    ``CONF.conductor.disable_kernel_parameter_parsing`` to true will restrict
+    Ironic to only blocking the most dangerous, nonsensical special characters
+    at the cost of being less security hardened against future attacks.
+
