@@ -4,6 +4,9 @@ id: OSSA-2026-021
 
 title: Neutron port RBAC policy bypass allows project managers to set trusted device owners on shared networks
 
+errata: >
+  CVE-2026-50266 has been assigned for this vulnerability.
+
 description: >
   Tim Shephard from roiai.ca reported a policy enforcement bypass in
   Neutron's default port RBAC rules. A project manager can create or
@@ -20,13 +23,13 @@ affected-products:
     version: '>=25.0.0 <25.2.4, >=26.0.0 <26.0.4, >=27.0.0 <27.0.3, ==28.0.0'
 
 vulnerabilities:
-  - cve-id: CVE-2026-pending
+  - cve-id: CVE-2026-50266
 
 reporters:
   - name: Tim Shephard
     affiliation: roiai.ca
     reported:
-      - CVE-2026-pending
+      - CVE-2026-50266
 
 issues:
   links:
@@ -46,5 +49,8 @@ reviews:
     - https://review.opendev.org/991523
 
 notes:
-  - A CVE request has been filed with MITRE (CAN-2026-2030702).
   - This is a regression of CVE-2015-5240 (OSSA-2015-018).
+
+errata_history:
+  - 2026-06-04 - Errata 1
+  - 2026-06-04 - Original Version
