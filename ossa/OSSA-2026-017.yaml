@@ -11,6 +11,20 @@ description: >
   ``node.driver_info`` or ``node.instance_info`` can create a crafted value
   to enable iPXE script execution during the boot process.
 
+errata: |
+  The initial patches issued to address the vulnerability would erroneously
+  reject some valid kernel parameters, particularly when URL encoded. These
+  bugs had no detrimental security impact, but may have caused unexpected
+  failures. We apologize for the inconvienience.
+
+  Impacted operators should also apply the patches below labelled **errata 1**.
+  For a more rapid resolution of failures, operators can set
+  ``CONF.conductor.disable_kernel_parameter_parsing`` to false until they can
+  apply the provided patches.
+
+  **Both the patches labelled original and the patches labelled errata 1 should be
+  applied for proper behavior.**
+
 affected-products:
   - product: ironic
     version: '>=17.0.0 <26.1.7, >=27.0.0 <29.0.6, >=30.0.0 <32.0.2, >=33.0.0 <35.0.2'
@@ -31,28 +45,36 @@ issues:
 
 reviews:
   2026.2/hibscus (development):
-    - https://review.opendev.org/c/openstack/ironic/+/991365
+    - '**original** https://review.opendev.org/c/openstack/ironic/+/991365'
+    - '**errata 1** https://review.opendev.org/c/openstack/ironic/+/992025'
 
   2026.1/gazpacho:
-    - https://review.opendev.org/c/openstack/ironic/+/991374
+    - '**original** https://review.opendev.org/c/openstack/ironic/+/991374'
+    - '**errata 1** https://review.opendev.org/c/openstack/ironic/+/992340'
 
   2025.2/flamingo:
-    - https://review.opendev.org/c/openstack/ironic/+/991377
+    - '**original** https://review.opendev.org/c/openstack/ironic/+/991377'
+    - '**errata 1** https://review.opendev.org/c/openstack/ironic/+/992341'
 
   2025.1/epoxy:
-    - https://review.opendev.org/c/openstack/ironic/+/991380
+    - '**original** https://review.opendev.org/c/openstack/ironic/+/991380'
+    - '**errata 1** https://review.opendev.org/c/openstack/ironic/+/992345'
 
   2024.1/caracal (unmaintained):
-    - https://review.opendev.org/c/openstack/ironic/+/991383
+    - '**original** https://review.opendev.org/c/openstack/ironic/+/991383'
+    - '**errata 1** https://review.opendev.org/c/openstack/ironic/+/992659'
 
   2023.1/antelope (unmaintained):
-    - https://review.opendev.org/c/openstack/ironic/+/991387
+    - '**original** https://review.opendev.org/c/openstack/ironic/+/991387'
+    - '**errata 1** https://review.opendev.org/c/openstack/ironic/+/992661'
 
   bugfix/34.0:
-    - https://review.opendev.org/c/openstack/ironic/+/991368
+    - '**original** https://review.opendev.org/c/openstack/ironic/+/991368'
+    - '**errata 1** https://review.opendev.org/c/openstack/ironic/+/992367'
 
   bugfix/33.0:
-    - https://review.opendev.org/c/openstack/ironic/+/991371
+    - '**original** https://review.opendev.org/c/openstack/ironic/+/991371'
+    - '**errata 1** https://review.opendev.org/c/openstack/ironic/+/992368'
 
 notes:
   - Releases 2024.1 (caracal) and 2023.1 (antelope) are unmaintained. Patches
@@ -67,4 +89,8 @@ notes:
     ``CONF.conductor.disable_kernel_parameter_parsing`` to true will restrict
     Ironic to only blocking the most dangerous, nonsensical special characters
     at the cost of being less security hardened against future attacks.
+
+errata_history:
+  - 2026-06-15 - Errata 1
+  - 2026-06-03 - Original Version
 
