@@ -1,0 +1,68 @@
+date: 2026-06-16
+
+id: OSSA-2026-023
+
+title: Sensitive properties returned unredacted in POST and PATCH HTTP responses
+
+description: |
+  Tuomo Tanskanen (Ericsson Software Technology) and Dmitry Tantsur (Red Hat)
+  of the Metal3.io Security Team discovered a vulnerability in Ironic API RBAC
+  handling, where a user with a valid token and credentials to send a
+  POST or PATCH request to ``/v1/volume/targets`` can have potentially
+  sensitive properties returned in the response unredacted, such as iSCSI
+  credentials.
+
+affected-products:
+  - product: ironic
+    version: '>=17.0.0 <29.0.6, >=30.0.0 <32.0.2, >=33.0.0 <35.0.2, >=36.0.0 <37.0.1'
+
+vulnerabilities:
+  - cve-id: 'CVE-2026-54421'
+
+reporters:
+  - name: Tuomo Tanskanen
+    affiliation: Ericsson Software Technology
+
+  - name: Dmitry Tantsur
+    affiliation: Red Hat
+
+issues:
+  links:
+    - https://bugs.launchpad.net/ironic/+bug/2155049
+
+reviews:
+  2026.2/hibiscus (development):
+    - https://review.opendev.org/c/openstack/ironic/+/990430
+
+  2026.1/gazpacho:
+    - https://review.opendev.org/c/openstack/ironic/+/992321
+
+  2025.2/flamingo:
+    - https://review.opendev.org/c/openstack/ironic/+/992325
+
+  2025.1/epoxy:
+    - https://review.opendev.org/c/openstack/ironic/+/992326
+
+  2024.1/caracal (unmaintained):
+    - https://review.opendev.org/c/openstack/ironic/+/992333
+
+  2023.1/antelope (unmaintained):
+    - https://review.opendev.org/c/openstack/ironic/+/992335
+
+  bugfix/33.0:
+    - https://review.opendev.org/c/openstack/ironic/+/992323
+
+  bugfix/34.0:
+    - https://review.opendev.org/c/openstack/ironic/+/992322
+
+notes:
+  - The vulnerable code path has existed since Ironic 9.0.0 (OpenStack Pike),
+    however, this could only be considered an escalation of privileges after
+    Ironic 17.0.0 (OpenStack Wallaby), when Ironic introduced the ability for
+    project-scoped users to interact via the owner/lessee model.
+  - Branches for 2024.1 (caracal) and 2023.1 (antelope) are unmaintained.
+    Patches are provided as a courtesy. Releases 2023.2 (bobcat) and
+    2024.2 (dalmatian) are end of life and have not had patches provided. See
+    https://releases.openstack.org for more information on supported releases.
+  - Ironic bugfix branch patches will be available in git for interested
+    operators. We will not perform an additional release from these branches.
