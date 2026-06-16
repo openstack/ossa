@@ -1,0 +1,47 @@
+date: 2026-06-16
+
+id: OSSA-2026-022
+
+title: Nova scheduler hint injection bypasses Placement resource claims and scheduling constraints
+
+description: >
+  Erichen from the Institute of Computing Technology, Chinese
+  Academy of Sciences reported that Nova's server create API does
+  not strip internal scheduler hints. An authenticated user can
+  bypass Placement resource claims and scheduling constraint
+  enforcement, including availability zone, host aggregate, and
+  image trait restrictions. The resulting instance has no Placement
+  allocation, which can lead to compute node resource exhaustion
+  and cross-tenant data persistence on NVMe devices after instance
+  deletion. Deployments running Nova 18.0.0 or later are affected.
+
+affected-products:
+  - product: nova
+    version: '>=18.0.0 <31.3.1, >=32.0.0 <32.2.1, >=33.0.0 <33.0.2'
+
+vulnerabilities:
+  - cve-id: CVE-2026-46448
+
+reporters:
+  - name: Erichen
+    affiliation: Institute of Computing Technology, Chinese Academy of Sciences
+    reported:
+      - CVE-2026-46448
+
+issues:
+  links:
+    - https://launchpad.net/bugs/2151252
+
+reviews:
+  2026.2/hibiscus:
+    - https://review.opendev.org/993601
+
+  2026.1/gazpacho:
+    - https://review.opendev.org/993602
+
+  2025.2/flamingo:
+    - https://review.opendev.org/993603
+
+  2025.1/epoxy:
+    - https://review.opendev.org/993604
+
