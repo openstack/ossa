@@ -1,0 +1,43 @@
+date: 2026-06-23
+
+id: OSSA-2026-024
+
+title: Swift proxy-server SSRF via header injection
+
+description: >
+  Tim Shephard from roiai.ca reported a server-side request forgery
+  (SSRF) vulnerability in Swift's proxy-server. An authenticated
+  user can cause Swift object servers to issue outbound HTTP
+  requests to attacker-specified hosts, potentially exposing
+  internal infrastructure details. All deployments running
+  Swift 2.0.0 or later are affected.
+
+affected-products:
+  - product: swift
+    version: '>=2.0.0 <2.35.3, >=2.36.0 <2.36.2, >=2.37.0 <2.37.2'
+
+vulnerabilities:
+  - cve-id: CVE-2026-50221
+
+reporters:
+  - name: Tim Shephard
+    affiliation: roiai.ca
+    reported:
+      - CVE-2026-50221
+
+issues:
+  links:
+    - https://launchpad.net/bugs/2150261
+
+reviews:
+  2026.2/hibiscus (development):
+    - https://review.opendev.org/994449
+
+  2026.1/gazpacho:
+    - https://review.opendev.org/994450
+
+  2025.2/flamingo:
+    - https://review.opendev.org/994451
+
+  2025.1/epoxy:
+    - https://review.opendev.org/994452
