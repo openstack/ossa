@@ -1,0 +1,76 @@
+date: 2026-07-08
+
+id: OSSA-2026-025
+
+title: RBAC Bypass in IPMI Raw Command Execution
+
+description: >
+  Dmitry Tantsur (Red Hat) and Tuomo Tanskanen (Ericsson Software Technology)
+  of the Metal3.io Security Team descovered a vulnerability around IPMI
+  management_interface. A malicious user with access to deploy a node directly
+  via Ironic can specify the IPMI `send_raw` deployment step with a malicious
+  payload and send commands to that nodes' BMC.
+
+  IPMI `send_raw` capability is exposed multiple ways, including via our
+  VendorPassthru interfaces (restricted to system admin) and other step based
+  flows such as cleaning or servicing. This also means any malicious user with
+  the ability to initate manual cleaning and servicing flows with arbitrary
+  steps can also execute this vulnerability.
+
+  Operators can fix this issue by applying the provided patches which apply
+  a blocklist forbidding use of the IPMI send_raw functionality in certain
+  provisioning methods. Clouds currently using IPMI send_raw functionality
+  should carefully review the behavior changes in the provided patches to
+  ensure their workflows are not broken.
+
+affected-products:
+  - product: ironic
+    version: '>=22.1.0 <29.0.6, >=30.0.0 <32.0.2, >=33.0.0 <35.0.2, >=36.0.0 <37.0.1'
+
+vulnerabilities:
+  - cve-id: 'CVE-2026-54423'
+
+reporters:
+  - name: Dmitry Tantsur
+    affiliation: Red Hat
+
+  - name: Tuomo Tanskanen
+    affiliation: Ericcson Software Technology
+
+issues:
+  links:
+    - https://bugs.launchpad.net/ironic/+bug/2150458
+
+reviews:
+  2026.2/hibiscus (development):
+    - https://review.opendev.org/c/openstack/ironic/+/996461
+    - https://review.opendev.org/c/openstack/ironic/+/989017
+
+  2026.1/gazpacho:
+    - https://review.opendev.org/c/openstack/ironic/+/996466
+    - https://review.opendev.org/c/openstack/ironic/+/992516
+
+  2025.2/flamingo:
+    - https://review.opendev.org/c/openstack/ironic/+/996475
+    - https://review.opendev.org/c/openstack/ironic/+/992719
+
+  2025.1/epoxy:
+    - https://review.opendev.org/c/openstack/ironic/+/996477
+    - https://review.opendev.org/c/openstack/ironic/+/992732
+
+  bugfix/33.0:
+    - https://review.opendev.org/c/openstack/ironic/+/996473
+    - https://review.opendev.org/c/openstack/ironic/+/992718
+
+  bugfix/34.0:
+    - https://review.opendev.org/c/openstack/ironic/+/996470
+    - https://review.opendev.org/c/openstack/ironic/+/992717
+
+  bugfix/37.0:
+    - https://review.opendev.org/c/openstack/ironic/+/996463
+    - The prerequisite patch was merged before bugfix/37.0 was tagged.
+
+notes:
+  - Ironic bugfix branch patches will be available in git for interested
+    operators. We will not perform an additional release from these branches.
+
