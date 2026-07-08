@@ -1,0 +1,90 @@
+date: 2026-07-08
+
+id: OSSA-2026-026
+
+title: Insufficient Access Controls in Ironic regarding Parent/Child Nodes
+
+description: |
+  Dmitry Tantsur (Red Hat) and Tuomo Tanskanen (Ericsson Software Technology)
+  from the Metal3.io Security Team reported a vulnerability in Ironic's
+  access control code.
+
+  This OSSA represents multiple related vulnerabilities in Ironic RBAC. An
+  authenticated project manager can change the node associated with 
+  Volume Connectors or Volume Target objects, potentially changing the
+  project permitted to access the object. Volume Connectors
+  contain secrets in environments configuring boot from volume with iSCSI
+  volumes. This is tracked as bug #2150256.
+
+  Objects reparented in this manner cannot be detected
+  via inspection of the data. Operators who are concerned they may have
+  had this occur are encouraged to perform a basic audit of node
+  configuration, for instance, insuring the expected number of
+  volume targets, and volume connectors are present.
+
+  Additionally, a project manager with the ability to create nodes can use
+  the UUID of a node not owned by their project as a parent node when creating
+  a new node. This mismatched child node can then be used to impact operations
+  on the parent, such as forcing it to power on. This is tracked as bug
+  #2150450.
+
+  Ironic now specifically checks, and requires node parents and children to
+  have matching ``node.owner`` values. This patch contains an enhancement
+  to Ironic's upgrade check to detect this mismatched state. Operators can
+  use the provided ``ironic-status upgrade check`` to identify misconfigured
+  nodes.
+
+affected-products:
+  - product: ironic
+    version: '>=27.0.0 <29.0.6, >=30.0.0 <32.0.2, >=33.0.0 <35.0.2, >=36.0.0 <37.0.1'
+
+vulnerabilities:
+  - cve-id: 'CVE-2026-44918'
+
+reporters:
+  - name: Dmitry Tantsur
+    affiliation: Red Hat
+
+  - name: Tuomo Tanskanen
+    affiliation: Ericsson Software Technology
+
+issues:
+  links:
+    - https://bugs.launchpad.net/ironic/+bug/2150256
+    - https://bugs.launchpad.net/ironic/+bug/2150450
+
+reviews:
+  2026.2/hibiscus:
+    - https://review.opendev.org/c/openstack/ironic/+/996462
+
+  2026.1/gazpacho:
+    - https://review.opendev.org/c/openstack/ironic/+/996469
+
+  2025.2/flamingo:
+    - https://review.opendev.org/c/openstack/ironic/+/996476
+
+  2025.1/epoxy:
+    - https://review.opendev.org/c/openstack/ironic/+/996478
+
+  2024.1/caracal (unmaintained):
+    - https://review.opendev.org/c/openstack/ironic/+/996479
+
+  bugfix/37.0:
+    - https://review.opendev.org/c/openstack/ironic/+/996464
+  
+  bugfix/34.0:
+    - https://review.opendev.org/c/openstack/ironic/+/996471
+
+  bugfix/33.0:
+    - https://review.opendev.org/c/openstack/ironic/+/996474
+
+notes:
+  - Volume Targets and Volume Connectors only contain sensitive information
+    in environments utilizing boot-from-volume with iSCSI volumes.
+  - These patches also contain hardening logic to prevent this class of
+    vulnerability in Port and Portgroup objects. This is a defense in depth
+    measure to provide consistent errors at the API level for invalid data.
+  - Branch 2024.1/caracal is unmaintained and patches are provided as a
+    courtesy.
+  - Bugfix branches will recieve patches in git but will not recieve a
+    updated release.
