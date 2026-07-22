@@ -10,6 +10,12 @@
 The OpenStack :ref:`Vulnerability Management Team` is responsible
 for coordinating the progressive disclosure of a vulnerability.
 
+.. note::
+
+   If you are a project maintainer looking for guidance on how to
+   work with the VMT when a vulnerability is reported in your
+   project, see :doc:`project-maintainer-guide`.
+
 Members of the team are independent and security-minded folks who
 ensure that vulnerabilities are dealt with in a timely manner and
 that downstream stakeholders are notified in a coordinated and fair

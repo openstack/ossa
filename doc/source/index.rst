@@ -12,6 +12,7 @@
 
    reporting
    repos-overseen
+   project-maintainer-guide
    vmt
    vmt-process
 
