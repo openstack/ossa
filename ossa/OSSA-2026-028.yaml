@@ -1,0 +1,57 @@
+date: 2026-07-23
+
+id: OSSA-2026-028
+
+title: Credential extraction from Ironic Python Agent via malicious container
+
+description: >
+  Yuliang Xiao reported a vulnerability in Ironic Python Agent's bootc
+  container deployment support. A malicious container can extract the
+  secrets used to fetch from the OCI registry on deployment.
+
+  Operators can fix this issue by applying the provided patches or completely
+  disabling the bootc deploy_interface on their Ironic conductors.
+
+  Any Ironic user with the ability to deploy arbitrary containers from the
+  bootc deploy_interface can exploit this.
+
+affected-products:
+  - product: ironic-python-agent
+    version: '>=10.2.0 <10.2.3, >=11.0.0 <11.2.1, >=11.3.0 <11.5.1'
+
+vulnerabilities:
+  - cve-id: CVE-2026-54422
+
+reporters:
+  - name: Yuliang Xiao
+
+issues:
+  links:
+    - https://launchpad.net/bugs/2155826
+
+reviews:
+  2026.2/hibiscus (development):
+    - https://review.opendev.org/998479
+
+  2026.1/gazpacho:
+    - https://review.opendev.org/998481
+
+  2025.2/flamingo:
+    - https://review.opendev.org/998484
+
+  2025.1/epoxy:
+    - https://review.opendev.org/998485
+
+  bugfix/11.6:
+    - https://review.opendev.org/998480
+
+  bugfix/11.4:
+    - https://review.opendev.org/998493
+
+  bugfix/11.3:
+    - https://review.opendev.org/998494
+
+notes:
+  - Ironic Python Agent bugfix branch patches will be available in git for
+    interested operators. We will not perform an additional release from these
+    branches.

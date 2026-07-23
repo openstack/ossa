@@ -1,0 +1,77 @@
+date: 2026-07-23
+
+id: OSSA-2026-027
+
+title: Command execution via unsanitized config
+
+description: |
+  Dmitry Tantsur (Red Hat) and Tuomo Tanskanen (Ericsson Software Technology)
+  from the Metal3.io Security Team reported a vulnerability in
+  Ironic-Python-Agent's (IPAs) time syncing code.
+
+  The value of the ntp_server configuration option is inserted into a shell
+  command without sanitization. This command is run as root very early in the
+  IPA startup flow, allowing an attacker to run arbitrary commands as root.
+
+  This value can be set in three ways; directly in an operator-created ramdisk,
+  set via kernel command line using Ironic, or passing the parameters via mDNS
+  responder for mDNS enabled installation. For the most common, and highest
+  security risk case, this means a Manager role associated with the project set
+  as ``node.owner`` may be able to trigger this vulnerability.
+
+affected-products:
+  - product: ironic-python-agent
+    version: '>=6.0.0 <10.2.3, >=11.0.0 <11.2.1, >=11.3.0 <11.5.1, ==11.6.0'
+
+vulnerabilities:
+  - cve-id: CVE-2026-pending
+
+reporters:
+  - name: Dmitry Tantsur
+    affiliation: Red Hat
+
+  - name: Tuomo Tanskanen
+    affiliation: Ericsson Software Technology
+
+issues:
+  links:
+    - https://launchpad.net/bugs/2160050
+
+reviews:
+  2026.2/hibiscus (development):
+    - https://review.opendev.org/998486
+
+  2026.1/gazpacho:
+    - https://review.opendev.org/998488
+
+  2025.2/flamingo:
+    - https://review.opendev.org/998489
+
+  2025.1/epoxy:
+    - https://review.opendev.org/998490
+
+  2024.1/caracal (unmaintained):
+    - https://review.opendev.org/998491
+
+  2023.1/antelope (unmaintained):
+    - https://review.opendev.org/998492
+
+  bugfix/11.6:
+    - https://review.opendev.org/998487
+
+  bugfix/11.4:
+    - https://review.opendev.org/998482
+
+  bugfix/11.3:
+    - https://review.opendev.org/998483
+
+notes:
+  - A CVE assignment is pending from MITRE. This advisory will be
+    updated when the CVE is assigned.
+  - Branches 2024.1/caracal and 2023.1/antelope are unmaintained
+    and patches are provided as a courtesy.
+  - Bugfix branches will receive patches in git but will not receive an
+    updated release.
+  - While root access to a node running an Ironic workflow has security
+    implications for that specific node, there is no known method for turning
+    node ramdisk shell access into a full compromise of the Ironic service.
