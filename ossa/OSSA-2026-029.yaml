@@ -1,0 +1,50 @@
+date: 2026-07-23
+
+id: OSSA-2026-029
+
+title: Zaqar EXTRA-SPEC header bypasses Keystone authentication
+
+description: >
+  chen9861 reported that the Zaqar messaging service bypasses
+  Keystone authentication when an EXTRA-SPEC header is present
+  in the request. An unauthenticated attacker who knows a
+  project UUID can read, enumerate, create, and delete that
+  project's queues without a Keystone token. The EXTRA-SPEC
+  header was intended to support an alternative authentication
+  mechanism, but the backend validation was never implemented,
+  resulting in a complete authentication bypass. All deployments
+  running Zaqar 12.0.0 or later are affected.
+
+affected-products:
+  - product: zaqar
+    version: '>=12.0.0 <20.1.1, ==21.0.0, ==22.0.0'
+
+vulnerabilities:
+  - cve-id: CVE-2026-pending
+
+reporters:
+  - name: Chen YuXiang
+    affiliation: Institute of Computing Technology, Chinese Academy of Sciences
+
+issues:
+  links:
+    - https://launchpad.net/bugs/2161254
+
+reviews:
+  2026.2/hibiscus (development):
+    - https://review.opendev.org/998272
+
+  2026.1/gazpacho:
+    - https://review.opendev.org/998400
+
+  2025.2/flamingo:
+    - https://review.opendev.org/998410
+
+  2025.1/epoxy:
+    - https://review.opendev.org/998411
+
+notes:
+  - A CVE assignment is pending from MITRE. This advisory will be
+    updated when the CVE is assigned.
+  - https://review.opendev.org/998223 proposes removing the
+    EXTRA-SPEC feature entirely as a follow-up hardening measure.
