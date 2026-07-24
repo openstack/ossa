@@ -4,6 +4,9 @@ id: OSSA-2026-027
 
 title: Command execution via unsanitized config
 
+errata: >
+  CVE-2026-66138 has been assigned for this vulnerability.
+
 description: |
   Dmitry Tantsur (Red Hat) and Tuomo Tanskanen (Ericsson Software Technology)
   from the Metal3.io Security Team reported a vulnerability in
@@ -24,7 +27,7 @@ affected-products:
     version: '>=6.0.0 <10.2.3, >=11.0.0 <11.2.1, >=11.3.0 <11.5.1, ==11.6.0'
 
 vulnerabilities:
-  - cve-id: CVE-2026-pending
+  - cve-id: CVE-2026-66138
 
 reporters:
   - name: Dmitry Tantsur
@@ -66,8 +69,6 @@ reviews:
     - https://review.opendev.org/998483
 
 notes:
-  - A CVE assignment is pending from MITRE. This advisory will be
-    updated when the CVE is assigned.
   - Branches 2024.1/caracal and 2023.1/antelope are unmaintained
     and patches are provided as a courtesy.
   - Bugfix branches will receive patches in git but will not receive an
@@ -75,3 +76,7 @@ notes:
   - While root access to a node running an Ironic workflow has security
     implications for that specific node, there is no known method for turning
     node ramdisk shell access into a full compromise of the Ironic service.
+
+errata_history:
+  - 2026-07-24 - Errata 1
+  - 2026-07-23 - Original Version
