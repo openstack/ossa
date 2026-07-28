@@ -1,0 +1,49 @@
+date: 2026-07-28
+
+id: OSSA-2026-030
+
+title: Swift S3API header authorization bypass
+
+description: >
+  Christian Schwede from NVIDIA reported two authorization bypass
+  vulnerabilities in Swift's S3API middleware. Insufficient validation
+  of request headers allows an attacker to copy and read objects
+  belonging to other tenants. The first issue affects the default
+  ``s3_acl=false`` configuration; the second affects deployments
+  with ``s3_acl=true``. Both require the attacker to know the target
+  container and object names. All deployments using the S3API
+  middleware with versions between 2.18.0 and the fixed releases
+  listed below are affected.
+
+affected-products:
+  - product: swift
+    version: '>=2.18.0 <2.35.4, >=2.36.0 <2.36.3, >=2.37.0 <2.37.3, ==2.38.0'
+
+vulnerabilities:
+  - cve-id: CVE-2026-pending
+  - cve-id: CVE-2026-pending
+
+reporters:
+  - name: Christian Schwede
+    affiliation: NVIDIA
+
+issues:
+  links:
+    - https://launchpad.net/bugs/2158733
+
+reviews:
+  2026.2/hibiscus (development):
+    - https://review.opendev.org/998942
+    - https://review.opendev.org/998943
+
+  2026.1/gazpacho:
+    - https://review.opendev.org/998944
+    - https://review.opendev.org/998945
+
+  2025.2/flamingo:
+    - https://review.opendev.org/998946
+    - https://review.opendev.org/998947
+
+  2025.1/epoxy:
+    - https://review.opendev.org/998948
+    - https://review.opendev.org/998949

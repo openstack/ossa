@@ -1,0 +1,42 @@
+date: 2026-07-28
+
+id: OSSA-2026-031
+
+title: Swift proxy denial of service via Accept header
+
+description: >
+  Christian Schwede from NVIDIA reported a denial of service
+  vulnerability in Swift's proxy server. The Accept header parser
+  is vulnerable to catastrophic regular expression backtracking.
+  An unauthenticated attacker can send crafted requests that
+  exhaust proxy worker threads, rendering the service unavailable.
+  All deployments running Swift proxy with versions between 1.9.1
+  and the fixed releases listed below are affected.
+
+affected-products:
+  - product: swift
+    version: '>=1.9.1 <2.35.4, >=2.36.0 <2.36.3, >=2.37.0 <2.37.3, ==2.38.0'
+
+vulnerabilities:
+  - cve-id: CVE-2026-pending
+
+reporters:
+  - name: Christian Schwede
+    affiliation: NVIDIA
+
+issues:
+  links:
+    - https://launchpad.net/bugs/2158771
+
+reviews:
+  2026.2/hibiscus (development):
+    - https://review.opendev.org/998950
+
+  2026.1/gazpacho:
+    - https://review.opendev.org/998951
+
+  2025.2/flamingo:
+    - https://review.opendev.org/998952
+
+  2025.1/epoxy:
+    - https://review.opendev.org/998953
