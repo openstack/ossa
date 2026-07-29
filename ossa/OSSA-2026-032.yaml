@@ -1,0 +1,42 @@
+date: 2026-07-29
+
+id: OSSA-2026-032
+
+title: Subnetpool onboarding cross-project subnet mutation
+
+description: >
+  Tim Shephard from roiai.ca reported a vulnerability in Neutron's
+  subnetpool onboarding API. A project member can onboard subnets
+  from another project's shared network into their own subnetpool,
+  mutating the victim's persistent subnet state and altering L3
+  routing, NAT, and address-scope behavior for victim routers. Only
+  deployments with shared or RBAC-shared networks and the subnetpool
+  onboarding extension enabled are affected.
+
+affected-products:
+  - product: neutron
+    version: '>=14.0.0 <26.0.6, >=27.0.0 <27.0.4, >=28.0.0 <28.0.2'
+
+vulnerabilities:
+  - cve-id: CVE-2026-55707
+
+reporters:
+  - name: Tim Shephard
+    affiliation: roiai.ca
+
+issues:
+  links:
+    - https://launchpad.net/bugs/2152113
+
+reviews:
+  2026.2/hibiscus (development):
+    - https://review.opendev.org/999131
+
+  2026.1/gazpacho:
+    - https://review.opendev.org/999132
+
+  2025.2/flamingo:
+    - https://review.opendev.org/999133
+
+  2025.1/epoxy:
+    - https://review.opendev.org/999134
