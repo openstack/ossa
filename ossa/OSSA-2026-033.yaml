@@ -1,0 +1,50 @@
+date: 2026-08-05
+
+id: OSSA-2026-033
+
+title: Portgroup shard filter bypasses project scope
+
+description: |
+  Chen YuXiang of Institute of Computing Technology, Chinese Academy
+  of Sciences reported an issue in Ironic's API. When a project
+  reader requests a list of portgroups filtered by shard, all portgroups
+  in that shard are returned, not just those in their project.
+
+  This is a similar vulnerability to the one originally advisoried in
+  OSSA-2026-026 -- that issue impacted ports; this impacts
+  portgroups.
+
+affected-products:
+  - product: ironic
+    version: '>=34.0.0 <35.0.2, >=36.0.0 <38.0.1'
+
+vulnerabilities:
+  - cve-id: 'CVE-2026-71201'
+
+reporters:
+  - name: Chen YuXiang
+    affiliation: Institute of Computing Technology, Chinese Academy of Sciences
+
+issues:
+  links:
+    - https://launchpad.net/bugs/2162715
+
+reviews:
+  2026.2/hibiscus (development):
+    - https://review.opendev.org/999656
+
+  2026.1/gazpacho:
+    - https://review.opendev.org/999762
+
+  bugfix/38.0:
+    - https://review.opendev.org/999763
+
+  bugfix/37.0:
+    - https://review.opendev.org/999764
+
+  bugfix/34.0:
+    - https://review.opendev.org/999765
+
+notes:
+  - Ironic bugfix branch patches will be available in git for interested
+    operators. We will not perform an additional release from these branches.
