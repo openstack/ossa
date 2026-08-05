@@ -4,6 +4,10 @@ id: OSSA-2026-030
 
 title: Swift S3API header authorization bypass
 
+errata: >
+  CVE-2026-71191 and CVE-2026-71192 have been assigned for these
+  vulnerabilities.
+
 description: >
   Christian Schwede from NVIDIA reported two authorization bypass
   vulnerabilities in Swift's S3API middleware. Insufficient validation
@@ -20,8 +24,8 @@ affected-products:
     version: '>=2.18.0 <2.35.4, >=2.36.0 <2.36.3, >=2.37.0 <2.37.3, ==2.38.0'
 
 vulnerabilities:
-  - cve-id: CVE-2026-pending
-  - cve-id: CVE-2026-pending
+  - cve-id: CVE-2026-71191
+  - cve-id: CVE-2026-71192
 
 reporters:
   - name: Christian Schwede
@@ -47,3 +51,7 @@ reviews:
   2025.1/epoxy:
     - https://review.opendev.org/998948
     - https://review.opendev.org/998949
+
+errata_history:
+  - 2026-08-05 - Errata 1
+  - 2026-07-28 - Original Version
