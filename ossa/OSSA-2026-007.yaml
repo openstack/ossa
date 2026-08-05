@@ -4,6 +4,9 @@ id: OSSA-2026-007
 
 title: LDAP identity backend does not convert enabled attribute to boolean
 
+errata: >
+  CVE-2026-40683 has been assigned for this vulnerability.
+
 description: >
   Benedikt Trefzer and Andrew Bogott independently reported a
   vulnerability in the Keystone LDAP identity backend. When the
@@ -19,21 +22,21 @@ affected-products:
     version: '>=8.0.0 <25.0.1, >=26.0.0 <26.1.1, >=27.0.0 <27.0.1, >=28.0.0 <28.0.1'
 
 vulnerabilities:
-  - cve-id: CVE-2026-pending
+  - cve-id: CVE-2026-40683
 
 reporters:
   - name: Benedikt Trefzer
     affiliation: Cirrax GmbH
     reported:
-      - CVE-2026-pending
+      - CVE-2026-40683
   - name: Andrew Bogott
     affiliation: Wikimedia Foundation
     reported:
-      - CVE-2026-pending
+      - CVE-2026-40683
   - name: Grzegorz Grasza
     affiliation: Red Hat
     reported:
-      - CVE-2026-pending
+      - CVE-2026-40683
 
 issues:
   links:
@@ -57,7 +60,10 @@ notes:
   - To work around this vulnerability, set user_enabled_invert=True and
     use an LDAP attribute with inverted semantics such as nsAccountLock,
     or use user_enabled_emulation with group-based enabled status.
-  - A CVE request was filed with MITRE on 2026-04-10.
   - The fix was merged on the master branch before the stable/2026.1
     branch was cut, so no specific stable/2026.1 patch exists. The
     fix is included in the gazpacho (29.0.0) release.
+
+errata_history:
+  - 2026-08-05 - Errata 1
+  - 2026-04-14 - Original Version
