@@ -4,6 +4,9 @@ id: OSSA-2026-031
 
 title: Swift proxy denial of service via Accept header
 
+errata: >
+  CVE-2026-71190 has been assigned for this vulnerability.
+
 description: >
   Christian Schwede from NVIDIA reported a denial of service
   vulnerability in Swift's proxy server. The Accept header parser
@@ -18,7 +21,7 @@ affected-products:
     version: '>=1.9.1 <2.35.4, >=2.36.0 <2.36.3, >=2.37.0 <2.37.3, ==2.38.0'
 
 vulnerabilities:
-  - cve-id: CVE-2026-pending
+  - cve-id: CVE-2026-71190
 
 reporters:
   - name: Christian Schwede
@@ -40,3 +43,7 @@ reviews:
 
   2025.1/epoxy:
     - https://review.opendev.org/998953
+
+errata_history:
+  - 2026-08-05 - Errata 1
+  - 2026-07-28 - Original Version
