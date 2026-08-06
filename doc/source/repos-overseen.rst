@@ -93,5 +93,5 @@ Requirements
    a recommendation in order to keep the VMT's workload to a
    necessary minimum, but is not a strict requirement.
 
-.. _security liaison: https://wiki.openstack.org/wiki/CrossProjectLiaisons#Vulnerability_management
+.. _security liaison: https://opendev.org/openstack/governance/src/branch/master/reference/projects.yaml
 .. _stable branch maintenance phases: https://docs.openstack.org/project-team-guide/stable-branches.html#maintenance-phases

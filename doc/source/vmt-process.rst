@@ -98,7 +98,7 @@ stage of the process, the VMT and other interested parties may reach
 out to that project's `security liaison`_ requesting more immediate
 attention to the issue.
 
-.. _security liaison: https://wiki.openstack.org/wiki/CrossProjectLiaisons#Vulnerability_management
+.. _security liaison: https://opendev.org/openstack/governance/src/branch/master/reference/projects.yaml
 
 Patch review
 ^^^^^^^^^^^^
