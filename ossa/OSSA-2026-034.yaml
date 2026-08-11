@@ -1,0 +1,58 @@
+date: 2026-08-11
+
+id: OSSA-2026-034
+
+title: Cross-tenant DNS zone overlap and mDNS DoS via pool scheduling
+
+description: >
+  Tore Anderson of Redpill Linpro AS reported that OpenStack
+  Designate does not enforce cross-pool zone ownership checks when
+  scheduling a zone to a non-default pool via the attribute filter. A
+  tenant can create a sub-zone, super-zone, or duplicate of another
+  tenant's zone by targeting a different pool, enabling DNS hijack or
+  denial of service. Independently, Omer Schwartz of Red Hat
+  identified that the mDNS handler performs pool-blind record lookups,
+  causing a deterministic denial of service when colliding zones exist
+  across pools. All deployments using multiple Designate pools are
+  affected.
+
+affected-products:
+  - product: designate
+    version: '>=1.0.0 <20.0.2, ==21.0.0, ==22.0.0'
+
+vulnerabilities:
+  - cve-id: CVE-2026-71193
+  - cve-id: CVE-2026-71194
+
+reporters:
+  - name: Tore Anderson
+    affiliation: Redpill Linpro AS
+  - name: Omer Schwartz
+    affiliation: Red Hat
+
+issues:
+  links:
+    - https://launchpad.net/bugs/2160533
+
+reviews:
+  2026.2/hibiscus (development):
+    - https://review.opendev.org/1000471
+
+  2026.1/gazpacho:
+    - https://review.opendev.org/1000473
+
+  2025.2/flamingo:
+    - https://review.opendev.org/1000474
+
+  2025.1/epoxy:
+    - https://review.opendev.org/1000475
+
+notes:
+  - 'The stable branch patches depend on two prerequisite backports
+    (mDNS split-horizon pool scoping, Change 998005/998006 and their
+    stable equivalents) that were merged before disclosure. Operators
+    applying the fix to releases older than the next point release
+    should ensure those prerequisite commits are present.'
+  - 'Operators should audit existing zones for cross-tenant collisions
+    that may have been created before the fix. A detection tool will
+    be proposed as a separate public patch.'
