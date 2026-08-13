@@ -1,0 +1,47 @@
+date: 2026-08-13
+
+id: OSSA-2026-035
+
+title: Unauthorized QoS policy deletion lock
+
+description: >
+  Chen YuXiang with the Institute of Computing Technology, Chinese Academy of
+  Sciences, reported a vulnerability in Octavia quality of service (QoS) policy
+  authorization. By associating another project's QoS policy with an amphora,
+  an authenticated user may prevent deletion of that policy. All Octavia
+  deployments are affected.
+
+affected-products:
+  - product: Octavia
+    version: '<16.0.2, ==17.0.0, ==18.0.0'
+
+vulnerabilities:
+  - cve-id: PENDING
+
+reporters:
+  - name: Chen YuXiang
+    affiliation: Institute of Computing Technology, Chinese Academy of Sciences
+    reported:
+      - PENDING
+
+issues:
+  links:
+    - https://launchpad.net/bugs/2161500
+
+reviews:
+  2026.2/hibiscus (development):
+    - https://review.opendev.org/998935
+
+  2026.1/gazpacho:
+    - https://review.opendev.org/1000094
+
+  2025.2/flamingo:
+    - https://review.opendev.org/1000295
+
+  2025.1/epoxy:
+    - https://review.opendev.org/1000296
+
+notes:
+  - A CVE assignment was requested from MITRE on 2026-08-05 (request 2079027);
+    this advisory will be updated with the ID in an errata publication once it
+    becomes available.
