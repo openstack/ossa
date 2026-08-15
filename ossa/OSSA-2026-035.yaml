@@ -11,18 +11,21 @@ description: >
   an authenticated user may prevent deletion of that policy. All Octavia
   deployments are affected.
 
+errata: >
+  MITRE assigned CVE-2026-74248 after intial publication.
+
 affected-products:
   - product: Octavia
     version: '<16.0.2, ==17.0.0, ==18.0.0'
 
 vulnerabilities:
-  - cve-id: PENDING
+  - cve-id: CVE-2026-74248
 
 reporters:
   - name: Chen YuXiang
     affiliation: Institute of Computing Technology, Chinese Academy of Sciences
     reported:
-      - PENDING
+      - CVE-2026-74248
 
 issues:
   links:
@@ -41,7 +44,6 @@ reviews:
   2025.1/epoxy:
     - https://review.opendev.org/1000296
 
-notes:
-  - A CVE assignment was requested from MITRE on 2026-08-05 (request 2079027);
-    this advisory will be updated with the ID in an errata publication once it
-    becomes available.
+errata_history:
+  - 2026-08-17 - Errata 1
+  - 2026-08-13 - Original Version
