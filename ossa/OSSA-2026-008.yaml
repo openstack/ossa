@@ -14,7 +14,17 @@ description: >
   installations which have set ``[conductor]/enabled_console_interfaces`` to
   enable either ``ipmitool-shellinabox`` or ``ipmitool-socat`` are vulnerable.
 
-errata: 'When the original advisory was published a CVE number was not assigned. CVE-2026-42510 was assigned on 2026-04-29.'
+errata: |
+  - **Errata 1:** When the original advisory was published a CVE number was
+    not assigned. CVE-2026-42510 was assigned on 2026-04-29.
+
+  - **Errata 2:** The original fix shell-quoted the console command, but
+    socat executes it directly without a shell and so treated the quoted
+    command line as a single program name. Deployments using the
+    ipmitool-socat console interface lose console functionality entirely as
+    a result, though the vulnerability itself is not reintroduced. The
+    Errata 2 patches provide an additional fix which escapes the command
+    for socat's own address syntax.
 
 affected-products:
   - product: ironic
@@ -35,23 +45,31 @@ issues:
     - https://launchpad.net/bugs/2148331
 
 reviews:
+  2026.2/hibiscus:
+    - '**Errata 2** https://review.opendev.org/c/openstack/ironic/+/999701'
+
   2026.1/gazpacho:
-    - https://review.opendev.org/c/openstack/ironic/+/986235
+    - '**Original** https://review.opendev.org/c/openstack/ironic/+/986235'
+    - '**Errata 2** https://review.opendev.org/c/openstack/ironic/+/1000984'
 
   2025.2/flamingo:
-    - https://review.opendev.org/c/openstack/ironic/+/986361
+    - '**Original** https://review.opendev.org/c/openstack/ironic/+/986361'
+    - '**Errata 2** https://review.opendev.org/c/openstack/ironic/+/1000985'
 
   2025.1/epoxy:
-    - https://review.opendev.org/c/openstack/ironic/+/986362
+    - '**Original** https://review.opendev.org/c/openstack/ironic/+/986362'
+    - '**Errata 2** https://review.opendev.org/c/openstack/ironic/+/1000986'
 
   2024.2/dalmatian:
-    - https://review.opendev.org/c/openstack/ironic/+/986363
+    - '**Original** https://review.opendev.org/c/openstack/ironic/+/986363'
 
   2024.1/caracal (unmaintained):
-    - https://review.opendev.org/c/openstack/ironic/+/986417
+    - '**Original** https://review.opendev.org/c/openstack/ironic/+/986417'
+    - '**Errata 2** https://review.opendev.org/c/openstack/ironic/+/1000989'
 
   2023.1/antelope (unmaintained):
-    - https://review.opendev.org/c/openstack/ironic/+/986418
+    - '**Original** https://review.opendev.org/c/openstack/ironic/+/986418'
+    - '**Errata 2** https://review.opendev.org/c/openstack/ironic/+/1000990'
 
 notes:
   - A CVE request was filed with MITRE on 2026-04-27.
@@ -60,8 +78,13 @@ notes:
     for removal from Ironic for lack of security support for shellinabox.
     Security sensitive operators are strongly encouraged to stop use of this
     console interface immediately.
-
+  - '**Errata 2** The console regression affects the 26.1.6, 29.0.5, 29.0.6, 32.0.1,
+    35.0.1, 36.0.0, 37.0.0 and 38.0.0 releases; stable/2024.2 has since
+    been retired, so 26.1.6 can only be corrected by applying the
+    additional fix locally.'
+ 
 errata_history:
+  - 2026-08-19 - Errata 2
   - 2026-04-29 - Errata 1
   - 2026-04-27 - Original Version
 
