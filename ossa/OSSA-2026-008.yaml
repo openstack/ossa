@@ -82,7 +82,7 @@ notes:
     35.0.1, 36.0.0, 37.0.0 and 38.0.0 releases; stable/2024.2 has since
     been retired, so 26.1.6 can only be corrected by applying the
     additional fix locally.'
- 
+
 errata_history:
   - 2026-08-19 - Errata 2
   - 2026-04-29 - Errata 1

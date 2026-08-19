@@ -1,0 +1,5 @@
+---
+rules:
+  trailing-spaces: enable
+  new-line-at-end-of-file: enable
+  key-duplicates: enable
