@@ -21,6 +21,9 @@ description: |
   associated action plan regardless of their own project or role.
   All Watcher deployments are affected.
 
+errata: >
+  MITRE assigned CVE-2026-76878 after initial publication.
+
 affected-products:
   - product: aodh
     version: '>=10.0.0 <20.0.1, ==21.0.0, ==22.0.0'
@@ -28,7 +31,7 @@ affected-products:
     version: '>=4.0.0 <14.1.2, >=15.0.0 <15.1.2, >=16.0.0 <16.0.2'
 
 vulnerabilities:
-  - cve-id: CVE-2026-pending
+  - cve-id: 'CVE-2026-76878'
 
 reporters:
   - name: Chen YuXiang
@@ -64,7 +67,6 @@ reviews:
   2025.1/epoxy (watcher):
     - https://review.opendev.org/1001509
 
-notes:
-  - 'A CVE identifier was requested from MITRE for the aodh vulnerability on
-    2026-08-03. The CVE will be added to this advisory by errata once
-    assigned.'
+errata_history:
+  - 2026-08-20 - Errata 1
+  - 2026-08-19 - Original Version
