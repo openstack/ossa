@@ -35,6 +35,16 @@ is:
   private will be made public within 90 calendar days from when it is received,
   even if a solution has not been identified.
 
+Vulnerabilities in Other Software
+---------------------------------
+
+In the event that a reported bug is actually a previously unknown vulnerability
+in software outside OpenStack, such as in a dependency, OpenStack's
+Vulnerability Management Team will make a best effort attempt to follow their
+vulnerability reporting process and forward the details to that project's
+security contacts or put them in touch with the original reporter. Our own
+policies, such as our maximum embargo time, do not apply to these cases.
+
 Bug Bounties
 ------------
 
