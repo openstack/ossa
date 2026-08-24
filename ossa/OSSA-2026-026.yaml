@@ -10,7 +10,7 @@ description: |
   access control code.
 
   This OSSA represents multiple related vulnerabilities in Ironic RBAC. An
-  authenticated project manager can change the node associated with 
+  authenticated project manager can change the node associated with
   Volume Connectors or Volume Target objects, potentially changing the
   project permitted to access the object. Volume Connectors
   contain secrets in environments configuring boot from volume with iSCSI
@@ -71,7 +71,7 @@ reviews:
 
   bugfix/37.0:
     - https://review.opendev.org/c/openstack/ironic/+/996464
-  
+
   bugfix/34.0:
     - https://review.opendev.org/c/openstack/ironic/+/996471
 
