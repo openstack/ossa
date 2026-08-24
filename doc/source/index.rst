@@ -115,17 +115,22 @@ Security information for OpenStack developers
 ---------------------------------------------
 
 
-How to propose and review a security patch
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. _how to propose and review a security patch:
+
+How to propose and review an embargoed security patch
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. note::
 
-    The patch development and review process for security patches is different
-    from normal patches in OpenStack. Because the gerrit review process is
-    public, all security bugs must have patches proposed to and reviewed in
-    the StoryBoard or Launchpad report comments.
+    The embargoed (private) development and review process for security patches
+    is different from normal patches in OpenStack. Because the Gerrit review
+    process is public, all private security bugs must have patches proposed to
+    and reviewed in the StoryBoard or Launchpad report comments or attachments.
 
-After a patch for the reported bug has been developed locally, you the patch author need to share that with the community. This is a simple process, but it is different than the normal OpenStack workflow.
+After a patch for the reported Private Security bug has been developed locally,
+you the patch author need to share that with the bug's subscribers. This is a
+simple process, but it is different than the normal public OpenStack
+development workflow.
 
 * Export it using the `format-patch` command::
 
