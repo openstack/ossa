@@ -4,6 +4,10 @@ id: OSSA-2026-037
 
 title: Inconsistent scope enforcement for delegated tokens in Keystone
 
+errata: >
+  CVE-2026-80182 and CVE-2026-80184 have been assigned for these
+  vulnerabilities.
+
 description: |
   Grzegorz Grasza (Red Hat) reported that OpenStack Keystone did not
   consistently block delegated tokens from creating new long-lived
@@ -30,14 +34,18 @@ affected-products:
     version: '>=13.0.0 <27.0.3, >=28.0.0 <28.0.3, >=29.0.0 <29.0.3'
 
 vulnerabilities:
-  - cve-id: 'CVE-2026-pending'
-  - cve-id: 'CVE-2026-pending'
+  - cve-id: CVE-2026-80182
+  - cve-id: CVE-2026-80184
 
 reporters:
   - name: Grzegorz Grasza
     affiliation: Red Hat
+    reported:
+      - CVE-2026-80182
   - name: Tim Shephard
     affiliation: roiai.ca
+    reported:
+      - CVE-2026-80184
 
 issues:
   links:
@@ -62,9 +70,6 @@ reviews:
     - https://review.opendev.org/1002308
 
 notes:
-  - 'Two CVEs have been requested from MITRE for these vulnerabilities
-    and are pending assignment.'
-
   - 'The two patch sets are interdependent and must be applied together.
     The token reauthentication guard introduced by the second patch
     depends on the delegation classification logic and the new
@@ -89,4 +94,5 @@ notes:
     proposed at https://review.opendev.org/1002296'
 
 errata_history:
+  - 2026-08-25 - Errata 1
   - 2026-08-25 - Original Version
