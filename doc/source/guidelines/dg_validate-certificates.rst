@@ -56,5 +56,5 @@ than banking passwords and account information.
 References
 ~~~~~~~~~~
 
--  `OSSN-0033 <https://wiki.openstack.org/wiki/OSSN/OSSN-0033>`__
+-  `OSSN-0033 <https://docs.openstack.org/security-notes/OSSN-0033.html>`__
 -  https://wiki.openstack.org/wiki/SecureClientConnections

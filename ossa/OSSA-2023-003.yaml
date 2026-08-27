@@ -205,7 +205,7 @@ notes:
     all deployments.
   - Using Configuration as a Short-Term Mitigation... An alternative approach
     to mitigation can be found in OSSN-0092
-    https://wiki.openstack.org/wiki/OSSN/OSSN-0092
+    https://docs.openstack.org/security-notes/OSSN-0092.html
   - The stable/xena and stable/wallaby branches are under extended maintenance
     and will receive no new point releases, but patches for them are provided
     as a courtesy where available.

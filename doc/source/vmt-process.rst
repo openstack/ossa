@@ -65,6 +65,9 @@ will be set to *Progress/Confirmed*. If the need for an OSSA is
 challenged, the ossa bugtask status should be set back to
 *Todo/Incomplete* until that question is resolved.
 
+If an OSSN_ is warranted instead, follow the `OSSN creation process`_ in
+the openstack/security-doc repository.
+
 If no OSSA is warranted and there is no benefit to an OSSN_ then the
 ossa bugtask will be set to *Won't Fix* or *Invalid* (depending on
 the tracker and situation) and the bug state switched from *Private
@@ -75,7 +78,8 @@ tables.
 
 .. _embargo reminder: #reception-embargo-reminder-private-issues
 .. _incomplete reception: #reception-incomplete-message-unconfirmed-issues
-.. _OSSN: https://wiki.openstack.org/wiki/Security_Notes
+.. _OSSN: https://docs.openstack.org/security-notes/
+.. _OSSN creation process: https://docs.openstack.org/security-notes/ossn-process.html
 
 Patch development
 ^^^^^^^^^^^^^^^^^
@@ -305,7 +309,8 @@ Report Taxonomy
 
 The VMT is now using this classification list in order to assist
 vulnerability report triage, especially whenever a bug does not
-warrant an advisory.
+warrant an advisory. For the classes whose outcome is an OSSN, see the
+`OSSN creation process`_.
 
 +----------+-----------+-------------------------------------------+
 | Classes  | Outcome   | Description                               |

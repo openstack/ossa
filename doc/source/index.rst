@@ -58,6 +58,9 @@ There are three main sources of security guidance for OpenStack deployers:
 OpenStack Security Advisories (OSSA)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+Security Advisories (OSSA) advise users of major security issues which
+can be resolved with a code change.
+
 Recent OSSAs:
 
 .. toctree::
@@ -78,14 +81,14 @@ You can find the complete list of published advisories here:
 OpenStack Security Notes
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-Security Notes advise users of security related issues. Security notes are
-similar to advisories; they often address vulnerabilities in third party tools
-typically used within OpenStack deployments and provide guidance on common
-configuration mistakes that can result in an insecure operating environment.
+Security Notes (OSSN) advise users of security related issues that, for
+whatever reason, are too complex to be solved with a simple patch. This
+can include security risks that OpenStack operators need to be advised
+of, even if they aren't bugs in OpenStack directly.
 
-The complete set of `security notes <https://wiki.openstack.org/wiki/Security_Notes>`_
-is available online, but they are also published on the OpenStack mailing list
-when they are released.
+You can find the complete list of published notes here:
+
+* `OpenStack Security Notes <https://docs.openstack.org/security-notes/>`_
 
 
 OpenStack Security Guide

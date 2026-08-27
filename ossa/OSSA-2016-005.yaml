@@ -33,7 +33,7 @@ issues:
 
   links:
     - https://bugs.launchpad.net/bugs/1490804
-    - https://wiki.openstack.org/wiki/OSSN/OSSN-0062
+    - https://docs.openstack.org/security-notes/OSSN-0062.html
 
 reviews:
 
