@@ -43,7 +43,9 @@ For detailed vulnerability reporting instructions, see :doc:`reporting`.
 Vulnerability Management Team
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-See :doc:`vmt` for the list of OpenStack Vulnerability Managers.
+| See :doc:`vmt` for the list of OpenStack Vulnerability Managers.
+| See :doc:`vmt-process` for the workflow we follow.
+
 
 Security information for OpenStack deployers
 --------------------------------------------
