@@ -407,7 +407,7 @@ are negatively affected by vulnerabilities. In the spirit of
 coordinated disclosure, this ecosystem, collectively known as the
 downstream stakeholders, needs to be warned in advance to be able to
 prepare patches and roll them out in a coordinated fashion on
-disclosure day. The embargo period is kept voluntarily small (3-5
+disclosure day. The embargo period is kept voluntarily small (5-10
 business days), as a middle ground between keeping the vulnerability
 under cover for too long and not giving a chance to downstream
 stakeholders to react.
