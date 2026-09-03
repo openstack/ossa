@@ -1,0 +1,87 @@
+date: 2026-09-03
+
+id: OSSA-2026-038
+
+title: Multiple SSRF vulnerabilities in Glance web-download and HTTP image APIs
+
+description: |
+  Sergey Kanibor (Luntry), Sami Yessou (switch.ch), and Abhishek Kekane
+  (Red Hat) reported three related SSRF vulnerabilities in OpenStack
+  Glance.
+
+  The web-download import method ships with insecure default filtering
+  that permits authenticated users to fetch arbitrary internal URLs,
+  including cloud metadata endpoints. The URI validator does not perform
+  DNS resolution before applying host filters, enabling bypass via
+  attacker-controlled domains and DNS rebinding attacks. The HTTP image
+  location API lacks host filtering entirely when the HTTP store is
+  enabled, and fetched content is stored as image data accessible for
+  download, converting blind SSRF into full-read exfiltration.
+
+  All Glance deployments using the web-download import method or HTTP
+  image location APIs are affected.
+
+affected-products:
+  - product: glance
+    version: '>=16.0.0 <30.2.1, >=31.0.0 <31.1.1, >=32.0.0 <32.0.1'
+
+vulnerabilities:
+  - cve-id: CVE-2026-71196
+  - cve-id: CVE-2026-71197
+  - cve-id: CVE-2026-71198
+
+reporters:
+  - name: Sergey Kanibor
+    affiliation: Luntry
+    reported:
+      - CVE-2026-71196
+      - CVE-2026-71197
+  - name: Sami Yessou
+    affiliation: switch.ch
+    reported:
+      - CVE-2026-71196
+  - name: Abhishek Kekane
+    affiliation: Red Hat
+    reported:
+      - CVE-2026-71198
+
+issues:
+  links:
+    - https://launchpad.net/bugs/2158998
+    - https://launchpad.net/bugs/2158999
+    - https://launchpad.net/bugs/2161330
+    - https://launchpad.net/bugs/2160020
+
+reviews:
+  2026.2/hibiscus (development):
+    - https://review.opendev.org/1003805
+    - https://review.opendev.org/1003806
+    - https://review.opendev.org/1003807
+    - https://review.opendev.org/1003808
+
+  2026.1/gazpacho:
+    - https://review.opendev.org/1003812
+    - https://review.opendev.org/1003813
+    - https://review.opendev.org/1003814
+    - https://review.opendev.org/1003815
+
+  2025.2/flamingo:
+    - https://review.opendev.org/1003816
+    - https://review.opendev.org/1003817
+    - https://review.opendev.org/1003818
+    - https://review.opendev.org/1003819
+
+  2025.1/epoxy:
+    - https://review.opendev.org/1003822
+    - https://review.opendev.org/1003823
+    - https://review.opendev.org/1003824
+    - https://review.opendev.org/1003825
+
+notes:
+  - 'All four commits in each patch set are interdependent and must be
+    applied together, in the order listed above, as each builds on the
+    previous. The DoS issue (LP#2160020) is addressed as part of this
+    coordinated fix.'
+
+  - 'A related Tempest test compatibility fix was proposed at
+    https://review.opendev.org/1003560'
