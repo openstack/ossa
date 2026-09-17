@@ -1,0 +1,87 @@
+date: 2026-09-21
+
+id: OSSA-2026-039
+
+title: HAProxy configuration injection leading to remote code execution in Octavia
+
+description: |
+  Chen YuXiang from the Institute of Computing Technology, Chinese
+  Academy of Sciences reported input validation flaws in the Octavia
+  load balancer API. The listener and pool ``tls_ciphers`` fields and
+  the L7 policy ``redirect_url`` and ``redirect_prefix`` fields were
+  written into the HAProxy configuration generated on the amphora
+  without rejecting control characters, allowing an authenticated user
+  who owns a load balancer managed by OpenStack Octavia's Amphora
+  provider to inject arbitrary HAProxy configuration directives.
+
+  Subsequently, an independent reporter, "Rolix", demonstrated that
+  these flaws can be exploited to execute arbitrary commands as root
+  on the provider-managed amphora, to disclose other tenants' TLS
+  private keys and certificates and the deployment heartbeat key
+  stored on the amphora, and to reach the control-plane network to
+  which the amphora is attached.
+
+  Only the Amphora provider driver is affected. Deployments that use a
+  different provider driver do not render tenant input into an HAProxy
+  configuration and are not affected.
+
+affected-products:
+  - product: octavia
+    version: '>=0.8.0 <16.1.0, ==17.0.0, ==18.0.0'
+
+vulnerabilities:
+  - cve-id: CVE-2026-pending
+  - cve-id: CVE-2026-pending
+
+reporters:
+  - name: Chen YuXiang
+    affiliation: Institute of Computing Technology, Chinese Academy of Sciences
+  - name: '"Rolix"'
+    affiliation: Independent
+
+issues:
+  links:
+    - https://launchpad.net/bugs/2167565
+    - https://launchpad.net/bugs/2162101
+    - https://launchpad.net/bugs/2162103
+
+reviews:
+  2026.2/hibiscus:
+    - https://review.opendev.org/999553
+    - https://review.opendev.org/999555
+
+  2026.1/gazpacho:
+    - https://review.opendev.org/1001091
+    - https://review.opendev.org/1001092
+
+  2025.2/flamingo:
+    - https://review.opendev.org/1001094
+    - https://review.opendev.org/1001095
+
+  2025.1/epoxy:
+    - https://review.opendev.org/1001096
+    - https://review.opendev.org/1001097
+
+notes:
+  - 'Two changes are required on each branch: one fixes the
+    ``tls_ciphers`` fields and one fixes the L7 policy redirect
+    fields.'
+
+  - 'The listener and pool ``tls_ciphers`` fields were introduced in
+    Octavia 6.0.0. Releases within the affected range that predate
+    6.0.0 are vulnerable only through the L7 policy ``redirect_url``
+    and ``redirect_prefix`` fields.'
+
+  - 'These issues were originally triaged as a low-severity hardening
+    opportunity and the fixes were developed and merged in public.
+    They were reclassified after a proof of concept demonstrated
+    remote code execution as root on the amphora and reachability of
+    the control-plane network.'
+
+  - 'The remote code execution issue was reported to the OpenStack
+    VMT by Thomas Goirand (zigo) of Infomaniak, on behalf of the
+    reporter, "Rolix".'
+
+  - 'CVE identifiers were requested from MITRE for these two
+    vulnerabilities on 2026-09-17. The CVEs will be added to this
+    advisory by errata once assigned.'
