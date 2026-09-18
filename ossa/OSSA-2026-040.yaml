@@ -1,0 +1,62 @@
+date: 2026-09-21
+
+id: OSSA-2026-040
+
+title: Multiple authorization vulnerabilities in the Blazar V2 lease API
+
+description: |
+  Rohan Das from the University of Engineering and Management, Kolkata,
+  reported that the Blazar V2 lease API does not enforce object-level
+  authorization on its update and delete operations. As a result, any
+  authenticated user who knows a lease ID can modify or delete leases
+  belonging to other users and projects.
+
+  The same reporter found that the Blazar V2 lease listing operation
+  returns leases for every project without enforcing project scoping
+  or an administrator-only policy. Any authenticated user can
+  enumerate other projects' leases, exposing lease and reservation
+  identifiers along with reservation metadata. The exposed
+  identifiers enable the object-level authorization bypass
+  described above, allowing an attacker to then modify or delete the
+  enumerated leases.
+
+  Only deployments that enable Blazar's V2 lease API are affected.
+  Deployers that do not use the V2 API endpoint can set
+  ``api_v2_controllers`` to an empty value in the ``[api]`` section of
+  ``blazar.conf``. Patches below address the issue if the API
+  controllers cannot be disabled.
+
+affected-products:
+  - product: blazar
+    version: '>=1.0.0 <15.1.1, ==16.0.0, ==17.0.0'
+
+vulnerabilities:
+  - cve-id: CVE-2026-93852
+  - cve-id: CVE-2026-93854
+
+reporters:
+  - name: Rohan Das
+    affiliation: University of Engineering and Management, Kolkata
+
+issues:
+  links:
+    - https://launchpad.net/bugs/2162719
+
+reviews:
+  2027.1/indri (development):
+    - https://review.opendev.org/1006049
+
+  2026.2/hibiscus:
+    - https://review.opendev.org/1006050
+
+  2026.1/gazpacho:
+    - https://review.opendev.org/1006051
+
+  2025.2/flamingo:
+    - https://review.opendev.org/1006052
+
+  2025.1/epoxy:
+    - https://review.opendev.org/1006053
+
+notes:
+  - 'A single patch on each branch fixes both vulnerabilities.'
