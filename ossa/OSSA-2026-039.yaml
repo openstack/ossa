@@ -4,6 +4,10 @@ id: OSSA-2026-039
 
 title: HAProxy configuration injection leading to remote code execution in Octavia
 
+errata: >
+  CVE-2026-94571 and CVE-2026-94572 have been assigned for these
+  vulnerabilities.
+
 description: |
   Chen YuXiang from the Institute of Computing Technology, Chinese
   Academy of Sciences reported input validation flaws in the Octavia
@@ -30,14 +34,19 @@ affected-products:
     version: '>=0.8.0 <16.1.0, ==17.0.0, ==18.0.0'
 
 vulnerabilities:
-  - cve-id: CVE-2026-pending
-  - cve-id: CVE-2026-pending
+  - cve-id: CVE-2026-94572
+  - cve-id: CVE-2026-94571
 
 reporters:
   - name: Chen YuXiang
     affiliation: Institute of Computing Technology, Chinese Academy of Sciences
+    reported:
+      - CVE-2026-94572
+      - CVE-2026-94571
   - name: '"Rolix"'
     affiliation: Independent
+    reported:
+      - CVE-2026-94572
 
 issues:
   links:
@@ -82,6 +91,6 @@ notes:
     VMT by Thomas Goirand (zigo) of Infomaniak, on behalf of the
     reporter, "Rolix".'
 
-  - 'CVE identifiers were requested from MITRE for these two
-    vulnerabilities on 2026-09-17. The CVEs will be added to this
-    advisory by errata once assigned.'
+errata_history:
+  - 2026-09-21 - Errata 1
+  - 2026-09-21 - Original Version
