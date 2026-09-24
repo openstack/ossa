@@ -1,0 +1,58 @@
+date: 2026-09-24
+
+id: OSSA-2026-042
+
+title: Zaqar empty URL-Signature header bypasses authentication
+
+description: |
+  pple, an independent security researcher, reported that Zaqar's
+  WSGI transport mishandles an empty URL-Signature header: a request
+  carrying the header with an empty value bypasses both Keystone
+  authentication and pre-signed URL verification. An unauthenticated
+  remote attacker who knows a target project's UUID can then read,
+  enumerate, create, and delete that project's queues, messages,
+  claims, and subscriptions. By additionally claiming an
+  administrative role, the attacker may also perform administrative
+  operations, such as managing pools and flavors in admin_mode
+  deployments. Only deployments using the WSGI transport with an
+  authentication strategy configured are affected; the websocket
+  transport is not affected.
+
+affected-products:
+  - product: zaqar
+    version: '>=1.0.0 <20.1.2, >=21.0.0 <21.0.2, >=22.0.0 <22.0.2'
+
+vulnerabilities:
+  - cve-id: CVE-2026-97404
+
+reporters:
+  - name: pple
+    affiliation: Independent
+    reported:
+      - CVE-2026-97404
+
+issues:
+  links:
+    - https://launchpad.net/bugs/2164987
+
+reviews:
+  2027.1/indri (development):
+    - https://review.opendev.org/1007158
+
+  2026.2/hibiscus:
+    - https://review.opendev.org/1007159
+
+  2026.1/gazpacho:
+    - https://review.opendev.org/1007160
+
+  2025.2/flamingo:
+    - https://review.opendev.org/1007161
+
+  2025.1/epoxy:
+    - https://review.opendev.org/1007162
+
+notes:
+  - 'This issue is distinct from the EXTRA-SPEC header bypass in
+    OSSA-2026-029; the fix for that issue removed the EXTRA-SPEC
+    branch but left the empty-value handling of the URL-Signature
+    header untouched.'
