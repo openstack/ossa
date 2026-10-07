@@ -1,0 +1,51 @@
+date: 2026-10-07
+
+id: OSSA-2026-043
+
+title: Zaqar WebSocket project substitution allows cross-project queue access
+
+description: |
+  Chen YuXiang from the Institute of Computing Technology, Chinese Academy
+  of Sciences reported a vulnerability in Zaqar's WebSocket transport. An
+  authenticated remote attacker who knows a target project's UUID may
+  substitute it in subsequent WebSocket frames to enumerate, inspect,
+  create, or delete queues belonging to that project. This may result in
+  unauthorized disclosure, modification, or loss of queue data. Only
+  deployments using the WebSocket transport with Keystone authentication
+  are affected.
+
+affected-products:
+  - product: zaqar
+    version: '>=1.0.0 <20.1.3, >=21.0.0 <21.0.3, >=22.0.0 <22.0.3, ==23.0.0'
+
+vulnerabilities:
+  - cve-id: CVE-2026-pending
+
+reporters:
+  - name: Chen YuXiang
+    affiliation: Institute of Computing Technology, Chinese Academy of Sciences
+
+issues:
+  links:
+    - https://launchpad.net/bugs/2161402
+
+reviews:
+  2027.1/indri (development):
+    - https://review.opendev.org/1009250
+
+  2026.2/hibiscus:
+    - https://review.opendev.org/1009251
+
+  2026.1/gazpacho:
+    - https://review.opendev.org/1009252
+
+  2025.2/flamingo:
+    - https://review.opendev.org/1009253
+
+  2025.1/epoxy:
+    - https://review.opendev.org/1009254
+
+notes:
+  - 'A CVE identifier was requested from MITRE for this vulnerability
+    on 2026-10-06. The CVE will be added to this advisory by errata
+    once assigned.'
