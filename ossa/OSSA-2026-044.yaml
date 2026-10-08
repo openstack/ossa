@@ -1,0 +1,123 @@
+date: 2026-10-08
+
+id: OSSA-2026-044
+
+title: Four authorization and privilege vulnerabilities in Mistral
+
+description: |
+  Arnaud Morin from OVHcloud reported that several of Mistral's v2 API
+  write paths resolve the target object with a query that can return
+  another project's resource, then write to it (CVE-2026-97147). An
+  authenticated project member can use this to rewrite and un-publish
+  another project's public action definitions and environments. A
+  project administrator can create a workbook whose embedded ad-hoc
+  action or workflow name collides with a resource of another project,
+  which moves that resource into the caller's project and causes the
+  original owner's subsequent updates of it to fail with server
+  errors. All deployments exposing the Mistral API are affected.
+
+  Chen YuXiang from the Institute of Computing Technology, Chinese
+  Academy of Sciences reported that Mistral's workflow membership API
+  lets a project that has accepted a share of another project's
+  private workflow create a further membership naming a third project
+  (CVE-2026-93861). The new membership row is created with its
+  project_id defaulted to the accepting project rather than the
+  original workflow owner, so the owner can neither see nor delete it.
+  The third project can accept this membership it was never actually
+  granted by the owner, then read and execute the owner's private
+  workflow; only the accepting (not the owning) project can later
+  revoke that access.
+
+  Chen YuXiang also reported a vulnerability in Mistral's ssh_proxied
+  action provider (CVE-2026-93858). By supplying a specially-crafted
+  action payload, an unprivileged authenticated user may override
+  paramiko's proxy_command resulting in execution of arbitrary code on
+  the executor host operating system. Only Mistral deployments
+  allowing the std.ssh_proxied action provider (the default) are
+  affected.
+
+  Chen YuXiang further reported a vulnerability in Mistral's
+  maintenance API method (CVE-2026-93860). By calling the maintenance
+  API method, an unprivileged authenticated user may pause processing
+  for creation of new objects for all tenant projects resulting in a
+  temporary denial of service. All Mistral deployments are affected.
+
+affected-products:
+  - product: Mistral
+    version: '<20.1.1, ==21.0.0, ==22.0.0, ==23.0.0'
+
+vulnerabilities:
+  - cve-id: CVE-2026-93858
+  - cve-id: CVE-2026-93860
+  - cve-id: CVE-2026-93861
+  - cve-id: CVE-2026-97147
+
+reporters:
+  - name: Arnaud Morin
+    affiliation: OVHcloud
+    reported:
+      - CVE-2026-97147
+  - name: Chen YuXiang
+    affiliation: Institute of Computing Technology, Chinese Academy of Sciences
+    reported:
+      - CVE-2026-93858
+      - CVE-2026-93860
+      - CVE-2026-93861
+
+issues:
+  links:
+    - https://launchpad.net/bugs/2160267 (CVE-2026-97147)
+    - https://launchpad.net/bugs/2161277 (CVE-2026-93861)
+    - https://launchpad.net/bugs/2162100 (CVE-2026-93858)
+    - https://launchpad.net/bugs/2162789 (CVE-2026-93860)
+
+reviews:
+  2027.1/indri (development):
+    - https://review.opendev.org/c/openstack/mistral/+/1009468
+    - https://review.opendev.org/c/openstack/mistral/+/1009469
+    - https://review.opendev.org/c/openstack/mistral/+/1009470
+    - https://review.opendev.org/c/openstack/mistral/+/1009471
+    - https://review.opendev.org/c/openstack/mistral/+/1009472
+    - https://review.opendev.org/c/openstack/mistral/+/1009473
+    - https://review.opendev.org/c/openstack/mistral/+/1009474
+    - https://review.opendev.org/c/openstack/mistral/+/1009475
+
+  2026.2/hibiscus:
+    - https://review.opendev.org/c/openstack/mistral/+/1009476
+    - https://review.opendev.org/c/openstack/mistral/+/1009477
+    - https://review.opendev.org/c/openstack/mistral/+/1009478
+    - https://review.opendev.org/c/openstack/mistral/+/1009479
+    - https://review.opendev.org/c/openstack/mistral/+/1009480
+    - https://review.opendev.org/c/openstack/mistral/+/1009481
+    - https://review.opendev.org/c/openstack/mistral/+/1009482
+    - https://review.opendev.org/c/openstack/mistral/+/1009483
+
+  2026.1/gazpacho:
+    - https://review.opendev.org/c/openstack/mistral/+/1009484
+    - https://review.opendev.org/c/openstack/mistral/+/1009485
+    - https://review.opendev.org/c/openstack/mistral/+/1009486
+    - https://review.opendev.org/c/openstack/mistral/+/1009487
+    - https://review.opendev.org/c/openstack/mistral/+/1009488
+    - https://review.opendev.org/c/openstack/mistral/+/1009489
+    - https://review.opendev.org/c/openstack/mistral/+/1009490
+    - https://review.opendev.org/c/openstack/mistral/+/1009491
+
+  2025.2/flamingo:
+    - https://review.opendev.org/c/openstack/mistral/+/1009493
+    - https://review.opendev.org/c/openstack/mistral/+/1009494
+    - https://review.opendev.org/c/openstack/mistral/+/1009495
+    - https://review.opendev.org/c/openstack/mistral/+/1009496
+    - https://review.opendev.org/c/openstack/mistral/+/1009497
+    - https://review.opendev.org/c/openstack/mistral/+/1009498
+    - https://review.opendev.org/c/openstack/mistral/+/1009499
+    - https://review.opendev.org/c/openstack/mistral/+/1009500
+
+  2025.1/epoxy:
+    - https://review.opendev.org/c/openstack/mistral/+/1009502
+    - https://review.opendev.org/c/openstack/mistral/+/1009503
+    - https://review.opendev.org/c/openstack/mistral/+/1009504
+    - https://review.opendev.org/c/openstack/mistral/+/1009505
+    - https://review.opendev.org/c/openstack/mistral/+/1009506
+    - https://review.opendev.org/c/openstack/mistral/+/1009507
+    - https://review.opendev.org/c/openstack/mistral/+/1009508
+    - https://review.opendev.org/c/openstack/mistral/+/1009509
