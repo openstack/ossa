@@ -1,0 +1,68 @@
+date: 2026-10-20
+
+id: OSSA-2026-046
+
+title: Manila allows cross-project public-share and export-metadata changes
+
+description: |
+  Chen YuXiang from the Institute of Computing Technology, Chinese Academy of
+  Sciences reported that a non-owner could modify access rules and
+  export-location metadata of another project's public share. Goutham Pacha
+  Ravi and Carlos da Silva from Red Hat identified further public-share paths:
+  a non-owner could soft-delete or restore a foreign public share, or create a
+  backup of it. A compatible storage backend may apply unauthorized changes to
+  existing access rules, disrupting access for the share's owner or authorized
+  users.
+
+  Separately, Yuliang Xiao reported that the export-location metadata API does
+  not scope its lookup to the share in the request. An authenticated project
+  member may therefore read, modify, or delete another project's export-location
+  metadata by supplying the target export-location UUID with the identifier of
+  a share they control. This issue is more easily exploitable with public
+  shares.
+
+  Deployments with public shares are affected by the public-share operations.
+  Deployments that utilize export-location metadata for shares are affected by the metadata vulnerability.
+
+affected-products:
+  - product: manila
+    version: '>=1.0.0 <20.0.3, >=21.0.0 <21.0.3, >=22.0.0 <22.0.2, ==23.0.0'
+
+vulnerabilities:
+  - cve-id: CVE-2026-71195
+
+reporters:
+  - name: Chen YuXiang
+    affiliation: Institute of Computing Technology, Chinese Academy of Sciences
+    reported:
+      - CVE-2026-71195
+  - name: Yuliang Xiao
+    affiliation: Independent
+    reported:
+      - CVE-2026-71195
+
+issues:
+  links:
+    - https://bugs.launchpad.net/manila/+bug/2161412
+    - https://bugs.launchpad.net/manila/+bug/2168962
+
+reviews:
+  2027.1/indri (development):
+    - https://review.opendev.org/1011478
+
+  2026.2/hibiscus:
+    - https://review.opendev.org/1011479
+
+  2026.1/gazpacho:
+    - https://review.opendev.org/1011481
+
+  2025.2/flamingo:
+    - https://review.opendev.org/1011482
+
+  2025.1/epoxy:
+    - https://review.opendev.org/1011483
+
+notes:
+  - 'The companion Manila Tempest plugin update,
+    https://review.opendev.org/1011484, updates cross-project
+    export-location tests to expect 404 after the fix.'
