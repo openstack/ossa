@@ -41,11 +41,12 @@ Patches
 Credits
 ~~~~~~~
 {% for reporter in reporters %}
-{% if 'affiliation' in reporter and reporter['affiliation'] and reporter['affiliation'] != 'UNKNOWN' %}
+{% if 'affiliation' in reporter and reporter['affiliation'] and reporter['affiliation'].lower() not in ('unknown', 'independent') %}
 - {{ reporter['name'] | trim | indent }} from {{ reporter ['affiliation'] }}{% if 'reported' in reporter %} ({{ reporter['reported'] | csv_list }}){% endif %}
 
 {% else %}
-- {{ reporter['name'] | trim | indent }} ({{ reporter['reported'] | csv_list }})
+- {{ reporter['name'] | trim | indent }}{% if 'reported' in reporter %} ({{ reporter['reported'] | csv_list }}){% endif %}
+
 {% endif %}
 {% endfor %}
 
