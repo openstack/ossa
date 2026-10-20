@@ -1,0 +1,68 @@
+date: 2026-10-20
+
+id: OSSA-2026-045
+
+title: Cross-project information disclosure in Cinder Messages API
+
+description: |
+  Yuliang Xiao, an independent reporter, and Chen YuXiang of the
+  Institute of Computing Technology, Chinese Academy of Sciences independently
+  reported a vulnerability in Cinder's messages API. A non-admin user
+  with the project-scoped 'member' or 'reader' role making the Block
+  Storage API v3.3 "List messages" call finds the non-expired user
+  messages for other projects included in the response, resulting in
+  the leakage of UUIDs of resources owned by other projects in addition
+  to the user message about the other projects' resources (which, by
+  design, are sanitized generic messages). All Cinder deployments are
+  affected.
+
+affected-products:
+  - product: cinder
+    version: '>=9.0.0 <26.3.1, ==27.0.0, ==28.0.0, ==29.0.0'
+
+vulnerabilities:
+  - cve-id: CVE-2026-93856
+
+reporters:
+  - name: Yuliang Xiao
+    affiliation: Independent
+    reported:
+      - CVE-2026-93856
+  - name: Chen YuXiang
+    affiliation: Institute of Computing Technology, Chinese Academy of Sciences
+    reported:
+      - CVE-2026-93856
+
+issues:
+  links:
+    - https://launchpad.net/bugs/2160671
+
+reviews:
+  2027.1/indri (development):
+    - https://review.opendev.org/1011486
+
+  2026.2/hibiscus:
+    - https://review.opendev.org/1011487
+
+  2026.1/gazpacho:
+    - https://review.opendev.org/1011488
+
+  2025.2/flamingo:
+    - https://review.opendev.org/1011489
+
+  2025.1/epoxy:
+    - https://review.opendev.org/1011490
+
+notes:
+  - 'Although the UUIDs of resources of other projects are leaked, a
+    project_id is not included in the response, so someone wishing to
+    exploit the leak must find an independent means of correlating each
+    resource ID with its associated project.'
+  - 'The user messages API was introduced during the Newton development
+    cycle and first appeared in Cinder 9.0.0.'
+  - 'The Cinder Contributor Guide contains more information about
+    `User Messages
+    <https://docs.openstack.org/cinder/latest/contributor/user_messages.html>`_.'
+  - 'Cinder user messages are controlled by the configuration options
+    ``message_ttl`` (default: 30 days) and ``message_reap_interval``
+    (default: 24 hours).'
