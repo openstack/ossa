@@ -1,0 +1,62 @@
+date: 2026-10-29
+
+id: OSSA-2026-049
+
+title: Ironic Conductor DoS via gzip bomb configdrive
+
+description: |
+  Jay Faulkner of G-Research Open Source Software reported a vulnerability
+  in the Ironic conductor. The Ironic conductor can be subjected to an out
+  of memory or disk full condition when attempting to extract a
+  base64-encoded, gzipped configdrive image submitted via
+  ``/v1/nodes/provision_state`` when deploying a node.
+
+  This issue impacts environments where users have access to deploy
+  instances directly via Ironic.
+
+affected-products:
+  - product: ironic
+    version: '>=16.2.0 <29.1.1, >=30.0.0 <32.1.1, >=33.0.0 <35.1.1, >=36.0.0 <39.0.1'
+
+vulnerabilities:
+  - cve-id: CVE-2026-115638
+
+reporters:
+  - name: Jay Faulkner
+    affiliation: G-Research Open Source Software
+    reported:
+      - CVE-2026-115638
+
+issues:
+  links:
+    - https://launchpad.net/bugs/2171814
+
+reviews:
+  2027.1/indri (development):
+    - https://review.opendev.org/1011906
+    - https://review.opendev.org/1012743
+
+  2026.2/hibiscus:
+    - https://review.opendev.org/1012122
+
+  2026.1/gazpacho:
+    - https://review.opendev.org/1012123
+
+  2025.2/flamingo:
+    - https://review.opendev.org/1012130
+
+  2025.1/epoxy:
+    - https://review.opendev.org/1012134
+
+  2024.1/caracal (unmaintained):
+    - https://review.opendev.org/1012759
+
+  bugfix/38.0:
+    - https://review.opendev.org/1012132
+
+  bugfix/37.0:
+    - https://review.opendev.org/1012133
+
+notes:
+  - Patches for unmaintained/2024.1, bugfix/38.0, and bugfix/37.0 will be
+    merged to git but no new release will be provided.
