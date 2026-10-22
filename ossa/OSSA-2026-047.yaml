@@ -1,0 +1,68 @@
+date: 2026-10-22
+
+id: OSSA-2026-047
+
+title: Redfish vendor_passthru method allows path injection via ID
+
+description: |
+  The Metal3.io Security team reported a vulnerability in Ironic's API.
+  When calling the ``vendor_passthru`` API endpoint provided by the
+  ``redfish`` management interface to create or delete a subscription,
+  a malicious System-scoped Administrator could instead perform an HTTP
+  DELETE or HTTP GET on an arbitrary path on a node's BMC. In a worst
+  case scenario, this could lead to user accounts being deleted from
+  the Redfish service on the BMC.
+
+  Only clouds with nodes enrolled in a redfish hardware type are
+  susceptible to this vulnerability.
+
+affected-products:
+  - product: ironic
+    version: '>=18.1.0 <=29.1.1, >30.0.0 <=32.1.1, >33.0.0 <=35.1.1, >36.0.0 <=39.0.1'
+
+vulnerabilities:
+  - cve-id: CVE-2026-90458
+
+reporters:
+  - name: Tuomo Tanskanen, Metal3.io Security Team
+    affiliation: Ericsson Software Technology
+    reported:
+      - CVE-2026-90458
+  - name: Dmitry Tantsur, Metal3.io Security Team
+    affiliation: Red Hat
+    reported:
+      - CVE-2026-90458
+
+issues:
+  links:
+    - https://launchpad.net/bugs/2166507
+
+reviews:
+  2027.1/indri (development):
+    - https://review.opendev.org/1011860
+
+  2026.2/hibiscus:
+    - https://review.opendev.org/1011862
+
+  2026.1/gazpacho:
+    - https://review.opendev.org/1011864
+
+  2025.2/flamingo:
+    - https://review.opendev.org/1011866
+
+  2025.1/epoxy:
+    - https://review.opendev.org/1011868
+
+  2024.1/caracal (unmaintained):
+    - https://review.opendev.org/1011870
+
+  bugfix/38.0:
+    - https://review.opendev.org/1011872
+
+  bugfix/37.0:
+    - https://review.opendev.org/1011874
+
+notes:
+  - Patches for unmaintained/2024.1, bugfix/38.0 and bugfix/37.0 will be
+    merged to git but no new release will be provided.
+
