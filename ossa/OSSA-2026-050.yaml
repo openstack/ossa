@@ -1,0 +1,47 @@
+date: 2026-10-29
+
+id: OSSA-2026-050
+
+title: keystonemiddleware access_rules bypass via X-Service-Token
+
+description: >
+  Nassim Abbaoui with OVHcloud reported a vulnerability in
+  keystonemiddleware application credential access_rules enforcement.
+  By supplying a custom X-Service-Token header in a request, anyone in
+  posession of an access-restricted application credential may bypass
+  those restrictions resulting in elevation of privileges. Deployments
+  that use application credential access_rules, or that enforce token
+  binding, are affected.
+
+affected-products:
+  - product: keystonemiddleware
+    version: '<10.9.2, >=10.10.0 <10.12.2, >=11.0.0 <12.0.1, >=13.0.0 <13.0.2'
+
+vulnerabilities:
+  - cve-id: CVE-2026-115642
+
+reporters:
+  - name: Nassim Abbaoui
+    affiliation: OVHcloud
+    reported:
+      - CVE-2026-115642
+
+issues:
+  links:
+    - https://launchpad.net/bugs/2162748
+
+reviews:
+  2027.1/indri (development):
+    - https://review.opendev.org/1012869
+
+  2026.2/hibiscus:
+    - https://review.opendev.org/1012871
+
+  2026.1/gazpacho:
+    - https://review.opendev.org/1012872
+
+  2025.2/flamingo:
+    - https://review.opendev.org/1012873
+
+  2025.1/epoxy:
+    - https://review.opendev.org/1012874
