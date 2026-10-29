@@ -9,7 +9,7 @@ description: |
   in the Ironic conductor. The Ironic conductor can be subjected to an out
   of memory or disk full condition when attempting to extract a
   base64-encoded, gzipped configdrive image submitted via
-  ``/v1/nodes/provision_state`` when deploying a node.
+  ``/v1/nodes/{node_ident}/states/provision`` when deploying a node.
 
   This issue impacts environments where users have access to deploy
   instances directly via Ironic.
