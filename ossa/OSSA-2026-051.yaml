@@ -1,0 +1,52 @@
+date: 2026-11-17
+
+id: OSSA-2026-051
+
+title: Local Privilege Escalation in Cinder LIO iSCSI driver
+
+description: |
+  Sami Yessou, cloud engineer at switch.ch, reported a vulnerability
+  in Cinder.  By making an os-initialize_connection request with an
+  IQN that includes a path traversal as part of the connector's
+  initiator element, an authenticated user with a 'member' role may
+  create or overwrite files in the volume host filesystem.  Only
+  cinder-volume hosts using the LIO iSCSI target driver are affected.
+  This target driver is typically used with the LVM volume driver.
+
+affected-products:
+  - product: cinder
+    version: <27.1.1, >=28.0.0 <28.1.1, >=29.0.0 <29.1.1
+
+vulnerabilities:
+  - cve-id: CVE-2026-pending
+
+reporters:
+  - name: Sami Yessou
+    affiliation: switch.ch
+
+issues:
+  links:
+    - https://launchpad.net/bugs/2163562
+
+reviews:
+  2027.1/indri (development):
+    - https://review.opendev.org/1015478
+
+  2026.2/hibiscus:
+    - https://review.opendev.org/1015485
+
+  2026.1/gazpacho:
+    - https://review.opendev.org/1015486
+
+  2025.2/flamingo:
+    - https://review.opendev.org/1015654
+
+  2025.1/epoxy (unmaintained):
+    - https://review.opendev.org/1015676
+
+notes:
+  - A patch is available for the unmaintained/2025.1 branch as a
+    courtesy.  Unmaintained branches do not receive updated releases.
+  - A CVE identifier was requested from MITRE for this vulnerability
+    on 2026-11-12. The CVE will be added to this advisory by errata
+    once assigned.
