@@ -1,0 +1,45 @@
+date: 2026-11-17
+
+id: OSSA-2026-052
+
+title: keystonemiddleware ReDoS in AppCred access_rules processing
+
+description: >
+  Rock Xu reported a vulnerability in keystonemiddleware access rule path
+  matching. By supplying a malicious regular expression when creating an
+  application credential access_rules entry, an authenticated user may consume
+  resources in the consuming process making a service unresponsive. All
+  OpenStack service deployments may be affected.
+
+affected-products:
+  - product: keystonemiddleware
+    version: '<10.13.1, >=11.0.0 <12.1.1, >=13.0.0 <13.0.3'
+
+reporters:
+  - name: Rock Xu
+
+issues:
+  links:
+    - https://launchpad.net/bugs/2167923
+
+reviews:
+  2027.1/indri (development):
+    - https://review.opendev.org/1016057
+
+  2026.2/hibiscus (stable):
+    - https://review.opendev.org/1016058
+
+  2026.1/gazpacho (stable):
+    - https://review.opendev.org/1016059
+
+  2025.2/flamingo (stable):
+    - https://review.opendev.org/1016060
+
+  2025.1/epoxy (unmaintained):
+    - https://review.opendev.org/1016061
+
+notes:
+  - The unmaintained/2025.1 branch is not actively maintained and no longer
+    receives new releases, but a patch is being provided as a convenience.
+  - A CVE identifier was requested from MITRE on 2026-11-10 and will be added
+    in future errata once assigned.
