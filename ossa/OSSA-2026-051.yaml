@@ -13,16 +13,21 @@ description: |
   cinder-volume hosts using the LIO iSCSI target driver are affected.
   This target driver is typically used with the LVM volume driver.
 
+errata: |
+  MITRE assigned CVE-2026-131920 after initial publication.
+
 affected-products:
   - product: cinder
     version: <27.1.1, >=28.0.0 <28.1.1, >=29.0.0 <29.1.1
 
 vulnerabilities:
-  - cve-id: CVE-2026-pending
+  - cve-id: CVE-2026-131920
 
 reporters:
   - name: Sami Yessou
     affiliation: switch.ch
+    reported:
+      - CVE-2026-131920
 
 issues:
   links:
@@ -47,6 +52,7 @@ reviews:
 notes:
   - A patch is available for the unmaintained/2025.1 branch as a
     courtesy.  Unmaintained branches do not receive updated releases.
-  - A CVE identifier was requested from MITRE for this vulnerability
-    on 2026-11-12. The CVE will be added to this advisory by errata
-    once assigned.
+
+errata_history:
+  - 2026-11-18 - Errata 1
+  - 2026-11-17 - Original Version
