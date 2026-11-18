@@ -4,6 +4,9 @@ id: OSSA-2026-052
 
 title: keystonemiddleware ReDoS in AppCred access_rules processing
 
+errata: >
+  MITRE assigned CVE-2026-131922 for this vulnerability on 2026-11-18.
+
 description: >
   Rock Xu reported a vulnerability in keystonemiddleware access rule path
   matching. By supplying a malicious regular expression when creating an
@@ -14,6 +17,9 @@ description: >
 affected-products:
   - product: keystonemiddleware
     version: '<10.13.1, >=11.0.0 <12.1.1, >=13.0.0 <13.0.3'
+
+vulnerabilities:
+  - cve-id: CVE-2026-131922
 
 reporters:
   - name: Rock Xu
@@ -41,5 +47,7 @@ reviews:
 notes:
   - The unmaintained/2025.1 branch is not actively maintained and no longer
     receives new releases, but a patch is being provided as a convenience.
-  - A CVE identifier was requested from MITRE on 2026-11-10 and will be added
-    in future errata once assigned.
+
+errata_history:
+  - 2026-11-18 - Errata 1
+  - 2026-11-17 - Original Version
