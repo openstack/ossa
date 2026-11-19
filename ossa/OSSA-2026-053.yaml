@@ -1,0 +1,54 @@
+date: 2026-11-19
+
+id: OSSA-2026-053
+
+title: Networking-Generic-Switch does not sanitize all inputs
+
+description: >
+  Jay Faulkner reported a vulnerability in Networking-Generic-Switch. By
+  setting specially crafted metadata in an upstream service, such as Ironic,
+  an authenticated user may compel Networking-Generic-Switch to execute
+  arbitrary switch commands.
+
+affected-products:
+  - product: networking-generic-switch
+    version: '<8.0.2, >=9.0.0 <9.1.2, >=10.0.0 <10.1.1, ==10.2.0'
+
+vulnerabilities:
+  - cve-id: CVE-2026-131919
+
+reporters:
+  - name: Jay Faulkner
+    affiliation: G-Research OSS
+
+issues:
+  links:
+    - https://launchpad.net/bugs/2163364
+
+reviews:
+  2027.1/indri (development):
+    - https://review.opendev.org/1016492
+
+  2026.2/hibiscus (stable):
+    - https://review.opendev.org/1016493
+
+  2026.1/gazpacho (stable):
+    - https://review.opendev.org/1016494
+
+  2025.2/flamingo (stable):
+    - https://review.opendev.org/1016495
+
+  2025.1/epoxy (unmaintained):
+    - https://review.opendev.org/1016496
+
+  2024.1/caracal (unmaintained):
+    - https://review.opendev.org/1016498
+
+  2023.1/antelope (unmaintained):
+    - https://review.opendev.org/1016499
+
+notes:
+  - Unmaintained branches (2025.1, 2024.1, 2023.1) are not actively
+    maintained and no longer receive new releases, but a patch is
+    being provided as a convenience.
+
