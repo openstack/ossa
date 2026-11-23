@@ -234,16 +234,28 @@ MITRE returns the assigned CVE. It is added to the bug (see "link to
 CVE" at the top-right in Launchpad or use a story comment in
 StoryBoard), and the bug is retitled to "$TITLE ($CVE)".
 
+Disclosure Date
+^^^^^^^^^^^^^^^
+Once the patches are approved and the CVE is assigned, a disclosure
+date is chosen. Typically, disclosures are performed 5-10 business
+days after the initial embargo notification email.
+
+When scheduling a disclosure date, you should avoid holidays,
+release periods, and Monday/Friday. The ideal time for a disclosure
+is a Tuesday, Wednesday, or Thursday at 1500 UTC. This guideline
+aims to prevent after-hours or weekend work for upstream project
+maintainers and OpenStack operators.
+
 Embargoed disclosure
 ^^^^^^^^^^^^^^^^^^^^
+Once a disclosure date is chosen, a signed email with the
+vulnerability description and disclosure date is is sent to the
+downstream stakeholders. 
 
-Once the patches are approved and the CVE is assigned, a signed
-email with the vulnerability description is sent to the downstream
-stakeholders. The disclosure date is set to 5-10 business days,
-excluding Monday/Friday and holiday periods, at 1500 UTC. No
-stakeholder is supposed to deploy public patches before disclosure
-date. Once the email is sent, any stakeholders who reply requesting
-subscription to the report may be added.
+No stakeholder is supposed to deploy public patches before public
+notification on the disclosure date. Once the email is sent, any
+stakeholders who reply requesting subscription to the report may be
+added.
 
 For non-embargoed, public vulnerabilities no separate downstream
 advance notification is sent. Instead the OSSA bugtask is set to fix
